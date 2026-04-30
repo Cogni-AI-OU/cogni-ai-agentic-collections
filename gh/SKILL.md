@@ -16,16 +16,6 @@ and bounded fallbacks over brittle shell post-processing.
 ```mermaid
 mindmap
   root((gh))
-    actions
-      cache
-        delete
-          Delete GitHub Actions caches
-        list
-          List GitHub Actions caches
-      run
-        (Load gh-run skill if required)
-      workflow
-        (Load gh-run skill if required)
     agent-task
       create
         Create an agent task
@@ -68,6 +58,11 @@ mindmap
         Print the authentication token
     browse
       Open repositories, issues, PRs in browser
+    cache
+      delete
+        Delete GitHub Actions caches
+      list
+        List GitHub Actions caches
     codespace
       code
         Open in VS Code
@@ -327,6 +322,8 @@ mindmap
         List rulesets
       view
         View information
+    run
+      (Load gh-run skill if required)
     search
       code
         Search within code
@@ -363,6 +360,8 @@ mindmap
         List variables
       set
         Create or update variables
+    workflow
+      (Load gh-run skill if required)
 ```
 
 ## When to Activate
