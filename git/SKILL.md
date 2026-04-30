@@ -322,6 +322,3 @@ Always explain proposed git operations step-by-step, quote exact commands, and c
 
 - **gh-pr**: For pull request management, review workflows, and CI/CD checks using GitHub CLI.
 
-## Maintenance
-
-Note that this file should be updated if outdated or steps/examples are not working.
