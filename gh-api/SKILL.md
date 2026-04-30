@@ -95,6 +95,16 @@ Notes:
   It uses native GitHub CLI auth, avoiding 401s for internal repositories.
 - Especially useful when `curl` is not available or restricted.
 
+## Downloading Workflow Logs via API
+
+When `gh run view --log` fails to retrieve logs (often returning empty strings for canceled matrix jobs or cached runs),
+you can download the full artifact zip via the REST API, bypassing CLI streaming limits.
+
+```bash
+gh api -H "Accept: application/vnd.github+json" /repos/<owner>/<repo>/actions/runs/<run_id>/logs > run_logs.zip
+unzip -d temp/run_logs run_logs.zip
+```
+
 ## Discussion Patterns (via GraphQL)
 
 Since `gh` often lacks a native `discussion` subcommand, use `gh api graphql`.
