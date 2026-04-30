@@ -43,6 +43,15 @@ mindmap
 
 ## Workflow Run Diagnostics
 
+- **Checking Runs for a Pull Request**:
+  - Instead of parsing commit hashes or wrestling with `gh run list --branch <branch_name>`
+    (which lacks branch filtering in newer versions or gets complicated),
+    use the native tool mapping directly to the PR's HEAD commit:
+    ```bash
+    gh pr checks <pr_number> --repo <owner>/<repo>
+    ```
+    This outputs all CI/CD checks (successes, failures, skips) and provides direct URLs to the workflow jobs.
+
 - **Fetching Logs for In-Progress Runs or Multiple Attempts**:
   - `gh run view --log` only fetches logs for the *latest completed* attempt and often fails on in-progress runs or expired attempts.
   - The API endpoint `/repos/{owner}/{repo}/actions/jobs/{job_id}/logs` often fails during
