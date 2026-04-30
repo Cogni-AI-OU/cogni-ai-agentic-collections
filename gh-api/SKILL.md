@@ -18,6 +18,7 @@ Use `gh api` and `gh api graphql` when standard `gh` subcommands do not expose t
 - Task requires interacting with GitHub resources not supported by native `gh` subcommands
   (e.g., repository variables, environment secrets, discussions).
 - Task requires complex GraphQL queries or mutations.
+- Task to resolve outdated PR comments.
 - User specifically asks for `gh api` or `gh api graphql` usage.
 
 ## Mindmap of Commands
