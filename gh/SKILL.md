@@ -340,7 +340,8 @@ mindmap
 1. Verify availability and auth first: `gh --version`, then `gh auth status`.
 2. Choose the narrowest native `gh` surface before reaching for `gh api`:
    - `gh issue view/comment` for issues
- 
+   - `gh pr view/comment/review` for pull requests; see the `gh-pr` skill
+     for PR-specific guidance
    - `gh api` only when native subcommands do not expose the needed field
 3. Prefer structured output over shell filtering:
    - use `--json`, `--jq`, or `--template` instead of `grep`/`rg`
