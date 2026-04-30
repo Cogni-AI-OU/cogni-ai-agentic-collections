@@ -37,7 +37,8 @@ this repo is cloned into `.github/agents`.
 - [**Cogni AI Weaver**](cogni-ai-weaver/cogni-ai-weaver.agent.md):
   Canonical flow custody and diagram stewardship kernel specializing in flowchart and dependency memory.
 - [**Cogni AI Brain Ops**](cogni-ai-brain-ops/cogni-ai-brain-ops.agent.md):
-  Autonomous brainstorming agent responsible for gathering facts, describing constraints, and architecting suggested plans and tasks.
+  Autonomous brainstorming agent responsible for gathering facts, describing constraints,
+  and architecting suggested plans and tasks.
 
 ## Persistent Memory & Context Files
 
