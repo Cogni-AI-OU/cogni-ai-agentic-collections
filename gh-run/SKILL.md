@@ -96,7 +96,8 @@ mindmap
 ## Structured Query Patterns
 
 - `gh run list --json databaseId,name,workflowName,status,conclusion,url --limit 20`
-- `gh run list --json databaseId,headBranch,name,event,status,conclusion,createdAt,url -q '.[] | select(.headBranch == "<branch_name>")' --repo <owner>/<repo> --limit 10`
+- `gh run list --json databaseId,headBranch,name,event,status,conclusion,createdAt,url \`
+  `-q '.[] | select(.headBranch == "<branch_name>")' --repo <owner>/<repo> --limit 10`
 - `gh run list --repo <owner>/<repo>`
 
 ## Failure Signatures

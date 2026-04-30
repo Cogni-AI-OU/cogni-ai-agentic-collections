@@ -161,6 +161,10 @@ Avoid process substitution for the body; use a temporary file.
     to the target repository.
   - **Rate Limiting**: Use `gh api rate_limit` to check your current quota.
 
+## Structured Query Patterns
+
+- `gh api repos/<owner>/<repo>/actions/jobs/<job_id>`
+
 ## Common API Patterns
 
 Use these when standard `gh` commands (like `gh pr view` or `gh issue view`) do not provide enough detail:
