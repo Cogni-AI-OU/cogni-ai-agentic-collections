@@ -124,26 +124,26 @@ flowchart LR
 
     subgraph Checks ["CI Format & Linting"]
         direction TB
-        c3["actionlint"]:::pass %% #<job_id>
-        c1["link-checker"]:::pass %% #<job_id>
-        c2["pre-commit"]:::pass %% #<job_id>
+        c3["actionlint<br>#<job_id>"]:::pass
+        c1["link-checker<br>#<job_id>"]:::pass
+        c2["pre-commit<br>#<job_id>"]:::pass
     end
 
     subgraph Tests ["Tests"]
         direction TB
-        t1["test-on-debian-latest"]:::pass %% #<job_id>
+        t1["test-on-debian-latest<br>#<job_id>"]:::pass
     end
 
     subgraph Molecule ["Scenarios"]
         direction TB
-        m1["default / ubuntu-latest"]:::fail %% #<job_id>
-        m2["default / ubuntu-noble"]:::fail %% #<job_id>
+        m1["default / ubuntu-latest<br>#<job_id>"]:::fail
+        m2["default / ubuntu-noble<br>#<job_id>"]:::fail
     end
 
     pr --> Checks
     pr --> Tests
     pr --> Molecule
-    pr --> cr["CodeRabbit"]:::pass %% #<job_id>
+    pr --> cr["CodeRabbit<br>#<job_id>"]:::pass
 
     classDef pass fill:#d4edda,stroke:#28a745,color:#155724,stroke-width:2px;
     classDef fail fill:#f8d7da,stroke:#dc3545,color:#721c24,stroke-width:2px;
