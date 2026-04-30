@@ -302,13 +302,6 @@ Docs: <https://mermaid.js.org/syntax/gantt.html>
 A GitGraph diagram visualizes Git repository structures, including branches,
 commit histories, and merge strategies.
 
-- Use `gitGraph` to layout the repository history diagram.
-- Add commits to the active branch using the `commit` command. Customize
-  its appearance or metadata with `id`, `tag`, or `type` (e.g., `HIGHLIGHT`).
-- Create branches using `branch <name>`.
-- Switch between existing branches using `checkout <name>`.
-- Merge a branch into the current one using `merge <branch_name>`.
-
 Example with Branches, Commits, and Merges:
 
 ```mermaid
@@ -327,9 +320,7 @@ gitGraph
     merge develop tag: "v1.0.0"
 ```
 
-**Pro-tip for accurate real-world GitGraphs**:
-
-Use CLI tools to generate commit entries from real commit history instead of rewriting commit subjects by hand:
+Use CLI tools to generate real-world commit entries from real commit history instead of rewriting commit subjects by hand:
 
 - **With Git (`git`)**:
   `git log origin/main..HEAD --reverse --format='commit id: "%s"'`
@@ -341,9 +332,6 @@ Use CLI tools to generate commit entries from real commit history instead of rew
 
 These commands provide a linear list of commits and can help seed `commit id: "..."` entries, but they do **not**
 reconstruct full branch and merge topology for a Mermaid `gitGraph`.
-
-*(Note: Escape inner quotes in commit subjects so the output remains valid Mermaid syntax. For example, use
-`sed 's/"/\\"/g'` to escape double quotes in a shell pipeline.)*
 
 Example:
 
@@ -359,7 +347,13 @@ gitGraph
 
 Notes:
 
+- Add commits to the active branch using the `commit` command. Customize
+  its appearance or metadata with `id`, `tag`, or `type` (e.g., `HIGHLIGHT`).
+- Create branches using `branch <name>`.
 - Escape inner quotes in commit subjects so the output remains valid Mermaid syntax.
+- Merge a branch into the current one using `merge <branch_name>`.
+- Switch between existing branches using `checkout <name>`.
+- Use `gitGraph` to layout the repository history diagram.
 
 Docs: <https://mermaid.js.org/syntax/gitgraph.html>
 
