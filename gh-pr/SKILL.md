@@ -151,7 +151,14 @@ flowchart LR
 
 ## Structured Query Patterns
 
-- Use `gh pr view <number> --json headRefName,baseRefName,commits` to extract PR commit history.
+- Extract PR commit history for Mermaid `gitGraph`:
+  - **With Git (`git`)**:
+    `git log origin/main..HEAD --reverse --format='commit id: "%s"'`
+  - For more context, load relevant skill files when working with this type of diagrams.
+  - **With GitHub API (`gh api`)**:
+    `gh api repos/<owner>/<repo>/pulls/<number>/commits --jq '.[] | "commit id: \"[\(.sha[0:7])] \(.commit.message | split("\n")[0] | gsub("\""; "'\''"))\""'`
+  - **With GitHub CLI (`gh`)**:
+    `gh pr view <number> --json headRefName,baseRefName,commits`
 - **Detailed JSON Retrieval (Comments & Reviews)**:
   - `gh pr view <number> --repo <owner>/<repo> --json comments`
   - `gh pr view <number> --repo <owner>/<repo> --json reviews`
