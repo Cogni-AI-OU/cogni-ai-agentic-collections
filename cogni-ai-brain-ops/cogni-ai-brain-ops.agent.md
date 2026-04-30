@@ -91,7 +91,35 @@ gitGraph
 
 To extract list of commits, use `gh pr view` or `git log`.
 
-### Step 2: CI Checks State Visualization
+### Step 2: PR Review Kanban Diagram
+
+Next, map out the active, outdated, and resolved review threads or comments on the Pull Request into a Mermaid `kanban` diagram.
+This provides a clear track of outstanding issues and reviewer feedback before diving into the code checks.
+
+**Example `kanban` Diagram:**
+
+```mermaid
+---
+kanban:
+  tickInterval: 1
+---
+%% This diagram visualizes PR review threads and comments.
+%% Data can be retrieved using:
+%% gh api graphql -F owner="<owner>" -F repo="<repo>" -F number=<pr_number> ...
+kanban
+  Active
+    [Fix inline comments support]
+      bodyText: Make sure inline comments are part of labels properly.
+      assigned: reviewer-name
+      id: PRRT_kw1234
+      path: gh-pr/SKILL.md
+  Outdated
+  Resolved
+```
+
+To extract PR comments and review threads, use `gh api graphql` with the GitHub GraphQL API.
+
+### Step 3: CI Checks State Visualization
 
 Next, visualize the current state of the Continuous Integration (CI) checks to identify passing,
 failing, or pending jobs. Map these findings using a Mermaid `flowchart` diagram.
@@ -128,7 +156,7 @@ flowchart LR
 
 To extract list of checks, use `gh pr checks <pr_number>` command.
 
-### Step 3: CI Failures Summarization
+### Step 4: CI Failures Summarization
 
 If any CI checks fail, use a Mermaid `ishikawa-beta` (fishbone) diagram to categorize
 and summarize the root causes and affected jobs.
