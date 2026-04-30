@@ -81,7 +81,7 @@ mindmap
   To quickly identify only the failing jobs for a specific PR:
 
   ```bash
-  gh pr checks <number> --repo <owner>/<repo> | grep fail
+  gh pr checks <number> --repo <owner>/<repo> --json name,conclusion -q '.[] | select(.conclusion == "FAILURE") | .name'
   ```
 
 - **Reviewing Changes**:
@@ -106,9 +106,12 @@ mindmap
   - `gh pr checks <number> --repo <owner>/<repo>` is the quickest way to map checks directly to the PR's HEAD commit.
     This outputs standard CI/CD checks (successes, failures, skips) and provides direct URLs to the workflow jobs.
   - **Limitation**: `gh pr checks` *only* evaluates the HEAD commit.
-    It completely misses manually triggered (`workflow_dispatch`) or comment-triggered (`issue_comment`) agent runs.
-  - **Workaround**: To comprehensively fetch *all* workflow runs associated with a PR (including custom actions and agentic runs),
-    refer to the `gh-api` skill for instructions on using `gh api` to query by branch and display title.
+    It completely misses manually triggered (`workflow_dispatch`) or
+    comment-triggered (`issue_comment`) agent runs.
+  - **Workaround**: To comprehensively fetch *all* workflow runs associated
+    with a PR (including custom actions and agentic runs), refer to the
+    `gh-api` skill for instructions on using `gh api` to query by branch
+    and display title.
 
 ### Visualizing PR Checks
 

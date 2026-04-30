@@ -36,13 +36,13 @@ Analyze, edit, and shrink PDF files at the object level without losing content.
 
 ```bash
 # Page count, size, fonts, metadata
-pdfinfo input.pdf
+pdfinfo /tmp/input.pdf
 
 # Object statistics — spot huge /FlateDecode streams or duplicate fonts
-pdf-parser.py -a input.pdf
+pdf-parser.py -a /tmp/input.pdf
 
 # Export full object graph as JSON; find largest streams
-qpdf --json --json-stream-data=file input.pdf > /tmp/analysis.json
+qpdf --json --json-stream-data=file /tmp/input.pdf > /tmp/analysis.json
 jq '[.qpdf[1] | to_entries[] | select(.value.stream) | {obj: .key, length: .value.stream.length}]
   | sort_by(-.length) | .[:20]' /tmp/analysis.json
 ```
@@ -53,30 +53,30 @@ jq '[.qpdf[1] | to_entries[] | select(.value.stream) | {obj: .key, length: .valu
 
 ```bash
 # pdfsizeopt — best for duplicate fonts/streams/EML-style bloat
-pdfsizeopt --use-pngout=no input.pdf output.pdf
+pdfsizeopt --use-pngout=no /tmp/input.pdf /tmp/output.pdf
 
 # qpdf — recompress streams + generate object streams
 qpdf --compress-streams=y --object-streams=generate --recompress-flate --linearize \
-  input.pdf qpdf-opt.pdf
+  /tmp/input.pdf /tmp/qpdf-opt.pdf
 ```
 
 ### Manual Object Pruning via QDF
 
 ```bash
 # Convert to human-readable QDF format
-qpdf --qdf input.pdf editable.qdf
+qpdf --qdf /tmp/input.pdf /tmp/editable.qdf
 
-# Edit editable.qdf: locate huge object IDs from inspection step,
+# Edit /tmp/editable.qdf: locate huge object IDs from inspection step,
 # delete entire "obj … endobj" blocks for unused /XObject or metadata.
 # Then repack:
-qpdf editable.qdf optimized.pdf
+qpdf /tmp/editable.qdf /tmp/optimized.pdf
 ```
 
 ## Lossy Reduction (Ghostscript)
 
 ```bash
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
-  -dNOPAUSE -dQUIET -dBATCH -sOutputFile=gs-opt.pdf input.pdf
+  -dNOPAUSE -dQUIET -dBATCH -sOutputFile=/tmp/gs-opt.pdf /tmp/input.pdf
 ```
 
 Preset options: `/screen` (72 dpi), `/ebook` (150 dpi), `/printer` (300 dpi),
@@ -87,10 +87,10 @@ Preset options: `/screen` (72 dpi), `/ebook` (150 dpi), `/printer` (300 dpi),
 Always verify after any reduction:
 
 ```bash
-ls -lh input.pdf optimized.pdf
-pdfinfo optimized.pdf
-diff <(pdfinfo input.pdf | grep -E 'Pages|Page size') \
-     <(pdfinfo optimized.pdf | grep -E 'Pages|Page size')
+ls -lh /tmp/input.pdf /tmp/optimized.pdf
+pdfinfo /tmp/optimized.pdf
+diff <(pdfinfo /tmp/input.pdf | grep -E 'Pages|Page size') \
+     <(pdfinfo /tmp/optimized.pdf | grep -E 'Pages|Page size')
 ```
 
 Confirm: file size decreased, page count unchanged, page dimensions preserved.
