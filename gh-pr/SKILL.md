@@ -152,6 +152,9 @@ flowchart LR
 ## Structured Query Patterns
 
 - Use `gh pr view <number> --json headRefName,baseRefName,commits` to extract PR commit history.
+- **Detailed JSON Retrieval (Comments & Reviews)**:
+  - `gh pr view <number> --repo <owner>/<repo> --json comments`
+  - `gh pr view <number> --repo <owner>/<repo> --json reviews`
 - Lightweight PR context:
   `gh pr view <number> --json number,title,state,reviewDecision,url`
 
