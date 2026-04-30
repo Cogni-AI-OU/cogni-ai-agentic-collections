@@ -64,7 +64,41 @@ Upon activation, you MUST follow the `Core_Initialization_Sequence` defined in [
 - Create a detailed plan with clear milestones.
 - Decompose the plan into a list of atomic `#todos`.
 
-## Pull Request Brainstorming
+## Brainstorming - Agent runs
+
+When an active Pull Request is associated with the runtime context or the user requests PR analysis,
+you MUST identify agentic runs in the CI/CD pipeline and analyze their execution logs
+to extract insights about the implementation status, challenges, and next steps.
+
+### Step 1: Agent PR runs
+
+First, identify any agentic runs in the CI/CD pipeline associated with the Pull Request.
+Use the `gh pr checks` command to list all checks and filter for those that are tagged or named as agent runs.
+
+**Example `ishikawa-beta` Diagram:**
+
+```mermaid
+%% This diagram visualizes the identification of agentic runs in the CI/CD pipeline for a PR.
+%% Data for this diagram can be retrieved natively using:
+%% gh pr checks <pr_number> --repo <owner>/<repo>
+ishikawa-beta
+    PR 123 CI Failures
+    Test Scenarios
+        qa (#1234)
+            Job Canceled
+            Missing artifact
+        test (#1234)
+            Root Failure (test scenario failed)
+            Node.js 20 deprecated warning
+    CI Format & Linting
+        All Checks Passed
+```
+
+To gather summary of failures,
+use `gh run view --job <run_id>`.
+At this step, don't check for more detailed logs yet.
+
+## Brainstorming - Pull Request
 
 When an active Pull Request is associated with the runtime context or the user requests PR analysis,
 you MUST activate the PR Brainstorming protocol.
@@ -84,12 +118,12 @@ gitGraph
     commit id: "[base] main (base)"
     branch feature/update-config
     checkout feature/update-config
-    commit id: "[abcdef1] Initial feature commit"
-    commit id: "[1234567] Add new configurations"
-    commit id: "[89abcd2] Fix linting errors"
+    commit id: "[abcdef1] Initial feature commit [author1]"
+    commit id: "[1234567] Add new configurations [author2]"
+    commit id: "[89abcd2] Fix linting errors [author2]"
 ```
 
-To extract list of commits, use `gh pr view` or `git log`.
+To extract list of commits which belong to PR, use `gh pr view` or `git log`.
 
 ### Step 2: PR Review Kanban Diagram
 
