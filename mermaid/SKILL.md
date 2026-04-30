@@ -17,6 +17,11 @@ license: MIT
 **render compatibility** (GitHub, VS Code, Mermaid Live Editor, Markdown), **minimalism**, and **Easy-To-Change (ETC)**
 design so diagrams remain maintainable as systems evolve.
 
+## Important note
+
+If you have only read part of this skill file and your task involves creating a diagram type not covered in those lines,
+you **MUST** read the rest of the file to access the relevant expert guidance and examples.
+
 ## When to Activate
 
 - Agent must explain complex logic, system architecture, or requirements via diagrams.
@@ -598,6 +603,8 @@ a list of events in chronological order.
 - Group events logically using `section` blocks.
 - Define periods and associated events using the format
   `<time period> : <event> : <additional event>`.
+- NEVER use colons (`:`) within the text of the `<time period>`,
+  it is strictly reserved as the structural delimiter.
 
 Example with Sections and Multiple Events:
 
