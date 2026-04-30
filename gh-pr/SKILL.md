@@ -2,12 +2,11 @@
 ---
 name: gh-pr
 description: >-
-  Use when planning or executing GitHub CLI (`gh pr`) commands for creating,
-  viewing, reviewing, and managing pull requests.
+  Use when planning or executing GitHub CLI (`gh pr`) commands for pull requests, reviews, PR checks, and PR branches.
 ---
 # gh-pr Skill
 
-Use `gh pr` to manage the lifecycle of pull requests. Prefer structured output and native subcommands over manual git operations when interacting with PR metadata or status.
+Use `gh pr` to natively interact with GitHub Pull Requests. Prefer native fields and explicit routing over brittle shell post-processing.
 
 ## Mindmap of Commands
 
@@ -52,6 +51,13 @@ mindmap
       View PR details, description, and comments
 ```
 
+## When to Activate
+
+- User asks to manage, review, or inspect a pull request using the GitHub CLI (`gh pr`).
+- Task involves querying PR CI/CD checks (`gh pr checks`), logs, mergeability, or PR metadata.
+- Need to perform branch synchronizations, merges, or PR updates inside a GitHub Actions runtime.
+- Extracting PR context, reviewing diffs, or commenting on specific PR threads.
+
 ## Advanced PR Workflows
 
 - **PR Creation with Metadata**:
@@ -81,22 +87,126 @@ mindmap
   gh pr merge <number> --rebase # Rebase and merge
   ```
 
+## Pull Request Diagnostics & Checks
+
+- **Checking Runs for a Pull Request**:
+  - Instead of parsing commit hashes or wrestling with `gh run list --branch <branch_name>`, use the native tool mapping directly to the PR's HEAD commit:
+    ```bash
+    gh pr checks <pr_number> --repo <owner>/<repo>
+    ```
+  - This elegantly outputs all CI/CD checks (successes, failures, skips) and provides direct URLs to the workflow jobs.
+
+### Visualizing PR Checks
+
+When you need to visualize the results of `gh pr checks`, you can generate an architectural flowchart (using Mermaid) that categorizes checks logically (e.g., CI Formatting vs Tests vs Molecule).
+
+Example:
+
+```mermaid
+%% This flowchart visualizes the topology and statuses of CI/CD checks for a PR.
+%% Data for this diagram can be retrieved natively using:
+%% gh pr checks <pr_number> --repo <owner>/<repo>
+flowchart LR
+    pr(["PR #<pr_number>: <pr_title>"])
+
+    subgraph Checks ["CI Format & Linting"]
+        direction TB
+        c3["actionlint"]:::pass
+        c1["link-checker"]:::pass
+        c2["pre-commit"]:::pass
+    end
+
+    subgraph Tests ["Tests"]
+        direction TB
+        t1["test-on-debian-latest"]:::pass
+    end
+
+    subgraph Molecule ["Scenarios"]
+        direction TB
+        m1["default / ubuntu-latest"]:::fail
+        m2["default / ubuntu-noble"]:::fail
+    end
+
+    pr --> Checks
+    pr --> Tests
+    pr --> Molecule
+    pr --> cr["CodeRabbit"]:::pass
+
+    classDef pass fill:#d4edda,stroke:#28a745,color:#155724,stroke-width:2px;
+    classDef fail fill:#f8d7da,stroke:#dc3545,color:#721c24,stroke-width:2px;
+```
+
 ## Structured Query Patterns
 
-- **Extracting Specific Metadata**:
-  ```bash
-  gh pr view <number> --json headRefName,baseRefName,title,body,state,author
-  ```
+- Use `gh pr view <number> --json headRefName,baseRefName,commits` to extract PR commit history.
+- Lightweight PR context:
+  `gh pr view <number> --json number,title,state,reviewDecision,url`
 
 - **Listing PRs for a Specific Author**:
   ```bash
   gh pr list --author "@me" --state open
   ```
-
 - **Checking Mergeability**:
   ```bash
   gh pr view <number> --json mergeable,mergeStateStatus
   ```
+
+## Interaction & Comments
+
+- For PR thread interactions, use `gh pr comment` or `gh pr review`.
+- **Dynamic PR Targeting**: ALWAYS target the explicitly provided **Base Branch** when creating/updating PRs.
+
+## GitHub Actions Runtime
+
+When executing autonomously within a GitHub Actions environment, adhere strictly to these interaction constraints:
+
+### OpenCode PR Context & Response Routing
+
+**Context & Targeting Invariants**:
+
+- **Extract Context**: Parse the `## Pull Request Context` block containing `**Base Branch:**` dynamically.
+- **Dynamic PR Targeting**: ALWAYS target this explicitly provided **Base Branch** when creating/updating PRs.
+
+**Response Detection & Routing**: Check `github.event_name` and payload to identify trigger source:
+
+- **General PR comment** (`issue_comment`):
+  - Condition: `if: ${{ github.event.issue.pull_request }}`
+  - Reply Method: `gh pr comment`
+- **Issue comment** (`issue_comment`):
+  - Condition: `if: ${{ !github.event.issue.pull_request }}`
+  - Reply Method: `gh issue comment`
+- **Inline code review** (`pull_request_review_comment`):
+  - Reply Method: `gh api repos/{owner}/{repo}/pulls/{pr}/comments/{comment_id}/replies -f body="..."`
+
+**Routing Invariants**:
+
+- **Symmetric Routing**: ALWAYS reply via the exact originating channel. NEVER cross threads.
+- Parse `github.event.comment.id` and `in_reply_to_id` to maintain thread continuity.
+
+
+## Branch Sync Policy (No Rebase During Runtime)
+
+When the prompt asks to "pull" or "sync with base" in GitHub Actions runtime, the agent MUST integrate remote changes with a merge commit workflow.
+
+- **MUST NOT** run any rebase-based update command during runtime.
+- **FORBIDDEN**: `gh pr update-branch --rebase`, `git pull --rebase`, `git rebase`, or any history rewrite that changes commit SHAs.
+- **MUST** use pull-with-merge semantics: `git pull --no-rebase`.
+- **MUST** preserve remote branch compatibility for post-run auto PR/push logic.
+
+**Execution Steps (strict order)**:
+
+1. Determine PR base/head from context (`## Pull Request Context`, `gh pr view`).
+2. Ensure work is on the PR head branch (not detached HEAD).
+3. Sync head branch from remote with merge semantics: `git pull --no-rebase origin <head-branch>`.
+4. If base changes must be integrated into head, merge base explicitly:
+   `git fetch origin <base-branch> && git merge --no-ff origin/<base-branch>`.
+5. Resolve conflicts, commit merge if required, then push normally (no force).
+
+**Verification Gate (required before push)**:
+
+- Confirm no rebase command was executed in this run.
+- Confirm `git log --oneline --graph -n 10` shows merge topology (no rewritten linearized history from rebase).
+- Proceed with normal `git push` only after these checks pass.
 
 ## Failure Signatures
 
@@ -106,11 +216,11 @@ mindmap
 
 ## What to Avoid
 
-- Avoid using `git push` then `gh pr create` separately if you can use `gh pr create --fill` or `--head` to do it in one flow (though `git push` is often safer to ensure remote is updated).
+- Avoid using `git push` then `gh pr create` separately if you can use `gh pr create --fill` or `--head` to do it in one flow.
 - Do not use `gh api` for PR operations that have native `gh pr` subcommands unless you need raw JSON fields not exposed by `--json`.
 
 ## Related Skills
 
-- **gh**: For general GitHub CLI usage and REST API.
-- **gh-run**: For detailed GitHub Actions workflow and job diagnostics.
+- **gh**: For general GitHub CLI usage (issues, auth, extensions, API).
+- **gh-run**: For workflow runs, jobs, logs, and diagnostic tools.
 - **git**: For low-level branch and commit management.
