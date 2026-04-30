@@ -99,6 +99,44 @@ gitGraph
     commit id: "[89abcd2] Fix linting errors"
 ```
 
+To extract list of commits, use `gh pr view` or `git log`.
+
+### Step 2: CI Checks State Visualization
+
+Next, visualize the current state of the Continuous Integration (CI) checks to identify passing,
+failing, or pending jobs. Map these findings using a Mermaid `flowchart` diagram.
+
+**Example `flowchart` Diagram:**
+
+```mermaid
+%% Data for this diagram can be retrieved natively using:
+%% gh pr checks <pr_number> --repo <owner>/<repo>
+flowchart LR
+    pr(["PR #123: Minor fixes"])
+
+    subgraph Checks ["CI Format & Linting"]
+        direction TB
+        c3["Actionlint<br/>#1234"]:::pass
+        c1["Link Checker<br/>#1234"]:::pass
+        c2["Pre-commit<br/>#1234"]:::pass
+    end
+
+    subgraph Tests ["Test Scenarios"]
+        direction TB
+        m1["default<br/>#1234"]:::pass
+        m3["qa<br/>#1234"]:::fail
+        m2["test<br/>#1234"]:::fail
+    end
+
+    pr --> Checks
+    pr --> Tests
+
+    classDef pass fill:#d4edda,stroke:#28a745,color:#155724,stroke-width:2px;
+    classDef fail fill:#f8d7da,stroke:#dc3545,color:#721c24,stroke-width:2px;
+```
+
+To extract list of checks, use `gh pr checks <pr_number>` command.
+
 ## Mandatory skills
 
 List of skills you must load:
