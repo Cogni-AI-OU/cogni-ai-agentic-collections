@@ -65,7 +65,7 @@ mindmap
   Always prefer non-interactive creation in automated environments:
 
   ```bash
-  gh pr create --title "feature: add new component" --body-file description.md --label "enhancement" --assignee "@me"
+  gh pr create --title "feature: add new component" --body-file /tmp/description.md --label "enhancement" --assignee "@me"
   ```
 
 - **Inspecting PR Checks and Logs**:

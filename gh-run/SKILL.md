@@ -65,8 +65,8 @@ mindmap
     even if the run is still in progress:
 
     ```bash
-    gh api /repos/<owner>/<repo>/actions/runs/<run_id>/attempts/<attempt_num>/logs > logs.zip
-    unzip logs.zip
+    gh api /repos/<owner>/<repo>/actions/runs/<run_id>/attempts/<attempt_num>/logs > /tmp/logs.zip
+    unzip /tmp/logs.zip -d /tmp/logs
     ```
 
     *(Note: This requires `unzip` and shell redirection to be available in the environment.)*

@@ -101,8 +101,8 @@ When `gh run view --log` fails to retrieve logs (often returning empty strings f
 you can download the full artifact zip via the REST API, bypassing CLI streaming limits.
 
 ```bash
-gh api -H "Accept: application/vnd.github+json" /repos/<owner>/<repo>/actions/runs/<run_id>/logs > run_logs.zip
-unzip -d temp/run_logs run_logs.zip
+gh api -H "Accept: application/vnd.github+json" /repos/<owner>/<repo>/actions/runs/<run_id>/logs > /tmp/run_logs.zip
+unzip -d /tmp/run_logs /tmp/run_logs.zip
 ```
 
 ## Discussion Patterns (via GraphQL)
@@ -127,7 +127,7 @@ Avoid process substitution for the body; use a temporary file.
 
   ```bash
   gh api graphql -F repositoryId="$REPO_ID" -F categoryId="$CAT_ID" \
-    -F title="Title" -F body=@body.md \
+    -F title="Title" -F body=@/tmp/body.md \
     -f query='mutation($repositoryId:ID!, $categoryId:ID!, $title:String!, $body:String!){
       createDiscussion(input:{repositoryId:$repositoryId,categoryId:$categoryId,title:$title,body:$body}){
         discussion{url}
@@ -138,7 +138,7 @@ Avoid process substitution for the body; use a temporary file.
 - **Comment on Discussion**:
 
   ```bash
-  gh api graphql -F discussionId="$DISCUSSION_ID" -F body=@comment.md \
+  gh api graphql -F discussionId="$DISCUSSION_ID" -F body=@/tmp/comment.md \
     -f query='mutation($discussionId:ID!, $body:String!){
       addDiscussionComment(input:{discussionId:$discussionId,body:$body}){
         comment{url}

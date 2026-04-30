@@ -199,8 +199,8 @@ else
 fi
 
 # Check if file is writable
-if [ -w file.txt ]; then
-  echo "data" > file.txt
+if [ -w /tmp/file.txt ]; then
+  echo "data" > /tmp/file.txt
 else
   echo "File not writable"
 fi
@@ -466,7 +466,7 @@ fi
 cat file.txt || head -n 99999 file.txt || python3 -c "print(open('file.txt').read())"
 
 # Write file
-echo "data" > file.txt || python3 -c "open('file.txt', 'w').write('data')"
+echo "data" > /tmp/file.txt || python3 -c "open('/tmp/file.txt', 'w').write('data')"
 
 # Append to file
 echo "data" >> file.txt || python3 -c "open('file.txt', 'a').write('data\n')"
