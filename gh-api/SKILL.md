@@ -175,16 +175,39 @@ Use these when standard `gh` commands (like `gh pr view` or `gh issue view`) do 
         reviewThreads(first:100) {
           nodes {
             id
+            path
             isResolved
+            isOutdated
             comments(first:1) {
-              nodes { author { login } body }
+              nodes { author { login } authorAssociation bodyText }
             }
           }
         }
       }
     }
-  }' --jq '"---\nkanban:\n  tickInterval: 1\n---\nkanban\n  Unresolved\n" + ( [.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved==false) | "    [" + (.comments.nodes[0].body | gsub("\n"; " ") | gsub("\\["; "(") | gsub("\\]"; ")") | gsub("\""; "'\''") | if length > 60 then .[0:57] + "..." else . end) + "]\n      id: " + .id + "\n      assigned: " + .comments.nodes[0].author.login ] | join("\n") ) + "\n  Resolved\n" + ( [.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved==true) | "    [" + (.comments.nodes[0].body | gsub("\n"; " ") | gsub("\\["; "(") | gsub("\\]"; ")") | gsub("\""; "'\''") | if length > 60 then .[0:57] + "..." else . end) + "]\n      id: " + .id + "\n      assigned: " + .comments.nodes[0].author.login ] | join("\n") )'
+  }' --jq '
+    def clean_text:
+      gsub("\n"; " ") | gsub("\\["; "") | gsub("\\]"; "") | gsub("\\("; "") | gsub("\\)"; "") | gsub("\\{"; "") | gsub("\\}"; "") | gsub("<"; "") | gsub(">"; "") | gsub("#"; "") | gsub("\""; "´");
+
+    def format_title:
+      .comments.nodes[0].bodyText | split("\n")[0] | clean_text | split(" ")[0:5] | join(" ") + "...";
+
+    def format_body:
+      .comments.nodes[0].bodyText | clean_text | if length > 80 then .[0:77] + "..." else . end;
+
+    def kanban_card:
+      "    [" + format_title + "]\n      bodyText: " + format_body + "\n      id: " + .id + "\n      assigned: " + .comments.nodes[0].author.login + "\n      authorAssociation: " + .comments.nodes[0].authorAssociation + "\n      path: " + .path;
+
+    "---\nkanban:\n  tickInterval: 1\n---\n%% gh api graphql -F owner=\"{owner}\" -F repo=\"{repo}\" -F number={pr_number} ... (query above)\nkanban\n  Active\n" +
+    ( [.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved==false and .isOutdated==false) | kanban_card ] | join("\n") ) +
+    "\n  Outdated\n" +
+    ( [.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved==false and .isOutdated==true) | kanban_card ] | join("\n") ) +
+    "\n  Resolved\n" +
+    ( [.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved==true) | kanban_card ] | join("\n") )
+  '
   ```
+
+  Use it when you need a visual overview of PR review threads categorized by status (active, outdated, resolved) with metadata like author and file path.
 
 - **List Unresolved PR Inline Review Comments (GraphQL)**:
 
@@ -219,6 +242,8 @@ Use these when standard `gh` commands (like `gh pr view` or `gh issue view`) do 
             comments: [.comments.nodes[] | {author: .author.login, url, body}]
           }'
   ```
+
+  Used it when you need a structured list of all unresolved inline review comments on a PR, including their file paths and whether they are outdated.
 
 - **List PR Comments (REST)**:
 
