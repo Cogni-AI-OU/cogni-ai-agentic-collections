@@ -1,7 +1,9 @@
 ---
 name: github
 description: >-
-  Provides guidance on GitHub specific features, pull requests viewing modes, and collaborative practices.
+  Provides guidance on GitHub specific features, pull requests viewing modes,
+  and collaborative practices. You must load this skill when working with
+  GitHub-specific features or PR view modes.
 license: MIT
 ---
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->

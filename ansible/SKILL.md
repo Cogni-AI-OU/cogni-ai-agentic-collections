@@ -1,7 +1,8 @@
 ---
 name: ansible
 description: >-
-  How to run and manage Ansible operations safely and prevent hangs.
+  How to run and manage Ansible operations safely and prevent hangs. You must
+  load this skill when working with Ansible operations.
 license: MIT
 ---
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->

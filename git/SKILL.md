@@ -1,7 +1,8 @@
 ---
 name: git
 description: >-
-  Guide for using git.
+  Guide for using git. You must load this skill when performing standard git
+  operations.
 license: MIT
 ---
 
