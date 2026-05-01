@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD003 MD013 MD022 MD026 MD041 -->
 ---
 name: git
 description: >-
@@ -6,9 +5,14 @@ description: >-
 
   Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
 license: MIT
-
 ---
-Expert in advanced git usage for repository agents. Prioritize non-interactive, safe, reproducible operations that maintain clean history and respect repository conventions.
+
+# Git
+
+<!-- markdownlint-disable MD013 -->
+
+Expert in advanced git usage for repository agents. Prioritize non-interactive, safe, reproducible operations that
+maintain clean history and respect repository conventions.
 
 ## When to Activate
 
@@ -19,24 +23,32 @@ Expert in advanced git usage for repository agents. Prioritize non-interactive, 
 
 ## Core Principles
 
-- **Non-interactive execution**: Commands must run without prompting. Never use interactive modes (`-i`, `--interactive`, default editors).
+- **Non-interactive execution**: Commands must run without prompting. Never use interactive modes (`-i`, `--interactive`,
+  default editors).
 - **Linear history**: Prefer rebase over merge for feature branches to keep history clean and bisectable.
 - **Atomic changes**: Favor small, focused commits. Use amend/fixup patterns for corrections.
 - **Safety**: Never perform destructive operations without explicit reasoning and user confirmation.
-- **Hook handling**: Aim to satisfy pre-commit/pre-push hooks. Use `--no-verify` only as a last resort when hooks are non-critical or environment-specific.
-- **Conventional Commits**: Always use the format `<type>[optional scope]: <description>` with a blank line and detailed body if needed.
+- **Hook handling**: Aim to satisfy pre-commit/pre-push hooks. Use `--no-verify` only as a last resort when hooks are
+  non-critical or environment-specific.
+- **Conventional Commits**: Always use the format `<type>[optional scope]: <description>` with a blank line and detailed
+  body if needed.
 
 ## Non-Interactive Patterns
 
-- **Amending last commit** (preserve author date): `git commit --amend --no-edit --date="$(git log -1 --format=%aD)"`
+- **Amending last commit** (preserve author date):
+  `git commit --amend --no-edit --date="$(git log -1 --format=%aD)"`
 - **Renaming files** (preserve history): `git mv old_file new_file` (instead of `mv` or `rm`)
 - **Fixup previous commits** (non-interactive preparation):
   - Create fixup: `git commit --fixup <commit-sha>`
-  - Later autosquash (requires interactive rebase - propose to user or defer to PR squash if agent cannot handle `-i`): `git rebase -i --autosquash origin/main`
-- **Rebasing feature branches**: `git fetch origin && git rebase origin/main --no-verify` (add `--no-verify` only if hooks block)
+  - Later autosquash (requires interactive rebase - propose to user or defer to PR squash if agent cannot handle `-i`):
+    `git rebase -i --autosquash origin/main`
+- **Rebasing feature branches**: `git fetch origin && git rebase origin/main --no-verify` (add `--no-verify` only if
+  hooks block)
 - **Cherry-picking without conflicts**: `git cherry-pick -x <commit-sha>` (`-x` records original SHA for traceability)
-- **Cherry-picking with editor bypass**: `GIT_EDITOR=true git cherry-pick --continue` (auto-accept commit message during conflict resolution)
-- **Stashing partial work** (non-interactive): `git stash push -m "wip-description" -- path/to/file` (use pathspec for selective stashing; avoid `-p` as it is interactive)
+- **Cherry-picking with editor bypass**: `GIT_EDITOR=true git cherry-pick --continue` (auto-accept commit message during
+  conflict resolution)
+- **Stashing partial work** (non-interactive): `git stash push -m "wip-description" -- path/to/file` (use pathspec for
+  selective stashing; avoid `-p` as it is interactive)
 
 ### Bypassing Editor Prompts
 
@@ -82,7 +94,8 @@ GitHub Actions and other CI environments often check out repositories as shallow
 - Generate Mermaid `gitGraph` commit lines:
   - **With Git (`git`)**:
     `git log origin/main..HEAD --reverse --format='commit id: "%s"'`
-    *(Note: if commit subjects contain `"` characters, escape them so Mermaid string parsing stays valid—see the GitGraph guidance in `mermaid/SKILL.md`.)*
+    *(Note: if commit subjects contain `"` characters, escape them so Mermaid string parsing stays valid—see the
+    GitGraph guidance in `mermaid/SKILL.md`.)*
   - **With GitHub API (`gh api`)**:
     `gh api repos/<owner>/<repo>/pulls/<number>/commits --jq '.[] | "commit id: \"[\(.sha[0:7])] \(.commit.message | split("\n")[0] | gsub("\""; "'\''"))\""'`
   - **With GitHub CLI (`gh`)**:
@@ -100,7 +113,8 @@ When a merge introduces too many unrelated changes, maintain PR focus with selec
 - **Reset to clean state**: `git reset --hard <commit-sha>` (reset to commit before problematic merge)
 - **Revert merge commit**: `git revert -m 1 <merge-commit-sha> --no-edit` (revert merge keeping first parent)
 - **Remove lock files**: `rm .git/index.lock` (if git operations fail due to lock)
-- **Check file state in commit**: `git ls-tree -r <commit-sha>:.github/workflows/ --name-only` (list files at specific commit)
+- **Check file state in commit**: `git ls-tree -r <commit-sha>:.github/workflows/ --name-only` (list files at specific
+  commit)
 - **Verify changes**: `git diff <commit-sha> HEAD --name-status` (compare commits to see what changed)
 
 Strategy for focused PRs:
@@ -184,7 +198,8 @@ that includes ALL commits from the target branch in your PR, making it impossibl
 
 - **Merge commits in PR**: Indicates wrong approach was used. Start over with reset + cherry-pick workflow.
 - **Too many changed files**: Verify you reset to correct target branch before cherry-picking.
-- **Conflict resolution mistakes**: When resolving conflicts, don't remove existing target branch content - only add your feature changes.
+- **Conflict resolution mistakes**: When resolving conflicts, don't remove existing target branch content - only add
+  your feature changes.
 - **Wrong commit order**: When cherry-picking multiple commits, maintain original chronological order.
 
 ### Working with Automation Tools
@@ -323,7 +338,8 @@ git diff origin/dev..HEAD --stat
 - Unqualified `git reset --hard` (prefer `git reset --hard origin/main` with backup tag).
 - When user asks to remove files, use `git rm` instead of `rm`.
 
-Always explain proposed git operations step-by-step, quote exact commands, and confirm irreversible actions with the user.
+Always explain proposed git operations step-by-step, quote exact commands, and confirm irreversible actions with the
+user.
 
 ## Related Skills
 

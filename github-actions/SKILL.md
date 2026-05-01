@@ -6,8 +6,13 @@ description: >-
   Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
 license: MIT
 ---
-<!-- markdownlint-disable MD003 MD013 MD022 MD023 MD026 MD031 MD032 MD041 -->
-This skill enables autonomous diagnosis of GitHub Actions failures, preferring MCP tools for summaries and falling back to gh CLI.
+
+# GitHub Actions Diagnosis
+
+<!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
+
+This skill enables autonomous diagnosis of GitHub Actions failures, preferring MCP tools for summaries and falling back
+to gh CLI.
 
 ## When to Activate
 
@@ -30,14 +35,17 @@ This skill enables autonomous diagnosis of GitHub Actions failures, preferring M
 
    First, check for gh CLI: run_in_terminal `gh --version`.
    If successful, verify access: run_in_terminal `gh auth status`.
-   Prioritize MCP tools (e.g., `list_workflow_runs`, `get_job_logs`) if present — they provide the most token-efficient access.
-   If neither MCP nor authenticated gh is available, respond: 'Automated retrieval of workflow logs is not possible in this environment. Please share the workflow run URL, specific error messages, or screenshots for diagnosis.'
+   Prioritize MCP tools (e.g., `list_workflow_runs`, `get_job_logs`) if present — they provide the most
+   token-efficient access.
+   If neither MCP nor authenticated gh is available, respond: 'Automated retrieval of workflow logs is not possible in
+   this environment. Please share the workflow run URL, specific error messages, or screenshots for diagnosis.'
 
 3. Preferred path: Use MCP tools (if available).
 
    **If you have RUN_ID and JOB_ID from URL:**
    - Use `github-mcp-server-actions_get` with method `get_workflow_job` and `resource_id=JOB_ID` to get job details
-   - Use `github-mcp-server-get_job_logs` with `job_id=JOB_ID`, `return_content=true`, and `tail_lines=100` (or more) to retrieve logs
+   - Use `github-mcp-server-get_job_logs` with `job_id=JOB_ID`, `return_content=true`, and `tail_lines=100` (or more) to
+     retrieve logs
    - Parse logs for failing step, command, and error message
 
    **If you only have RUN_ID or need to find failures:**
@@ -47,7 +55,8 @@ This skill enables autonomous diagnosis of GitHub Actions failures, preferring M
    - Use `github-mcp-server-get_job_logs` for each failed job
 
    **If you need to find recent runs:**
-   - Use `github-mcp-server-actions_list` with method `list_workflow_runs` and filters (current branch, PR number, or workflow name)
+   - Use `github-mcp-server-actions_list` with method `list_workflow_runs` and filters (current branch, PR number, or
+     workflow name)
    - Identify failed runs (`conclusion: "failure"`). Note the latest `run_id`
    - Follow steps above to get job details and logs
 
@@ -57,7 +66,8 @@ This skill enables autonomous diagnosis of GitHub Actions failures, preferring M
    - Inspect run metadata first; do not assume pathological sessions conclude with `failure`.
    - Use `gh run view <run_id> --log-failed` only when the relevant run or job actually concluded with failure.
    - For job metadata, prefer `gh api repos/<owner>/<repo>/actions/jobs/<job_id>` over shell pipelines.
-   - If `gh run view ... --log` returns empty output or `gh api .../logs` returns a signed-blob `403`, classify it as `LOG_ACCESS_UNSUPPORTED` and pivot instead of retrying the same command shape.
+   - If `gh run view ... --log` returns empty output or `gh api .../logs` returns a signed-blob `403`, classify it as
+     `LOG_ACCESS_UNSUPPORTED` and pivot instead of retrying the same command shape.
    - In restricted shells, prefer `gh --json/--jq/--template` over `grep` or `rg` pipelines.
 
 5. With evidence from either path:
@@ -74,7 +84,8 @@ This skill enables autonomous diagnosis of GitHub Actions failures, preferring M
 - Use `gh run list --limit 3` to list recent builds.
 - Use `gh run view <run_id>` to inspect run status and conclusion before choosing a log path.
 - Use `gh run view <run_id> --log-failed` only when the run or job actually failed.
-- Use `gh api repos/<owner>/<repo>/actions/jobs/<job_id>` to inspect job metadata when logs are unavailable or the session concluded `success`.
+- Use `gh api repos/<owner>/<repo>/actions/jobs/<job_id>` to inspect job metadata when logs are unavailable or the
+  session concluded `success`.
 - When reading long logs, use `sed` or `awk` to read content in smaller parts (e.g. `sed -n '100,200p'`).
 
 ## Useful Diagnostic Commands
@@ -117,7 +128,8 @@ gh api repos/<owner>/<repo>/actions/jobs/<job_id>
 ## What to Avoid
 
 - Never fetch full raw logs first — always use summaries (`summarize_job_log_failures`) or `--log-failed`
-- Do not assume `gh run view --log` or `gh api .../logs` will work in every environment; empty output and signed-blob `403` should trigger a pivot, not retries.
+- Do not assume `gh run view --log` or `gh api .../logs` will work in every environment; empty output and signed-blob
+  `403` should trigger a pivot, not retries.
 - Do not guess causes without log evidence
 - Do not default to `grep` or `rg` pipelines in restricted or allowlisted shells
 - Avoid modifying workflow YAML unless failure clearly originates there

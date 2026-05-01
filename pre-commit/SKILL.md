@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD003 MD013 MD022 MD026 MD041 -->
 ---
 name: pre-commit
 description: >-
@@ -6,9 +5,14 @@ description: >-
 
   Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
 license: MIT
-
 ---
-Expert guide for pre-commit framework usage, configuration, and custom hook development. Focus on autonomous validation, diagnostics, and fix workflows.
+
+# Pre-commit
+
+<!-- markdownlint-disable MD013 -->
+
+Expert guide for pre-commit framework usage, configuration, and custom hook development. Focus on autonomous validation,
+diagnostics, and fix workflows.
 
 ## When to Activate
 
@@ -21,8 +25,10 @@ Expert guide for pre-commit framework usage, configuration, and custom hook deve
 - **Staged files only**: Pre-commit runs exclusively on staged (cached) files, not the entire working directory.
 - **Fast feedback**: Catch issues before commit/push to reduce CI failures and review cycles.
 - **Configuration-driven**: Hooks reference external config files (.yamllint, .markdownlint.yaml, etc.) for consistency.
-- **Idempotent fixes**: Many hooks auto-fix issues (e.g., trailing-whitespace, end-of-file-fixer); re-stage and re-run to pass.
-- **Skip only when necessary**: Use `--no-verify` or `SKIP=<hook-id>` sparingly; prefer fixing issues over bypassing validation.
+- **Idempotent fixes**: Many hooks auto-fix issues (e.g., trailing-whitespace, end-of-file-fixer); re-stage and re-run to
+  pass.
+- **Skip only when necessary**: Use `--no-verify` or `SKIP=<hook-id>` sparingly; prefer fixing issues over bypassing
+  validation.
 
 ## Testing Commands
 
@@ -88,7 +94,9 @@ Pre-commit hooks reference external dotfiles for linting rules. Key dependencies
 | `detect-secrets` | Optional `.secrets.baseline` | Secret detection baseline | Can store known false positives |
 | All hooks | `.editorconfig` | Cross-editor consistency | Indent size: 2 for YAML/JSON, 4 for others; LF line endings |
 
-**Why trailing-whitespace excludes YAML**: The `trailing-whitespace` hook in the repository's `.pre-commit-config.yaml` excludes `\.ya?ml$` (YAML files) because yamllint handles trailing spaces for YAML files with warning-level enforcement, avoiding duplicate checks.
+**Why trailing-whitespace excludes YAML**: The `trailing-whitespace` hook in the repository's `.pre-commit-config.yaml`
+excludes `\.ya?ml$` (YAML files) because yamllint handles trailing spaces for YAML files with warning-level enforcement,
+avoiding duplicate checks.
 
 ## Optional Configuration Files
 
