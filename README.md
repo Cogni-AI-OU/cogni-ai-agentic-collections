@@ -44,6 +44,7 @@ Cogni AI capabilities loaded into the `.github/` directory.
   bisecting, complex conflict resolution, and history manipulation
 - **[github](github/SKILL.md)**: GitHub specific features and collaborative practices
 - **[github-actions](github-actions/SKILL.md)**: Diagnosing and debugging failing GitHub Actions workflows
+- **[github-issue](github-issue/SKILL.md)**: Skills for working with GitHub Issues
 - **[github-pr](github-pr/SKILL.md)**: Skills for working with changes on a GitHub Pull Request
 - **[github-script](github-script/SKILL.md)**: Advanced use cases and examples for using actions/github-script
 - **[mermaid](mermaid/SKILL.md)**: Guide for creating and maintaining stable Mermaid.js diagrams

@@ -37,6 +37,8 @@ and planned work into the current context:
   You must load this skill when working with GitHub-specific features or PR view modes.
 - **[github-actions](github-actions/SKILL.md)**: Diagnosing and debugging failing GitHub Actions workflows.
   You must load this skill when diagnosing or debugging GitHub Actions workflow failures.
+- **[github-issue](github-issue/SKILL.md)**: Skills for working with GitHub Issues.
+  You must load this skill when working with issues or when runtime was triggered by an issue comment.
 - **[github-pr](github-pr/SKILL.md)**: Skills for working with changes on a GitHub Pull Request.
   You must load this skill when working with changes on a pull request.
 - **[github-script](github-script/SKILL.md)**: Advanced use cases and examples for using actions/github-script.
