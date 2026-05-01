@@ -169,7 +169,9 @@ branch_name=$(gh pr view <pr_number> --repo <owner>/<repo> --json headRefName -q
 pr_title=$(gh pr view <pr_number> --repo <owner>/<repo> --json title -q .title)
 
 gh api repos/<owner>/<repo>/actions/runs --paginate \
-  -q ".workflow_runs[] | select((.head_branch == \"$branch_name\" or .display_title == \"$pr_title\")) | {id: .id, name: .name, status: .status, conclusion: .conclusion, event: .event}"
+  -q ".workflow_runs[] | \
+     select((.head_branch == \"$branch_name\" or .display_title == \"$pr_title\")) | \
+     {id: .id, name: .name, status: .status, conclusion: .conclusion, event: .event}"
 ```
 
 ## Pagination & Robustness

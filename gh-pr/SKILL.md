@@ -107,7 +107,8 @@ mindmap
     This outputs standard CI/CD checks (successes, failures, skips) and provides direct URLs to the workflow jobs.
   - **Limitation**: `gh pr checks` *only* evaluates the HEAD commit.
     It completely misses manually triggered (`workflow_dispatch`) or comment-triggered (`issue_comment`) agent runs.
-  - **Workaround**: To comprehensively fetch *all* workflow runs associated with a PR (including custom actions and agentic runs),
+  - **Workaround**: To comprehensively fetch *all* workflow runs associated with
+    a PR (including custom actions and agentic runs),
     refer to the `gh-api` skill for instructions on using `gh api` to query by branch and display title.
 
 ### Visualizing PR Checks
