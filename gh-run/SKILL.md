@@ -1,8 +1,9 @@
 ---
 name: gh-run
 description: >-
-  Use when planning or executing GitHub CLI (`gh run` and `gh workflow`)
-  commands for workflow runs, jobs, logs, and attempts.
+  GitHub CLI (`gh run` and `gh workflow`) operations for workflow runs, jobs,
+  logs, and attempts.
+  You must load this skill when working with the `gh run` and `gh workflow` commands.
 ---
 # gh-run Skill
 

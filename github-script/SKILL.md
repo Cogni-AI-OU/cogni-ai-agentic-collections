@@ -2,8 +2,7 @@
 name: github-script
 description: >-
   Advanced use cases and examples for using actions/github-script.
-
-  Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
+  You must load this skill when using actions/github-script in workflows.
 license: MIT
 ---
 

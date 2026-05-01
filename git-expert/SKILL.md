@@ -1,10 +1,10 @@
 ---
 name: git-expert
 description: >-
-  Advanced Git operations including interactive rebasing, reflog recovery, bisecting,
-  complex conflict resolution, and history manipulation.
-
-  Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
+  Advanced Git operations including interactive rebasing, reflog recovery,
+  bisecting, complex conflict resolution, and history manipulation.
+  You must load this skill when performing advanced git operations or repository
+  recovery.
 license: MIT
 ---
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->

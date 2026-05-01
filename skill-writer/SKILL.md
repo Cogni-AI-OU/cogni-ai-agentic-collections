@@ -4,8 +4,7 @@ description: >-
   When the user requests to create, update, or refine a GitHub Copilot skill,
   generate or revise a complete SKILL.md file that strictly adheres to the
   official format, validation rules, and community best practices.
-
-  Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
+  You must load this skill when creating or updating GitHub Copilot skill files.
 license: MIT
 ---
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->

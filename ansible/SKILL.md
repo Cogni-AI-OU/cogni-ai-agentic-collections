@@ -1,9 +1,8 @@
 ---
 name: ansible
 description: >-
-  How to run and manage Ansible operations safely and prevent hangs.
-
-  Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
+  How to run and manage Ansible operations.
+  You must load this skill when working with the `ansible` command.
 license: MIT
 ---
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->

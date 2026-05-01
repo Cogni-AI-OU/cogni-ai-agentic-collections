@@ -1,9 +1,9 @@
 ---
 name: robust-commands
 description: >-
-  Resilient command execution with automatic fallbacks and error recovery.
-
-  Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
+  Resilient command execution with automatic fallbacks and error recovery. You
+  must load this skill when executing commands requiring resilient error
+  recovery or fallbacks.
 license: MIT
 ---
 

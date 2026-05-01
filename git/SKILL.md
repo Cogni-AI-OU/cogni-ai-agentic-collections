@@ -2,8 +2,7 @@
 name: git
 description: >-
   Guide for using git.
-
-  Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
+  You must load this skill when performing standard git operations.
 license: MIT
 ---
 

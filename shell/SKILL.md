@@ -2,8 +2,7 @@
 name: shell
 description: >-
   Efficient shell command handling.
-
-  Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
+  You must load this skill when handling shell commands with performance monitoring or timeouts.
 license: MIT
 
 ---

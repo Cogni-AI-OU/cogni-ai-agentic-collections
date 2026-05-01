@@ -1,9 +1,9 @@
 ---
 name: context-aware-ops
 description: >-
-  Intelligent resource management with size checking and filtering to preserve context window.
-
-  Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
+  Intelligent resource management with size checking and filtering to preserve
+  context window.
+  You must load this skill when managing large resources or context window limits.
 license: MIT
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 ---
