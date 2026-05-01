@@ -5,8 +5,8 @@ description: >-
   **stable** Mermaid.js diagrams (v11+). Covers C4, Class, Entity Relationship,
   Flowchart (with v11.3+ shapes/icons/images), Gantt, GitGraph, Kanban, Mindmap,
   Pie, Quadrant, Requirement, Sequence, State, Timeline, User Journey.
-  Emphasizes clarity, render-portability, and Doc-Rot prevention. You must load
-  this skill when creating or maintaining Mermaid.js diagrams.
+  Emphasizes clarity, render-portability, and Doc-Rot prevention.
+  You must load this skill when creating or maintaining Mermaid.js diagrams.
 license: MIT
 ---
 

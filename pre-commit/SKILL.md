@@ -2,8 +2,8 @@
 name: pre-commit
 description: >-
   Guide for using pre-commit hooks to validate code formatting, linting, and
-  security checks before commits. You must load this skill when using
-  pre-commit hooks for validation.
+  security checks before commits.
+  You must load this skill when using pre-commit hooks for validation.
 license: MIT
 ---
 

@@ -3,8 +3,8 @@ name: gh
 description: >-
   GitHub CLI (`gh`) operations for issues, pull requests, workflow runs,
   reviews, or API queries, especially in restricted shells where structured
-  output and fallback choice matter. You must load this skill when working with
-  the `gh` command and its subcommands.
+  output and fallback choice matter.
+  You must load this skill when working with the `gh` command and its subcommands.
 license: MIT
 ---
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->

@@ -2,8 +2,8 @@
 name: pdf
 description: >-
   PDF file inspection, object-level editing, and lossless size reduction using
-  qpdf, pdf-parser.py, pdfsizeopt, and Ghostscript. You must load this skill
-  when inspecting, editing, or optimizing PDF files.
+  qpdf, pdf-parser.py, pdfsizeopt, and Ghostscript.
+  You must load this skill when inspecting, editing, or optimizing PDF files.
 license: MIT
 
 ---

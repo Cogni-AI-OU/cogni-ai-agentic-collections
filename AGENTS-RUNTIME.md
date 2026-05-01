@@ -8,7 +8,7 @@ You must load the skills relevant to the user prompt, inferred intent,
 and planned work into the current context:
 
 - **[ansible](ansible/SKILL.md)**: How to run and manage Ansible operations safely and prevent hangs.
-  You must load this skill when working with Ansible operations.
+  You must load this skill when working with the `ansible` command.
 - **[context-aware-ops](context-aware-ops/SKILL.md)**: Intelligent resource management with size checking and filtering
   to preserve context window.
   You must load this skill when managing large resources or context window limits.

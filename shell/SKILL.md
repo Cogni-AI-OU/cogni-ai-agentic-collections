@@ -1,8 +1,8 @@
 ---
 name: shell
 description: >-
-  Efficient shell command handling. You must load this skill when handling
-  shell commands with performance monitoring or timeouts.
+  Efficient shell command handling.
+  You must load this skill when handling shell commands with performance monitoring or timeouts.
 license: MIT
 
 ---

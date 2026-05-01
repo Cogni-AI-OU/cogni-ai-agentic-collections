@@ -2,8 +2,8 @@
 name: github-actions
 description: >-
   Diagnose GitHub Actions workflow failures by retrieving run statuses and logs
-  using MCP tools or gh CLI. You must load this skill when diagnosing or
-  debugging GitHub Actions workflow failures.
+  using MCP tools or gh CLI.
+  You must load this skill when diagnosing or debugging GitHub Actions workflow failures.
 license: MIT
 ---
 
