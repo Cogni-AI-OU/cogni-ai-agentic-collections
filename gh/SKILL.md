@@ -1,6 +1,7 @@
 ---
 name: gh
 description: >-
+  You must load this skill when working with `gh` command and its subcommands.
   Use when planning or executing GitHub CLI (`gh`) commands for issues, pull
   requests, workflow runs, reviews, or API queries, especially in restricted
   shells where structured output and fallback choice matter.
