@@ -42,7 +42,7 @@ Check `github.event_name` and payload to identify trigger source:
   INNER_EOF
   )"
   ```
-- **Workspace Cleanliness (No PR for Non-Code-Change Tasks)**: If your task is purely informational (e.g., analyzing a PR, posting a comment), you MUST ensure the workspace remains completely clean (no modified or untracked files). ANY modification to the workspace after a repo event triggers an automatic Pull Request. Delete temporary files or run `git clean -fd` before finishing.
+- **Workspace Cleanliness (No Commits for Non-Code-Change Tasks)**: If your task is purely informational (e.g., analyzing a PR, posting a comment), you MUST ensure the workspace remains completely clean (no modified or untracked files). ANY modification to the workspace after a repo event triggers an automatic commit and push to the Pull Request. Delete temporary files or run `git clean -fd` before finishing.
 - **Symmetric Routing**: ALWAYS reply via the exact originating channel. When asked to post or comment without providing a code fix, you MUST communicate back via the API without modifying any files.
 - Parse `github.event.comment.id` and `in_reply_to_id` to maintain thread continuity.
 
@@ -61,12 +61,15 @@ Check `github.event_name` and payload to identify trigger source:
 ## 3. Code Modification & Sync Policies
 
 ### Commit & Workspace Invariants
+
 - **Verify Before Commit**: Verify your expected changes with `git diff --no-color`. NEVER use blanket `git add .` without verifying the exact list of staged files.
 - **No Untracked Additions**: NEVER automatically commit untracked files or workspace artifacts.
 - **Final Status Check**: ALWAYS run `git status` at the end of your work before completion to verify the final workspace state.
 
 ### Branch Sync Policy (No Rebase During Runtime)
+
 When the prompt asks to "pull" or "sync with base", the agent MUST integrate remote changes with a merge commit workflow.
+
 - **MUST NOT** run any rebase-based update command during runtime.
 - **FORBIDDEN**: `gh pr update-branch --rebase`, `git pull --rebase`, `git rebase`.
 - **MUST** use pull-with-merge semantics: `git pull --no-rebase`.
@@ -75,6 +78,7 @@ When the prompt asks to "pull" or "sync with base", the agent MUST integrate rem
 ### Pre-Completion Upstream Sync
 
 Before finishing your session, you **MUST** pull and integrate the latest upstream changes to avoid rejected pushes.
+
 **Mandatory steps**:
 1. Stage and commit all local work (`git add` only verified files, then `git commit`).
 2. Pull with merge semantics from the current head branch:
@@ -91,6 +95,7 @@ Before finishing your session, you **MUST** pull and integrate the latest upstre
 - **Scope Focus**: Avoid blindly fixing all PR comments not relevant to the original prompt.
 
 ### GitHub Runtime Decision Policy
+
 - **Default to Best Practice:** Implement the most recommended path autonomously when multiple options exist.
 - **Document Trade-offs:** Capture unresolved decisions, explicit options, and impacts in the PR description.
 - **Never Stall:** Proceed immediately with safe defaults. Request preference feedback in the PR instead of waiting.
