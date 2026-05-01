@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD003 MD013 MD022 MD026 MD041 -->
 ---
 name: github-script
 description: >-
@@ -6,9 +5,14 @@ description: >-
 
   Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
 license: MIT
-
 ---
-Expert guide for using actions/github-script in GitHub Actions workflows. Focuses on advanced API interactions, cross-platform execution, and secure script implementation.
+
+# GitHub Script
+
+<!-- markdownlint-disable MD013 -->
+
+Expert guide for using actions/github-script in GitHub Actions workflows. Focuses on advanced API interactions,
+cross-platform execution, and secure script implementation.
 
 ## When to Activate
 
@@ -181,7 +185,8 @@ jobs:
 
 ### 6. Complex Condition Checking and Workflow Control
 
-Replace verbose GitHub Actions expressions with a centralized `github-script` block to determine if subsequent steps should run based on complex logic (e.g., event type, user roles, and message content).
+Replace verbose GitHub Actions expressions with a centralized `github-script` block to determine if subsequent steps
+should run based on complex logic (e.g., event type, user roles, and message content).
 
 ```yaml
     - name: Check conditions

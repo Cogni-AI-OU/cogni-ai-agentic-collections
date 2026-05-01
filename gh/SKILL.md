@@ -8,7 +8,7 @@ description: >-
   Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
 license: MIT
 ---
-<!-- markdownlint-disable MD003 MD013 MD022 MD023 MD026 MD031 MD032 MD041 -->
+<!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 # gh Skill
 
 Use `gh` as a structured client first. Prefer native fields, explicit routing,

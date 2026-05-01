@@ -8,7 +8,7 @@ description: >-
   Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
 license: MIT
 ---
-<!-- markdownlint-disable MD003 MD013 MD022 MD023 MD026 MD031 MD032 MD041 -->
+<!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 # Skill Writer
 
 Generate or update SKILL.md files for GitHub Copilot coding agents, ensuring
@@ -41,7 +41,6 @@ repository standards.
    formatting).
 
 4. Structure the file exactly as:
-   - First line: `<!-- markdownlint-disable MD003 MD022 MD026 MD041 -->`
    - YAML frontmatter block
    - Pure Markdown body with minimal, value-adding sections only
 
@@ -94,9 +93,6 @@ When creating or updating a skill file, ensure the following format:
   unfocused, split it into multiple specialized skills with narrow,
   non-overlapping activation descriptions to maintain conciseness, precise
   triggering, and efficient token usage.
-- **Start with Lint Disable**: Always open the file with
-  `<!-- markdownlint-disable MD003 MD022 MD026 MD041 -->` to suppress common
-  markdownlint warnings.
 - **YAML Frontmatter is Mandatory**: Begin every SKILL.md with required fields
   `name` (lowercase-hyphenated, exactly matching folder name) and `description`
   (one precise, activation-triggering sentence explaining exactly what the skill

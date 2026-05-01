@@ -1,5 +1,4 @@
 ---
-<!-- markdownlint-disable MD003 MD022 MD026 MD041 -->
 name: mermaid-beta
 description: >-
   Guide for creating and maintaining experimental Mermaid.js beta diagrams

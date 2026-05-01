@@ -7,7 +7,7 @@ description: >-
   Maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agent-skills>
 license: MIT
 ---
-<!-- markdownlint-disable MD003 MD013 MD022 MD023 MD026 MD031 MD032 MD041 -->
+<!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 # Fact Writer
 
 Guidance for structuring and maintaining verifiable project fact files. Use this skill when managing `FACTS.md`,
