@@ -272,3 +272,4 @@ For high-level pull request routing guidance, refer to the **github-pr** skill.
 - **gh**: For general GitHub CLI usage (issues, auth, extensions, API).
 - **gh-run**: For workflow runs, jobs, logs, and diagnostic tools.
 - **git**: For low-level branch and commit management.
+- **github-pr**: For high-level pull request routing in GitHub Actions.
