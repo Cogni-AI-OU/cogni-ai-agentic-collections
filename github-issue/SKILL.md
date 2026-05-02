@@ -16,8 +16,8 @@ This skill helps with work on issues.
 ### Initialization Sequence
 
 Upon receiving a new objective, you should focus on the user request first.
-Identify the trigger source first to understand context and avoid ambiguity. A comment like 'fix it' could refer to
-a specific issue detail, a previous comment, or a bug report.
+Identify the trigger source first to understand context and avoid ambiguity. A comment like 'fix it' could refer
+to a specific issue detail, a previous comment, or a bug report.
 
 ### Context & Response Routing
 
@@ -31,8 +31,9 @@ Check `github.event_name` and payload to identify trigger source:
 
 **Routing Invariants**:
 
-- **Direct API Responses ONLY**: When asked to comment on an issue, you MUST use the `gh` CLI (`gh issue comment` etc.)
-  to post the comment directly via API. NEVER write the comment text to a file in the workspace or commit such files.
+- **Direct API Responses ONLY**: When asked to comment on an issue, you MUST use the `gh` CLI (`gh issue comment`
+  etc.) to post the comment directly via API. NEVER write the comment text to a file in the workspace or commit
+  such files.
   For long comments, use a HEREDOC:
 
   ```bash
@@ -44,9 +45,9 @@ Check `github.event_name` and payload to identify trigger source:
   ```
 
 - **Workspace Cleanliness (No Commits for Non-Code-Change Tasks)**: If your task is purely informational (e.g.,
-  analyzing an issue, posting a comment), you MUST ensure the workspace remains completely clean (no modified or
-  untracked files). ANY modification to the workspace after a repo event might trigger unwanted workflows. Delete
-  temporary files or run `git clean -fd` before finishing.
+  analyzing an issue, posting a comment), you MUST ensure the workspace remains completely clean (no modified
+  or untracked files). ANY modification to the workspace after a repo event might trigger unwanted workflows.
+  Delete temporary files or run `git clean -fd` before finishing.
 - **Symmetric Routing**: ALWAYS reply via the exact originating channel. When asked to post or comment without
   providing a code fix, you MUST communicate back via the API without modifying any files.
 - Use `github.event.comment.id` context to quote or reference the user accurately.
@@ -56,8 +57,8 @@ Check `github.event_name` and payload to identify trigger source:
 ### Restricted Shell & Ephemeral Environment
 
 - **Ephemeral State**: Any uncommitted modifications or tools installed outside of the project directory will be
-  immediately lost when the runner terminates. ALL intended state changes must be committed and pushed to the remote
-  branch to persist.
+  immediately lost when the runner terminates. ALL intended state changes must be committed and pushed to the
+  remote branch to persist.
 - **Restricted Command Allowlist**: You are operating in a highly restricted shell environment where arbitrary
   commands are denied by default. Only explicitly allowed tools can be invoked.
 

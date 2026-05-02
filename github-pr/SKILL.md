@@ -16,8 +16,8 @@ This skill helps with work on pull requests.
 ### Initialization Sequence
 
 Upon receiving a new objective, you should focus on the user request first.
-Identify the trigger source first to understand context and avoid ambiguity. A comment like 'fix it' could refer to
-an inline thread comment, a specific line, the whole file, a previous comment, quote, or build failures.
+Identify the trigger source first to understand context and avoid ambiguity. A comment like 'fix it' could refer
+to an inline thread comment, a specific line, the whole file, a previous comment, quote, or build failures.
 
 ### Context & Response Routing
 
@@ -32,15 +32,16 @@ Check `github.event_name` and payload to identify trigger source:
   changes, you SHOULD use the `gh` CLI or API to mark the comment/thread as resolved.
 - **General PR comment** (`issue_comment`):
   - Condition: `if: ${{ github.event.issue.pull_request }}`
-  - Reply Method: `gh pr comment` or `gh pr review` for batching broad feedback and setting state.
+  - Reply Method: `gh pr comment` (preferred) or `gh pr review` (if permitted) for batching broad feedback.
 - **Inline code review** (`pull_request_review_comment`):
-  - Reply Method: Use `gh pr review` to submit batched inline feedback, or `gh api
-    repos/{owner}/{repo}/pulls/{pr}/comments/{comment_id}/replies -f body="..."` for single-line replies.
+  - Reply Method: Use `gh api repos/{owner}/{repo}/pulls/{pr}/comments/{comment_id}/replies -f body="..."`
+    for single-line replies. Use `gh pr review` only if permitted by the runtime allowlist.
 
 **Routing Invariants**:
 
-- **Direct API Responses ONLY**: When asked to comment on a PR, you MUST use the `gh` CLI (`gh pr comment`, etc.) to
-  post the comment directly via API. NEVER write the comment text to a file in the workspace or commit such files.
+- **Direct API Responses ONLY**: When asked to comment on a PR, you MUST use the `gh` CLI (`gh pr comment`, etc.)
+  to post the comment directly via API. NEVER write the comment text to a file in the workspace or commit such
+  files.
   For long comments, use a HEREDOC:
 
   ```bash
@@ -53,8 +54,8 @@ Check `github.event_name` and payload to identify trigger source:
 
 - **Workspace Cleanliness (No Commits for Non-Code-Change Tasks)**: If your task is purely informational (e.g.,
   analyzing a PR, posting a comment), you MUST ensure the workspace remains completely clean (no modified or
-  untracked files). ANY modification to the workspace after a repo event triggers an automatic commit and push to
-  the Pull Request. Delete temporary files or run `git clean -fd` before finishing.
+  untracked files). ANY modification to the workspace after a repo event triggers an automatic commit and push
+  to the Pull Request. Delete temporary files or run `git clean -fd` before finishing.
 - **Symmetric Routing**: ALWAYS reply via the exact originating channel. When asked to post or comment without
   providing a code fix, you MUST communicate back via the API without modifying any files.
 - Parse `github.event.comment.id` and `in_reply_to_id` to maintain thread continuity.
@@ -64,8 +65,8 @@ Check `github.event_name` and payload to identify trigger source:
 ### Restricted Shell & Ephemeral Environment
 
 - **Ephemeral State**: Any uncommitted modifications or tools installed outside of the project directory will be
-  immediately lost when the runner terminates. ALL intended state changes must be committed and pushed to the remote
-  branch to persist.
+  immediately lost when the runner terminates. ALL intended state changes must be committed and pushed to the
+  remote branch to persist.
 - **Restricted Command Allowlist**: You are operating in a highly restricted shell environment where arbitrary
   commands are denied by default. Only explicitly allowed tools can be invoked.
 
@@ -111,8 +112,9 @@ Before finishing your session, you **MUST** pull and integrate the latest upstre
 
 ## 4. Review & Feedback Management
 
-- **Batching PR Feedback**: You SHOULD use `gh pr review` to batch broad feedback, resolve threads, and assert review
-  states (`APPROVE`, `REQUEST_CHANGES`, `COMMENT`). This prevents notification spam.
+- **Batching PR Feedback**: You SHOULD use `gh pr review` (if available) to batch broad feedback, resolve threads,
+  and assert review states (`APPROVE`, `REQUEST_CHANGES`, `COMMENT`). This prevents notification spam.
+  If `gh pr review` is restricted, use `gh pr comment` for general feedback and `gh api` for inline replies.
 - **Contextual Continuity**: Maintain conversation context within the originating thread. When replying to an inline
   comment, your response MUST appear as a reply in that same thread.
 - **Scope Focus**: Avoid blindly fixing all PR comments not relevant to the original prompt.
