@@ -41,8 +41,11 @@ and planned work into the current context:
   You must load this skill when diagnosing or debugging GitHub Actions workflow failures.
 - **[github-issue](github-issue/SKILL.md)**: Skills for working with GitHub Issues.
   You must load this skill when working with issues or when runtime was triggered by an issue comment.
+  Load this before any gh skills.
 - **[github-pr](github-pr/SKILL.md)**: Skills for working with changes on a GitHub Pull Request.
-  You must load this skill when working with changes on a pull request.
+  You must load this skill when working with changes on a pull request
+  or when runtime was triggered by a PR comment.
+  Load this before any gh skills.
 - **[github-script](github-script/SKILL.md)**: Advanced use cases and examples for using actions/github-script.
   You must load this skill when using actions/github-script in workflows.
 - **[mermaid](mermaid/SKILL.md)**: Guide for creating and maintaining stable Mermaid.js diagrams.
