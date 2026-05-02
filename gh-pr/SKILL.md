@@ -281,7 +281,11 @@ If the runtime did not involve intended modification of files:
 
 ## Related Skills
 
-- **gh**: For general GitHub CLI usage (issues, auth, extensions, API).
-- **gh-run**: For workflow runs, jobs, logs, and diagnostic tools.
-- **git**: For low-level branch and commit management.
-- **github-pr**: For high-level pull request routing in GitHub Actions.
+- **gh**:
+  Must be loaded when working with `gh` command.
+- **gh-run**:
+  Must be loaded when working with `gh run` and `gh workflow` commands.
+- **git**:
+  Must be loaded when performing standard git operations.
+- **github-pr**:
+  Must be loaded when working with changes associated with a pull request or when the runtime was triggered by a PR comment.

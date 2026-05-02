@@ -2,8 +2,8 @@
 name: github-pr
 description: >-
   Skills for working with changes on a GitHub Pull Request.
-  You must load this skill when working with changes on a pull request
-  or when runtime was triggered by a PR comment.
+  You must load this skill when working with changes associated with a pull request
+  or when the runtime was triggered by a PR comment.
   Load this before any gh skills.
 ---
 
@@ -198,5 +198,7 @@ gh pr checks <number> --json name,status,conclusion,url
 
 ## Related Skills
 
-- `gh-pr`: For low-level `gh pr` command operations.
-- `github`: For web-based PR interactions (.diff, .patch).
+- **gh-pr**:
+  Must be loaded when working with `gh pr` command.
+- **github**:
+  Must be loaded when working with GitHub-specific features or web-based PR interactions.

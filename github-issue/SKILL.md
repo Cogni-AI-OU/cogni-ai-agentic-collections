@@ -3,7 +3,7 @@ name: github-issue
 description: >-
   Skills for working with GitHub Issues.
   You must load this skill when working with issues
-  or when runtime was triggered by an issue comment.
+  or when the runtime was triggered by an issue comment.
   Load this before any gh skills.
 ---
 
@@ -93,4 +93,5 @@ If the runtime did not involve intended modification of files:
 
 ## Related Skills
 
-- `gh`: For low-level `gh` command operations.
+- **gh**:
+  Must be loaded when working with `gh` command.
