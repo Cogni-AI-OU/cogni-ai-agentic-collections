@@ -120,6 +120,32 @@ mindmap
     gh run view <run_id> --verbose --repo <owner>/<repo>
     ```
 
+## Triggering Workflows
+
+- **Manually Triggering a Workflow**:
+  - Use `gh workflow run` to trigger a `workflow_dispatch` event. This requires the
+    workflow to have a `workflow_dispatch` trigger.
+
+    ```bash
+    gh workflow run <workflow_id_or_filename> --ref <branch_or_tag> --repo <owner>/<repo>
+    ```
+
+- **Passing Input Parameters**:
+  - Use the `-f` or `--field` flag to pass inputs defined in the workflow's
+    `workflow_dispatch` configuration:
+
+    ```bash
+    gh workflow run deploy.yml --ref main -f environment=production -f version=v1.2.3
+    ```
+
+- **Execution and Tracking**:
+  - Triggering a workflow does not return the run ID. To find the triggered run,
+    list the most recent runs for that workflow:
+
+    ```bash
+    gh run list --workflow <workflow_id_or_filename> --limit 1
+    ```
+
 ## Structured Query Patterns
 
 - `gh run list --json databaseId,name,workflowName,status,conclusion,url --limit 20`
