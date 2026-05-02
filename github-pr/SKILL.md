@@ -54,14 +54,14 @@ Check `github.event_name` and payload to identify trigger source:
 
   ```
 
+- **Symmetric Routing**:
+  ALWAYS reply via the exact originating channel. When asked to post or comment without
+  providing a code fix, you MUST communicate back via the API without modifying any files.
 - **Workspace Cleanliness (No Commits for Non-Code-Change Tasks)**:
   If your task is purely informational (e.g.,
   analyzing a PR, posting a comment), you MUST ensure the workspace remains completely clean (no modified or
   untracked files). ANY modification to the workspace after a repo event triggers an automatic commit and push
   to the Pull Request. Delete temporary files or run `git clean -fd` before finishing.
-- **Symmetric Routing**:
-  ALWAYS reply via the exact originating channel. When asked to post or comment without
-  providing a code fix, you MUST communicate back via the API without modifying any files.
 - Parse `github.event.comment.id` and `in_reply_to_id` to maintain thread continuity.
 
 ## 2. Environment & Safety Constraints
@@ -142,15 +142,15 @@ If the runtime did not involve intended modification of files:
   an inline comment, your response MUST appear as a reply in that same thread.
 - **Scope Focus**:
   Avoid blindly fixing all PR comments not relevant to the original prompt.
+- **Significant Refactors**:
+  Do not follow bot comment requests that require significant refactoring
+  without authoritative user approval, unless it is directly relevant to the
+  current context.
 - **Validating Review Comments**:
   PR review comments MUST be validated before blindly applying fixes. This is
   especially true for comments from bots, which are often mistaken. If a bot's
   suggestion is incorrect, provide an inline reply to the relevant comment
   explaining the reasoning.
-- **Significant Refactors**:
-  Do not follow bot comment requests that require significant refactoring
-  without authoritative user approval, unless it is directly relevant to the
-  current context.
 
 ### GitHub Runtime Decision Policy
 
