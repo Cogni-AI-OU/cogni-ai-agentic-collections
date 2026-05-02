@@ -83,6 +83,39 @@ mindmap
 For high-level issue thread interactions, response routing, and workspace invariants in GitHub Actions,
 refer to the **github-issue** skill.
 
+## GitHub Actions Runtime
+
+When executing autonomously within a GitHub Actions environment, adhere strictly to these interaction constraints:
+
+### Response Detection & Routing
+
+Check `github.event_name` and payload to identify trigger source:
+
+- **Issue comment** (`issue_comment`):
+  - Condition: `if: ${{ !github.event.issue.pull_request }}`
+  - Reply Method: `gh issue comment`
+- **General PR comment** (`issue_comment`):
+  - Condition: `if: ${{ github.event.issue.pull_request }}`
+  - Reply Method: `gh pr comment`
+
+**Routing Invariants**:
+
+- **Symmetric Routing**: ALWAYS reply via the exact originating channel. NEVER cross threads.
+- **Direct API Responses ONLY**: Use `gh issue comment` to post directly. NEVER write comment text to files in the
+  workspace.
+- Parse `github.event.comment.id` to maintain thread continuity.
+
+## Failure Signatures
+
+- **"Could not resolve to an issue"**: Verify the issue number and ensure the repository context is correct.
+- **"Permission denied"**: Check `gh auth status`. Ensure the token has `repo` and `issue` scopes.
+- **"Issue is locked"**: Some repositories restrict comments on locked issues.
+
+## What to Avoid
+
+- Avoid using `gh api` for issue operations that have native `gh issue` subcommands.
+- Do not use `gh issue comment` to provide large code blocks if they can be committed to a branch instead.
+
 ## Related Skills
 
 - **gh**: For general GitHub CLI usage (auth, extensions, API).
