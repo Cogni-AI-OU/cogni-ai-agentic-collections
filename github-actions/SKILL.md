@@ -79,6 +79,14 @@ to gh CLI.
 
 6. Before committing fixes, verify logically against observed error. Stage changes and re-run verification if possible.
 
+## Workflow Commands
+
+- **Job Summaries**: Add rich text to the Actions run summary page.
+  ```bash
+  echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+  ```
+- **Documentation**: For more workflow commands (e.g., environment variables, outputs, path modification), see [GitHub Actions Workflow Commands](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands).
+
 ## Finding Build Issues via `gh` Command
 
 - Use `gh run list --limit 3` to list recent builds.
