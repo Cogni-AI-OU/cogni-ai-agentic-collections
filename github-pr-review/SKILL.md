@@ -1,6 +1,8 @@
 ---
 name: github-pr-review
-description: Comprehensive PR review workflow for verifying code quality, metadata accuracy, and merge readiness.
+description: >-
+  Comprehensive PR review workflow for verifying code quality, metadata accuracy, and merge readiness.
+  Must be loaded when reviewing a pull request.
 ---
 
 # GitHub PR Review
@@ -32,6 +34,7 @@ Execute these checks systematically using `gh` and `git` tools:
 ## Workflow Execution
 
 ### 1. Context Gathering
+
 ```bash
 # Get PR metadata and mergeability
 gh pr view <pr-number> --json title,body,mergeable,state,baseRefName,headRefName
@@ -44,6 +47,7 @@ gh pr checks <pr-number>
 ```
 
 ### 2. Deep Inspection
+
 ```bash
 # Check for debug statements in diff
 git diff $(gh pr view <pr-number> --json baseRefName --jq .baseRefName)...HEAD | grep -E "console\.log|debugger|print\(|TODO|FIXME"
@@ -53,6 +57,7 @@ gh api repos/:owner/:repo/pulls/<pr-number>/comments
 ```
 
 ### 3. Verification
+
 - Run local tests if applicable.
 - Perform a "Design-It-Twice" comparison if the PR implements a complex architectural change.
 
