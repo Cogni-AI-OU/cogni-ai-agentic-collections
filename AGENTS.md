@@ -70,14 +70,17 @@ and execution logic defined in [AGENTS-RUNTIME.md](AGENTS-RUNTIME.md).
 
 ## Multi-Repository Architecture & Git Isolation
 
-- **Directory Boundaries**: In consumer repositories where these agents are deployed (following the
+- **Directory Boundaries**:
+  In consumer repositories where these agents are deployed (following the
   [setup instructions](README.md#installation)), `.github/agents/`, `.github/skills/`, and `.github/instructions/`
-  are typically cloned as separate external repositories or git submodules. They are NOT standard native
-  subdirectories of the root repository.
-- **Git Context Switching**: When an agent performs modifications inside the root repository, and simultaneously
+  are typically cloned as separate external repositories or git submodules.
+  They are NOT standard native subdirectories of the root repository.
+- **Git Context Switching**:
+  When an agent performs modifications inside the root repository, and simultaneously
   modifies files inside one of these `.github/*` directories, they must be aware that they are touching
   separate `.git` instances.
-- **Strict Prohibition**: NEVER attempt to run `git add`, `git commit`, or `git mv` from the root workspace
+- **Strict Prohibition**:
+  NEVER attempt to run `git add`, `git commit`, or `git mv` from the root workspace
   to track changes in these subdirectories, as that will fail or corrupt the repository boundaries.
   All git operations must be correctly scoped (e.g. `cd .github/skills && git ...`) or entirely omitted
   (delegated to the user based on the interactive-editor protocol in `copilot-instructions.md`).
@@ -94,19 +97,26 @@ and execution logic defined in [AGENTS-RUNTIME.md](AGENTS-RUNTIME.md).
 To prevent redundancy and context drift, always enforce a strict conceptual boundary when authoring system components:
 
 1. **Agents (`*.agent.md`) - The "Who" and "Why"**:
-   - **Focus**: Persona, invariants, cognitive framework, escalation gates, and output constraints.
-   - **Rule**: Do not embed explicit execution tutorials or command-by-command scripts here.
+   - **Focus**:
+     Persona, invariants, cognitive framework, escalation gates, and output constraints.
+   - **Rule**:
+     Do not embed explicit execution tutorials or command-by-command scripts here.
      Instruct the agent *who* they are, *what* constraints they must obey (e.g. "Never mutate files directly"),
      and explicitly tell them to invoke specific skills for mechanical processes.
 
 2. **Skills (`SKILL.md`) - The "How" (Execution Playbooks)**:
-   - **Focus**: Tools, commands, step-by-step procedures, and mechanical execution.
-   - **Rule**: Isolates the exact `bash`, `gh`, or API mechanics. A skill is agnostic to *who* uses it.
+   - **Focus**:
+     Tools, commands, step-by-step procedures, and mechanical execution.
+   - **Rule**:
+     Isolates the exact `bash`, `gh`, or API mechanics.
+     A skill is agnostic to *who* uses it.
      It exists strictly to define *how* an audit, a build, or a commit sync is correctly executed.
 
 3. **Instructions (`*.instructions.md`) - The "Rules" (Domain Standards)**:
-   - **Focus**: Formatting standards, coding conventions, and structural rules (e.g. JSON schema, Python dependencies).
-   - **Rule**: Applied dynamically based on the file-type or project paths being modified.
+   - **Focus**:
+     Formatting standards, coding conventions, and structural rules (e.g. JSON schema, Python dependencies).
+   - **Rule**:
+     Applied dynamically based on the file-type or project paths being modified.
      They govern the output structure regardless of which agent or skill generated it.
 
 ## Required References
