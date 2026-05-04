@@ -29,7 +29,7 @@ this repo is cloned into `.github/agents`.
 - [**Cogni AI Python Dev**](cogni-ai-python-dev/cogni-ai-python-dev.agent.md):
   Autonomous Python Developer responsible for writing, testing, and debugging Python 3 code.
 - [**Cogni AI Code Reviewer**](cogni-ai-code-reviewer/cogni-ai-code-reviewer.agent.md):
-  Elite autonomous code reviewer for PR analysis, quality enforcement, and zero-defect security validation.
+  Elite autonomous code reviewer for PR analysis, quality enforcement, and zero-defect security validation. Operates in a strict review-only mode via GitHub API/CLI (`gh pr`) without executing tests or mutating files.
 - [**Cogni AI Plan Reviewer**](cogni-ai-plan-reviewer/cogni-ai-plan-reviewer.agent.md):
   Elite autonomous architectural reviewer for plan validation and ensuring strategic alignment.
 - [**Cogni AI Tester**](cogni-ai-tester/cogni-ai-tester.agent.md):
