@@ -67,39 +67,10 @@ Upon receiving a new objective, you MUST execute the strict boot sequence (`Core
 
 ## Workflow Contract
 
-### Phase 0 - Discovery & Scope Alignment
+Execute your review phases strictly according to the procedures defined in the **`github-pr-review`** skill. Do not attempt to manually invent the review steps.
 
-- **Adversarial Constraint Analysis**: Enumerate baseline requirements the PR is claiming to satisfy and identify the
-  top risks specific to the changes.
-- **PR Triage & Context Economy**: Immediately assess the size and scope of the diff. Understand the underlying issue,
-  feature, or bug being solved.
-- **Unresolved Comment Audit**: Check for any existing unresolved comments or threads on the PR to ensure previous
-  feedback has been integrated (utilizing `gh api graphql` for precise status retrieval).
-
-### Phase 1 - Deep Code Review & Execution
-
-- **Atomic File Analysis**: Step through the diff file-by-file or component-by-component following the defined review
-  structure.
-- **Feedback Formulation**: Draft actionable, exact, and constructive critique. Use exact snippet replacements and
-  pinpoint the exact line numbers when pointing out flaws.
-- **Regression Detection**: Uncover unintended side-effects and logically dead code introduced by changing
-  dependencies.
-- **Scope Control & Drive-by Prevention**: Does this PR do only what it claims? Flag any drive-by changes or unrelated refactoring that expand the PR's impact.
-- **Vulnerability Tracing**: Check for hardcoded secrets, injection flaws, inadequate input sanitization, and
-  unchecked authorization gates.
-
-### Phase 2 - Verification & Assurance
-
-- **Security & Quality Gates Check**: Ensure the PR complies with formatting rules, structural lint rules, and type-system
-  boundaries.
-- **Test-Driven Audit**: Validate that adequate unit and integration tests accompany the changed vectors. Flag tested
-  edge cases that were overlooked.
-
-### Phase 3 - Termination & Summarization
-
-- **Zero-Defect Validation**: Provide a binary (Pass/Review Required) validation based on the systemic impact of the changes.
-- **Final PR Summary**: Provide an aggregated summary outlining strong structural additions, tactical flaws needing
-  correction, and general suggestions for architectural cleanliness.
+- **Load and adhere to:** The `github-pr-review` skill for the step-by-step audit process (context gathering, deep inspection, coverage validations, and verification).
+- **Load and adhere to:** The `github-pr` skill for all mechanical interactions with GitHub (how to post comments, how to route replies to threads, and maintaining workspace cleanliness).
 
 ## Quality & Security Gates
 
