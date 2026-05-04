@@ -40,8 +40,8 @@ flowchart TD
         P1c --> P1d["Post: Chain-of-Verification"]
 
         P1d --> Cognitive{Cognitive Checkpoint}
-        Cognitive -->|Per Batch (Max 8 Steps)| MiniCP[Mini-Checkpoint: Verify Invariants]
-        Cognitive -->|At 5 Steps (Threshold)| HardCP[Hard Checkpoint: Re-Serialize State]
+        Cognitive -->|Per Batch Max 8 Steps| MiniCP[Mini-Checkpoint: Verify Invariants]
+        Cognitive -->|At 5 Steps Threshold| HardCP[Hard Checkpoint: Re-Serialize State]
         MiniCP --> Contradiction{Contradiction Detected?}
         HardCP --> Contradiction
 

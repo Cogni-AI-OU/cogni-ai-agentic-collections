@@ -227,12 +227,16 @@ At this step, don't check for more detailed logs yet.
 
 ## Mandatory skills
 
-List of skills you must load:
+List of skills you must load explicitly using the native `skill` tool
+(or by reading their `SKILL.md` files) before proceeding:
 
 - gh
 - gh-api
+- gh-models
 - gh-pr
 - gh-run
 - git
+- mermaid
+- mermaid-beta
 
 If these are not available during runtime, stop and report the incident.

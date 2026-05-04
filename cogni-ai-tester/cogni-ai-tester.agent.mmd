@@ -18,47 +18,37 @@ flowchart TD
     Boot --> GLOBAL_AGENTS_md
     GLOBAL_AGENTS_md --> B4
 
-    subgraph LOCAL_CONTRACT [code-reviewer.agent.md: Local Framework]
+    subgraph LOCAL_CONTRACT [tester.agent.md: Local Framework]
         B4["4- Context Verification"]
         B5["5- Emit Boot Report"]
         B5 --> Idle
-        Idle{"6- Await Code Input"}
+        Idle{"6- Await Testing Target"}
 
-        Idle -->|Code Diff / PR Changes| Phase0[Phase 0: Discovery & Scope Alignment]
+        Idle -->|Code/Feature Input| Phase0[Phase 0: Pre-Execution Audit]
 
-        Phase0 --> Rules{"Relevant Rules Found? (Global + Local)"}
-        Rules -->|No| Generic[Load Base Coding Standards]
-        Rules -->|Yes| Specific[Load Context-Specific Instructions]
+        Phase0 --> T_Audit["Adversarial Testability Review"]
+        T_Audit -->|Fail| RefactorReq["Reject: Code Not Testable"]
+        T_Audit -->|Pass| Phase1[Phase 1: Test-Driven Lifecycle]
 
-        Generic & Specific --> Phase1[Phase 1: Deep Code Review & Execution]
+        RefactorReq --> Phase3
 
-        subgraph Review_Dimensions [Mandatory Review Dimensions]
-            direction TB
-            D1["Correctness / Logic"]
-            D2["Security / Vulnerability"]
-            D3["Maintainability / Clean Code"]
-            D4["Performance / Complexity"]
-            D5["Alignment with AGENTS.md/FACTS.mmd"]
-            D6["Drive-by Prevention / Scope"]
-        end
+        Phase1 --> TDD_Red["1. Assert the Gap (Write Failing Test)"]
+        TDD_Red --> TDD_Dim["2. Dimensional Scaling (Scale Boundaries/Errors)"]
+        TDD_Dim --> TDD_Exec{"Execute Test Suite"}
 
-        Phase1 --> Review_Dimensions
+        TDD_Exec -->|Passes Intentionally| TDD_Green["3. Resolve the Gap (Green)"]
+        TDD_Exec -->|Fails/Flaky| Signal["Signal Extraction & Flakiness Eradication"]
+        Signal --> TDD_Exec
 
-        Review_Dimensions --> Phase2[Phase 2: Verification & Assurance]
+        TDD_Green --> Phase2[Phase 2: Quality & Security Gates]
 
-        Phase2 --> Assessment{"Issues Found?"}
+        Phase2 --> Q_Mock["Boundary Mocking Verification"]
+        Q_Mock --> Q_Iso["Non-Destructive Isolation Check"]
+        Q_Iso --> Q_Cov["Behavior vs Coverage Check"]
 
-        Assessment -->|No| Approve["Emit: [PRAISE] / APPROVAL"]
-        Assessment -->|Yes| Flag["Generate Critical Feedback"]
-
-        Flag --> Severity{"Critical / Blocking?"}
-
-        Severity -->|No| Suggest["Emit: [SUGGESTION] / [QUESTION]"]
-        Severity -->|Yes| Request["Emit: [BLOCKER] / REQUEST CHANGES"]
-
-        Approve & Suggest & Request --> Phase3[Phase 3: Termination & Summarization]
-        Phase3 --> Finalize[Log Meta-Analysis for AI Learning]
-        Finalize --> Output["Finalize Review Action"]
+        Q_Cov --> Phase3[Phase 3: Output & Closure]
+        Phase3 --> Finalize["Format Trace & Summarize Permutations"]
+        Finalize --> Output["Finalize Test Engineering Action"]
     end
 
     subgraph GLOBAL_FLOWS_mmd [FLOWS.mmd: Shared Protocols]
@@ -131,22 +121,20 @@ flowchart TD
     Escalate -->|User Input Received| Phase1
     EscalateGate -->|No| Phase2
 
-    subgraph Invariants ["Code Reviewer Invariants"]
+    subgraph Invariants ["Testing Invariants"]
         direction TB
-        I1["Zero False Positives"]
-        I2["Categorized Feedback Syntax (BLOCKER/SUGGESTION/etc)"]
-        I3["Solution-Oriented Comments"]
-        I4["Strict Project Alignment"]
-        I5["Neurosymbolic Verification (CoV)"]
-        I6["No Execution of Code or Tests"]
+        I1["Genuine Falsifiability (Tests Must Fail First)"]
+        I2["Behavior Over Implementation"]
+        I3["Boundary Mocking Constraint"]
+        I4["Realistic Data Modeling"]
+        I5["Non-Destructive Execution"]
     end
 
-    Phase0 -.->|governed by| I6
-    Phase1 -.->|governed by| I5
-    Flag -.->|governed by| I2
-    Flag -.->|governed by| I3
-    Approve -.->|governed by| I4
-    Phase3 -.->|governed by| I1
+    TDD_Red -.->|governed by| I1
+    Q_Cov -.->|governed by| I2
+    Q_Mock -.->|governed by| I3
+    TDD_Dim -.->|governed by| I4
+    Q_Iso -.->|governed by| I5
 
     classDef phaseNode fill:#1e3a5f,stroke:#4a90e2,stroke-width:2px,color:#fff
     classDef gateNode fill:#5f1e1e,stroke:#e24a4a,stroke-width:2px,color:#fff
@@ -157,7 +145,7 @@ flowchart TD
     class FL1,FL3,FL4,FL5,FL6,CL1,CL3,CL4,CL5,CL6,IL1,IL3,IL4,IL5,IL6,SL1,SL3,SL5,SL6,SL7,SL8,B1,B2,B3a phaseNode
     class FL2,CL2,IL2,SL2,SL4,B3 gateNode
     class Boot,Phase0,Phase1,Phase2,Phase3,Finalize,B4,B5 phaseNode
-    class Idle,Rules,Assessment,Severity,TL,EscalateGate gateNode
-    class Generic,Specific,Flag,Suggest,Request,Approve,Escalate checkNode
+    class Idle,T_Audit,TDD_Exec,TL,EscalateGate gateNode
+    class TDD_Red,TDD_Dim,TDD_Green,Signal,Q_Mock,Q_Iso,Q_Cov,RefactorReq,Escalate checkNode
     class Start,End,Output endNode
-    class I1,I2,I3,I4,I5,I6 guardNode
+    class I1,I2,I3,I4,I5 guardNode
