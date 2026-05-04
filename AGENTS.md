@@ -11,7 +11,8 @@ Agent files live at the repository root so they are accessible directly when
 this repo is cloned into `.github/agents`.
 
 - [**Cogni AI Agent Auditor**](cogni-ai-agent-auditor/cogni-ai-agent-auditor.agent.md):
-  Expert autonomous auditor specializing in analyzing agent session logs, evaluating reasoning workflows, and generating visual reports.
+  Expert autonomous auditor specializing in analyzing agent session logs, evaluating reasoning workflows,
+  and generating visual reports.
 - [**Cogni AI Architect**](cogni-ai-architect/cogni-ai-architect.agent.md):
   Primary autonomous coding agent with critical thinking, robust problem-solving, and context-aware resource management.
 - [**Cogni AI DevOps**](cogni-ai-devops/cogni-ai-devops.agent.md):
@@ -32,11 +33,13 @@ this repo is cloned into `.github/agents`.
   Autonomous Python Developer responsible for writing, testing, and debugging Python 3 code.
 - [**Cogni AI Code Reviewer**](cogni-ai-code-reviewer/cogni-ai-code-reviewer.agent.md):
   Elite autonomous code reviewer for PR analysis, quality enforcement, and zero-defect security validation.
-  Operates in a strict review-only mode via GitHub API/CLI (`gh pr`) without executing tests or mutating files.
+  Operates in a strict review-only mode via GitHub API/CLI (`gh pr`)
+  without executing tests or mutating files.
 - [**Cogni AI Plan Reviewer**](cogni-ai-plan-reviewer/cogni-ai-plan-reviewer.agent.md):
   Elite autonomous architectural reviewer for plan validation and ensuring strategic alignment.
 - [**Cogni AI Security Auditor**](cogni-ai-security-auditor/cogni-ai-security-auditor.agent.md):
-  Elite autonomous security auditor specializing in zero-defect threat modeling, vulnerability detection, and hardening boundaries.
+  Elite autonomous security auditor specializing in zero-defect threat modeling,
+  vulnerability detection, and hardening boundaries.
 - [**Cogni AI Tester**](cogni-ai-tester/cogni-ai-tester.agent.md):
   Autonomous Tester responsible for executing test tasks, ensuring quality, and verifying system behavior.
 - [**Cogni AI Weaver**](cogni-ai-weaver/cogni-ai-weaver.agent.md):
@@ -67,9 +70,17 @@ and execution logic defined in [AGENTS-RUNTIME.md](AGENTS-RUNTIME.md).
 
 ## Multi-Repository Architecture & Git Isolation
 
-- **Directory Boundaries**: `.github/agents/`, `.github/skills/`, and `.github/instructions/` are cloned into this project as separate external repositories or git submodules, they are NOT standard native subdirectories of the root `cogni-ai-agents` repository.
-- **Git Context Switching**: When an agent performs modifications inside the root repository `cogni-ai-agents`, and simultaneously modifies files inside one of these `.github/*` directories, they must be aware that they are touching separate `.git` instances.
-- **Strict Prohibition**: NEVER attempt to run `git add`, `git commit`, or `git mv` from the root workspace to track changes in these subdirectories, as that will fail or corrupt the repository boundaries. All git operations must be correctly scoped (e.g. `cd .github/skills && git ...`) or entirely omitted (delegated to the user based on the interactive-editor protocol in `copilot-instructions.md`).
+- **Directory Boundaries**: In consumer repositories where these agents are deployed (following the
+  [setup instructions](README.md#installation)), `.github/agents/`, `.github/skills/`, and `.github/instructions/`
+  are typically cloned as separate external repositories or git submodules. They are NOT standard native
+  subdirectories of the root repository.
+- **Git Context Switching**: When an agent performs modifications inside the root repository, and simultaneously
+  modifies files inside one of these `.github/*` directories, they must be aware that they are touching
+  separate `.git` instances.
+- **Strict Prohibition**: NEVER attempt to run `git add`, `git commit`, or `git mv` from the root workspace
+  to track changes in these subdirectories, as that will fail or corrupt the repository boundaries.
+  All git operations must be correctly scoped (e.g. `cd .github/skills && git ...`) or entirely omitted
+  (delegated to the user based on the interactive-editor protocol in `copilot-instructions.md`).
 
 ## Subagent Delegation
 
