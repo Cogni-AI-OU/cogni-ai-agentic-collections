@@ -136,11 +136,11 @@ If failures or bugs hit the agent, you MUST generate:
 
    ```mermaid
    architecture-beta
-       group api(cloud) [API Gateway]
-       service auth(server) [Auth Service] in api
-       service db(database) [Session DB] in api
+       group api(cloud)[API Gateway]
+       service auth(server)[Auth Service] in api
+       service db(database)[Session DB] in api
 
-       user(user) [Agent Session]
-       user -> auth: Request Logs
-       auth -> db: Query Session
+       service user(user)[Agent Session]
+       user:R -- L:auth
+       auth:R -- L:db
    ```
