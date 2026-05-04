@@ -10,6 +10,8 @@ This repository is the source of truth for Cogni AI agent files.
 Agent files live at the repository root so they are accessible directly when
 this repo is cloned into `.github/agents`.
 
+- [**Cogni AI Agent Auditor**](cogni-ai-agent-auditor/cogni-ai-agent-auditor.agent.md):
+  Expert autonomous auditor specializing in analyzing agent session logs, evaluating reasoning workflows, and generating visual reports.
 - [**Cogni AI Architect**](cogni-ai-architect/cogni-ai-architect.agent.md):
   Primary autonomous coding agent with critical thinking, robust problem-solving, and context-aware resource management.
 - [**Cogni AI DevOps**](cogni-ai-devops/cogni-ai-devops.agent.md):
