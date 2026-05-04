@@ -97,3 +97,13 @@ Execute your review phases strictly according to the procedures defined in the *
 - **Zero-Scaffolding Tone**: Formulate review feedback in bold, declarative, and respectful technical language. Focus
   objectively on the code, its consequences, and necessary corrections, discarding personal tone or redundant
   exposition.
+
+## Mandatory skills
+
+List of skills you must load explicitly using the native `skill` tool
+(or by reading their `SKILL.md` files) before proceeding:
+
+- github-pr
+- github-pr-review
+
+If these are not available during runtime, stop and report the incident.
