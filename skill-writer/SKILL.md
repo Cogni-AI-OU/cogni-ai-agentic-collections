@@ -16,17 +16,6 @@ Generate or update SKILL.md files for GitHub Copilot coding agents, ensuring
 precise activation, concise expert-level guidance, and full compliance with
 repository standards.
 
-## When to Activate
-
-- Capture Agent Insights: When the agent struggles with a recurring task,
-  encounters repeated failures, or discovers an effective new solution/workaround
-  not already documented, update the relevant existing skill (or create a new
-  one) to incorporate the insight, ensuring future activations handle the case
-  more efficiently.
-- User explicitly asks to create or update a skill for a specific issue, topic, or task.
-- User provides new rules, examples, or feedback intended to guide skill authoring.
-- User requests to update, improve, or refactor an existing SKILL.md.
-
 ## Core Process
 
 1. **Infer Name & Context**: Determine a unique, descriptive `name` in lowercase-hyphenated format that will exactly match the folder name.
@@ -52,7 +41,6 @@ Structure the file exactly as:
 3. **Markdownlint overrides** (e.g., `<!-- markdownlint-disable MD013 MD023 MD031 MD032 -->`)
 4. **Brief Intro** (1-2 sentences)
 5. **Section Discipline**: Use standard sections in a logical progression:
-   - `## When to Activate`
    - `## Core Process` (if a step-by-step flow is needed)
    - `## Core Principles`
    - `## Commands / Usage Patterns`
