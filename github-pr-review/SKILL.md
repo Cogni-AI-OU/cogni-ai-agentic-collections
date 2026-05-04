@@ -59,10 +59,21 @@ git diff $(gh pr view <pr-number> --json baseRefName --jq .baseRefName)...HEAD |
 gh api repos/:owner/:repo/pulls/<pr-number>/comments
 ```
 
-### 3. Verification
+### 3. Agent Delegation
+
+For a comprehensive PR review, delegate specialized reviews to relevant project agents
+using the `task` tool to ensure thorough coverage:
+
+- **Architectural Alignment**: Delegate to `cogni-ai-plan-reviewer` to validate structural changes against project patterns.
+- **Code Quality**: Delegate to `cogni-ai-code-reviewer` for exhaustive idiomatic inspection and quality enforcement.
+- **Security Audit**: Delegate to `cogni-ai-security-auditor` for deep vulnerability tracing and threat modeling.
+- **Verification**: Delegate to `cogni-ai-tester` to execute tests and verify edge-case behavior.
+
+### 4. Verification
 
 - Run local tests if applicable.
 - Perform a "Design-It-Twice" comparison if the PR implements a complex architectural change.
+- Synthesize results from delegated agents (if any) into the final review summary.
 
 ## What to Avoid
 
@@ -78,3 +89,5 @@ gh api repos/:owner/:repo/pulls/<pr-number>/comments
   Must be loaded when working with `gh pr` command.
 - **github**:
   Must be loaded when working with GitHub-specific features or web-based PR interactions.
+- **subagent-task**:
+  Must be loaded when delegating specialized review tasks to other agents.
