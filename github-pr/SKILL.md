@@ -90,6 +90,8 @@ Check `github.event_name` and payload to identify trigger source:
 - **Verify Before Commit**:
   Verify your expected changes with `git diff --no-color`. NEVER use blanket `git add .`
   without verifying the exact list of staged files.
+  CRITICAL: You MUST check for unresolved merge conflict markers (e.g., `<<<<<<<`, `=======`,
+  `>>>>>>>`) in your changes. NEVER commit files containing unresolved merge conflict markers.
 - **No Untracked Additions**:
   NEVER automatically commit untracked files or workspace artifacts.
 - **Final Status Check**:
@@ -201,5 +203,8 @@ gh pr checks <number> --json name,status,conclusion,url
 
 - **gh-pr**:
   Must be loaded when working with `gh pr` command.
+- **git**:
+  MUST be loaded when working with PRs, as PR operations inherently involve Git operations
+  like committing, pulling, resolving conflicts, or reverting.
 - **github**:
   Must be loaded when working with GitHub-specific features or web-based PR interactions.
