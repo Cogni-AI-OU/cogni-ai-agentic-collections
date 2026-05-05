@@ -101,6 +101,7 @@ Generate a Mermaid `sequenceDiagram` visualizing chronological actions.
 - **Focus**: Initialization, Context Gathering, Agent Interactions (e.g., Task/delegation calls), Execution, Verification.
 
 Example showing sub-agent interaction:
+
 ```mermaid
 sequenceDiagram
     participant W as Workflow
@@ -216,23 +217,22 @@ treeView-beta
     "AGENTS.md"
     ".github"
         "workflows"
-          "check.yml"
+            "check.yml"
 ```
 
 #### I. Agent Task Board (Kanban)
 
 Generate a Mermaid `kanban` diagram to visualize the task board and tracking state.
-Column headers SHOULD include a JSON-serialized `todos` array within the metadata to provide a machine-readable summary of the session's final status.
+Column headers SHOULD include status metadata. To avoid breaking Mermaid syntax, DO NOT use structural characters like
+`{}`, `[]`, `()`, `<`, or `>` in labels.
 
 ```mermaid
 kanban
-  Todo {"todos":[{"content":"Analyze requirements","status":"completed","priority":"high"}]}
+  Todo - Status: completed
     [Create Documentation]
     docs[Create Blog about the new diagram]
-  [In Progress] {"todos":[{"content":"Implement solution","status":"in_progress","priority":"high"}]}
+  In Progress - Status: in_progress
     id6[Create renderer for all cases]
-  [Ready for Deploy] {"todos":[{"content":"Verify changes","status":"pending","priority":"medium"}]}
+  Ready for Deploy - Status: pending
     id8[Design grammar]@{ assigned: 'agent' }
 ```
-
-
