@@ -113,10 +113,13 @@ mindmap
     - **Job Summaries** (Markdown content written to `$GITHUB_STEP_SUMMARY`) are **NOT** available via the REST API or
       standard `gh run view` JSON output. They are strictly intended for the GitHub web UI.
     If you need to retrieve a Job Summary programmatically, you must rely on workflow-specific workarounds:
-    - Parse it from the **logs** (`gh run view --job <job_id> --log`).
+    - First, try to parse it from the **logs** using `gh run view --job <job_id> --log`.
+      If that returns empty output, do not assume the summary is unavailable:
+      fall back to downloading the full run logs zip via the API (see the
+      `gh-api` skill) and inspect the extracted job log instead.
       Note: Actions runners often dump the executed shell script and its evaluated environment variables into the step log preamble.
       If a script loads the summary from an env var (e.g., `echo "$RESPONSE" >> $GITHUB_STEP_SUMMARY`),
-      you can `grep` the log for that variable block.
+      you can `grep` the retrieved log for that variable block.
     - Check if the action also creates **Check Run Annotations** for key messages.
     - Check if the summary was posted as a **PR or Issue comment**.
 
