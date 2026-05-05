@@ -102,6 +102,8 @@ Generate a Mermaid `sequenceDiagram` visualizing chronological actions.
 
 Example showing sub-agent interaction:
 
+**Agent Execution Flow**
+
 ```mermaid
 sequenceDiagram
     participant W as Workflow
