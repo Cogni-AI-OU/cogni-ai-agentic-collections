@@ -197,3 +197,17 @@ mindmap
             name: gh-run
 ```
 
+#### H. Agent File Access Hierarchy
+
+Generate a Mermaid `treeView-beta` diagram visualizing the hierarchy of files and directories accessed by the agent.
+
+```mermaid
+treeView-beta
+    "docs"
+        "build"
+        "make.bat"
+        "Makefile"
+        "out"
+        "source"
+```
+
