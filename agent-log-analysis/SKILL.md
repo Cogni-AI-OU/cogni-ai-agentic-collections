@@ -89,7 +89,7 @@ Generate a Mermaid `pie` diagram to visualize the relative frequency of tool cal
 **Tool Utilization Pie Chart**
 
 ```mermaid
-pie title "Tool Call Distribution"
+pie title Tool Call Distribution
     "Glob" : 1
     "Read" : 2
     "Shell" : 3
@@ -165,7 +165,7 @@ Generate a Mermaid `venn-beta` diagram visualizing action alignment. Ensure stri
 
 ```mermaid
 venn-beta
-    title "Action Alignment"
+    title Action Alignment
     set Intent["Request"]
     set Actions["Actions"]
     set Rules["Protocols"]
