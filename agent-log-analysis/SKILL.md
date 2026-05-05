@@ -173,7 +173,27 @@ If failures or bugs hit the agent, you MUST generate:
        service auth(server)[Auth Service] in api
        service db(database)[Session DB] in api
 
-       service user(user)[Agent Session]
-       user:R -- L:auth
-       auth:R -- L:db
-   ```
+        service user(user)[Agent Session]
+        user:R -- L:auth
+        auth:R -- L:db
+    ```
+
+#### G. Agent Tool Usage Mindmap
+
+Generate a Mermaid `mindmap` visualizing the hierarchy of tools and their key parameters or sub-commands executed during the session.
+
+```mermaid
+mindmap
+  root((Tools))
+    Glob
+      pattern
+    Read
+      filePath
+    Shell
+      command
+        grep
+        gh
+          skill
+            name: gh-run
+```
+
