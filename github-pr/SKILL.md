@@ -195,7 +195,9 @@ gh pr checks <number> --json name,status,conclusion,url
 
     Note: For GitHub Actions jobs, the `output.summary` field in these check runs is usually `null`.
     Job Summaries from `$GITHUB_STEP_SUMMARY` are not accessible here.
-    See the `gh-run` and `gh-api` skills for detailed workarounds to retrieve Job Summaries programmatically via log extraction.
+    See the `gh-run` and `gh-api` skills for detailed workarounds to inspect
+    job results and retrieve summary information programmatically, including
+    approaches beyond log extraction.
 
 2. Fetch annotations for a specific check run ID:
 
