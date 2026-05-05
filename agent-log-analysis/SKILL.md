@@ -219,3 +219,20 @@ treeView-beta
           "check.yml"
 ```
 
+#### I. Agent Task Board (Kanban)
+
+Generate a Mermaid `kanban` diagram to visualize the task board and tracking state.
+Column headers SHOULD include a JSON-serialized `todos` array within the metadata to provide a machine-readable summary of the session's final status.
+
+```mermaid
+kanban
+  Todo {"todos":[{"content":"Analyze requirements","status":"completed","priority":"high"}]}
+    [Create Documentation]
+    docs[Create Blog about the new diagram]
+  [In Progress] {"todos":[{"content":"Implement solution","status":"in_progress","priority":"high"}]}
+    id6[Create renderer for all cases]
+  [Ready for Deploy] {"todos":[{"content":"Verify changes","status":"pending","priority":"medium"}]}
+    id8[Design grammar]@{ assigned: 'agent' }
+```
+
+
