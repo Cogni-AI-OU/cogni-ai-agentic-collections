@@ -81,6 +81,7 @@ project's initialization and verification workflows.
 
 * **Execution Time:** [Total time taken]
 * **Steps Taken:** [Number of steps]
+* **Total Tasks:** [Total number of tasks (from todos)]
 * **Tool Calls:** [Total number of tool calls] ([Tool1]: [N], [Tool2]: [M], ...)
 * **Tokens Used:** [Optional: total tokens if available]
 
@@ -248,18 +249,30 @@ treeView-beta
 #### H. Agent Task Board (Kanban)
 
 Generate a Mermaid `kanban` diagram to visualize the task board and tracking state.
-Column headers SHOULD include status metadata. To avoid breaking Mermaid syntax, DO NOT use structural characters like
+Column headers SHOULD include status metadata.
+This MUST be based on the actual `todos` found in the agent session logs
+(e.g., from `todowrite` tool calls or explicit task tracking), not invented tasks.
+To avoid breaking Mermaid syntax, DO NOT use structural characters like
 `{}`, `[]`, `()`, `<`, or `>` in labels.
 
+**Agent Task Board**
+
 ```mermaid
+---
+config:
+  kanban:
+    ticketBaseUrl: 'https://github.com/{owner}/{repo}/issues/#TICKET#'
+---
 kanban
-  Todo - Status: completed
+  Todo - Status: pending
     [Create Documentation]
-    docs[Create Blog about the new diagram]
-  In Progress - Status: in_progress
-    id6[Create renderer for all cases]
-  Ready for Deploy - Status: pending
+    docs[Create file with the new diagram]
+    id4[Create parsing tests]@{ ticket: 2038, assigned: 'agent', priority: 'High' }
+  In Progress - Status: in progress
+    id6[Create renderer for all cases]@{ ticket: 2039, priority: 'Medium' }
+  Completed - Status: completed
     id8[Design grammar]@{ assigned: 'agent' }
+    id9[Verify environment]@{ ticket: 2040, assigned: 'agent' }
 ```
 
 #### I. Agent Cognitive & Execution Loop (State Diagram)
