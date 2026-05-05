@@ -23,12 +23,26 @@ Raw logs from GitHub runs can be filtered by:
 awk '/PROMPT:/,/Post job cleanup/ { $1=""; print substr($0,2) }'
 ```
 
-## 2. Standardized Reporting Structure
+## 2. Artifact Extraction
+
+When analyzing logs, specifically identify any external artifacts created or modified:
+- **Pull Requests**: Look for "Created PR #<number>", "Creating pull request...", or "gh pr create" success messages.
+- **Issues**: Look for "Created issue #<number>", "gh issue create" success messages, or comments.
+- **Commits/Branches**: Look for "git push", "Pushed to <branch>", or commit SHA references.
+
+## 3. Skill Loading Analysis
+
+When analyzing logs, verify the skill loading process:
+- **Skill Discovery**: Identify which skills the agent attempted to load (e.g., `skill` tool calls).
+- **Loading Success**: Confirm if the skills were successfully loaded into the context.
+- **Missing Skills**: Identify if the agent failed to load a skill that was clearly relevant to the task.
+
+## 4. Standardized Reporting Structure
 
 You MUST systematically output your findings adhering to this strict standardized structure.
 Do not invent new structures or deviate from these templates.
 
-### 2.1 Text Report (Markdown)
+### 4.1 Text Report (Markdown)
 
 ```markdown
 #### Brief
@@ -50,8 +64,13 @@ project's initialization and verification workflows.
 * **Workflow Compliance:** [Did the agent load the necessary constraints, flows, and instructions?]
 * **Conclusion:** [What was the final state?]
 
+#### Produced Artifacts
+
+* **[Artifact Type]:** [Link/Reference, e.g., Pull Request #179, Issue #42, or commit `deadbeef`]
+
 #### Key Actions & Decisions
 
+* **Skill Loading:** [List the skills loaded and their relevance to the task.]
 * **Context Gathering:** [How did the agent acquire necessary information?]
 * **Agent Interactions:** [List any sub-agents called and their purpose (e.g., Architect -> Brain Ops).]
 * **Task/Workflow Management:** [How did it track progress?]
@@ -62,7 +81,7 @@ project's initialization and verification workflows.
 
 * **Execution Time:** [Total time taken]
 * **Steps Taken:** [Number of steps]
-* **Tool Calls:** [Total number of tool calls]
+* **Tool Calls:** [Total number of tool calls] ([Tool1]: [N], [Tool2]: [M], ...)
 * **Tokens Used:** [Optional: total tokens if available]
 
 #### Root Cause Identified (If Applicable)
@@ -75,12 +94,13 @@ The agent discovered a **[brief description of the core issue]**:
 * **[Issue / None]:** [Describe any tool failures or explicitly state "None".]
 
 #### Recommendation Provided (Optional)
+
 [Summarize any recommendations]
 ```
 
 Note: The Text Report must be output as direct Markdown; do not wrap the resulting report in an outer code block.
 
-### 2.2 Comprehensive Visual Audit Suite (Mermaid & Data)
+### 4.2 Comprehensive Visual Audit Suite (Mermaid & Data)
 
 #### A. Agent Tool Utilization (Pie Chart)
 
@@ -130,7 +150,7 @@ mindmap
 Generate a Mermaid `sequenceDiagram` visualizing chronological actions.
 
 - **Participants**: `Workflow`, `Agent`, `[Sub-Agent]`, `Tools`, `FileSystem`, `GitHub`
-- **Focus**: Initialization, Context Gathering, Agent Interactions (e.g., Task/delegation calls), Execution, Verification.
+- **Focus**: Initialization, Skill Loading, Context Gathering, Agent Interactions (e.g., Task/delegation calls), Execution, Verification.
 
 Example showing sub-agent interaction:
 
@@ -144,6 +164,7 @@ sequenceDiagram
     participant T as Tools
 
     W->>A: Start Task
+    A->>T: Load Skills
     A->>T: Search Context
     T-->>A: Results
     A->>B: Delegate Architecture Plan
