@@ -92,6 +92,27 @@ gh api -H "Accept: application/vnd.github+json" /repos/<owner>/<repo>/actions/ru
 unzip -d /tmp/run_logs /tmp/run_logs.zip
 ```
 
+## Retrieving Job Summaries
+
+GitHub Actions Job Summaries (written to `$GITHUB_STEP_SUMMARY`) are **NOT** directly accessible via the REST API
+`check-runs` or `jobs` endpoints. They are only visible in the GitHub web UI or as raw markdown via an
+undocumented web endpoint.
+
+**Common Mistake**: Attempting to read `output.summary` from the check run associated with a GitHub Actions job.
+For standard Action jobs, this field is almost always `null`.
+
+**Proper Alternatives**:
+
+1. **Check for separate Check Runs**: Some tools (like `agent-auditor`) might create a *separate* check run
+   (distinct from the job itself) and populate its `output.summary`.
+2. **Inspect logs**: Start with `gh run view --job <job_id> --log`, but be aware that `gh run view --log`
+   frequently fails for some runs or attempts. If that happens, use the ZIP log download approach documented
+   just above (`/actions/runs/<run_id>/logs`) and inspect the extracted logs instead.
+   Even if the script only writes to `$GITHUB_STEP_SUMMARY`, the raw summary text can often be scraped from the
+   step's initialization logs where evaluated environment variables (like `$RESPONSE`) or expanded `echo`
+   commands are echoed by the runner preamble.
+3. **Check PR Comments**: Many actions post summaries as PR comments. Use `gh pr view <number> --json comments`.
+
 ## Discussion Patterns (via GraphQL)
 
 Since `gh` often lacks a native `discussion` subcommand, use `gh api graphql`.
