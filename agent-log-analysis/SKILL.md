@@ -82,7 +82,50 @@ Note: Don't include code block for above.
 
 ### 2.2 Comprehensive Visual Audit Suite (Mermaid & Data)
 
-#### A. Agent Execution Flow (Sequence Diagram)
+#### A. Agent Tool Utilization (Pie Chart)
+
+Generate a Mermaid `pie` diagram to visualize the relative frequency of tool calls.
+
+**Tool Utilization Pie Chart**
+
+```mermaid
+pie title "Tool Call Distribution"
+    "Glob" : 1
+    "Read" : 2
+    "Shell" : 3
+    "Skill" : 4
+    "Task" : 5
+    "Todo" : 1
+```
+
+#### B. Agent Tool Usage Mindmap
+
+Generate a Mermaid `mindmap` visualizing the hierarchy of tools
+and their key parameters or sub-commands executed during the session.
+
+**Tool Usage Mindmap**
+
+```mermaid
+mindmap
+  root((Tools))
+    Glob
+      pattern
+    Read
+      filePath
+    Shell
+      command
+        gh
+        grep
+    Skill
+      gh-run
+      git
+    Task
+      subagent_type
+        brain-ops
+    Todo
+```
+
+#### C. Agent Execution Flow (Sequence Diagram)
 
 Generate a Mermaid `sequenceDiagram` visualizing chronological actions.
 
@@ -108,7 +151,7 @@ sequenceDiagram
     A->>T: Implement Plan
 ```
 
-#### B. Agent Execution Journey (Friction & Success Map)
+#### D. Agent Execution Journey (Friction & Success Map)
 
 Generate a Mermaid `journey` diagram of problem-solving friction.
 
@@ -116,7 +159,7 @@ Generate a Mermaid `journey` diagram of problem-solving friction.
 - **Sections**: `Initialization`, `Investigation`, `Execution`, `Verification`.
 - **Actors**: `Agent`, `Bash`, `GitHubAPI`, `FileSystem`.
 
-#### C. Agent Execution Alignment (Venn Diagram)
+#### E. Agent Execution Alignment (Venn Diagram)
 
 Generate a Mermaid `venn-beta` diagram visualizing action alignment. Ensure strings are properly delimited.
 
@@ -133,7 +176,7 @@ venn-beta
     union Intent,Actions,Rules["Execution"]
 ```
 
-#### D. Root Cause & System Architecture (If Errors Occurred)
+#### F. Root Cause & System Architecture (If Errors Occurred)
 
 If failures or bugs hit the agent, you MUST generate:
 
@@ -167,32 +210,7 @@ If failures or bugs hit the agent, you MUST generate:
         auth:R -- L:db
     ```
 
-#### E. Agent Tool Usage Mindmap
-
-Generate a Mermaid `mindmap` visualizing the hierarchy of tools
-and their key parameters or sub-commands executed during the session.
-
-```mermaid
-mindmap
-  root((Tools))
-    Glob
-      pattern
-    Read
-      filePath
-    Shell
-      command
-        gh
-        grep
-    Skill
-      gh-run
-      git
-    Task
-      subagent_type
-        brain-ops
-    Todo
-```
-
-#### F. Agent File Access Hierarchy
+#### G. Agent File Access Hierarchy
 
 Generate a Mermaid `treeView-beta` diagram visualizing the hierarchy of files and directories accessed by the agent.
 
@@ -206,7 +224,7 @@ treeView-beta
             "check.yml"
 ```
 
-#### G. Agent Task Board (Kanban)
+#### H. Agent Task Board (Kanban)
 
 Generate a Mermaid `kanban` diagram to visualize the task board and tracking state.
 Column headers SHOULD include status metadata. To avoid breaking Mermaid syntax, DO NOT use structural characters like
@@ -221,20 +239,6 @@ kanban
     id6[Create renderer for all cases]
   Ready for Deploy - Status: pending
     id8[Design grammar]@{ assigned: 'agent' }
-```
-
-#### H. Agent Tool Utilization (Pie Chart)
-
-Generate a Mermaid `pie` diagram to visualize the relative frequency of tool calls.
-
-```mermaid
-pie title "Tool Call Distribution"
-    "Glob" : 1
-    "Read" : 2
-    "Shell" : 3
-    "Skill" : 4
-    "Task" : 5
-    "Todo" : 1
 ```
 
 #### I. Agent Cognitive & Execution Loop (State Diagram)
