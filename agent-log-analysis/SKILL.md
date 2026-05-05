@@ -256,5 +256,5 @@ Generate a `radar-beta` diagram to score the agent from 1 to 10 on core competen
 radar-beta
     title Agent Performance Alignment
     axis Completion, Compliance, Proficiency, Verification, Depth, Efficiency
-    curve Agent {8, 9, 7, 8, 9, 7}
+    curve Agent {1, 1, 1, 1, 1, 1}
 ```
