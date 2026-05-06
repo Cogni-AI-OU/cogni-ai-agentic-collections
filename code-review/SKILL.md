@@ -1,6 +1,8 @@
 ---
 name: code-review
-description: Execute expert-level code reviews, dissecting codebases and Pull Requests (PRs) with surgical precision to identify logical flaws, architectural drift, performance bottlenecks, and security vulnerabilities before they merge.
+description: >-
+  Execute expert-level code reviews, dissecting codebases and Pull Requests (PRs) with surgical precision to identify logical flaws, architectural drift, performance bottlenecks, and security vulnerabilities before they merge.
+  Must be loaded when reviewing code or Pull Requests.
 ---
 
 # Skill: code-review
@@ -52,5 +54,9 @@ To fetch PR context and post reviews, utilize the `gh` CLI via the `github-pr` a
 
 ## Related Skills
 
-- `github-pr`
-- `github-pr-review`
+- **github-pr**:
+  Must be loaded when working with changes associated with a pull request.
+- **github-pr-review**:
+  Must be loaded when reviewing, auditing, or verifying a GitHub Pull Request.
+- **gh-pr**:
+  Must be loaded when working with `gh pr` command.
