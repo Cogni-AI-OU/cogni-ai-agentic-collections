@@ -148,11 +148,13 @@ Generate the following Mermaid `pie` diagrams to visualize the relative frequenc
 ```mermaid
 pie title Tool Call Distribution
     "Glob" : 1
-    "Read" : 2
-    "Shell" : 3
-    "Skill" : 4
-    "Task" : 5
-    "Todo" : 1
+    "Grep": 2
+    "Read" : 3
+    "Search": 4
+    "Shell" : 5
+    "Skill" : 6
+    "Task" : 7
+    "Todo" : 8
     "Webfetch": 1
     "Write": 1
 ```
@@ -182,8 +184,13 @@ mindmap
   root((Tools))
     Glob
       pattern
+    Grep
+      pattern
     Read
       filePath
+    Search
+      query
+        site
     Shell
       command
         gh
