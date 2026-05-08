@@ -66,6 +66,9 @@ Reference: <https://gh.io/copilot/firewall-config>
 - **NEVER create `.github/README.md`**:
   GitHub renders `.github/README.md` with the highest priority.
   Creating it will override the main `README.md` on the repository homepage and profile page.
+- **Do not break your own workflow**:
+  Refactoring, such as removing required triggers, can prevent the workflow from being triggered again.
+  Always be careful and double-check your changes to ensure the continuity of your own runtime workflow.
 
 ## What to Avoid
 
