@@ -28,28 +28,14 @@ gh aw compile
 
 If any workflow fails to compile (e.g., strict mode violations like `contents: write`), fix the `.md` source file and re-run.
 
-### 2. Run post-processing script (ALWAYS)
-
-**This step MUST run every time lock files are regenerated, regardless of how they were generated.**
-
-The post-processing script replaces the "Install awf binary" step in smoke and build-test workflows with local build+install steps, so CI tests the repo's own code instead of a released binary.
-
-```bash
-npx ts-node scripts/ci/postprocess-smoke-workflows.ts
-```
-
-This updates these lock files:
-- `smoke-copilot.lock.yml`
-- `smoke-claude.lock.yml`
-- `smoke-chroot.lock.yml`
-- `build-test.lock.yml`
-
 ## Common Issues
 
 ### Strict mode violations
+
 Newer gh-aw versions enforce strict mode which disallows write permissions like `contents: write`, `issues: write`, etc. Workflows should use `safe-outputs` for write operations and only request `read` permissions.
 
 ### Discussion category warnings
+
 Warnings about "General" vs "general" discussion category casing are non-blocking.
 
 ## Verification
@@ -59,3 +45,7 @@ After both steps, run `git diff --stat` to review all changed files. Expect chan
 - `.github/aw/actions-lock.json` - Updated action pins
 - `.github/workflows/*.lock.yml` - Regenerated lock files
 - `.github/workflows/*.md` - If codemods applied fixes
+
+## References
+
+- <https://github.com/github/gh-aw-firewall/blob/main/.claude/skills/recompile-workflows/SKILL.md>
