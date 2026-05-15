@@ -1,20 +1,19 @@
 ---
 name: gh-aw-compile
 description: >-
-  Regenerate and post-process all agentic workflows. Use when gh-aw is
-  updated, workflow .md files change, or when asked to
-  recompile/regenerate workflows.
-allowed-tools: Bash(gh:*), Bash(npx:*), Read, Glob, Edit
+  Regenerate and post-process all agentic workflows.
+  You MUST load this skill when gh-aw is updated, workflow .md files change,
+  or when asked to recompile/regenerate workflows.
 ---
 
 # Recompile Agentic Workflows
 
-Use this skill when you need to regenerate all agentic workflow lock files and apply post-processing.
+Use this skill when you need to regenerate all agentic workflow lock files and verify them.
 
-## IMPORTANT: Post-processing is required after EVERY lock file change
+## IMPORTANT: Verification is required after EVERY lock file change
 
 Any time `.lock.yml` files are regenerated — whether via `gh aw compile`, `gh aw upgrade`, or any other gh-aw
-command — you MUST run the post-processing script afterward. This is not optional.
+command — you MUST run the repo-standard pre-commit hooks afterward. This is not optional.
 
 ## Steps
 
@@ -30,13 +29,21 @@ gh aw upgrade
 gh aw compile
 ```
 
-If any workflow fails to compile (e.g., strict mode violations like `contents: write`), fix the `.md` source file and re-run.
+If any workflow fails to compile (e.g., due to permission violations), fix the `.md` source file and re-run.
+
+### 2. Run verification
+
+After recompiling, run the pre-commit hooks to ensure everything is valid:
+
+```bash
+pre-commit run --all-files
+```
 
 ## Common Issues
 
 ### Strict mode violations
 
-Newer gh-aw versions enforce strict mode which disallows write permissions like `contents: write`,
+When compiling with `--strict` (or if enforced by the version), gh-aw disallows write permissions like `contents: write`,
 `issues: write`, etc. Workflows should use `safe-outputs` for write operations and only request
 `read` permissions.
 
