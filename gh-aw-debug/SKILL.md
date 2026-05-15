@@ -33,6 +33,15 @@ Diagnose, troubleshoot, and fix failing GitHub Agentic Workflows by analyzing lo
 gh aw logs --run-id <run-id> -o /tmp/logs
 gh aw logs --workflow <workflow-name> --start-date -1d
 
+# Audit a specific workflow run (detailed analysis with missing tools and errors)
+gh aw audit <run-id> --json
+
+# Diff two runs to detect regressions (firewall, MCP, metrics)
+gh aw audit <base-run-id> <compare-run-id> --json
+
+# Show status of all workflows
+gh aw status
+
 # Inspect MCP configuration
 gh aw mcp inspect <workflow-name>
 gh aw mcp list
@@ -42,6 +51,8 @@ gh aw mcp list
 
 ```bash
 gh aw compile <workflow-name>.md
+# Validate workflow with strict security checks
+gh aw compile --strict <workflow-name>.md
 gh workflow run <workflow-name>.lock.yml
 gh run watch <run-id>
 ```
@@ -87,10 +98,11 @@ safe-outputs:
 
 ## Investigation Steps
 
-1. **Check Logs**: Look for `Error: Tool '...' not found` or `Error: 403`.
-2. **Inspect MCP**: Ensure `gh aw mcp inspect` shows the expected toolsets.
-3. **Validate Triggers**: Ensure `mcp-scripts` maps the correct event payload fields.
-4. **Check Recompilation**: Verify the `.lock.yml` timestamp matches your last edit.
+1. **Verify Version**: Run `gh extension list | grep 'github/gh-aw'` to retrieve the installed `gh aw` version, then ensure it is not in the retired range `[0.68.4, 0.71.3]`. If it is, run `gh extension upgrade aw`.
+2. **Check Logs**: Look for `Error: Tool '...' not found` or `Error: 403`. Use `gh aw audit <run-id> --json` for detailed insights.
+3. **Inspect MCP**: Ensure `gh aw mcp inspect` shows the expected toolsets.
+4. **Validate Triggers**: Ensure `mcp-scripts` maps the correct event payload fields.
+5. **Check Recompilation**: Verify the `.lock.yml` timestamp matches your last edit.
 
 ## Case Study: Triage Workflow Fix
 
@@ -108,6 +120,7 @@ safe-outputs:
 
 - [gh-aw Runbook](https://github.com/github/gh-aw/blob/main/.github/aw/runbooks/workflow-health.md)
 - [Official gh-aw Repo](https://github.com/github/gh-aw)
+- <https://github.com/github/gh-aw/blob/main/debug.md>
 
 ## Related Skills
 
