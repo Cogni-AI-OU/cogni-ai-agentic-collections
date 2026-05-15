@@ -79,6 +79,9 @@ and planned work into the current context.
 - **[gh-aw-debug](gh-aw-debug/SKILL.md)**: Diagnose and fix GitHub Agentic Workflows (`gh-aw`) failures
   by analyzing logs for missing tools, permissions, or MCP configurations.
   You MUST load this skill when diagnosing or fixing `gh aw` workflow failures.
+- **[gh-aw-firewall-debug](gh-aw-firewall-debug/SKILL.md)**: Debug the AWF firewall by inspecting Docker containers,
+  analyzing Squid access logs, checking iptables rules, and troubleshooting network issues.
+  You MUST load this skill when debugging the awf firewall.
 - **[gh-aw-new](gh-aw-new/SKILL.md)**: Create new GitHub Agentic Workflows (gh-aw) from scratch using the CLI extension and fetching official remote creation prompts.
   You MUST load this skill when creating new agentic workflows.
 - **[gh-issue](gh-issue/SKILL.md)**: GitHub CLI (`gh issue`) operations for managing, viewing, and editing issues.
