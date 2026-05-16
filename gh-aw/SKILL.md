@@ -19,6 +19,16 @@ To install the GitHub Agentic Workflows extension for the GitHub CLI, run:
 gh extension install github/gh-aw
 ```
 
+If `gh extension install` is unavailable or fails (e.g., in environments
+without GitHub CLI extension support), you can download and run the
+installation script:
+
+```bash
+curl -sL https://raw.githubusercontent.com/github/gh-aw/main/install-gh-aw.sh -o install-gh-aw.sh
+head -n 50 install-gh-aw.sh # Review the script before executing
+bash install-gh-aw.sh
+```
+
 ## Mindmap of Commands
 
 ```mermaid
@@ -89,12 +99,22 @@ mindmap
         Create Projects V2 boards
 ```
 
+## Agentic Workflow Prompts
+
+When asked to create, update, debug, or upgrade GitHub Agentic Workflows, use `webfetch` to retrieve and read the appropriate instruction prompt from the official repository before proceeding:
+
+- **Create New Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/create-agentic-workflow.md`
+- **Update Existing Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/update-agentic-workflow.md`
+- **Debug Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/debug-agentic-workflow.md`
+- **Upgrade Agentic Workflows**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/upgrade-agentic-workflows.md`
+- **Create Shared Agentic Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/create-shared-agentic-workflow.md`
+
 ## Core Process
 
 1. **Setup**: Use `gh aw init` to initialize a repository, followed by `gh aw new <workflow-name>` or `gh aw add-wizard`.
 2. **Development**: Workflows are markdown files compiled via `gh aw compile` into GitHub Actions YAML (`.lock.yml`).
 3. **Execution**: Use `gh aw run <workflow-name>` to execute a workflow or `gh aw trial` for simulated runs.
-4. **Analysis**: If a run fails, use `gh aw audit <run-id-or-url>` to debug the failed run. View logs with `gh aw logs <workflow-name>`.
+4. **Analysis**: If a run fails, use `gh aw audit <run-id-or-url>` to debug the failed run. View logs with `gh aw logs <workflow-name> | head -n 100`.
 5. **Updating**: Run `gh aw upgrade` to get the latest agent files and apply codemods.
 
 ## What to Avoid
