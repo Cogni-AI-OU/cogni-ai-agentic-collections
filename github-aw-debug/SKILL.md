@@ -111,6 +111,14 @@ Comprehensive reference of common error messages in GitHub Agentic Workflows:
 - **`strict mode: wildcard '*' is not allowed`**: Public repositories require strict mode, which forbids standalone wildcards in network configuration. Use specific domains or patterns (e.g., `*.github.com`).
 - **`tool <name> missing required 'url' field`**: HTTP MCP server configuration is incomplete. Add the `url:` field.
 
+## Troubleshooting Tips
+
+- Use `--verbose` flag for detailed error information
+- Validate YAML syntax and check file paths
+- Consult the [frontmatter reference](/gh-aw/reference/frontmatter-full/)
+- Run `gh aw compile` frequently to catch errors early
+- Use `--strict` flag to catch security issues early
+- Test incrementally: add one feature at a time
 
 ## References
 
