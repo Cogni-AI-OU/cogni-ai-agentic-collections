@@ -74,18 +74,8 @@ mindmap
       trial
         Run in trial mode
     Analysis Commands
-      audit
-        Audit workflow run
-      checks
-        Classify CI check state
-      health
-        Display health metrics
       list
         List workflows
-      logs
-        Analyze workflow logs
-      status
-        Show status of workflows
     Utilities
       completion
         Generate shell completion
@@ -105,7 +95,6 @@ When asked to create, update, debug, or upgrade GitHub Agentic Workflows, use `w
 
 - **Create New Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/create-agentic-workflow.md`
 - **Update Existing Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/update-agentic-workflow.md`
-- **Debug Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/debug-agentic-workflow.md`
 - **Upgrade Agentic Workflows**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/upgrade-agentic-workflows.md`
 - **Create Shared Agentic Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/create-shared-agentic-workflow.md`
 
@@ -114,34 +103,8 @@ When asked to create, update, debug, or upgrade GitHub Agentic Workflows, use `w
 1. **Setup**: Use `gh aw init` to initialize a repository, followed by `gh aw new <workflow-name>` or `gh aw add-wizard`.
 2. **Development**: Workflows are markdown files compiled via `gh aw compile` into GitHub Actions YAML (`.lock.yml`).
 3. **Execution**: Use `gh aw run <workflow-name>` to execute a workflow or `gh aw trial` for simulated runs.
-4. **Analysis**: If a run fails, use `gh aw audit <run-id-or-url>` to debug the failed run. View logs with `gh aw logs <workflow-name> | head -n 100`.
+4. **Analysis**: If a run fails, load the `gh-aw-debug` skill to diagnose the root cause using `gh aw audit` and `gh aw logs`.
 5. **Updating**: Run `gh aw upgrade` to get the latest agent files and apply codemods.
-
-## Manual Debugging with CLI Commands
-
-### Audit a specific run
-
-```bash
-gh aw audit RUN_ID
-gh aw audit RUN_ID --json    # machine-readable output
-gh aw audit RUN_ID --parse   # writes log.md and firewall.md
-```
-
-The audit report covers: failure summary, tool usage, MCP server health, firewall analysis, token metrics, and missing tools.
-
-### Analyze logs across multiple runs
-
-```bash
-gh aw logs my-workflow
-gh aw logs my-workflow --format markdown --count 10
-gh aw logs --filtered-integrity    # only runs with DIFC-filtered events
-```
-
-### Compare two runs for regressions
-
-```bash
-gh aw audit BASELINE_ID CURRENT_ID
-```
 
 ## What to Avoid
 
@@ -159,5 +122,7 @@ gh aw audit BASELINE_ID CURRENT_ID
 
 - **gh-aw-compile**:
   You MUST load this skill when recompiling Agentic Workflows.
+- **gh-aw-debug**:
+  You MUST load this skill to diagnose and fix failing Agentic Workflows.
 - **gh-run**:
   You MUST load this skill when working with GitHub Actions workflow runs.

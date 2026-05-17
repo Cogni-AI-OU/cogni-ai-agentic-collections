@@ -27,6 +27,7 @@ Diagnose, troubleshoot, and fix failing GitHub Agentic Workflows by analyzing lo
 
 - `gh aw audit <run-id> [--json]` → investigate a specific run or diff multiple runs
 - `gh aw logs [workflow-name] --json` → download and analyze workflow logs
+- `gh aw checks` → classify CI check state
 - `gh aw compile [--strict]` → validate workflow syntax
 - `gh aw run <workflow-name>` → run a workflow (requires workflow_dispatch)
 - `gh aw status` → show status of agentic workflows in the repository
