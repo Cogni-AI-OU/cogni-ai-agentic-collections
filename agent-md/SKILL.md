@@ -225,3 +225,4 @@ You are an expert <role> for this project.
 - [OpenCode Agents Documentation](https://opencode.ai/docs/agents/)
 - [Claude Code Documentation](https://code.claude.com/docs/en/memory)
 - [Preparing to use custom agents in your organization](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/prepare-for-custom-agents)
+- [The Complete Guide to Configuring AI Coding Agents](https://vibecoding.app/blog/agents-md-guide)
