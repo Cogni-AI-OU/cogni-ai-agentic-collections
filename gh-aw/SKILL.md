@@ -24,7 +24,7 @@ without GitHub CLI extension support), you can download and run the
 installation script:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/github/gh-aw/main/install-gh-aw.sh -o install-gh-aw.sh
+curl -sL https://raw.githubusercontent.com/github/gh-aw/v0.74.3/install-gh-aw.sh -o install-gh-aw.sh
 head -n 50 install-gh-aw.sh # Review the script before executing
 bash install-gh-aw.sh
 ```
@@ -74,18 +74,18 @@ mindmap
       trial
         Run in trial mode
     Analysis Commands
+      list
+        List workflows
       audit
-        Audit workflow run
+        Audit workflow runs
       checks
         Classify CI check state
       health
-        Display health metrics
-      list
-        List workflows
+        Show health overview
       logs
         Analyze workflow logs
       status
-        Show status of workflows
+        Show workflow status
     Utilities
       completion
         Generate shell completion
@@ -103,18 +103,17 @@ mindmap
 
 When asked to create, update, debug, or upgrade GitHub Agentic Workflows, use `webfetch` to retrieve and read the appropriate instruction prompt from the official repository before proceeding:
 
-- **Create New Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/create-agentic-workflow.md`
-- **Update Existing Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/update-agentic-workflow.md`
-- **Debug Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/debug-agentic-workflow.md`
-- **Upgrade Agentic Workflows**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/upgrade-agentic-workflows.md`
-- **Create Shared Agentic Workflow**: `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/create-shared-agentic-workflow.md`
+- **Create New Workflow**: `https://raw.githubusercontent.com/github/gh-aw/v0.74.3/.github/aw/create-agentic-workflow.md`
+- **Update Existing Workflow**: `https://raw.githubusercontent.com/github/gh-aw/v0.74.3/.github/aw/update-agentic-workflow.md`
+- **Upgrade Agentic Workflows**: `https://raw.githubusercontent.com/github/gh-aw/v0.74.3/.github/aw/upgrade-agentic-workflows.md`
+- **Create Shared Agentic Workflow**: `https://raw.githubusercontent.com/github/gh-aw/v0.74.3/.github/aw/create-shared-agentic-workflow.md`
 
 ## Core Process
 
 1. **Setup**: Use `gh aw init` to initialize a repository, followed by `gh aw new <workflow-name>` or `gh aw add-wizard`.
 2. **Development**: Workflows are markdown files compiled via `gh aw compile` into GitHub Actions YAML (`.lock.yml`).
 3. **Execution**: Use `gh aw run <workflow-name>` to execute a workflow or `gh aw trial` for simulated runs.
-4. **Analysis**: If a run fails, use `gh aw audit <run-id-or-url>` to debug the failed run. View logs with `gh aw logs <workflow-name> | head -n 100`.
+4. **Analysis**: If a run fails, load the `gh-aw-debug` skill to diagnose the root cause using `gh aw audit` and `gh aw logs`.
 5. **Updating**: Run `gh aw upgrade` to get the latest agent files and apply codemods.
 
 ## What to Avoid
@@ -126,11 +125,14 @@ When asked to create, update, debug, or upgrade GitHub Agentic Workflows, use `w
 
 - [gh-aw Documentation](https://github.com/github/gh-aw/)
 - [Official gh-aw Repo](https://github.com/github/gh-aw)
-- [gh-aw Runbook](https://github.com/github/gh-aw/blob/main/.github/aw/runbooks/workflow-health.md)
+- [gh-aw Runbook](https://github.com/github/gh-aw/blob/v0.74.3/.github/aw/runbooks/workflow-health.md)
+- [Maintaining Repositories](https://github.com/github/gh-aw/blob/v0.74.3/docs/src/content/docs/practices/maintaining-repos.md)
 
 ## Related Skills
 
 - **gh-aw-compile**:
   You MUST load this skill when recompiling Agentic Workflows.
+- **gh-aw-debug**:
+  You MUST load this skill to diagnose and fix failing Agentic Workflows.
 - **gh-run**:
   You MUST load this skill when working with GitHub Actions workflow runs.
