@@ -80,15 +80,15 @@ Frequently encountered issues when working with GitHub Agentic Workflows and the
 
 Step-by-step guide for setting up and debugging agentic workflows on GitHub Enterprise Cloud with data residency (*.ghe.com):
 
-1.  **Configure Engine (Critical)**: Set `api-target` in frontmatter to point to your enterprise's Copilot API subdomain:
+1. **Configure Engine (Critical)**: Set `api-target` in frontmatter to point to your enterprise's Copilot API subdomain:
     ```yaml
     engine:
       id: "copilot"
       api-target: "copilot-api.yourorg.ghe.com"
     ```
-2.  **Authenticate CLI**: Use `GH_HOST=yourorg.ghe.com gh auth login` to target the correct instance.
-3.  **Compile with Host**: Always use `GH_HOST=yourorg.ghe.com gh aw compile <workflow>` to ensure the correct domains are auto-added to the firewall allow-list.
-4.  **Local Diagnostic**: Launch `GH_HOST=yourorg.ghe.com copilot` and use `/agent agentic-workflows` to test authentication and run audits from your machine.
+2. **Authenticate CLI**: Use `GH_HOST=yourorg.ghe.com gh auth login` to target the correct instance.
+3. **Compile with Host**: Always use `GH_HOST=yourorg.ghe.com gh aw compile <workflow>` to ensure the correct domains are auto-added to the firewall allow-list.
+4. **Local Diagnostic**: Launch `GH_HOST=yourorg.ghe.com copilot` and use `/agent agentic-workflows` to test authentication and run audits from your machine.
 
 ## Debugging Workflows
 
