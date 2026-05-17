@@ -30,7 +30,93 @@ Diagnose, troubleshoot, and fix failing GitHub Agentic Workflows by analyzing lo
 - `gh aw compile [--strict]` → validate workflow syntax
 - `gh aw run <workflow-name>` → run a workflow (requires workflow_dispatch)
 - `gh aw status` → show status of agentic workflows in the repository
+- `gh aw health` → show health overview of all workflows in the repository
 - `gh aw mcp inspect <workflow-name>` → check active MCP server settings
+
+## Manual Debugging with CLI Commands
+
+### Audit a specific run
+- `gh aw audit RUN_ID` → human-readable summary
+- `gh aw audit RUN_ID --json` → machine-readable diagnostic output
+- `gh aw audit RUN_ID --parse` → writes detailed `log.md` and `firewall.md` reports
+
+The audit report covers: **failure summary**, **tool usage**, **MCP server health**, **firewall analysis**, **token metrics**, and **missing tools**.
+
+### Analyze logs across multiple runs
+- `gh aw logs my-workflow` → basic log analysis
+- `gh aw logs my-workflow --format markdown --count 10` → markdown report of last 10 runs
+- `gh aw logs --filtered-integrity` → analysis restricted to runs with DIFC-filtered events
+
+### Compare two runs for regressions
+- `gh aw audit BASELINE_ID CURRENT_ID` → multi-dimensional diff of metrics, tooling, and behavior
+
+## Iterative Debug Workflow
+
+1. **Observe**: Check the workflow run summary in the GitHub Actions UI for immediate failure signals.
+2. **Audit**: Run `gh aw audit RUN_ID` for a structured breakdown of the root cause.
+3. **Consult Agent**: For complex issues, use `/agent agentic-workflows` in Copilot Chat to analyze artifacts.
+4. **Fix**: Edit the `.md` workflow file based on findings.
+5. **Validate**: Run `gh aw compile` to ensure frontmatter schema and syntax are correct.
+6. **Execute**: Trigger a new run (e.g., `gh aw run <workflow-name>`).
+7. **Verify**: Compare the new run against the baseline with `gh aw audit BASELINE_ID NEW_ID`.
+
+## Common Failure Patterns & Fixes
+
+### Authentication & Authorization
+- **Error**: `401 Unauthorized` or `Authentication failed`.
+- **Cause**: Missing or expired `COPILOT_TOKEN` or `OPENAI_API_KEY`.
+- **Fix**: Rotate secrets or check organization policy for Copilot access.
+
+### Missing Tools & MCP Connectivity
+- **Error**: `Tool '...' not found` or `initialize: timeout`.
+- **Cause**: Tool missing from `tools:` section, server timeout, or schema mismatch.
+- **Fix**: Add the missing MCP server to `tools:`, verify config with `gh aw mcp inspect`, increase `startup-timeout`, or recompile to sync with latest MCP gateway schema.
+
+Example fix for missing `github` tools:
+```aw
+tools:
+  github:
+    toolsets: [default]
+```
+
+### Network & Firewall Restrictions
+- **Error**: `blocked egress to domain:443`.
+- **Cause**: Domain not included in `network.allowed` list in frontmatter.
+- **Fix**: Add the blocked domain to the allowlist (refer to `firewall.md` from `--parse`).
+
+### Safe-Outputs & Permissions
+- **Error**: `Write operations fail` or `safeoutputs noop` permission denied.
+- **Cause**: Missing `permissions:`, or attempting to use bash for operations that require `safe-outputs`.
+- **Fix**: Ensure `safe-outputs:` is correctly configured and permissions (e.g., `issues: read`) are granted. Prefer `read` permissions combined with `safe-outputs` for mutations.
+
+Example `safe-outputs` configuration:
+```aw
+permissions:
+  issues: read
+
+safe-outputs:
+  jobs:
+    create-issue:
+      labels: ["bug"]
+```
+
+### MCP Scripts & Payload Mapping
+- **Error**: "missing tool configuration for mcpscripts-gh" or resource creation failures.
+- **Cause**: `mcp-scripts` does not correctly map event payload fields.
+- **Fix**: Correct the mapping in the frontmatter.
+
+Example mapping:
+```aw
+mcp-scripts:
+  issue:
+    number: ${{ github.event.issue.number }}
+    title: ${{ github.event.issue.title }}
+```
+
+### Compilation & Schema
+- **Error**: Fields silently ignored or `Schema validation failed`.
+- **Cause**: Misspelled fields (silently discarded!) or outdated `.lock.yml`.
+- **Fix**: Use `gh aw compile --verbose` to find schema errors and regenerate the lock file.
 
 ## Debug Flows
 
@@ -57,45 +143,6 @@ Diagnose, troubleshoot, and fix failing GitHub Agentic Workflows by analyzing lo
 2. **Run**: `gh aw run <workflow-name>`.
 3. **Poll Audit Results**: Use `gh aw audit <run-id> --json` in a loop until terminal status (`completed`, `failure`, `cancelled`).
 
-## Common Failure & Fix Patterns
-
-### Missing Tools (e.g., "Tool 'github:read_issue' not found")
-
-Add the missing MCP server to `tools:`:
-```aw
-tools:
-  github:
-    toolsets: [default]
-```
-
-### Permission Errors (e.g., HTTP 403 or "Resource not accessible")
-
-Prefer `read` permissions combined with `safe-outputs` for mutations. Use `write` only if `safe-outputs` is not supported for the task:
-```aw
-permissions:
-  issues: read
-
-safe-outputs:
-  jobs:
-    create-issue:
-      labels: ["bug"]
-```
-
-### MCP Scripts & Safe-Outputs
-
-Fix "missing tool configuration for mcpscripts-gh" or resource creation failures:
-```aw
-mcp-scripts:
-  issue:
-    number: ${{ github.event.issue.number }}
-    title: ${{ github.event.issue.title }}
-
-safe-outputs:
-  jobs:
-    create-issue:
-      labels: ["ai-generated"]
-```
-
 ## Investigation Steps
 
 1. **Verify Version**: Run `gh extension list | grep 'github/gh-aw'` to retrieve the installed `gh aw` version, then ensure it is not in the retired range `[0.68.4, 0.71.3]`. If it is, run `gh extension upgrade aw`.
@@ -117,6 +164,7 @@ safe-outputs:
 - [gh-aw Runbook](https://github.com/github/gh-aw/blob/main/.github/aw/runbooks/workflow-health.md)
 - [Official gh-aw Repo](https://github.com/github/gh-aw)
 - [Debugging Agentic Workflows](https://github.com/github/gh-aw/blob/main/debug.md)
+- [Maintaining Repositories with Agentic Workflows](https://github.com/github/gh-aw/blob/v0.74.3/docs/src/content/docs/practices/maintaining-repos.md)
 
 ## Related Skills
 
