@@ -117,6 +117,32 @@ When asked to create, update, debug, or upgrade GitHub Agentic Workflows, use `w
 4. **Analysis**: If a run fails, use `gh aw audit <run-id-or-url>` to debug the failed run. View logs with `gh aw logs <workflow-name> | head -n 100`.
 5. **Updating**: Run `gh aw upgrade` to get the latest agent files and apply codemods.
 
+## Manual Debugging with CLI Commands
+
+### Audit a specific run
+
+```bash
+gh aw audit RUN_ID
+gh aw audit RUN_ID --json    # machine-readable output
+gh aw audit RUN_ID --parse   # writes log.md and firewall.md
+```
+
+The audit report covers: failure summary, tool usage, MCP server health, firewall analysis, token metrics, and missing tools.
+
+### Analyze logs across multiple runs
+
+```bash
+gh aw logs my-workflow
+gh aw logs my-workflow --format markdown --count 10
+gh aw logs --filtered-integrity    # only runs with DIFC-filtered events
+```
+
+### Compare two runs for regressions
+
+```bash
+gh aw audit BASELINE_ID CURRENT_ID
+```
+
 ## What to Avoid
 
 - Always review the changes made by the AI agent, especially considering security and context.
@@ -127,6 +153,7 @@ When asked to create, update, debug, or upgrade GitHub Agentic Workflows, use `w
 - [gh-aw Documentation](https://github.com/github/gh-aw/)
 - [Official gh-aw Repo](https://github.com/github/gh-aw)
 - [gh-aw Runbook](https://github.com/github/gh-aw/blob/main/.github/aw/runbooks/workflow-health.md)
+- [Maintaining Repositories](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/practices/maintaining-repos.md)
 
 ## Related Skills
 
