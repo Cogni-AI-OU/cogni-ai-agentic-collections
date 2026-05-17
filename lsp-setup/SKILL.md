@@ -77,6 +77,13 @@ After setup, tell the user:
 
 - Some LSP servers might require additional dependencies (like Node.js, Python) which should be checked.
 
+## References
+
+- [`copilot-cli/set-up-copilot-cli`](https://github.com/github/docs/tree/main/content/copilot/how-tos/copilot-cli/set-up-copilot-cli)
+- [`lsp-setup/SKILL.md`](https://github.com/github/awesome-copilot/blob/main/skills/lsp-setup/SKILL.md)
+- [Adding LSP servers for GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/add-lsp-servers)
+- [Using LSP servers with GitHub Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/lsp-servers)
+
 ## Related Skills
 
 - **critical-thinking**: You MUST load this skill when troubleshooting why an LSP isn't working or properly registering.
