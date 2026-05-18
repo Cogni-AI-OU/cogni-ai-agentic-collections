@@ -8,23 +8,37 @@ license: MIT
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 
+## When to Use
+
+- Creating a new agent skill directory with a `SKILL.md` and optional bundled resources (scripts, templates, references).
+- Updating or refining an existing `SKILL.md` to improve description precision, add missing sections, or fix activation triggers.
+- Bundling scripts, templates, or references alongside a skill following the progressive loading architecture.
+- Troubleshooting skill activation failures or context budget issues in an existing skill.
+- Refactoring an overlong skill by splitting detailed content into a `references/` directory.
+
+## When Not to Use
+
+- Writing agent persona files (`.agent.md`, `CLAUDE.md`) — use `agent-md-writer` instead.
+- Writing project-level `AGENTS.md` files — use `agents-md-writer` instead.
+- General documentation writing that does not involve agent skill structure or the `SKILL.md` format.
+
+## Common Pitfalls
+
+- **Description Precision is Critical**: The `description` field in frontmatter is the sole trigger an agent uses to determine skill activation. A vague or overly broad description causes missed activations or false positives. Append "You MUST load this skill when <condition>" only for unambiguous CLI-based triggers.
+- **Circular Dependencies**: Never create circular `## Related Skills` references between skill files (e.g., parent references child and child references parent). This can cause infinite loading loops or context corruption.
+- **File Length Constraints**: Keep `SKILL.md` under 500 lines (ideally <200). If exceeded, split detailed workflows into `references/` files and link them explicitly from the main skill.
+- **No Real-Time Activation Testing**: The skill writer cannot test activation triggers in real-time. Rely on the description precision rule and manual validation to ensure correct loading behavior.
+
 Generate or update Agent Skills for coding agents, ensuring
 precise activation, concise expert-level guidance, and full compliance with
 the portable progressive loading architecture.
-
-## When to Use This Skill
-
-- User asks to create a new agent skill
-- User needs to update or refine an existing `SKILL.md`
-- User wants to bundle scripts, templates, or references with a skill
-- User is troubleshooting skill activation or context limits
 
 ## Core Process
 
 1. **Infer Name & Context**: Determine a unique, descriptive `name` in lowercase-hyphenated format that will exactly match the folder name.
 2. **Draft the Description**: Write a keyword-dense `description` (10–1024 characters) wrapped in single quotes that clearly states WHAT the skill does and WHEN to use it.
 3. **Structure the File**: Follow the exact layout specified in `Skill Structure & Formatting`.
-4. **Enforce Style**: Write imperative, expert-level instructions. Focus on what the agent doesn't know (quirks, internal conventions, gotchas). Skip standard language syntax.
+4. **Enforce Style**: Write imperative, expert-level instructions. Focus on what the agent doesn't know (quirks, internal conventions, Common Pitfalls). Skip standard language syntax.
 5. **Manage Context Budget**: Keep `SKILL.md` under 500 lines (ideally <200). Split large workflows or detailed references into a `references/` directory.
 6. **Preserve Quality**: When updating, always choose the better, clearer sections. If previous changes are better, leave them intact. Always pick the best format.
 7. **Output**: Output ONLY the complete, ready-to-commit file content without conversational wrappers. Do not explain changes unless requested.
@@ -36,7 +50,7 @@ the portable progressive loading architecture.
 - **Description Precision**: Write the `description` as a single, highly specific sentence that matches user intent patterns without overlap—poor phrasing causes missed or false activations.
 - **Avoid Hardcoding**: Never embed specific values, file paths, repository names, user details, or tool versions; instead, use clear placeholders (e.g., `<repository-name>`, `<file-path>`, `<version>`).
 - **Pure Markdown Body**: Use only Markdown in the body; never include extraneous files, scripts, or resources unless explicitly required for the skill.
-- **Gotchas are High Signal**: Always include a `## Gotchas` section for documenting proactive warnings about non-obvious behavior.
+- **Common Pitfalls are High Signal**: Always include a `## Common Pitfalls` section for documenting proactive warnings about non-obvious behavior.
 
 ## Skill Structure & Formatting
 
