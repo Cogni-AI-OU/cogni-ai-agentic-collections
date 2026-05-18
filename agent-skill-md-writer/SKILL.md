@@ -45,18 +45,20 @@ Structure the generated file with the following sections (omit optional ones if 
 1. **YAML Frontmatter block**
 2. **Title (`# Skill Name`)**
 3. **Markdownlint overrides** (e.g., `<!-- markdownlint-disable MD013 MD023 MD031 MD032 -->`)
-4. **`## When to Use This Skill`**: Concrete scenarios reinforcing description triggers.
-5. **Section Discipline**: Use standard sections in a logical progression:
+4. **`## When to Use`**: Concrete scenarios reinforcing description triggers.
+5. **`## When Not to Use`**
+6. **Section Discipline**: Use standard sections in a logical progression:
    - `## Prerequisites` (Optional): Required tools, dependencies, or environment setup.
    - `## Core Process` or `## Step-by-Step Workflows`: For repeatable procedures where sequence matters.
    - `## Core Principles`
-   - `## Gotchas`: Proactive warnings (Bold the key constraint, then explain why).
+   - `### Workflow` (Optional, under `## Core Process` or `## Step-by-Step Workflows`): Use for named sub-flows when a process section contains multiple distinct procedures.
+   - `## Common Pitfalls`: Table with Pitfall → Solution columns.
    - `## Troubleshooting`: Reactive fixes (Symptom → Solution table).
    - `## Best Practices`
    - `## What to Avoid`
    - `## Limitations`
-   - `## References`: Links to bundled files or external resources.
-   - `## Related Skills`
+   - `## References`: Links to references/ files or external resources.
+   - `## Related Skills`: With brief description when to load (avoid circular dependencies).
 
 ## Bundling Resources
 
