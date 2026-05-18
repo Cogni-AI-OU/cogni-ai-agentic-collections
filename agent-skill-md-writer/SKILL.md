@@ -64,12 +64,12 @@ Structure the generated file with the following sections (omit optional ones if 
 4. **`## When to Use`**:
    Concrete scenarios reinforcing description triggers.
    **Bullet points** (concise and strictly relevant).
-   Use to clarify exactly when the agent should apply this skill.
+   Use to clarify exact activation conditions. Skip generic filler.
 5. **`## When Not to Use`**:
    Explicit non-triggers to prevent false activation.
-   **Bullet points** (concise and strictly relevant).
-   Use to set clear boundaries for out-of-scope tasks.
-6. **Section Discipline**: Use standard sections in a logical progression:
+   **Bullet points** (focus on non-obvious edge cases and overlaps).
+   Use to set clear boundaries against similar out-of-scope tasks; skip obvious exclusions.
+7. **Section Discipline**: Use standard sections in a logical progression:
    - `## Prerequisites` (Optional):
      Required tools, dependencies, or environment setup.
      **Requirement → Why it's needed**.
@@ -99,9 +99,9 @@ Structure the generated file with the following sections (omit optional ones if 
      **Limitation → Workaround (if any)**.
      Use to set realistic expectations and prevent the agent from attempting impossible tasks.
    - `## Common Pitfalls`:
-     Proactive prevention.
+     Proactive prevention for non-obvious traps and edge cases.
      **Pitfall → Prevention/Solution**.
-     Use to stop avoidable errors before they happen.
+     Use to stop likely agent mistakes; skip generic or obvious advice.
    - `## Troubleshooting`:
      Reactive recovery.
      **Symptom → Diagnosis/Fix**.
