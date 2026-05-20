@@ -7,21 +7,26 @@ on:
   push:
   schedule:
     - cron: 0 0 * * 1  # Run every Monday at 00:00 UTC
-  workflow_call:
   workflow_dispatch:
+    inputs:
+      submodules:
+        default: 'false'
+        description: 'Whether to checkout submodules: true, false, or recursive'
+        options:
+          - 'false'
+          - 'true'
+          - recursive
+        required: false
+        type: choice
   workflow_run:
     workflows:
-      - OpenCode
-      - OpenCode Review
+      - Cogni AI Agent
     types:
       - completed
 permissions:
   contents: read
 jobs:
   check:
-    # Skip if triggered by workflow_run and the triggering workflow failed
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     uses: Cogni-AI-OU/.github/.github/workflows/check.yml@main
     with:
-      submodules: recursive
-    secrets: inherit  # pragma: allowlist secret
+      submodules: ${{ inputs.submodules || 'false' }}
