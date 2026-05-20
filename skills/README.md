@@ -1,9 +1,5 @@
 # Cogni AI Agent Skills
 
-This directory is the **source of truth** for Cogni AI agent skills.
-Skill directories are stored here so they are accessible directly when this repo is cloned
-into `.github/skills`.
-
 ## Skill Catalog
 
 | Skill | Description |
