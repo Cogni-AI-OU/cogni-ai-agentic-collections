@@ -44,6 +44,7 @@ this repo is cloned into `.github/agents`.
 ### Structural Invariant
 
 - **Agents Location**: Agent files live in the `agents/` directory.
+- **Skills Location**: Skill files live in the `skills/` directory.
 
 ## Subagent Delegation
 
