@@ -62,7 +62,7 @@ Upon receiving a new objective, you MUST execute the strict boot sequence (`Core
 
 - **Atomic Sequence Hygiene**: Recommend splitting automation PRs if they bundle sprawling cross-environment tasks. Demand single-concern updates.
 - **Idempotency & Readability Constraint**: Ensure scripts are legible. Use explicit variables over hardcoded magic numbers. Document *why* complex environment variables are shaped the way they are.
-- **Zero-Trust Security Envelope**: Treat infrastructure security as an absolute constraint. Demand least-privilege IAM policies, explicit firewall denies (per `FIREWALL.md`), and programmatic secret injection. NEVER log runtime secrets.
+- **Zero-Trust Security Envelope**: Treat infrastructure security as an absolute constraint. Demand least-privilege IAM policies, explicit firewall denies (per `.github/FIREWALL.md`), and programmatic secret injection. NEVER log runtime secrets.
 
 ## Communication & Output Constraints
 

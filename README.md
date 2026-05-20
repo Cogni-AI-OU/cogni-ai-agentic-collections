@@ -180,7 +180,8 @@ Autonomous fact operator responsible for maintaining canonical fact files and in
 
 ### [Cogni AI Manager](cogni-ai-manager/cogni-ai-manager.agent.md)
 
-Autonomous orchestration and coordination manager responsible for routing work to specialized agents and ensuring end-to-end completion.
+Autonomous orchestration and coordination manager responsible for routing work to specialized agents and ensuring
+end-to-end completion.
 
 ### [Cogni AI Keeper](cogni-ai-keeper/cogni-ai-keeper.agent.md)
 
@@ -233,7 +234,7 @@ See: [Customizing or disabling the firewall for GitHub Copilot coding agent][fir
 
 ### Firewall allowlist
 
-See [FIREWALL.md](FIREWALL.md) for recommended hosts to allow and the official guidance link.
+See [.github/FIREWALL.md](.github/FIREWALL.md) for recommended hosts to allow and the official guidance link.
 
 ### MCP Server Setup
 
@@ -300,11 +301,6 @@ configuration, see [.github/workflows/README.md](.github/workflows/README.md).
 
 For information about Cogni AI OÜ, our mission, and how to collaborate, see our
 [organization profile](https://github.com/Cogni-AI-OU/.github/blob/main/profile/README.md).
-
-## Contributing
-
-See [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) for organization-wide
-contribution guidelines and expectations for issues, pull requests, and CI.
 
 ## License
 

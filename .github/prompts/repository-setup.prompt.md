@@ -326,14 +326,6 @@ exist. Do not skip items just because a file already exists.
   - Format: File patterns mapped to team/user handles
   - Example: `* @Cogni-AI-OU/core-team`
 
-- [ ] **`.github/CONTRIBUTING.md`**
-  - Check if file exists
-  - Reference: `https://github.com/Cogni-AI-OU/.github/blob/main/.github/CONTRIBUTING.md`
-  - Purpose: Contribution guidelines (auto-applies from org .github if missing)
-  - Action: **DO NOT** create this file in individual repositories
-  - Note: This file is automatically loaded from the organization's `.github` repository. Only create
-    it if repository-specific contribution guidelines are strictly required.
-
 - [ ] **`.github/pull_request_template.md`**
   - Check if file exists
   - Reference: `https://github.com/Cogni-AI-OU/.github/blob/main/.github/pull_request_template.md`

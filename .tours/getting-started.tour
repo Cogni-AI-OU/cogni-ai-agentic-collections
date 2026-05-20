@@ -72,19 +72,13 @@
       "line": 2
     },
     {
-      "title": "Contributing Guidelines",
-      "description": "## How to Contribute\n\nThe `CONTRIBUTING.md` file outlines the contribution process:\n\n### Key Steps:\n\n1. **Report Bugs**: Use GitHub Issues with detailed information\n2. **Code Standards**: Follow the coding conventions (2-space indentation, readable code)\n3. **Pull Requests**: Submit changes via GitHub PRs\n4. **CI Checks**: Ensure all tests pass before merging\n\n### Before Submitting:\n```bash\npre-commit run --all-files\n```",
-      "file": ".github/CONTRIBUTING.md",
-      "line": 1
-    },
-    {
       "title": "License",
       "description": "## Project License\n\nThis project is licensed under the MIT License.\n\n### Key Points:\n\n- \u2705 Commercial use allowed\n- \u2705 Modification allowed\n- \u2705 Distribution allowed\n- \u2705 Private use allowed\n- \u26a0\ufe0f License and copyright notice must be included\n\nFor full details, see the LICENSE file or visit [TLDRLegal](https://tldrlegal.com/license/mit-license).",
       "file": "LICENSE"
     },
     {
       "title": "Next Steps",
-      "description": "# You're All Set! \ud83d\ude80\n\n## Quick Start Checklist:\n\n\u2705 Explored the repository structure\n\u2705 Learned about development environment setup\n\u2705 Understand coding standards and guidelines\n\u2705 Know how to run validation tools\n\u2705 Reviewed contribution process\n\n## What's Next?\n\n1. **Set Up Environment**: Open this repository in a devcontainer or install dependencies locally\n2. **Install Pre-commit**: Run `pre-commit install` to enable automatic checks\n3. **Review Assets**: Inspect `.devcontainer/` and setup scripts\n4. **Start Contributing**: Pick an issue or create a new feature\n5. **Run Validations**: Always run `pre-commit run --all-files` before committing\n\n## Helpful Commands:\n\n```bash\n# Install pre-commit hooks\npre-commit install\n\n# Run all validation checks\npre-commit run --all-files\n\n# Run specific check\npre-commit run markdownlint -a\npre-commit run yamllint -a\n```\n\n## Questions?\n\nOpen an issue for help!\n\nHappy coding! \ud83d\udcbb"
+      "description": "# You're All Set! \ud83d\ude80\n\n## Quick Start Checklist:\n\n\u2705 Explored the repository structure\n\u2705 Learned about development environment setup\n\u2705 Understand coding standards and guidelines\n\u2705 Know how to run validation tools\n\n## What's Next?\n\n1. **Set Up Environment**: Open this repository in a devcontainer or install dependencies locally\n2. **Install Pre-commit**: Run `pre-commit install` to enable automatic checks\n3. **Review Assets**: Inspect `.devcontainer/` and setup scripts\n4. **Start Contributing**: Pick an issue or create a new feature\n5. **Run Validations**: Always run `pre-commit run --all-files` before committing\n\n## Helpful Commands:\n\n```bash\n# Install pre-commit hooks\npre-commit install\n\n# Run all validation checks\npre-commit run --all-files\n\n# Run specific check\npre-commit run markdownlint -a\npre-commit run yamllint -a\n```\n\n## Questions?\n\nOpen an issue for help!\n\nHappy coding! \ud83d\udcbb"
     }
   ]
 }
