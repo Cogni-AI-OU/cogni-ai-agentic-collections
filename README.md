@@ -75,6 +75,7 @@ pre-commit run flake8 -a
 ## Project Layout
 
 - `agents/`: Cogni AI autonomous agent configurations (see [agents/README.md](agents/README.md) for catalog)
+- `skills/`: Cogni AI autonomous agent skills (see [skills/README.md](skills/README.md) for catalog)
 - `AGENTS.md`: agents catalog and repository-specific guidance
 - `AGENTS-RUNTIME.md`: core loading protocols and execution logic for the GitHub Runtime
 - `AGENTS.mmd`: root canonical diagram, flows, and booting sequence visualizations (Initialization primary source)
