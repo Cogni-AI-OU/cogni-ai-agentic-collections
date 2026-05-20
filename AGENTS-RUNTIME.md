@@ -247,6 +247,8 @@ and planned work into the current context.
 - **[mot](mot/SKILL.md)**: Evaluate and classify machine learning models based on the Model Openness Framework (MOF).
   You MUST load this skill to find model metadata like architecture, producer, components, etc.,
   from the Model Openness Tool.
+- **[npx-skills](npx-skills/SKILL.md)**: Install, find, update, and manage agent skills using the npx skills CLI tool.
+  You MUST load this skill when asked to use the npx skills command.
 - **[ollama-cli](ollama-cli/SKILL.md)**: Execute and manage local LLMs using the ollama CLI, including pulling models and launching agents with MCP configurations.
   You MUST load this skill when interacting with the `ollama` CLI.
 - **[opencode](opencode/SKILL.md)**: Manage OpenCode configuration, credentials, and access the OpenCode Zen API.
