@@ -27,12 +27,12 @@ For a human-readable overview, see [README.md](README.md).
 ### cogni-ai-agent.yml
 
 - Purpose: provides the underlying logic to run the Cogni AI Agent.
-- Triggers: `issue_comment`, `pull_request_review_comment`, `workflow_call`, `workflow_dispatch`.
+- Triggers: `issue_comment`, `pull_request_review_comment`, `issues`, `pull_request`,
+  `discussion`, `discussion_comment`, `workflow_dispatch`.
 - Details: Installs Python dependencies from `.devcontainer/requirements.txt` and calls the
-  `Cogni-AI-OU/cogni-ai-agent-action` to process instructions. A post-run `summary` job generates
-  an AI summary of the agent's actions.
-- Concurrency: Only one run per issue/PR/branch at a time; new runs are queued (no auto-cancel).
-- Permissions: `contents: write`, `id-token: write`, `issues: write`, `pull-requests: write`.
+  `Cogni-AI-OU/cogni-ai-agent-action` to process instructions.
+- Permissions: `contents: write`, `id-token: write`, `issues: write`, `pull-requests: write`,
+  `discussions: write`.
 
 ### copilot-setup-steps.yml
 
@@ -51,8 +51,18 @@ For a human-readable overview, see [README.md](README.md).
 - Permissions: callers must grant `packages: write` when pushing images to GHCR.
 - Reusable: `uses: Cogni-AI-OU/.github/.github/workflows/devcontainer-ci.yml@main`.
 
+## Synchronized Configuration
+
+The following configuration values **MUST** be kept in sync across multiple files:
+
+### Model options list
+
+The `model` input options for `workflow_dispatch` must be identical in the corresponding workflow files:
+
+| File | Location |
+| ---- | -------- |
+| [cogni-ai-agent.yml](cogni-ai-agent.yml) | `workflow_dispatch` inputs |
+
 ## Notes
 
-- Follow the GitHub workflows instructions (available in the runtime instructions catalog)
-  when editing workflow files (ordering, formatting, validation).
 - Keep this catalog updated when workflows are added, removed, or renamed.

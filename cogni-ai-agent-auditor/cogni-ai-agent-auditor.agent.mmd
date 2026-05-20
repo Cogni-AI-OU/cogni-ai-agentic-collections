@@ -1,0 +1,166 @@
+flowchart TD
+    Start([Activation]) --> Boot[Initialization Sequence]
+
+    subgraph GLOBAL_AGENTS_md [AGENTS.md: Global Contract]
+        direction TB
+        B1["1- Agent Contract Alignment"] --> B2
+        B2["2- Skill & Instruction Loading"]
+        B3{"3- Submodules Initialized?"}
+        B3 -->|No| B3a["git submodule update --init"]
+        B3a --> B2
+        B2 --> FL1
+        FL6 --> CL1
+        CL6 --> IL1
+        IL6 --> SL1
+        SL8 --> B3
+    end
+
+    Boot --> GLOBAL_AGENTS_md
+    GLOBAL_AGENTS_md --> B4
+
+    subgraph LOCAL_CONTRACT [agent-auditor.agent.md: Local Framework]
+        B4["4- Context Verification"]
+        B5["5- Emit Boot Report"]
+        B5 --> Idle
+        Idle{"6- Await Session Logs"}
+
+        Idle -->|Log Intake| Input[Parse Raw Session Logs]
+
+        Input --> Rules{"Relevant Rules Found?"}
+        Rules -->|No| Generic[Load Base Audit Standards]
+        Rules -->|Yes| Specific[Load Context-Specific Audit Instructions]
+
+        Generic & Specific --> Scope[Phase 0: Investigation & Scope Alignment]
+
+        Scope --> TaskTargeting[Task Targeting: Identify Primary Intent]
+        TaskTargeting --> Phase1[Phase 1: Deep Protocol Analysis]
+
+        subgraph Analysis_Dimensions [Mandatory Audit Dimensions]
+            direction TB
+            D1["Task Adherence"]
+            D2["Workflow Compliance"]
+            D3["Tool Selection & Context Gathering"]
+            D4["Self-Verification"]
+            D5["Root Cause Analysis"]
+        end
+
+        Phase1 --> Analysis_Dimensions
+
+        Analysis_Dimensions --> Friction{"Friction or Errors Detected?"}
+
+        Friction -->|Yes| FailureTrace[Map Error Trajectory & Root Cause]
+        Friction -->|No| SuccessTrace[Map Positive Execution Path]
+
+        FailureTrace & SuccessTrace --> Phase2[Phase 2: Synthesis & Feedback Generation]
+
+        subgraph Visual_Audit_Suite [Comprehensive Visual Audit Suite]
+            direction TB
+            V1["Markdown Text Report"]
+            V2["Radar-Beta Diagram"]
+            V3["Sequence Diagram"]
+            V4["StateDiagram-v2"]
+            V5["Journey Map"]
+            V6["Venn-Beta Diagram"]
+            V7["Ishikawa / Architecture Beta (if errors)"]
+        end
+
+        Phase2 --> Visual_Audit_Suite
+
+        Visual_Audit_Suite --> Finalize[Log Meta-Analysis for Telemetry]
+        Finalize --> Output["Finalize Audit Report"]
+    end
+
+    subgraph GLOBAL_PROTOCOLS [Global Protocols: AGENTS.mmd & docs/FLOWS.mmd]
+        direction TB
+        TL{Traffic Light Classification}
+
+        subgraph Mandatory_Facts_Loading_Protocol
+            FL1[Locate docs/FACTS.mmd in Repo] --> FL2{docs/FACTS.mmd Exists?}
+            FL2 -->|Yes| FL3[Parse Project Facts & Invariants]
+            FL3 --> FL4[Inject Core Context into Working Memory]
+            FL2 -->|No| FL5[Proceed Without Canonical Facts]
+            FL4 --> FL6[Align Strategy with Project Facts]
+            FL5 --> FL6
+        end
+
+        subgraph Mandatory_Constraints_Loading_Protocol
+            CL1[Locate CONSTRAINTS.mzn in Repo] --> CL2{CONSTRAINTS.mzn Exists?}
+            CL2 -->|Yes| CL3[Parse Project Constraints & Invariants]
+            CL3 --> CL4[Inject Core Logic Context into Working Memory]
+            CL2 -->|No| CL5[Proceed Without Constraint Bounds]
+            CL4 --> CL6[Align Execution Bounds with Restrictions]
+            CL5 --> CL6
+        end
+
+        subgraph Mandatory_Instructions_Loading_Protocol
+            IL1[Scan Context for .instructions.md] --> IL2{Instructions Found?}
+            IL2 -->|Yes| IL3[Match Context to Instruction Scope]
+            IL3 --> IL4[Read Relevant .instructions.md Files]
+            IL2 -->|No| IL5[Proceed Without Domain Instructions]
+            IL4 --> IL6[Apply Instruction Rules to Execution]
+            IL5 --> IL6
+        end
+
+        subgraph Mandatory_Skill_Loading_Protocol
+            SL1[Check .github/skills/AGENTS.md] --> SL2{Skills Found?}
+            SL2 -->|Yes| SL3[Route Intent: Match Skill Name/Alias/Keyword]
+            SL2 -->|No| SL6[Proceed Without Skill]
+            SL3 --> SL4{Multiple Matches?}
+            SL4 -->|Yes| SL5[Load Non-Overlapping or Most Specific]
+            SL4 -->|No| SL5
+            SL5 --> SL7[Read Best-Matching SKILL.md Files]
+            SL7 --> SL8[Proceed with Execution]
+            SL6 --> SL8
+        end
+
+        subgraph Extrinsic_Escalation_Protocol [Extrinsic Escalation Protocol: 10-Point Gate]
+            direction TB
+            EE_Trig{Trigger Extrinsic Escalation}
+            EE_Trig -->|Missing API/Auth| EE1[Credential Lock]
+            EE_Trig -->|Structural Obj Complete| EE2[Milestone Validation]
+            EE_Trig -->|Quota/Hardware/Perms| EE3[Environment Hard-Block]
+            EE_Trig -->|Logical Impossibility| EE4[Requirement Contradiction]
+            EE_Trig -->|Exhausted Clarification| EE5[Irresolvable Ambiguity]
+            EE_Trig -->|All Avenues Failed| EE6[Vector Exhaustion]
+            EE_Trig -->|Deep Architectural Fork| EE7[High-Stakes Trade-Off]
+            EE_Trig -->|Force-Push/Data Mutation| EE8[Destructive Confirmation]
+            EE_Trig -->|Intractable Critical Bug| EE9[Persistent Regression]
+            EE_Trig -->|Restrictive Egress Block| EE10[Network/Firewall Isolation]
+        end
+
+        EE1 & EE2 & EE3 & EE4 & EE5 & EE6 & EE7 & EE8 & EE9 & EE10 --> Escalate[Extrinsic Escalation: 10-Point Gate]
+    end
+
+    Output --> End([Objective Complete])
+
+    Phase1 --> TL
+    TL -->|Green: Autonomous| Phase2
+    TL -->|Yellow: Collaborative| EscalateGate{Escalation Required?}
+    EscalateGate -->|Yes| EE_Trig
+    Escalate -->|User Input Received| Phase2
+    EscalateGate -->|No| Phase2
+
+    subgraph Guardrails [Agent Auditor Continuous Guardrails]
+        direction TB
+        G1[Objective Telemetry: No Hallucination]
+        G2[Strict Template Compliance: Agent Log Analysis Skill]
+        G3[Root Cause Validation]
+        G4[Protocol Enforcement]
+    end
+
+    Phase0 -.->|governed by| G1
+    Visual_Audit_Suite -.->|governed by| G2
+    FailureTrace -.->|governed by| G3
+    D2 -.->|governed by| G4
+
+    classDef phaseNode fill:#1e3a5f,stroke:#4a90e2,stroke-width:2px,color:#fff
+    classDef gateNode fill:#5f1e1e,stroke:#e24a4a,stroke-width:2px,color:#fff
+    classDef checkNode fill:#5f4a1e,stroke:#e2a04a,stroke-width:2px,color:#fff
+    classDef endNode fill:#1e5f3a,stroke:#4ae290,stroke-width:2px,color:#fff
+    classDef guardNode fill:#3a2a4a,stroke:#a070c0,stroke-width:1px,color:#eee
+
+    class Phase0,Phase1,Phase2,TaskTargeting,Scope,Input,Boot,FL1,FL3,FL4,FL5,FL6,CL1,CL3,CL4,CL5,CL6,IL1,IL3,IL4,IL5,IL6,SL1,SL3,SL5,SL6,SL7,SL8,B1,B2,B3a,B4,B5 phaseNode
+    class Rules,Friction,TL,EscalateGate,B3,FL2,CL2,IL2,SL2,SL4 gateNode
+    class FailureTrace,SuccessTrace,Generic,Specific,Escalate checkNode
+    class Start,End,Output endNode
+    class G1,G2,G3,G4 guardNode
