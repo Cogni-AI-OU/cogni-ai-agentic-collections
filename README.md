@@ -82,9 +82,6 @@ pre-commit run flake8 -a
 - `docs/FACTS.mmd`: root canonical fact store and project mindmap
 - `docs/FLOWS.mmd`: root canonical timelines, flows, and dependency graphs
 - `.github/`: default templates, workflows, and GitHub-specific configurations
-- `.github/agents/`: AI agent configurations (cloned in CI)
-- `.github/instructions/`: AI agent instructions (cloned in CI)
-- `.github/skills/`: reusable capabilities and skills (cloned in CI)
 - `.tours/`: guided walkthroughs for repository onboarding
 - `README.md`: repository overview and local development workflow
 
@@ -93,7 +90,7 @@ pre-commit run flake8 -a
 This repository is the **source of truth** for Cogni AI agent configurations.
 Agent files live in the `agents/` directory so that when they are cloned
 into `.github/agents`, consumers receive them directly at
-`.github/agents/cogni-ai-architect.agent.md` (and `.github/agents/AGENTS.md`).
+`.github/agents/agents/cogni-ai-architect.agent.md` (and `.github/agents/AGENTS.md`).
 
 See [agents/README.md](agents/README.md) for the full agent catalog, descriptions, and
 [AGENTS.md](AGENTS.md) for agent execution protocols and architecture principles.

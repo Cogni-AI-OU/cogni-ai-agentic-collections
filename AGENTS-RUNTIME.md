@@ -43,7 +43,7 @@ this repo is cloned into `.github/agents`.
 
 ### Structural Invariant
 
-- **Agents Location**: Agents are located in agent-specific subdirectories.
+- **Agents Location**: Agent files live in the `agents/` directory.
 
 ## Subagent Delegation
 
