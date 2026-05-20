@@ -18,6 +18,19 @@ Key contents:
 - Refer to the `README.md` in the project root for setup and installation instructions.
 - Check also `.tours/getting-started.tour` which provides a guided walkthrough of key project features and structure.
 
+## Interactive Editor Workflow (No Auto-Commit)
+
+When working interactively in the editor as a programming assistant, you MUST follow these guidelines:
+
+- **Leave Files Uncommitted**: Your scope of work ends at successfully editing the files and verifying they work/lint.
+  Allow the user to review the uncommitted changes in the workspace and decide when to commit them using VS Code's
+  Source Control UI.
+- **NEVER RUN GIT MUTATIONS**: When working interactively in the editor, you are strictly **FORBIDDEN** from running
+  commands like `git add`, `git commit`, `git push`, `git rebase`, or `gh pr create` via terminal tools unless the user
+  *explicitly* and *verbatim* commands you to "commit and push" or "create a PR".
+- **Provide a Summary Instead**: When you finish modifying files to solve the user's request, simply stop, output a
+  brief summary of the changes you made, and inform the user that the files are ready for their review and commit.
+
 ## Coding Standards
 
 ### Python
@@ -44,19 +57,13 @@ Key contents:
 
 ### JSON
 
-Follow the repository `.editorconfig` configuration for JSON files.
-
 To test locally, use `jq` for validation or use the VS Code JSON formatter.
 
 ### Markdown
 
-Follow the repository `markdownlint` configuration for Markdown files.
-
 To test locally, run via `pre-commit run markdownlint -a` or use the VS Code Markdownlint extension.
 
 ### YAML
-
-Follow the repository `.yamllint` configuration for YAML files.
 
 Notes:
 
@@ -97,18 +104,16 @@ runtime and as the source of required controller-side dependencies.
 
 ```text
 .
-├── .github/
-│   ├── ISSUE_TEMPLATE/      # Issue templates (bug reports, feature requests)
-│   ├── skills/              # Agent skills definitions
-│   ├── workflows/           # GitHub Actions workflows
-│   ├── copilot-instructions.md
-│   └── pull_request_template.md
-├── .tours/                   # VS Code guided tours
-├── profile/
-│   └── README.md             # Organization profile (shown on GitHub org page)
-├── AGENTS.md                 # AI agent guidance
-├── CODE_OF_CONDUCT.md        # Community standards
-└── README.md                 # Repository documentation
+|-- .github/
+|   |-- agents/              # AI agent configurations (cloned)
+|   |-- instructions/        # AI agent instructions (cloned)
+|   |-- skills/              # Reusable skills (cloned)
+|   |-- workflows/           # GitHub Actions workflows
+|   |-- copilot-instructions.md
+|   +-- pull_request_template.md
+|-- .tours/                   # VS Code guided tours
+|-- AGENTS.md                 # AI agent guidance
++-- README.md                 # Repository documentation
 ```
 
 ### Tours

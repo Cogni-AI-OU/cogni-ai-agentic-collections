@@ -150,9 +150,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-/.github/agents/
-/.github/instructions/
-/.github/skills/
 .env
 .envrc
 .venv
@@ -161,6 +158,11 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# CI/CD dynamic clones
+/.github/agents/
+/.github/instructions/
+/.github/skills/
 
 # Spyder project settings
 .spyderproject
