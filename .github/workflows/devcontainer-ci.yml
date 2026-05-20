@@ -1,0 +1,51 @@
+---
+# Note: Keep keys and envs in alphabetical order.
+name: Development Containers (CI)
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+    paths:
+      - .devcontainer/**
+      - .github/workflows/devcontainer-ci.yml
+  push:
+    branches:
+      - dev
+      - main
+    paths:
+      - .devcontainer/**
+      - .github/workflows/devcontainer-ci.yml
+  schedule:
+    - cron: 0 0 * * 1  # Run every Monday at 00:00 UTC
+  workflow_call:
+    # IMPORTANT: When calling this reusable workflow from another repository,
+    # you MUST grant 'packages: write' permission in the calling workflow.
+    # Example:
+    #   jobs:
+    #     devcontainer:
+    #       uses: <owner>/<repo>/.github/workflows/devcontainer-ci.yml@main
+    #       permissions:
+    #         contents: read
+    #         packages: write  # Required for pushing to GitHub Container Registry
+    inputs:
+      required_commands:
+        description: Space-separated list of required command-line tools
+        required: false
+        type: string
+        default: ''
+      required_python_packages:
+        description: Space-separated list of required Python packages
+        required: false
+        type: string
+        default: ''
+permissions:
+  contents: read
+  packages: write
+jobs:
+  devcontainer:
+    uses: Cogni-AI-OU/.github/.github/workflows/devcontainer-ci.yml@main
+    with:
+      required_commands: ${{ inputs.required_commands || '' }}
+      required_python_packages: ${{ inputs.required_python_packages || '' }}
+    permissions:
+      contents: read
+      packages: write
