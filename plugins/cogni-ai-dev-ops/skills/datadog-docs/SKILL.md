@@ -21,10 +21,12 @@ license: MIT
 ## Core Process
 
 1. **Identify the Need**: Determine what Datadog documentation is needed.
-2. **Access References**: Use the provided `llms.txt` to access the documentation links.
+2. **Access API Reference**: Check `references/api_reference.md` for the complete catalog of API endpoint documentation links.
+3. **Access Documentation**: Use the provided `llms.txt` to access broader documentation links.
 
 ## References
 
+- **API Reference Catalog**: `references/api_reference.md` - Comprehensive catalog of all Datadog API endpoints organized by category, sourced from the [Datadog API Reference](https://docs.datadoghq.com/api_reference/llms.txt).
 - <https://docs.datadoghq.com/llms.txt> - The official Datadog documentation curated for LLMs.
 
 ## Related Skills
