@@ -22,7 +22,7 @@ Cogni-AI-OU projects:
 ### How to Use
 
 1. Explore the available agents, skills, and plugins
-2. Install the desired tools using GitHub CLI (`gh skills install ...`)
+2. Install the desired tools using GitHub CLI (`gh skill install ...`)
 3. Access installed agents through the Copilot chat or CLI
 
 ## Getting Started
