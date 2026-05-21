@@ -9,15 +9,7 @@ Autonomous coding agent plugin for GitHub Copilot. Specializes in writing, refac
 ### Using Copilot CLI
 
 ```bash
-copilot plugin install https://github.com/Cogni-AI-OU/cogni-ai-copilot-collections/tree/main/plugins/cogni-ai-coder
-```
-
-### Manual Installation
-
-Add the plugin directory to your Copilot configuration or clone it into your `.github/plugins` directory:
-
-```bash
-git clone --depth=1 https://github.com/Cogni-AI-OU/cogni-ai-copilot-collections .github/plugins/cogni-ai-coder
+copilot plugin install Cogni-AI-OU/cogni-ai-copilot-collections:plugins/cogni-ai-coder
 ```
 
 ## What's Included
