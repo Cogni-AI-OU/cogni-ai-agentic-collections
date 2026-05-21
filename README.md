@@ -108,9 +108,11 @@ See [agents/README.md](agents/README.md) for the full agent catalog, description
 To set up the required agents, instructions, and skills in your repository:
 
 ```bash
-# Install agents, instructions, and skills using GitHub CLI
+# Install agent definitions
 gh skills install Cogni-AI-OU/cogni-ai-agents --scope user
+# Install custom instructions
 gh skills install Cogni-AI-OU/cogni-ai-agent-instructions --scope user
+# Install agent skills
 gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user
 
 # Install plugins from this collection as a marketplace
