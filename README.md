@@ -115,8 +115,8 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user
 
 # Install plugins from this collection as a marketplace
 copilot plugin marketplace add Cogni-AI-OU/cogni-ai-copilot-collections
-# Then install individual plugins by name:
-# copilot plugin install PLUGIN-NAME@cogni-ai-copilot-collections
+# Then install individual plugins by name (e.g. cogni-ai-architect):
+copilot plugin install cogni-ai-architect@cogni-ai-copilot-collections
 ```
 
 ## How to Use Custom Agents
