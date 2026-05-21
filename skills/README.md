@@ -30,16 +30,9 @@
 | [context-aware-ops](context-aware-ops/SKILL.md) | Intelligent resource management with size checking to preserve context. |
 | [copilot-cli](copilot-cli/SKILL.md) | Guidance for installing and using GitHub Copilot CLI. |
 | [copilot-docs](copilot-docs/SKILL.md) | Reference and documentation for GitHub Copilot CLI customization. |
-| [datadog-agent](datadog-agent/SKILL.md) | Expert-level guidance for installing and configuring the Datadog Agent. |
-| [datadog-api](datadog-api/SKILL.md) | Execute Datadog API requests to fetch metrics or monitor statuses. |
-| [datadog-mcp](datadog-mcp/SKILL.md) | Query observability data via Datadog MCP. |
-| [datadog-monitors](datadog-monitors/SKILL.md) | Guidelines for designing and troubleshooting Datadog monitor queries. |
-| [datadog-pulumi](datadog-pulumi/SKILL.md) | Create or debug Datadog monitors in Pulumi YAML. |
 | [devcontainer](devcontainer/SKILL.md) | Create and maintain robust devcontainer.json configurations. |
 | [dictation](dictation/SKILL.md) | Apply dictation correction protocols to fix common speech-to-text errors. |
 | [direnv](direnv/SKILL.md) | How to maintain credentials and authenticate using direnv safely. |
-| [docker](docker/SKILL.md) | How to run and manage Docker containers, images, and networks. |
-| [dockerfile](dockerfile/SKILL.md) | Write and optimize Dockerfiles applying multi-stage builds. |
 | [docs-review](docs-review/SKILL.md) | Enforce documentation quality and consistency across architecture and code. |
 | [docs-writer](docs-writer/SKILL.md) | Create and maintain ADRs, runbooks, READMEs, and code docs. |
 | [dot-claude](dot-claude/SKILL.md) | Configure and manage Claude Code (.claude) workspace settings. |
@@ -55,7 +48,6 @@
 | [mermaid](mermaid/SKILL.md) | Guide for creating and maintaining stable Mermaid.js diagrams. |
 | [mermaid-beta](mermaid-beta/SKILL.md) | Guide for experimental Mermaid.js beta diagrams. |
 | [minizinc](minizinc/SKILL.md) | Expert MiniZinc modeling for constraint satisfaction. |
-| [molecule](molecule/SKILL.md) | Molecule testing workflows for Ansible roles. |
 | [mot](mot/SKILL.md) | Evaluate and classify models based on Model Openness Framework. |
 | [name-com-docs](name-com-docs/SKILL.md) | Reference for name.com Core API documentation. |
 | [npx-skills](npx-skills/SKILL.md) | Install and manage agent skills using the npx skills CLI. |
@@ -66,8 +58,6 @@
 | [pipenv](pipenv/SKILL.md) | Manage Python dependencies and environments using pipenv. |
 | [pipfile](pipfile/SKILL.md) | Create and manage Python dependencies via Pipfile. |
 | [pre-commit](pre-commit/SKILL.md) | Using pre-commit to validate code formatting and security. |
-| [pulumi-cli](pulumi-cli/SKILL.md) | Execute Pulumi CLI commands for stack management. |
-| [pulumi-docs](pulumi-docs/SKILL.md) | Access and fetch Pulumi documentation and registry schemas. |
 | [python-cli](python-cli/SKILL.md) | Execute Python inline scripts for data transformation. |
 | [report-writer](report-writer/SKILL.md) | Generate comprehensive system audit reports. |
 | [rfc2119](rfc2119/SKILL.md) | Enforce correct usage of RFC 2119 requirement keywords. |

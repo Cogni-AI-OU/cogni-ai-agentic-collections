@@ -12,7 +12,7 @@ this repo is cloned into `.github/agents`.
   Elite autonomous neurosymbolic architect engineered for structural perfection, recursive problem decomposition, and zero-defect invariants.
 - [**Cogni AI Coder**](plugins/cogni-ai-coder/agents/cogni-ai-coder.agent.md):
   Autonomous coding agent that translates specifications into functional code with precision, speed, and strict convention adherence.
-- [**Cogni AI DevOps**](agents/cogni-ai-devops.agent.md):
+- [**Cogni AI DevOps**](plugins/cogni-ai-dev-ops/agents/cogni-ai-dev-ops.agent.md):
   Elite autonomous DevOps and Site Reliability Engineering agent focusing on task
   automation, CI/CD pipeline precision, and infrastructure-as-code.
 - [**Cogni AI Elite**](agents/cogni-ai-elite.agent.md):
