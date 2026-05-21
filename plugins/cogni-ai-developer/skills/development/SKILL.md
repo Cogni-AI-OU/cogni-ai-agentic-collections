@@ -64,9 +64,3 @@ A comprehensive workflow for delivering complete, usable software that solves re
 
 - **tdd**:
   You MUST load this skill when practice Test-Driven Development for reliability and regression prevention.
-- **critical-thinking**:
-  You MUST load this skill when requirements are ambiguous or complex trade-offs need evaluation.
-- **coding**:
-  You MUST load this skill for rapid implementation of well-defined sub-tasks within a larger feature.
-- **programming**:
-  You MUST load this skill when designing the algorithmic or data-intensive components of a feature.

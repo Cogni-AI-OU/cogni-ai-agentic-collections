@@ -58,5 +58,3 @@ A focused workflow for implementing code from clear specifications. Emphasizes s
 
 - **critical-thinking**:
   You MUST load this skill when specifications are ambiguous, contradictory, or incomplete and require deeper analysis before coding.
-- **tdd**:
-  You MUST load this skill when the task requires writing tests before or alongside implementation.

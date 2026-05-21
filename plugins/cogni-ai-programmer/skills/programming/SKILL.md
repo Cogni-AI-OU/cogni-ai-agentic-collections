@@ -61,7 +61,3 @@ A methodical approach to building robust, correct, and efficient code solutions.
 
 - **python** (or language-specific skills):
   You MUST load the relevant language skill for idiomatic syntax, type hints, and framework conventions.
-- **critical-thinking**:
-  You MUST load this skill when the problem is ambiguous or requires deep analytical reasoning.
-- **tdd**:
-  You MUST load this skill when writing tests before implementation to ensure behavioral correctness.
