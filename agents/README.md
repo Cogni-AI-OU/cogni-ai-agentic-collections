@@ -10,7 +10,7 @@ into `.github/agents`.
 | ---- | -------- | ------- |
 | [cogni-ai-architect.agent.md](../plugins/cogni-ai-architect/agents/cogni-ai-architect.agent.md) | Orchestrators | Primary Cogni AI Architect agent definition (moved to plugin) |
 | [cogni-ai-context7-ops.agent.md](cogni-ai-context7-ops.agent.md) | All agents | Autonomous Context7 Ops for gathering and filtering documentation |
-| [cogni-ai-devops.agent.md](cogni-ai-devops.agent.md) | DevOps/SREs | Elite autonomous DevOps and SRE agent |
+| [cogni-ai-dev-ops.agent.md](../plugins/cogni-ai-dev-ops/agents/cogni-ai-dev-ops.agent.md) | DevOps/SREs | Elite autonomous DevOps and SRE agent |
 | [cogni-ai-elite.agent.md](cogni-ai-elite.agent.md) | Orchestrators | Cogni AI Elite autonomous systems architect |
 | [cogni-ai-fact-ops.agent.md](cogni-ai-fact-ops.agent.md) | Fact Ops | Autonomous fact operator for maintaining canonical fact files |
 | [cogni-ai-manager.agent.md](cogni-ai-manager.agent.md) | Managers | Autonomous orchestration and coordination manager |
@@ -50,7 +50,7 @@ Elite autonomous engineering kernel and systems architect. Specializes in maxima
 
 Autonomous Context7 Ops responsible for gathering and filtering documentation from Context7 into relevant context.
 
-### [Cogni AI DevOps](cogni-ai-devops.agent.md)
+### [Cogni AI DevOps](../plugins/cogni-ai-dev-ops/agents/cogni-ai-dev-ops.agent.md)
 
 Elite autonomous DevOps and Site Reliability Engineering agent. Focuses on task automation,
 CI/CD pipeline precision, infrastructure-as-code (IaC), and resolving deployment challenges.
