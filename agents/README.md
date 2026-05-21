@@ -25,8 +25,7 @@ into `.github/agents`.
 | [cogni-ai-brain-ops.agent.md](cogni-ai-brain-ops.agent.md) | Planners | Autonomous brainstorming agent for gathering facts and planning |
 | [cogni-ai-docs-editor.agent.md](cogni-ai-docs-editor.agent.md) | Docs | Autonomous documentation operator |
 | [cogni-ai-github-ops](../plugins/cogni-ai-github-ops/agents/cogni-ai-github-ops.agent.md) | GitHub | Autonomous GitHub Operator for PRs, issues, discussions |
-| [cogni-ai-security-auditor.agent.md](cogni-ai-security-auditor.agent.md) | Security | Elite autonomous security auditor |
-| [cogni-ai-tester.agent.md](cogni-ai-tester.agent.md) | Testers | Autonomous Tester for quality and verification |
+ | [cogni-ai-security-auditor.agent.md](cogni-ai-security-auditor.agent.md) | Security | Elite autonomous security auditor |
 
 See also:
 
