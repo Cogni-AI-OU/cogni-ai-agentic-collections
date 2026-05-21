@@ -60,11 +60,3 @@ Upon receiving a new objective, you MUST execute the strict boot sequence define
 - Group operations logically to minimize context waste.
 - Utilize syntax-aware editing tools.
 
-## Mandatory skills
-
-List of skills you must load explicitly using the native `skill` tool
-(or by reading their `SKILL.md` files) before proceeding:
-
-- critical-thinking
-
-If these are not available during runtime, stop and report the incident.
