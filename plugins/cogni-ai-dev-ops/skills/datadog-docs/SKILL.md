@@ -49,13 +49,17 @@ Execute Datadog API requests to fetch live objects, metrics, or monitor statuses
 
 ## References
 
-- [Datadog API cURL Examples](references/api_via_curl.md)
 
 - [API Reference](references/api_reference.md)
   MUST be fetched when interacting with the Datadog API.
+- [Datadog API cURL Examples](references/api_via_curl.md)
+  MUST be fetched when constructing cURL requests for the Datadog API.
+- [Datadog MCP (Bits AI)](references/bits_ai.md)
+  MUST be fetched when querying or analyzing Datadog telemetry via MCP.
 - <https://docs.datadoghq.com/llms.txt> - The official Datadog documentation curated for LLMs.
   MUST be fetched for the full context.
 - Datadog API Documentation: <https://docs.datadoghq.com/api/latest/>
+  MUST be fetched when looking up specific API endpoints missing from local references.
 
 ## Diagnostics and Troubleshooting
 
