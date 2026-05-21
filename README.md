@@ -111,11 +111,11 @@ To set up the required agents, instructions, and skills in your repository:
 
 ```bash
 # Install agent definitions
-gh skills install Cogni-AI-OU/cogni-ai-agents --scope user
+gh skills install Cogni-AI-OU/cogni-ai-agents --scope user <agent-name>
 # Install custom instructions
-gh skills install Cogni-AI-OU/cogni-ai-agent-instructions --scope user
+gh skills install Cogni-AI-OU/cogni-ai-agent-instructions --scope user <instruction-name>
 # Install agent skills
-gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user
+gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 
 # Install plugins from this collection as a marketplace
 copilot plugin marketplace add Cogni-AI-OU/cogni-ai-copilot-collections
