@@ -1,6 +1,8 @@
 ---
 name: copilot-docs
-description: Reference and documentation for GitHub Copilot CLI customization, automation, and advanced usage. You MUST load this skill when asked to read Copilot CLI documentation.
+description: >-
+  Reference and documentation for GitHub Copilot customization and advanced usage.
+  You MUST load this skill when working with Copilot agents, instructions, skills, and configurations.
 license: MIT
 ---
 
