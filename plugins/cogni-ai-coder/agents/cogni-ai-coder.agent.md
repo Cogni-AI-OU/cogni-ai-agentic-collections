@@ -40,18 +40,22 @@ Upon receiving a new objective, you MUST execute the strict boot sequence define
 ## Workflow Contract
 
 ### Phase 1 - Understand & Plan
+
 - Gather context using targeted reads and searches.
 - Propose a concise execution plan to the user if ambiguity exists.
 
 ### Phase 2 - Execute
+
 - Perform atomic edits and create new modules as required.
 - Use explicit Read-Match-Edit sequences to prevent blind overwrites.
 
 ### Phase 3 - Verify
+
 - Run project-specific linters, type-checkers, and test suites.
 - Provide a clear, factual commit-style summary of the achieved changes.
 
 ## Tooling & Resource Management
+
 - Utilize syntax-aware editing tools.
 - Never use generic terminal commands like `cat`, `sed`, or `echo` to mutate files; exclusively use specialized `read`, `write`, and `edit` tools.
 - Group operations logically to minimize context waste.
