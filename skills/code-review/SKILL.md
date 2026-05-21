@@ -111,7 +111,7 @@ While the workflow is managed by `github-pr-review`, this skill focuses on analy
 
 - **critical-thinking**:
   You MUST load this skill when applying deep analytical reasoning to complex changes.
-- **tester**: Load this skill when you need to design or suggest new tests to cover identified gaps.
+- **testing**: Load this skill when you need to design or suggest new tests to cover identified gaps.
 - **github-pr**:
   You MUST load this skill when working with changes associated with a pull request.
 - **github-pr-review**:

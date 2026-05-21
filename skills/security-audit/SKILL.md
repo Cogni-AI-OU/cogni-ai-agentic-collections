@@ -31,7 +31,7 @@ Use this skill when the request involves:
 ## When Not to Use
 
 - When performing a lightweight PR review (use `security-review`).
-- When writing tests for functional validation (use `tester` or `tdd`).
+- When writing tests for functional validation (use `testing` or `tdd`).
 - When optimizing code purely for performance without a security context.
 
 ## Common Pitfalls

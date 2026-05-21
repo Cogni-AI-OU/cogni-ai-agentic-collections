@@ -23,7 +23,7 @@ Guidance for reviewing core architecture, documentation, and constraint files fo
 
 ## When Not to Use
 
-- For performing deep code execution or logic validation (use `tester` or `code-review` instead).
+- For performing deep code execution or logic validation (use `testing` or `code-review` instead).
 - When the user explicitly requests purely formatting/linting fixes (use `markdown` or `yaml` skills).
 - For writing completely new features from scratch without reviewing existing architecture.
 
