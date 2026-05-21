@@ -64,11 +64,6 @@
 | [gh-run](gh-run/SKILL.md) | GitHub CLI (`gh run`) operations for workflow runs and logs. |
 | [gh-search](gh-search/SKILL.md) | GitHub CLI (`gh search`) operations for searching code and PRs. |
 | [gh-skill](gh-skill/SKILL.md) | Expert-level guidance on managing agent skills via GitHub CLI. |
-| [git](git/SKILL.md) | Guide for using git with non-interactive, safe operations. |
-| [git-expert](git-expert/SKILL.md) | Advanced Git operations including reflog and history manipulation. |
-| [git-filter-branch](git-filter-branch/SKILL.md) | Extract subdirectories with history using git filter-branch. |
-| [git-merge](git-merge/SKILL.md) | Guide and safety rules for performing safe git merges. |
-| [git-rebase](git-rebase/SKILL.md) | Advanced Git rebase operations and history cleanup. |
 | [gitattributes](gitattributes/SKILL.md) | Define and modify .gitattributes to standardize repo behavior. |
 | [github](github/SKILL.md) | GitHub-specific features and collaborative practices. |
 | [github-actions](github-actions/SKILL.md) | Diagnosing and debugging failing GitHub Actions workflows. |

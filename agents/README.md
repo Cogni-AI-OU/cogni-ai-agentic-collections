@@ -15,6 +15,7 @@ into `.github/agents`.
 | [cogni-ai-fact-ops.agent.md](cogni-ai-fact-ops.agent.md) | Fact Ops | Autonomous fact operator for maintaining canonical fact files |
 | [cogni-ai-manager.agent.md](cogni-ai-manager.agent.md) | Managers | Autonomous orchestration and coordination manager |
 | [cogni-ai-keeper.agent.md](cogni-ai-keeper.agent.md) | Keepers | Canonical Fact Custody & Mindmap Stewardship Kernel |
+| [cogni-ai-git-ops](../plugins/cogni-ai-git-ops/agents/cogni-ai-git-ops.agent.md) | Git Ops | Autonomous Git Operations agent for version control and complex workflows |
 | [cogni-ai-coder](../plugins/cogni-ai-coder/agents/cogni-ai-coder.agent.md) | Coders | Autonomous coding agent for spec-driven implementation with precision and speed |
 | [cogni-ai-programmer](../plugins/cogni-ai-programmer/agents/cogni-ai-programmer.agent.md) | Programmers | Autonomous programmer for algorithmic problem-solving and robust code craftsmanship |
 | [cogni-ai-developer](../plugins/cogni-ai-developer/agents/cogni-ai-developer.agent.md) | Developers | Autonomous developer for full-cycle product delivery and end-to-end feature ownership |
@@ -70,6 +71,10 @@ Autonomous orchestration and coordination manager responsible for routing work t
 
 Canonical fact-custody kernel and mindmap steward.
 Deep module for fact management via VCS-aligned plain-text mindmaps.
+
+### [Cogni AI Git Ops](../plugins/cogni-ai-git-ops/agents/cogni-ai-git-ops.agent.md)
+
+Autonomous Git Operations agent. Specializes in version control, complex git workflows, rebase operations, and repository management.
 
 ### [Cogni AI Coder](../plugins/cogni-ai-coder/agents/cogni-ai-coder.agent.md)
 
