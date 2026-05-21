@@ -98,6 +98,9 @@ CHANGELOG merge=union
 
 # Mark all agentic workflow .lock.yml files as generated.
 .github/workflows/*.lock.yml linguist-generated=true merge=ours
+
+# Ignore whitespace warnings for generated files.
+backups/*.txt whitespace=-blank-at-eol,-space-before-tab,-indent-with-non-tab,-tab-in-indent,-blank-at-eof,-cr-at-eol
 ```
 
 Another example which can be used in `.github/aw/imports/.gitattributes`:
