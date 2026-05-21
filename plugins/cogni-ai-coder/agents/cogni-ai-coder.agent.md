@@ -3,6 +3,7 @@ description: >-
   Autonomous coding agent for the Copilot plugin. Specializes in writing, refactoring,
   and testing code while adhering strictly to project conventions and maintaining zero defects.
 name: cogni-ai-coder
+tools: [all]
 ---
 
 <!-- markdownlint-disable MD013 -->
