@@ -95,10 +95,12 @@ for easy installation. See [plugins/README.md](plugins/README.md) for the availa
 ## AI Agents
 
 This repository is the **source of truth** for Cogni AI agent configurations.
-Agent files live in the `agents/` directory so that when they are installed
-into `.github/agents`, consumers receive them directly at
-`.github/agents/agents/` (and `.github/agents/AGENTS.md`). Plugins are bundled
-in [`plugins/`](plugins/) as portable agent distributions with manifests.
+Agent files live in the `agents/` directory and are distributed to consumer
+repositories through the documented installation flow (for example,
+`gh skills install ...`). After installation, consumers receive the agent files
+under `.github/agents/agents/` and the accompanying guidance at
+`.github/agents/AGENTS.md`. Plugins are bundled in [`plugins/`](plugins/) as
+portable agent distributions with manifests.
 
 See [agents/README.md](agents/README.md) for the full agent catalog, descriptions, and
 [AGENTS.md](AGENTS.md) for agent execution protocols and architecture principles.
