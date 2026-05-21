@@ -1,7 +1,7 @@
 ---
 description: >-
-  Autonomous programmer agent for the Copilot plugin. Specializes in writing, refactoring,
-  and testing Python code while adhering strictly to project conventions.
+  Cogni AI Programmer autonomous agent specializes in writing, refactoring,
+  and testing code while adhering strictly to project conventions.
 name: cogni-ai-programmer
 tools: ["changes", "codebase", "edit/editFiles", "fetch", "findTestFiles", "githubRepo", "new", "openSimpleBrowser", "problems", "runCommands", "runTasks", "runTests", "search", "searchResults", "terminalLastCommand", "terminalSelection", "testFailure", "usages"]
 ---
