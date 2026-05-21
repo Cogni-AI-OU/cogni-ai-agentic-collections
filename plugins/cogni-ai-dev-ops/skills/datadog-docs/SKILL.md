@@ -47,43 +47,11 @@ Execute Datadog API requests to fetch live objects, metrics, or monitor statuses
 - **Data Pruning**: Use `jq` or `python` to prune large JSON responses, especially when fetching dashboards or monitors.
 - **Pagination**: Handle pagination when querying lists of items using `start` or `page` parameters.
 
-## Commands / Usage Patterns
-
-Fetch a specific Dashboard by ID:
-
-```bash
-curl -s -X GET "https://api.datadoghq.com/api/v1/dashboard/<dashboard_id>" \
-  -H "DD-API-KEY: ${DD_API_KEY}" \
-  -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
-```
-
-Search for Monitors by tag or name:
-
-```bash
-curl -s -X GET "https://api.datadoghq.com/api/v1/monitor/search?query=tag:env:prod" \
-  -H "DD-API-KEY: ${DD_API_KEY}" \
-  -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
-```
-
-Query Timeseries Metrics (Unix epoch timestamps):
-
-```bash
-curl -s -X GET "https://api.datadoghq.com/api/v1/query?query=system.cpu.idle{*}&from=$(date -d '1 hour ago' +%s)&to=$(date +%s)" \
-  -H "DD-API-KEY: ${DD_API_KEY}" \
-  -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
-```
-
-Get a specific Monitor's details:
-
-```bash
-curl -s -X GET "https://api.datadoghq.com/api/v1/monitor/<monitor_id>" \
-  -H "DD-API-KEY: ${DD_API_KEY}" \
-  -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
-```
-
 ## References
 
-- [API Reference Catalog](references/api_reference.md)
+- [Datadog API cURL Examples](references/api_via_curl.md)
+
+- [API Reference](references/api_reference.md)
   MUST be fetched when interacting with the Datadog API.
 - <https://docs.datadoghq.com/llms.txt> - The official Datadog documentation curated for LLMs.
   MUST be fetched for the full context.
