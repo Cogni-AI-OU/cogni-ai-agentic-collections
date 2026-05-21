@@ -1,0 +1,13 @@
+{
+  "agents": "agents/",
+  "author": {
+    "name": "Cogni AI",
+    "email": "237644711+cogni-ai-ee@users.noreply.github.com"
+  },
+  "description": "Cogni AI git operations agent. Specializes in version control, complex git workflows, and repository management.",
+  "keywords": ["git", "version-control", "vcs"],
+  "license": "MIT",
+  "name": "cogni-ai-git-ops",
+  "skills": ["skills/"],
+  "version": "1.0.0"
+}

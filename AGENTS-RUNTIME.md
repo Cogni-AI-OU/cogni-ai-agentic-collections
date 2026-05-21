@@ -24,6 +24,8 @@ this repo is cloned into `.github/agents`.
 - [**Cogni AI GitHub Ops**](agents/cogni-ai-github-ops.agent.md):
   Autonomous GitHub Operator responsible for GitHub operations such as
   modifying comments, issues, or discussions on behalf of other agents.
+- [**Cogni AI Git Ops**](plugins/cogni-ai-git-ops/agents/cogni-ai-git-ops.agent.md):
+  Autonomous Git Operations agent. Specializes in version control, complex git workflows, rebase operations, and repository management.
 - [**Cogni AI Manager**](agents/cogni-ai-manager.agent.md):
   Autonomous orchestration and coordination manager responsible for routing work
   to specialized agents and ensuring end-to-end completion.
