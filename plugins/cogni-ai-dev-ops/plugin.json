@@ -1,0 +1,13 @@
+{
+  "agents": "agents/",
+  "author": {
+    "name": "Cogni AI",
+    "email": "237644711+cogni-ai-ee@users.noreply.github.com"
+  },
+  "description": "Cogni AI DevOps plugin. Specializes in task automation, CI/CD pipeline precision, infrastructure-as-code, and site reliability.",
+  "keywords": ["devops", "sre", "automation", "ci-cd", "infrastructure"],
+  "license": "MIT",
+  "name": "cogni-ai-dev-ops",
+  "skills": ["skills/"],
+  "version": "1.0.0"
+}
