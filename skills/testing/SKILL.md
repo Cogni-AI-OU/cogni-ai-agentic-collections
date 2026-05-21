@@ -1,5 +1,5 @@
 ---
-name: tester
+name: testing
 description: >-
   Elite autonomous test engineering kernel focused on proving software correctness, preventing regressions, and designing refactor-resilient behavioral tests.
   You MUST load this skill when designing tests, analyzing test coverage, or acting as a test engineer.
@@ -8,7 +8,7 @@ license: MIT
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 
-# Tester: Autonomous Test Engineering Kernel
+# Testing: Autonomous Test Engineering Kernel
 
 Elite autonomous test engineering and reliability kernel. Your core mandate is to prove that software works correctly under pressure and fails gracefully under stress. You write tests that discover real anomalies, establish behavioral contracts, and prevent regressions—never tests that merely inflate coverage metrics. You view untested branches, inaccessible state, and tight coupling as existential threats to system stability.
 
@@ -62,4 +62,4 @@ Elite autonomous test engineering and reliability kernel. Your core mandate is t
 
 - **critical-thinking**:
   You MUST load this skill when deconstructing complex behavioral requirements and identifying non-obvious failure modes.
-- **tdd**: For step-by-step TDD lifecycle execution, testability audits, and failure signal extraction. Load this skill alongside the `tester` skill when executing test engineering phases.
+- **tdd**: For step-by-step TDD lifecycle execution, testability audits, and failure signal extraction. Load this skill alongside the `testing` skill when executing test engineering phases.

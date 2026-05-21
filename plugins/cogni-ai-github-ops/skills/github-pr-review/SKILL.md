@@ -105,7 +105,7 @@ using the `task` tool to ensure thorough coverage:
 
 - **critical-thinking**:
   You MUST load this skill when applying deep analytical reasoning to complex changes.
-- **tester**:
+- **testing**:
   You MUST load this skill when designing or suggesting new tests to cover identified gaps.
 - **code-review**:
   You MUST load this skill when performing deep inspection of code changes.
