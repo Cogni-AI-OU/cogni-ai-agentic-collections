@@ -47,7 +47,11 @@ Use this flow when working with new Datadog resource types:
 - Formula/event-platform monitors may require wrapper fields under `variables` (e.g., use `variables.eventQueries`, not a raw list of query objects).
 - Some schema names are intentionally awkward in this provider version (e.g., event query grouping uses `groupBies`, not `groupBy`).
 - For formula/event-query monitors, avoid empty search strings. Use `search.query: '*'` instead of an empty string, because preview may pass while `pulumi up` can crash the Datadog provider during create.
-- **Imports Format**: Know the required ID format for resources. For example, `datadog:TeamMembership` requires `teamId:userId` (e.g., `cef0d4b9-050c-4df6-ad9b-a6ee4d897392:421b76e9-90ff-467f-a3be-7045cf1ab5c6`).
+- **Imports Format & Type Tokens**:
+  The CLI `pulumi import` command strictly requires the **fully qualified type token** (e.g., `datadog:index/teamMembership:TeamMembership` or `datadog:index/team:Team`),
+  whereas Pulumi YAML configuration often accepts shorter aliases (e.g., `type: datadog:TeamMembership`).
+  If an import fails with an unrecognized type, always confirm the exact CLI token via `pulumi package get-schema datadog | jq '.resources | keys'`.
+  Additionally, know the required target ID format (e.g., the team membership ID format is `teamId:userId`).
 - **Team management API scope**: Interacting with `datadog:Team` and `datadog:TeamMembership` requires `teams_read` and `teams_write` scopes on the App Key, as well as `users_read` to lookup specific Datadog User IDs.
 
 ## Diagnostics and Troubleshooting
