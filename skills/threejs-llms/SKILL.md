@@ -46,5 +46,9 @@ license: MIT
 
 - **Three.js TSL & Full Code Examples**
   You MUST read this link when implementing TSL, creating node-based materials, using WebGPU, or when you need complete boilerplate examples.
-  **Headers/Topics**: Instructions for Large Language Models, Complete Code Examples (WebGLRenderer, WebGPURenderer, GLTFLoader), TSL - Complete Reference (TSL Specification, Introduction, Learning TSL, Constants and explicit conversions, Conversions, Uniform, Swizzle, Operators, Function, Variables, Array, Varying, Conditional, Loop, Math, Method chaining, Texture, Attributes, Position, Normal, Tangent, Bitangent, Camera, Model, Screen, Viewport, Blend Modes, Reflect, UV Utils, Interpolation, Random, Rotate, Oscillator, Timer, Packing, Render Pipeline, Storage, Struct, Flow Control, Fog, Color Adjustments, Utilities, NodeMaterial).
+  **Headers/Topics**: Instructions for Large Language Models, Complete Code Examples (WebGLRenderer, WebGPURenderer, GLTFLoader),
+  TSL - Complete Reference (TSL Specification, Introduction, Learning TSL, Constants and explicit conversions, Conversions, Uniform, Swizzle,
+  Operators, Function, Variables, Array, Varying, Conditional, Loop, Math, Method chaining, Texture, Attributes, Position, Normal, Tangent, Bitangent,
+  Camera, Model, Screen, Viewport, Blend Modes, Reflect, UV Utils, Interpolation, Random, Rotate, Oscillator, Timer, Packing, Render Pipeline, Storage,
+  Struct, Flow Control, Fog, Color Adjustments, Utilities, NodeMaterial).
   [https://threejs.org/docs/llms-full.txt](https://threejs.org/docs/llms-full.txt)
