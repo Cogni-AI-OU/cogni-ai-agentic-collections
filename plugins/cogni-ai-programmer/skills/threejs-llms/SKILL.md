@@ -34,7 +34,7 @@ license: MIT
 
 ## References
 
-To fully utilize this skill, you MUST read at least one of the links relevant to the current context: 
+To fully utilize this skill, you MUST read at least one of the links relevant to the current context:
 
 - **Three.js LLMs Overview**
   You MUST read this link to discover the available documentation endpoints and get a quick overview of the library.

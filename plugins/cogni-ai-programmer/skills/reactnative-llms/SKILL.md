@@ -33,7 +33,7 @@ license: MIT
 
 ## References
 
-To fully utilize this skill, you MUST read at least one of the links relevant to the current context: 
+To fully utilize this skill, you MUST read at least one of the links relevant to the current context:
 
 - **React Native Documentation Index (llms.txt)**: [https://reactnative.dev/llms.txt](https://reactnative.dev/llms.txt)
   You MUST read this index when you need to read documentation on any React Native component or API.

@@ -68,6 +68,30 @@ Execute expert-level code reviews, dissecting codebases and Pull Requests (PRs) 
 - **Zero-Scaffolding Tone**:
   Formulate review feedback in bold, declarative, and respectful technical language. Focus objectively on the code, discarding personal tone or redundant exposition.
 
+## Best Practices
+
+Enforce these code quality standards during the review:
+
+- Functions do one thing
+- Names are descriptive and intention-revealing
+- No magic numbers or strings (use constants)
+- Error handling is explicit (no empty catch blocks)
+- No commented-out code added
+- Tests cover the change
+- ✅ Keep functions small and focused
+- ✅ Match existing patterns in the codebase
+- ❌ Add dependencies without justification
+
+### Success Indicators
+
+These principles are working if you see:
+
+- Fewer unnecessary changes in diffs
+- Fewer rewrites due to overcomplication
+- Clarifying questions come before implementation (not after mistakes)
+- Clean, minimal PRs without drive-by refactoring
+- Tests that document expected behavior
+
 ## Commands / Usage Patterns
 
 While the workflow is managed by `github-pr-review`, this skill focuses on analyzing the diff and formulating feedback.
