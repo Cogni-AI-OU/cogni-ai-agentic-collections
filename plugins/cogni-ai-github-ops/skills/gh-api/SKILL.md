@@ -224,7 +224,7 @@ jq '.data.repository.pullRequest.reviews.nodes[]
 
 # Unresolved Copilot thread count
 jq '[.data.repository.pullRequest.reviewThreads.nodes[]
-  | select(.isResolved == false and
+  | select(.isResolved == false and (.comments.nodes | length > 0) and
       (.comments.nodes[0].author.login // "" | sub("\\[bot\\]$"; "")) == "copilot-pull-request-reviewer")]
   | length' <<<"$copilot_review_json"
 ```
