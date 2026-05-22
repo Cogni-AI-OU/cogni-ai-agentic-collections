@@ -63,36 +63,47 @@ jobs:
             CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
           fi
 
-          # Extract unique skill directories that were touched (directories containing SKILL.md)
-          {
-            SKILL_DIRS=$(echo "$CHANGED_FILES" | grep 'SKILL\.md$' | xargs -I {} dirname {} | sort -u || true)
+          # 1. Detect Skill Directories
+          # Any directory containing SKILL.md that was touched
+          SKILL_DIRS_FROM_MD=$(echo "$CHANGED_FILES" | grep 'SKILL\.md$' | xargs -I {} dirname {} || true)
+          # Any directory under skills/* that was touched
+          SKILL_DIRS_FROM_SKILLS=$(echo "$CHANGED_FILES" | grep -oP '^skills/[^/]+' || true)
+          # Any directory under plugins/*/skills/* that was touched
+          SKILL_DIRS_FROM_PLUGINS=$(echo "$CHANGED_FILES" | grep -oP '^plugins/[^/]+/skills/[^/]+' || true)
 
-            # Extract agent files that were touched
-            AGENT_FILES=$(echo "$CHANGED_FILES" | grep -oP '^[^/]+\.agent\.md$' | sort -u || true)
+          # Combine and de-duplicate skill directories
+          # shellcheck disable=SC2086
+          UNIQUE_SKILL_DIRS=$(printf "%s\n%s\n%s" "$SKILL_DIRS_FROM_MD" "$SKILL_DIRS_FROM_SKILLS" "$SKILL_DIRS_FROM_PLUGINS" | grep . | sort -u || true)
 
-            # Plugins are not used in this repo layout, but keeping for compatibility if they appear
-            PLUGIN_SKILL_DIRS=$(echo "$CHANGED_FILES" | grep -oP '^plugins/[^/]+/skills/[^/]+' | sort -u || true)
-            PLUGIN_AGENT_FILES=$(echo "$CHANGED_FILES" | \
-              grep -oP '^plugins/[^/]+/agents/[^/]+\.agent\.md$' | sort -u || true)
-          }
+          # 2. Detect Agent Files
+          # Any .agent.md file under agents/
+          AGENT_FILES_FROM_AGENTS=$(echo "$CHANGED_FILES" | grep -oP '^agents/[^/]+\.agent\.md' || true)
+          # Any .agent.md file under plugins/*/agents/
+          AGENT_FILES_FROM_PLUGINS=$(echo "$CHANGED_FILES" | grep -oP '^plugins/[^/]+/agents/[^/]+\.agent\.md' || true)
+          # Any .agent.md file in root (for compatibility)
+          AGENT_FILES_FROM_ROOT=$(echo "$CHANGED_FILES" | grep -oP '^[^/]+\.agent\.md' || true)
+
+          # Combine and de-duplicate agent files
+          # shellcheck disable=SC2086
+          UNIQUE_AGENT_FILES=$(printf "%s\n%s\n%s" "$AGENT_FILES_FROM_AGENTS" "$AGENT_FILES_FROM_PLUGINS" "$AGENT_FILES_FROM_ROOT" | grep . | sort -u || true)
 
           # Build CLI arguments for --skills
           SKILL_ARGS=""
-          for dir in $SKILL_DIRS $PLUGIN_SKILL_DIRS; do
+          for dir in $UNIQUE_SKILL_DIRS; do
             if [ -d "$dir" ]; then
-              SKILL_ARGS="$SKILL_ARGS $dir"
+              SKILL_ARGS="${SKILL_ARGS}${SKILL_ARGS:+ }$dir"
             fi
           done
 
           # Build CLI arguments for --agents
           AGENT_ARGS=""
-          for f in $AGENT_FILES $PLUGIN_AGENT_FILES; do
+          for f in $UNIQUE_AGENT_FILES; do
             if [ -f "$f" ]; then
-              AGENT_ARGS="$AGENT_ARGS $f"
+              AGENT_ARGS="${AGENT_ARGS}${AGENT_ARGS:+ }$f"
             fi
           done
-          SKILL_COUNT=$(echo "$SKILL_ARGS" | xargs -n1 2>/dev/null | wc -l || echo 0)
-          AGENT_COUNT=$(echo "$AGENT_ARGS" | xargs -n1 2>/dev/null | wc -l || echo 0)
+          SKILL_COUNT=$(echo "$SKILL_ARGS" | wc -w || echo 0)
+          AGENT_COUNT=$(echo "$AGENT_ARGS" | wc -w || echo 0)
           TOTAL=$((SKILL_COUNT + AGENT_COUNT))
           {
             echo "skill_args=$SKILL_ARGS"
