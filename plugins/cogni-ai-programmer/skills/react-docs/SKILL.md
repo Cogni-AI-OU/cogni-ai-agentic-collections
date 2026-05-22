@@ -35,7 +35,7 @@ React is a library for web and native user interfaces.
 
 ## References
 
-- **React Documentation Index (llms.txt)**: [https://react.dev/llms.txt](https://react.dev/llms.txt)
+- [React Documentation Index](https://react.dev/llms.txt)
   MUST read this index when working with React,
   in order to find documentation for React Hooks, built-in components, APIs, or React Server Components.
   Learn React, API Reference, Hooks, Components, Client APIs, Server APIs, Rules Of React, React Server Components.
