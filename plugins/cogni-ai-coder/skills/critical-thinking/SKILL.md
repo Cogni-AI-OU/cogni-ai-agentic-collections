@@ -46,8 +46,8 @@ A cognitive framework for deep analytical reasoning.
 8. **Root Cause Isolation**: When troubleshooting, split the problem into smaller, reproducible steps and use version history (`git blame`/`git log`) or execution logs to narrow down the fault.  
 9. **Adversarial Red-Teaming**: Aggressively attempt to break your proposed plan. Identify the exact line or condition most likely to fail.  
 10. **Constraint Formulation (MiniZinc)**: When applicable, formally model the problem's constraints by writing dry-code definitions in MiniZinc to expose hidden dependencies and restrictions.  
-11. **Verify Systemically**: Evaluate the decision against immediate needs, technical debt accrual, and long-term maintainability. **Emit Post: verified trace.**  
-12. **Persist & Close**: After verification, update persistent memory with outcome, assumptions ledger, and new invariants; emit final Hard Checkpoint.  
+11. **Verify Systemically**: Evaluate the decision against immediate needs, technical debt accrual, and long-term maintainability. **Emit a post-verification trace**: a short written summary in the current response that lists the checks performed, the evidence observed, and the final verification result.  
+12. **Persist & Close**: After verification, record the outcome, an **assumptions ledger** (a bullet list of assumptions made, which were verified, and which remain open), and any new invariants in the skill's persistent memory/store if one is available; otherwise include them in the current response. Then emit a final **Hard Checkpoint**: a concise closing summary of decision, evidence, remaining risks, and next step.  
 
 ## Core Principles
 
