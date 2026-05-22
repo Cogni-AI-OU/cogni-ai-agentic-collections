@@ -1,12 +1,16 @@
 ---
 name: nextjs-docs
-description: 'Read and navigate Next.js documentation using llms.txt context. You MUST load this skill when asked to read Next.js documentation or specific Next.js APIs, routing, or App Router.'
+description: >-
+  Read and navigate Next.js documentation, the React framework.
+  You MUST load this skill when working with Next.js.
 license: MIT
 ---
 
 # Next.js Docs
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
+
+Next.js is the React framework for building full-stack web applications.
 
 ## When to Use
 
@@ -34,8 +38,10 @@ license: MIT
 ## References
 
 - [Next.js](https://nextjs.org/llms.txt](https://nextjs.org/llms.txt)
-  MUST read when you need to find the correct, up-to-date documentation link for a Next.js topic.
-  This includes blog posts, documentation, support policy.
-- [Documentation Index](https://nextjs.org/docs/llms.txt): Complete Next.js documentation for LLMs
+  MUST read for a Next.js documentation index.
+  This link includes recent blog posts, documentation, support policy, etc.
+- [Next.js Documentation](https://nextjs.org/docs/llms.txt): Complete Next.js documentation for LLMs.
+  MUST read for reference and guides for Next.js
 - [Full Next.js Documentation](https://nextjs.org/docs/llms-full.txt)
-  MUST read when you need comprehensive documentation on Next.js APIs. Use a web reading tool that supports limits/pagination as this file is very large.
+  MUST read when you need comprehensive documentation on Next.js APIs.
+  MUST use a web reading tool that supports limits/pagination as this file is very large.
