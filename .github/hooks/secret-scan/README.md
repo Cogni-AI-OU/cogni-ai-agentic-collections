@@ -102,16 +102,16 @@ The hook is configured in `hooks.json` to run on the `sessionEnd` event:
 
 | Pattern | Severity | Example Match |
 |---------|----------|---------------|
-| `AWS_ACCESS_KEY` | critical | `AKIAIOSFODNN7EXAMPLE` |
+| `AWS_ACCESS_KEY` | critical | `AKIAIOSFODNN7EXAMPLE` | <!-- pragma: allowlist secret -->
 | `AWS_SECRET_KEY` | critical | `aws_secret_access_key = wJalr...` |
 | `GCP_SERVICE_ACCOUNT` | critical | `"type": "service_account"` |
 | `GCP_API_KEY` | high | `AIzaSyC...` |
 | `AZURE_CLIENT_SECRET` | critical | `azure_client_secret = ...` |
 | `GITHUB_PAT` | critical | `ghp_xxxxxxxxxxxx...` |
 | `GITHUB_FINE_GRAINED_PAT` | critical | `github_pat_...` |
-| `PRIVATE_KEY` | critical | `-----BEGIN RSA PRIVATE KEY-----` |
-| `GENERIC_SECRET` | high | `api_key = "sk-..."` |
-| `CONNECTION_STRING` | high | `postgresql://user:pass@host/db` |
+| `PRIVATE_KEY` | critical | `-----BEGIN RSA PRIVATE KEY-----` | <!-- pragma: allowlist secret -->
+| `GENERIC_SECRET` | high | `api_key = "sk-..."` | <!-- pragma: allowlist secret -->
+| `CONNECTION_STRING` | high | `postgresql://user:pass@host/db` | <!-- pragma: allowlist secret -->
 | `SLACK_TOKEN` | high | `xoxb-...` |
 | `STRIPE_SECRET_KEY` | critical | `sk_live_...` |
 | `NPM_TOKEN` | high | `npm_...` |
