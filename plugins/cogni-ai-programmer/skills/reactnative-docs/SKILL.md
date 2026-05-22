@@ -1,6 +1,8 @@
 ---
 name: reactnative-docs
-description: 'Read and navigate React Native documentation using llms.txt context. You MUST load this skill when asked to read React Native documentation, Core Components, or mobile APIs.'
+description: >-
+  React Native documentation.
+  You MUST load this skill when interactive with React such as Native documentation, Core Components, or mobile APIs.
 license: MIT
 ---
 
@@ -32,5 +34,5 @@ license: MIT
 ## References
 
 - **React Native Documentation Index (llms.txt)**: [https://reactnative.dev/llms.txt](https://reactnative.dev/llms.txt)
-  - **Condition**: Read this index first when you need to locate documentation on any React Native component or API.
-  - **Includes headers/tags**: docs, getting-started, environment-setup, components-and-apis, handling-touches, animated, flexbox, etc.
+  You MUST read this index when you need to read documentation on any React Native component or API.
+  Index includes docs, getting-started, environment-setup, components-and-apis, handling-touches, animated, flexbox, etc.
