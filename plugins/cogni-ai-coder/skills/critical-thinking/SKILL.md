@@ -57,6 +57,7 @@ A cognitive framework for deep analytical reasoning.
 - **Goal-Driven Execution**: Define success criteria. Loop until verified. Transform tasks into verifiable goals. Strong success criteria let you loop independently.
 - **Information Gain Optimization**: Prioritize actions that maximize information about the system's state over actions that merely "try to fix it."
 - **Internal Tension Scan**: Search for self-contradictions within the plan (e.g., claiming a system is "high-performance" while introducing O(n²) complexity in a critical path).
+- **Keep changes atomic and focused**: Keep changes atomic and focused.
 - **Simplicity First**: Minimum code that solves the problem. Nothing speculative.
 - **Socratic Depth**: Apply a minimum "3-Why" drill-down for any anomaly. Move from the immediate symptom to the behavioral anomaly, to the foundational flaw.
 - **Surgical Changes**: Touch only what you must. Clean up only your own mess.
