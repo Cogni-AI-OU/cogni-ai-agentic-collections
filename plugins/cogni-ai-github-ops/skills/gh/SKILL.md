@@ -388,6 +388,21 @@ in GitHub Actions, refer to the **github-issue** and **github-pr** skills.
 - If a shell policy blocks a `gh`-adjacent command shape, classify it as
   `POLICY_DENIED` and pivot immediately.
 
+## Self-Improvement Workflow
+
+When encountering a new `gh` CLI issue:
+
+1. **Document the problem**
+   - What command was run?
+   - What was the error or unexpected behavior?
+   - What was the intended outcome?
+
+2. **Find the solution**
+   - Load the relevant skills and their references that have not been loaded yet.
+   - Try alternative approaches.
+   - Check GitHub CLI documentation.
+   - Use GraphQL API directly if needed.
+
 ## What to Avoid
 
 - Do not use `-f` (`--raw-field`) when you intend to read a value from a file
