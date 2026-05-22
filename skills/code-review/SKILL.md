@@ -72,15 +72,15 @@ Execute expert-level code reviews, dissecting codebases and Pull Requests (PRs) 
 
 Enforce these code quality standards during the review:
 
-- Functions do one thing
-- Names are descriptive and intention-revealing
-- No magic numbers or strings (use constants)
-- Error handling is explicit (no empty catch blocks)
-- No commented-out code added
-- Tests cover the change
-- ✅ Keep functions small and focused
-- ✅ Match existing patterns in the codebase
-- ❌ Add dependencies without justification
+- Functions do one thing.
+- Names are descriptive and intention-revealing.
+- No magic numbers or strings (use constants).
+- Error handling is explicit (no empty catch blocks).
+- No commented-out code added.
+- Tests cover the change.
+- ✅ Keep functions small and focused.
+- ✅ Match existing patterns in the codebase.
+- ❌ Add dependencies without justification.
 
 ### Success Indicators
 
