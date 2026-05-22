@@ -1,10 +1,10 @@
 ---
-name: claude-docs
+name: claude-llms
 description: 'Reference and APIs for retrieving Anthropic Claude documentation programmatically for LLMs. You MUST load this skill when asked to search or retrieve Claude or Claude Code documentation.'
 license: MIT
 ---
 
-# claude-docs
+# claude-llms
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 
@@ -24,6 +24,8 @@ license: MIT
 3. **Process Content**: Extract the relevant information to answer the user's query or inform the ongoing task.
 
 ## References
+
+To fully utilize this skill, you MUST read at least one of the links relevant to the current context: 
 
 - [Agent SDK overview](https://code.claude.com/docs/en/agent-sdk.md)
   Includes: Get started, Capabilities (Built-in tools, Hooks, Subagents, MCP, Permissions, Sessions),

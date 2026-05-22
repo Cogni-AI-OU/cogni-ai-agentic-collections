@@ -1,5 +1,5 @@
 ---
-name: reactnative-docs
+name: reactnative-llms
 description: >-
   React Native documentation.
   You MUST load this skill when interacting with React Native documentation, Core Components, or mobile APIs.
@@ -18,7 +18,7 @@ license: MIT
 
 ## When Not to Use
 
-- When working on standard web applications using React (use `react-docs` instead).
+- When working on standard web applications using React (use `react-llms` instead).
 
 ## Core Process
 
@@ -32,6 +32,8 @@ license: MIT
 - **Targeted Loading**: React Native documentation is large. Rely on the `llms.txt` index to fetch only the specific files you need rather than attempting to fetch the entire corpus.
 
 ## References
+
+To fully utilize this skill, you MUST read at least one of the links relevant to the current context: 
 
 - **React Native Documentation Index (llms.txt)**: [https://reactnative.dev/llms.txt](https://reactnative.dev/llms.txt)
   You MUST read this index when you need to read documentation on any React Native component or API.

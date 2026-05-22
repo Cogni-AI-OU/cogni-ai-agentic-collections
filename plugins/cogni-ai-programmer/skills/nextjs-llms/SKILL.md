@@ -1,5 +1,5 @@
 ---
-name: nextjs-docs
+name: nextjs-llms
 description: >-
   Read and navigate Next.js documentation, the React framework.
   You MUST load this skill when working with Next.js.
@@ -20,7 +20,7 @@ Next.js is the React framework for building full-stack web applications.
 
 ## When Not to Use
 
-- When working on a plain React application without Next.js (use `react-docs` instead).
+- When working on a plain React application without Next.js (use `react-llms` instead).
 - When the context is already sufficiently clear and you do not need to read the official Next.js documentation.
 
 ## Core Process
@@ -36,6 +36,8 @@ Next.js is the React framework for building full-stack web applications.
 - **Agentic Loading**: Do not attempt to guess or hallucinate Next.js APIs; always fetch the documentation dynamically to stay up to date.
 
 ## References
+
+To fully utilize this skill, you MUST read at least one of the links relevant to the current context: 
 
 - [Next.js](https://nextjs.org/llms.txt)
   MUST read for a Next.js documentation index.

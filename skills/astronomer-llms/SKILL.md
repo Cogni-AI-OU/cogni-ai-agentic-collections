@@ -1,10 +1,10 @@
 ---
-name: astronomer-docs
+name: astronomer-llms
 description: 'Read and navigate Astronomer documentation using llms.txt context. You MUST load this skill when asked to read Astronomer documentation or Airflow documentation hosted by Astronomer.'
 license: MIT
 ---
 
-# Skill: astronomer-docs
+# Skill: astronomer-llms
 
 # Astronomer Docs
 
@@ -40,6 +40,8 @@ license: MIT
 - [Astronomer Docs LLMs.txt](https://www.astronomer.io/docs/llms.txt)
 
 ## Related Skills
+
+To fully utilize this skill, you MUST read at least one of the links relevant to the current context: 
 
 - **apache-airflow-dags**:
   You MUST load this skill when asked to write, refactor, or structure Airflow DAGs.

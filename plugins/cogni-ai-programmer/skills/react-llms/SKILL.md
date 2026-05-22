@@ -1,5 +1,5 @@
 ---
-name: react-docs
+name: react-llms
 description: >-
   React documentation.
   You MUST load this skill when asked to read React documentation, Hooks, Rules of React, or React APIs.
@@ -20,7 +20,7 @@ React is a library for web and native user interfaces.
 
 ## When Not to Use
 
-- When the task requires documentation specific to React Native components or Next.js routing features (use `reactnative-docs` or `nextjs-docs` instead).
+- When the task requires documentation specific to React Native components or Next.js routing features (use `reactnative-llms` or `nextjs-llms` instead).
 
 ## Core Process
 
@@ -34,6 +34,8 @@ React is a library for web and native user interfaces.
 - **Avoid Hallucination**: React APIs (like Server Components and new Hooks in React 19) change rapidly. Always refer to the official docs to ensure correctness.
 
 ## References
+
+To fully utilize this skill, you MUST read at least one of the links relevant to the current context: 
 
 - [React Documentation Index](https://react.dev/llms.txt)
   MUST read this index when working with React,
