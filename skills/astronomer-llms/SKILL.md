@@ -41,7 +41,7 @@ license: MIT
 
 ## Related Skills
 
-To fully utilize this skill, you MUST read at least one of the links relevant to the current context: 
+To fully utilize this skill, you MUST read at least one of the links relevant to the current context:
 
 - **apache-airflow-dags**:
   You MUST load this skill when asked to write, refactor, or structure Airflow DAGs.
