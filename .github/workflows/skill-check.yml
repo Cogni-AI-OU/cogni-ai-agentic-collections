@@ -77,11 +77,11 @@ jobs:
 
           # 2. Detect Agent Files
           # Any .agent.md file under agents/
-          AGENT_FILES_FROM_AGENTS=$(echo "$CHANGED_FILES" | grep -oP '^agents/[^/]+\.agent\.md' || true)
+          AGENT_FILES_FROM_AGENTS=$(echo "$CHANGED_FILES" | grep -oP '^agents/[^/]+\.agent\.md$' || true)
           # Any .agent.md file under plugins/*/agents/
-          AGENT_FILES_FROM_PLUGINS=$(echo "$CHANGED_FILES" | grep -oP '^plugins/[^/]+/agents/[^/]+\.agent\.md' || true)
+          AGENT_FILES_FROM_PLUGINS=$(echo "$CHANGED_FILES" | grep -oP '^plugins/[^/]+/agents/[^/]+\.agent\.md$' || true)
           # Any .agent.md file in root (for compatibility)
-          AGENT_FILES_FROM_ROOT=$(echo "$CHANGED_FILES" | grep -oP '^[^/]+\.agent\.md' || true)
+          AGENT_FILES_FROM_ROOT=$(echo "$CHANGED_FILES" | grep -oP '^[^/]+\.agent\.md$' || true)
 
           # Combine and de-duplicate agent files
           # shellcheck disable=SC2086
