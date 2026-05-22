@@ -73,7 +73,9 @@ jobs:
 
           # Combine and de-duplicate skill directories
           # shellcheck disable=SC2086
-          UNIQUE_SKILL_DIRS=$(printf "%s\n%s\n%s" "$SKILL_DIRS_FROM_MD" "$SKILL_DIRS_FROM_SKILLS" "$SKILL_DIRS_FROM_PLUGINS" | grep . | sort -u || true)
+          UNIQUE_SKILL_DIRS=$( \
+            printf "%s\n%s\n%s" "$SKILL_DIRS_FROM_MD" "$SKILL_DIRS_FROM_SKILLS" "$SKILL_DIRS_FROM_PLUGINS" \
+            | grep . | sort -u || true)
 
           # 2. Detect Agent Files
           # Any .agent.md file under agents/
@@ -85,7 +87,9 @@ jobs:
 
           # Combine and de-duplicate agent files
           # shellcheck disable=SC2086
-          UNIQUE_AGENT_FILES=$(printf "%s\n%s\n%s" "$AGENT_FILES_FROM_AGENTS" "$AGENT_FILES_FROM_PLUGINS" "$AGENT_FILES_FROM_ROOT" | grep . | sort -u || true)
+          UNIQUE_AGENT_FILES=$( \
+            printf "%s\n%s\n%s" "$AGENT_FILES_FROM_AGENTS" "$AGENT_FILES_FROM_PLUGINS" "$AGENT_FILES_FROM_ROOT" \
+            | grep . | sort -u || true)
 
           # Build CLI arguments for --skills
           SKILL_ARGS=""
