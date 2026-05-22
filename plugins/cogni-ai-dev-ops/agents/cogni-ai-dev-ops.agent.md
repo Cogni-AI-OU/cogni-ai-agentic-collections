@@ -76,11 +76,5 @@ List of skills you must load explicitly using the native `skill` tool
 (or by reading their `SKILL.md` files) before proceeding:
 
 - devops
-- molecule
-- pulumi-cli
-- docker
-- dockerfile
-- datadog-docs
-- pulumi-docs
 
 If these are not available during runtime, stop and report the incident.
