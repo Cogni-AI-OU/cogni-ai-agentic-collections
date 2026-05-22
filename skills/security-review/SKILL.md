@@ -45,7 +45,7 @@ Use this skill when:
 
 For PR reviews, provide a concise summary of findings. Use the format defined in `references/report-format.md`.
 
-## Security
+## Security Guidelines
 
 - Never commit secrets or API keys.
 - Use environment variables for configuration.
