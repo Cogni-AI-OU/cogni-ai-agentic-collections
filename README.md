@@ -43,6 +43,14 @@ How to install all or selected skills (interactive with override):
 ```console
 gh skills install Cogni-AI-OU/cogni-ai-copilot-collections --agent github-copilot --force --scope user
 ```
+
+For all skills (including from plugins), select `(all skills)`.
+
+### Devcontainer
+
+The repository includes `.devcontainer/devcontainer.json` for a reproducible local
+setup with GitHub Actions tooling, Docker support, and common CLI dependencies.
+
 ## References
 
 - [About custom agents](https://gh.io/customagents)
