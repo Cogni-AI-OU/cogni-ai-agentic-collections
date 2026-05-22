@@ -33,7 +33,7 @@ A cognitive framework for deep analytical reasoning.
 
 ## Core Process
 
-1. **Analyze**: Analyze task/issue/error to understand requirements.  
+1. **Analyze**: Review the task, issue, or error to understand the requirements.  
 2. **Deconstruct & Frame**: Separate the final goal (Conclusion) from the underlying logic (Premises).  
 3. **Surface Hidden Dependencies**: Identify what must be true for the current logic to hold (assumptions, state, concurrency). **State your assumptions explicitly. If uncertain, ask.**  
 4. **Generate Hypotheses**: Explicitly list alternative explanations or missing context before acting. **If multiple interpretations exist, present them—don't pick silently.**  
