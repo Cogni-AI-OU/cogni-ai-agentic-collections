@@ -92,8 +92,8 @@ flowchart TD
 
 ## What to Avoid
 
-- **Do NOT use `subagent_type` for skills.**:
-  The `subagent_type` parameter is reserved for agent types. Skills are loaded inside the sub-agent via the Skill tool.
+- **Do NOT use `subagent_type` for skills**:
+  The `subagent_type` parameter is reserved for agent types. Skills are loaded inside the sub-agent via the `skill` tool.
 
 ## Related Skills
 
