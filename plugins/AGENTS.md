@@ -133,6 +133,7 @@ Slash commands are invoked via `/agent:skill` in the Copilot CLI or VS Code Chat
 | `/cogni-ai-github-ops:github-aw` | Load the github-aw skill — Safely update existing GitHub Agentic Workflows (gh-aw) |
 | `/cogni-ai-programmer:programming` | Load the programming skill — expert workflow for solving technical problems with code: algorithm design, data structures, edge case handling, and code craftsmanship |
 | `/cogni-ai-programmer:python` | Load the python skill — expert Python language skill for writing, refactoring, and testing idiomatic Python 3 code (bundled with the programmer plugin) |
+| `/cogni-ai-programmer:threejs-llms` | Load the threejs-llms skill — expert guide for generating modern Three.js code using WebGL, WebGPU, and TSL (bundled with the programmer plugin) |
 | `/cogni-ai-architect:software-architecture` | Load the software-architecture skill — expert-level workflow for software architecture design covering architectural styles, SOLID principles, design patterns, and ADRs |
 | `/cogni-ai-dev-ops:devops` | Load the devops skill — Core DevOps and Site Reliability Engineering workflow covering CI/CD, IaC, and observability |
 | `/cogni-ai-dev-ops:molecule` | Load the molecule skill — Molecule testing workflows for Ansible roles |
