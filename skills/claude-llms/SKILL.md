@@ -1,10 +1,10 @@
 ---
-name: claude-docs
+name: claude-llms
 description: 'Reference and APIs for retrieving Anthropic Claude documentation programmatically for LLMs. You MUST load this skill when asked to search or retrieve Claude or Claude Code documentation.'
 license: MIT
 ---
 
-# claude-docs
+# claude-llms
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 

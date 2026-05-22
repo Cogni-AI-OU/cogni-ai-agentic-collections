@@ -1,5 +1,5 @@
 ---
-name: reactnative-docs
+name: reactnative-llms
 description: >-
   React Native documentation.
   You MUST load this skill when interacting with React Native documentation, Core Components, or mobile APIs.
@@ -18,7 +18,7 @@ license: MIT
 
 ## When Not to Use
 
-- When working on standard web applications using React (use `react-docs` instead).
+- When working on standard web applications using React (use `react-llms` instead).
 
 ## Core Process
 

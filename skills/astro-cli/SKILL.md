@@ -98,7 +98,7 @@ Examples:
 
 ## Related Skills
 
-- **astronomer-docs**:
+- **astronomer-llms**:
   Read and navigate Astronomer documentation using llms.txt context.
 - **apache-airflow-api**:
   Execute Apache Airflow Stable REST API queries, manage DAGs, backfills, connections, variables, and assets.

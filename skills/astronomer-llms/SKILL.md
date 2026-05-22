@@ -1,10 +1,10 @@
 ---
-name: astronomer-docs
+name: astronomer-llms
 description: 'Read and navigate Astronomer documentation using llms.txt context. You MUST load this skill when asked to read Astronomer documentation or Airflow documentation hosted by Astronomer.'
 license: MIT
 ---
 
-# Skill: astronomer-docs
+# Skill: astronomer-llms
 
 # Astronomer Docs
 

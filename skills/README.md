@@ -29,14 +29,14 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 | [apache-airflow-api](apache-airflow-api/SKILL.md) | Execute Apache Airflow Stable REST API queries. |
 | [apache-airflow-dags](apache-airflow-dags/SKILL.md) | Expert-level guide for authoring Apache Airflow DAGs. |
 | [astro-cli](astro-cli/SKILL.md) | Expert-level guide for using the Astro CLI to manage Astronomer Airflow. |
-| [astronomer-docs](astronomer-docs/SKILL.md) | Read and navigate Astronomer documentation using llms.txt context. |
+| [astronomer-llms](astronomer-llms/SKILL.md) | Read and navigate Astronomer documentation using llms.txt context. |
 | [awesome-copilot](awesome-copilot/SKILL.md) | Community-contributed instructions, agents, and skills for GitHub Copilot. |
 | [brainstorm](brainstorm/SKILL.md) | Activate brainstorming protocol to explore options and research. |
 | [brainstorm-agent-runs](brainstorm-agent-runs/SKILL.md) | Identify and analyze agent runs via GitHub API for a given PR. |
 | [brainstorm-github-pr](brainstorm-github-pr/SKILL.md) | Analyze and visualize commit history and CI pipeline checks for a PR. |
 | [cat](cat/SKILL.md) | Guidelines for safely using `cat` and avoiding shell hangs with heredocs. |
 | [chrome-devtools](chrome-devtools/SKILL.md) | Expert-level browser automation and debugging using Chrome DevTools MCP. |
-| [claude-docs](claude-docs/SKILL.md) | Reference and APIs for retrieving Anthropic Claude documentation. |
+| [claude-llms](claude-llms/SKILL.md) | Reference and APIs for retrieving Anthropic Claude documentation. |
 | [code-review](code-review/SKILL.md) | Cognitive framework for expert-level code inspection and logic validation. |
 | [code-tour](code-tour/SKILL.md) | Create, update, and maintain VSCode CodeTour (.tour) JSON walkthrough files. |
 | [codeql](codeql/SKILL.md) | Configure and execute CodeQL code scanning analysis. |
@@ -63,7 +63,7 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 | [mermaid-beta](mermaid-beta/SKILL.md) | Guide for experimental Mermaid.js beta diagrams. |
 | [minizinc](minizinc/SKILL.md) | Expert MiniZinc modeling for constraint satisfaction. |
 | [mot](mot/SKILL.md) | Evaluate and classify models based on Model Openness Framework. |
-| [name-com-docs](name-com-docs/SKILL.md) | Reference for name.com Core API documentation. |
+| [name-com-llms](name-com-llms/SKILL.md) | Reference for name.com Core API documentation. |
 | [npx-skills](npx-skills/SKILL.md) | Install and manage agent skills using the npx skills CLI. |
 | [ollama-cli](ollama-cli/SKILL.md) | Execute and manage local LLMs using the ollama CLI. |
 | [opencode](opencode/SKILL.md) | Manage OpenCode configuration and access the OpenCode Zen API. |

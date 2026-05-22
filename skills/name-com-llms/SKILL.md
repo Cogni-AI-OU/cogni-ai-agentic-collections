@@ -1,10 +1,10 @@
 ---
-name: name-com-docs
+name: name-com-llms
 description: 'Reference for name.com Core API documentation, API discovery, OpenAPI specs, and domain management workflows. You MUST load this skill when interacting with the name.com Core API.'
 license: MIT
 ---
 
-# Skill: name-com-docs
+# Skill: name-com-llms
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 
