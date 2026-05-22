@@ -4,6 +4,14 @@ This directory is the **source of truth** for Cogni AI autonomous agent configur
 Agent files are stored here so they are accessible directly when this repo is cloned
 into `.github/agents`.
 
+## Installation
+
+To install a specific agent from this collection:
+
+```bash
+gh skills install Cogni-AI-OU/cogni-ai-agents --scope user <agent-name>
+```
+
 ## Agent Catalog
 
 | File | Audience | Purpose |
