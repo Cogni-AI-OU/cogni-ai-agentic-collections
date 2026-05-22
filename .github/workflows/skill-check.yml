@@ -65,7 +65,7 @@ jobs:
 
           # 1. Detect Skill Directories
           # Any directory containing SKILL.md that was touched
-          SKILL_DIRS_FROM_MD=$(echo "$CHANGED_FILES" | grep 'SKILL\.md$' | xargs -I {} dirname {} || true)
+          SKILL_DIRS_FROM_MD=$(printf '%s\n' "$CHANGED_FILES" | grep 'SKILL\.md$' | xargs -r -I {} dirname "{}" || true)
           # Any directory under skills/* that was touched
           SKILL_DIRS_FROM_SKILLS=$(echo "$CHANGED_FILES" | grep -oP '^skills/[^/]+' || true)
           # Any directory under plugins/*/skills/* that was touched
