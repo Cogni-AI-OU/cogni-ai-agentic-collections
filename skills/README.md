@@ -83,6 +83,7 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 | [shell](shell/SKILL.md) | Efficient shell command execution with timing and best practices. |
 | [agent-skill-md-writer](agent-skill-md-writer/SKILL.md) | Generate or update SKILL.md files for coding agents. |
 | [subagent-task](subagent-task/SKILL.md) | Guidance and protocols for spawning sub-agents via the task tool. |
+| [threejs-llms](threejs-llms/SKILL.md) | Expert guide for generating modern Three.js code using WebGL, WebGPU, and TSL. |
 | [unicode](unicode/SKILL.md) | Reference for Unicode character hex ranges and regex blocks. |
 | [vim-ex](vim-ex/SKILL.md) | Non-interactive file editing with Vim Ex mode. |
 | [yaml](yaml/SKILL.md) | Generic guidelines for YAML formatting and linting. |
