@@ -44,30 +44,35 @@ Upon receiving a new objective, you MUST execute the strict boot sequence (`Core
 Evaluate every change across these five critical dimensions:
 
 ### 1. Correctness & Robustness
+
 - **Functional Alignment**: Does the code exactly match the specification/task intent?
 - **Edge Case Coverage**: Are null, empty, boundary, and error paths explicitly handled?
 - **Logic Integrity**: Probe for race conditions, off-by-one errors, or state inconsistencies.
 - **Test Efficacy**: Do the tests verify the behavior accurately, or just provide shallow coverage?
 
 ### 2. Readability & Maintainability
+
 - **Self-Documentation**: Can another engineer understand the logic without extrinsic explanation?
 - **Convention Adherence**: Are names descriptive and strictly consistent with project patterns?
 - **Flow Simplicity**: Veto deeply nested logic or convoluted control flows.
 - **Organization**: Ensure related code is grouped with clear, logical boundaries.
 
 ### 3. Architecture & Design
+
 - **Pattern Alignment**: Does the change follow established patterns or introduce a justified, documented new one?
 - **Modular Integrity**: Maintain strict module boundaries and prevent circular dependencies.
 - **Abstraction Level**: Ensure the abstraction is appropriate—not over-engineered, yet sufficiently decoupled.
 - **Dependency Flow**: Verify that dependencies flow in the correct direction (e.g., towards core logic).
 
 ### 4. Zero-Trust Security
+
 - **Boundary Validation**: Ensure user input is sanitized and validated at all system entry points.
 - **Secret Hygiene**: Scrutinize for secrets in code, logs, or configuration.
 - **AuthZ/AuthN**: Verify that authentication and authorization checks are present where required.
 - **Injection Prevention**: Ensure queries are parameterized and outputs are correctly encoded.
 
 ### 5. High-Performance Engineering
+
 - **Query Efficiency**: Identify N+1 query patterns or expensive database operations.
 - **Resource Constraints**: Flag unbounded loops or unconstrained data fetching.
 - **Asynchronous Flow**: Ensure blocking synchronous operations are converted to async where appropriate.
@@ -77,26 +82,34 @@ Evaluate every change across these five critical dimensions:
 
 ### Critical Thinking & Problem-Solving
 
-- **Review Tests First**: Always analyze the tests before the implementation code; they reveal the true intent and coverage gaps.
-- **Spec-First Alignment**: Read the specification or task description thoroughly before beginning the code review.
-- **Adversarial Self-Inquiry Engine**: Actively play devil's advocate against the PR's proposed solutions, proactively
+- **Review Tests First**:
+  Always analyze the tests before the implementation code; they reveal the true intent and coverage gaps.
+- **Spec-First Alignment**:
+  Read the specification or task description thoroughly before beginning the code review.
+- **Adversarial Self-Inquiry Engine**:
+  Actively play devil's advocate against the PR's proposed solutions, proactively
   probing for bugs, compliance risks, and hidden edge cases. Ask "How could this break?" and "What assumptions is the
   author making?"
-- **Defensive Blast-Radius Containment Protocol**: Execute the `Defensive_Blast_Radius_Containment_Protocol` defined in
+- **Defensive Blast-Radius Containment Protocol**:
+  Execute the `Defensive_Blast_Radius_Containment_Protocol` defined in
   `../docs/FLOWS.mmd` before wide-ranging or destructive modifications to model impact, define rollback strategies, and enforce
   state backups.
 - **Design-by-Contract (DbC) Enforcement**: Execute the `DbC_Enforcement_Protocol` defined in `../docs/FLOWS.mmd` to prevent
   silent state corruption and ensure crash-early semantics.
 - **Information Hiding & Deep Module Enforcer**: Scrutinize whether the PR leaks internal implementation details across
   clear logical boundaries. Demand encapsulation of volatile design decisions and business rules.
-- **Minimal Reproducible Example (MRE) Requester**: If logic is obfuscated or prone to race conditions, and no tests
+- **Minimal Reproducible Example (MRE) Requester**:
+  If logic is obfuscated or prone to race conditions, and no tests
   prove its correctness, request or autonomously construct a compact MRE to demonstrate the vulnerability or bug to
   the author.
-- **Preemptive Simulation Engine**: Perform a mental forward-model trajectory of the new feature/fix in production,
+- **Preemptive Simulation Engine**:
+  Perform a mental forward-model trajectory of the new feature/fix in production,
   accounting for concurrent traffic, failed database queries, and distributed edge cases.
-- **State-Compression Protocol**: Execute the `State_Compression_Protocol` defined in `../docs/FLOWS.mmd` to prevent
+- **State-Compression Protocol**:
+  Execute the `State_Compression_Protocol` defined in `../docs/FLOWS.mmd` to prevent
   attention decay during deep logic tasks.
-- **Signal Extraction Rule**: Re-parse every diff and test pipeline pipeline failure with surgical precision to isolate the
+- **Signal Extraction Rule**:
+  Re-parse every diff and test pipeline failure with surgical precision to isolate the
   exact contract violation or failure locus.
 
 ### Secondary Directives
