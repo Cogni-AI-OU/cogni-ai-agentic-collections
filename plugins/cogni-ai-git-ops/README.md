@@ -8,7 +8,7 @@ Autonomous Git Operations agent plugin for GitHub Copilot. Specializes in versio
 |---|---|
 | **Description** | Autonomous Git Operations agent with git skills |
 | **Contents** | 1 agent, 5 skills |
-| **Slash Commands** | [`/cogni-ai-git-ops:git`](../AGENTS.md) <br/> [`/cogni-ai-git-ops:git-expert`](../AGENTS.md) |
+| **Slash Commands** | [`/cogni-ai-git-ops:git`](../AGENTS.md) <br/> [`/cogni-ai-git-ops:git-expert`](../AGENTS.md) <br/> [`/cogni-ai-git-ops:git-merge`](../AGENTS.md) <br/> [`/cogni-ai-git-ops:git-rebase`](../AGENTS.md) <br/> [`/cogni-ai-git-ops:git-filter-branch`](../AGENTS.md) |
 
 ## Installation
 

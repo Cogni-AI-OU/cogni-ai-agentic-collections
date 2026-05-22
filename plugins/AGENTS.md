@@ -120,10 +120,21 @@ Slash commands are invoked via `/agent:skill` in the Copilot CLI or VS Code Chat
 | `/cogni-ai-coder:critical-thinking` | Load the critical-thinking skill — a cognitive framework for deep analytical reasoning, deconstructing assumptions, applying Socratic questioning, and performing adversarial red-teaming to solve complex problems |
 | `/cogni-ai-developer:development` | Load the development skill — full-cycle software development workflow from requirements and system design through deployment, monitoring, and iteration |
 | `/cogni-ai-developer:tdd` | Load the tdd skill — commands, step-by-step procedures, and mechanical execution for test engineering, testability audits, and the TDD lifecycle |
+| `/cogni-ai-developer:critical-thinking` | Load the critical-thinking skill — cognitive framework for deep analytical reasoning and problem decomposition (bundled with the developer plugin) |
 | `/cogni-ai-tester:testing` | Load the testing skill — elite autonomous test engineering and reliability kernel for proving correctness |
 | `/cogni-ai-git-ops:git` | Load the git skill — Guide for using git with non-interactive, safe operations |
 | `/cogni-ai-git-ops:git-expert` | Load the git-expert skill — Advanced Git operations including reflog and history manipulation |
+| `/cogni-ai-git-ops:git-merge` | Load the git-merge skill — Guide and safety rules for performing safe and verified git merges |
+| `/cogni-ai-git-ops:git-rebase` | Load the git-rebase skill — Advanced Git rebase operations including interactive history cleanup and scripted rewrites |
+| `/cogni-ai-git-ops:git-filter-branch` | Load the git-filter-branch skill — Extract a specific subdirectory with history using git filter-branch |
 | `/cogni-ai-github-ops:gh` | Load the gh skill — GitHub CLI (`gh`) operations for issues, PRs, and workflows |
+| `/cogni-ai-github-ops:github` | Load the github skill — Guidance on GitHub-specific features, pull requests viewing modes, and collaborative practices |
+| `/cogni-ai-github-ops:github-actions` | Load the github-actions skill — Diagnose GitHub Actions workflow failures by retrieving run statuses and logs |
+| `/cogni-ai-github-ops:github-aw` | Load the github-aw skill — Safely update existing GitHub Agentic Workflows (gh-aw) |
 | `/cogni-ai-programmer:programming` | Load the programming skill — expert workflow for solving technical problems with code: algorithm design, data structures, edge case handling, and code craftsmanship |
 | `/cogni-ai-programmer:python` | Load the python skill — expert Python language skill for writing, refactoring, and testing idiomatic Python 3 code (bundled with the programmer plugin) |
 | `/cogni-ai-architect:software-architecture` | Load the software-architecture skill — expert-level workflow for software architecture design covering architectural styles, SOLID principles, design patterns, and ADRs |
+| `/cogni-ai-dev-ops:devops` | Load the devops skill — Core DevOps and Site Reliability Engineering workflow covering CI/CD, IaC, and observability |
+| `/cogni-ai-dev-ops:molecule` | Load the molecule skill — Molecule testing workflows for Ansible roles |
+| `/cogni-ai-dev-ops:pulumi-cli` | Load the pulumi-cli skill — Execute Pulumi CLI commands for stack management and infrastructure deployments |
+| `/cogni-ai-dev-ops:docker` | Load the docker skill — How to run, manage, and troubleshoot Docker containers, images, and networks safely |
