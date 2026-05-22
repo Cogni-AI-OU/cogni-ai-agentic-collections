@@ -33,8 +33,9 @@ license: MIT
 
 ## References
 
-- **Next.js Documentation Index (llms.txt)**: [https://nextjs.org/llms.txt](https://nextjs.org/llms.txt)
-  - **Condition**: Read this index when you need to find the correct, up-to-date documentation link for a Next.js topic.
-  - **Includes headers/tags**: Documentation, Versioned Documentation, Support Policy, Learn Next.js, Blog.
-- **Full Next.js Documentation**: [https://nextjs.org/docs/llms-full.txt](https://nextjs.org/docs/llms-full.txt)
-  - **Condition**: Read this when you need comprehensive documentation on Next.js APIs. Use a web reading tool that supports limits/pagination as this file is very large.
+- [Next.js](https://nextjs.org/llms.txt](https://nextjs.org/llms.txt)
+  MUST read when you need to find the correct, up-to-date documentation link for a Next.js topic.
+  This includes blog posts, documentation, support policy.
+- [Documentation Index](https://nextjs.org/docs/llms.txt): Complete Next.js documentation for LLMs
+- [Full Next.js Documentation](https://nextjs.org/docs/llms-full.txt)
+  MUST read when you need comprehensive documentation on Next.js APIs. Use a web reading tool that supports limits/pagination as this file is very large.
