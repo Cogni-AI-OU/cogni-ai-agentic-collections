@@ -37,6 +37,8 @@ license: MIT
 
 - **`.astro/config.yaml`**: Configuration file for the Astro web framework, defining build options, integrations, and project settings.
 - **`.claude/`**: Directory containing workspace-specific Claude configuration, such as `settings.json` for hooks, tool permissions, and model or other workspace settings.
+- **`.cursor/`**: Directory for Cursor-specific workspace configurations, including project-specific rules, indexing settings, and AI behavior overrides.
+- **`.cursorrules`**: Defines custom instructions and behavioral rules for the Cursor AI editor, ensuring consistent AI assistance across the project.
 - **`.devcontainer/`**: Directory for containerized development environments, containing `devcontainer.json` (configuration), `requirements.txt` (Python dependencies), and `apt-packages.txt` (system packages).
 - **`.editorconfig`**: Defines consistent coding styles (indentation, line endings, character set) for multiple developers working on the same project across various IDEs.
 - **`.env.example` / `.env.sample` / `.env.dist`**: Provides a template of required environment variables without including actual secret values.
