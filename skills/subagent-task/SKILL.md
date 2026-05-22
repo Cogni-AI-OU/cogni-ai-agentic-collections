@@ -42,10 +42,10 @@ The use of the `task` tool and spawning sub-agents is permitted for complex, mul
 ## Example: Agent Delegation Protocol
 
 ```mermaid
-%% --------------------------------------------------------
-%% Agent Delegation Protocol
-%% --------------------------------------------------------
 flowchart TD
+    %% --------------------------------------------------------
+    %% Agent Delegation Protocol
+    %% --------------------------------------------------------
     subgraph Flow_Agent_Delegation ["Agent Delegation Protocol"]
         direction TB
         Arch((Cogni AI Architect))
@@ -79,7 +79,7 @@ flowchart TD
     Trigger -->|Large diff| CodeRev["code-reviewer<br/>Final code quality review"]
     Trigger -->|Security audit/review| SecAud["security-auditor<br/>Perform security audit or review"]
 
-    classDef scenario fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef scenario fill:#f9f,stroke:#333,stroke-width:2px
     class Docs,Brain,Programmer,GHOps,PlanRev,CodeRev,SecRev,DevOps scenario
 ```
 
