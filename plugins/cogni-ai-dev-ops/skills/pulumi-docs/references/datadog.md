@@ -37,6 +37,9 @@ Use this flow when working with new Datadog resource types:
 4. Inspect widget unions and nested types when fields fail type-checking.
 5. Map Datadog API JSON names to Pulumi schema names (e.g., `groupBy` to `groupBies`) and rerun preview.
 
+- The agent context window can be easily overwhelmed by full dashboard JSONs. Always filter the response with `jq` when possible.
+- For retrieving telemetry (logs, metrics, traces, monitors), **always prefer optimized MCP-based tools** over raw API calls if available, as they are specifically designed to optimize data size for the agent's context window.
+
 ## Known Datadog Pulumi Patterns
 
 - Log alerts grouped per host can use Datadog template variables in monitor text, but the query itself must group by host explicitly.
@@ -44,10 +47,18 @@ Use this flow when working with new Datadog resource types:
 - Formula/event-platform monitors may require wrapper fields under `variables` (e.g., use `variables.eventQueries`, not a raw list of query objects).
 - Some schema names are intentionally awkward in this provider version (e.g., event query grouping uses `groupBies`, not `groupBy`).
 - For formula/event-query monitors, avoid empty search strings. Use `search.query: '*'` instead of an empty string, because preview may pass while `pulumi up` can crash the Datadog provider during create.
+- **Imports Format & Type Tokens**:
+  The CLI `pulumi import` command strictly requires the **fully qualified type token** (e.g., `datadog:index/teamMembership:TeamMembership` or `datadog:index/team:Team`),
+  whereas Pulumi YAML configuration often accepts shorter aliases (e.g., `type: datadog:TeamMembership`).
+  If an import fails with an unrecognized type, always confirm the exact CLI token via `pulumi package get-schema datadog | jq '.resources | keys'`.
+  Additionally, know the required target ID format (e.g., the team membership ID format is `teamId:userId`).
+- **Team management API scope**: Interacting with `datadog:Team` and `datadog:TeamMembership` requires `teams_read` and `teams_write` scopes on the App Key, as well as `users_read` to lookup specific Datadog User IDs.
 
 ## Diagnostics and Troubleshooting
 
 - **`400 Bad Request`**: From `/api/v1/monitor/validate` usually means monitor logic, thresholds, or query syntax is wrong.
+- **`403 Forbidden` / `Failed permission authorization checks`**: Usually indicates the Datadog Application Key lacks necessary scopes (e.g., `teams_write`, `users_read`). These must be updated in the Datadog UI before running `pulumi up` or `pulumi import`.
+- **Validation errors during Import**: When doing `pulumi import`, if there are credential validation issues locally, setting `pulumi config set datadog:validate false` and ensuring the `datadog:apiUrl` is correct can bypass provider startup validation issues.
 - **`is not assignable`**: From Pulumi usually means the YAML shape does not match the provider schema (e.g., mismatch between API JSON and YAML format); check `get-schema` before guessing.
 - **Provider Panic**: During `Create` after a clean preview usually means a provider bug or an edge-case payload. Minimize optional fields first, then compare against the provider's monitor schema and upstream Terraform docs.
 - **Auth Failure**: If provider auth fails before monitor creation, inspect stack config and env credentials separately before changing monitor code.
