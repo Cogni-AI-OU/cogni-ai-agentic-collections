@@ -172,10 +172,10 @@ query {
 
 ### Full Copilot Review Status Summary
 
-Query all Copilot-related information in one call:
+Run one GraphQL call, keep the JSON in a variable, then run focused `jq` checks:
 
 ```bash
-gh api graphql -f query='
+copilot_review_json="$(gh api graphql -f query='
 query {
   repository(owner: "OWNER", name: "REPO") {
     pullRequest(number: PR_NUMBER) {
@@ -198,9 +198,7 @@ query {
         }
       }
       reviewThreads(first: 100) {
-        totalCount
         nodes {
-          id
           isResolved
           comments(first: 1) {
             nodes {
@@ -211,20 +209,20 @@ query {
       }
     }
   }
-}'
-```
+}')"
 
-Then filter for Copilot status:
+# Pending review request(s)
+jq '.data.repository.pullRequest.reviewRequests.nodes[]
+  | select(.requestedReviewer.login == "copilot-pull-request-reviewer")' <<<"$copilot_review_json"
 
-```bash
-# Pending review request
-jq '.data.repository.pullRequest.reviewRequests.nodes[] | select(.requestedReviewer.login == "copilot-pull-request-reviewer")'
+# Completed review(s)
+jq '.data.repository.pullRequest.reviews.nodes[]
+  | select(.author.login == "copilot-pull-request-reviewer")' <<<"$copilot_review_json"
 
-# Completed reviews
-jq '.data.repository.pullRequest.reviews.nodes[] | select(.author.login == "copilot-pull-request-reviewer")'
-
-# Unresolved Copilot threads
-jq '[.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false and .comments.nodes[0].author.login == "copilot-pull-request-reviewer")] | length'
+# Unresolved Copilot thread count
+jq '[.data.repository.pullRequest.reviewThreads.nodes[]
+  | select(.isResolved == false and .comments.nodes[0].author.login == "copilot-pull-request-reviewer")]
+  | length' <<<"$copilot_review_json"
 ```
 
 ## Retrieving Job Summaries
