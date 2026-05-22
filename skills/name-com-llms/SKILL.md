@@ -52,6 +52,8 @@ license: MIT
 
 ## References
 
+To fully utilize this skill, you MUST read at least one of the links relevant to the current context: 
+
 - [Name.com API Catalog](https://www.name.com/llms.txt)
 - [Name.com Core API Documentation](https://docs.name.com/llms.txt)
 - [Name.com Agent Skill Documentation](https://docs.name.com/skill.md)
