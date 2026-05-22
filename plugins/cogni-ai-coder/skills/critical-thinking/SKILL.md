@@ -33,20 +33,27 @@ A cognitive framework for deep analytical reasoning.
 
 ## Core Process
 
-1. **Analyze**: Analyze task/issue/error to understand requirements.
-2. **Deconstruct & Frame**: Separate the final goal (Conclusion) from the underlying logic (Premises).
-3. **Surface Hidden Dependencies**: Identify what must be true for the current logic to hold (assumptions, state, concurrency). **State your assumptions explicitly. If uncertain, ask.**
-4. **Generate Hypotheses**: Explicitly list alternative explanations or missing context before acting. **If multiple interpretations exist, present them—don't pick silently.**
-5. **Push for Simplicity**: **If a simpler approach exists, say so. Push back when warranted.**
-6. **Clarification Protocol**: **If something is unclear, stop. Name what's confusing. Ask.**
-7. **Transform Tasks into Verifiable Goals**: Reframe ambiguity into provable outcomes:
-   - "Add validation" → "Write tests for invalid inputs, then make them pass"
-   - "Fix the bug" → "Write a test that reproduces it, then make it pass"
-   - "Refactor X" → "Ensure tests pass before and after"
-8. **Root Cause Isolation**: When troubleshooting, split the problem into smaller, reproducible steps and use version history (`git blame`/`git log`) or execution logs to narrow down the fault.
-9. **Adversarial Red-Teaming**: Aggressively attempt to break your proposed plan. Identify the exact line or condition most likely to fail.
-10. **Constraint Formulation (MiniZinc)**: When applicable, formally model the problem's constraints by writing dry-code definitions in MiniZinc to expose hidden dependencies and restrictions.
-11. **Verify Systemically**: Evaluate the decision against immediate needs, technical debt accrual, and long-term maintainability.
+1. **Analyze**: Analyze task/issue/error to understand requirements.  
+2. **Deconstruct & Frame**: Separate the final goal (Conclusion) from the underlying logic (Premises).  
+3. **Surface Hidden Dependencies**: Identify what must be true for the current logic to hold (assumptions, state, concurrency). **State your assumptions explicitly. If uncertain, ask.**  
+4. **Generate Hypotheses**: Explicitly list alternative explanations or missing context before acting. **If multiple interpretations exist, present them—don't pick silently.**  
+5. **Push for Simplicity**: **If a simpler approach exists, say so. Push back when warranted.**  
+6. **Clarification Protocol**: **If something is unclear, stop. Name what's confusing. Ask.**  
+7. **Transform Tasks into Verifiable Goals**: Reframe ambiguity into provable outcomes:  
+   - "Add validation" → "Write tests for invalid inputs, then make them pass"  
+   - "Fix the bug" → "Write a test that reproduces it, then make it pass"  
+   - "Refactor X" → "Ensure tests pass before and after"  
+8. **Root Cause Isolation**: When troubleshooting, split the problem into smaller, reproducible steps and use version history (`git blame`/`git log`) or execution logs to narrow down the fault.  
+9. **Adversarial Red-Teaming**: Aggressively attempt to break your proposed plan. Identify the exact line or condition most likely to fail.  
+10. **Constraint Formulation (MiniZinc)**: When applicable, formally model the problem's constraints by writing dry-code definitions in MiniZinc to expose hidden dependencies and restrictions.  
+11. **Verify Systemically**: Evaluate the decision against immediate needs, technical debt accrual, and long-term maintainability. **Emit Post: verified trace.**  
+12. **Persist & Close**: After verification, update persistent memory with outcome, assumptions ledger, and new invariants; emit final Hard Checkpoint.  
+
+Root Cause Isolation: When troubleshooting, split the problem into smaller, reproducible steps and use version history (git blame/git log) or execution logs to narrow down the fault.
+Adversarial Red-Teaming: Aggressively attempt to break your proposed plan. Identify the exact line or condition most likely to fail.
+Constraint Formulation (MiniZinc): When applicable, formally model the problem's constraints by writing dry-code definitions in MiniZinc to expose hidden dependencies and restrictions.
+Verify Systemically: Evaluate the decision against immediate needs, technical debt accrual, and long-term maintainability. Emit Post: verified trace.
+Persist & Close: After verification, update persistent memory with outcome, assumptions ledger, and new invariants; emit final Hard Checkpoint.
 
 ## Core Principles
 
