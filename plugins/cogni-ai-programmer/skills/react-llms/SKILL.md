@@ -35,6 +35,8 @@ React is a library for web and native user interfaces.
 
 ## References
 
+To fully utilize this skill, you MUST read at least one of the links relevant to the current context: 
+
 - [React Documentation Index](https://react.dev/llms.txt)
   MUST read this index when working with React,
   in order to find documentation for React Hooks, built-in components, APIs, or React Server Components.
