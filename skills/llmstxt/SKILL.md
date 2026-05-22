@@ -54,4 +54,4 @@ license: MIT
 
 - [llms.txt Official Specification](https://llmstxt.org/) (links to docs)
 - [llms.txt proposal](https://llmstxt.org/index.md): The proposal for llms.txt
-- <https://llmstxt.org/llms.txt>
+- [llmstxt.org/llms.txt](https://llmstxt.org/llms.txt): Covers `llms.txt` proposal overview, `## Docs` section with links to the proposal, Python library docs, and ed demo
