@@ -11,6 +11,7 @@ Portable bundles that package agents, skills, and configuration together for eas
 - **[cogni-ai-programmer](cogni-ai-programmer/)** — Autonomous programmer agent with programming and python skills (1 agent, 2 skills)
 - **[cogni-ai-architect](cogni-ai-architect/)** — Elite autonomous architect agent with software-architecture skill for structural perfection and neurosymbolic verification (1 agent, 1 skill)
 - **[cogni-ai-tester](cogni-ai-tester/)** — Elite autonomous test engineering agent with testing skill for proving software correctness and preventing regressions (1 agent, 1 skill)
+- **[cogni-ai-dev-ops](cogni-ai-dev-ops/)** — Elite autonomous DevOps and site reliability agent with devops, molecule, pulumi, datadog, and docker skills (1 agent, 7 skills)
 
 ## Installation
 

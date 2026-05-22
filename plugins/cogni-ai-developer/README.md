@@ -8,7 +8,7 @@ Autonomous development agent plugin for GitHub Copilot. Specializes in building 
 |---|---|
 | **Description** | Autonomous developer agent with development, tdd, and critical-thinking skills |
 | **Contents** | 1 agent, 3 skills |
-| **Slash Commands** | [`/cogni-ai-developer:development`](../AGENTS.md) <br/> [`/cogni-ai-developer:tdd`](../AGENTS.md) |
+| **Slash Commands** | [`/cogni-ai-developer:development`](../AGENTS.md) <br/> [`/cogni-ai-developer:tdd`](../AGENTS.md) <br/> [`/cogni-ai-developer:critical-thinking`](../AGENTS.md) |
 
 ## Installation
 
