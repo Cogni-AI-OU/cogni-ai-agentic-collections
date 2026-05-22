@@ -6,7 +6,13 @@ into `.github/agents`.
 
 ## Installation
 
-To install a specific agent from this collection:
+To install all agents from this collection:
+
+```bash
+gh skills install Cogni-AI-OU/cogni-ai-agents --scope user
+```
+
+To install a specific agent:
 
 ```bash
 gh skills install Cogni-AI-OU/cogni-ai-agents --scope user <agent-name>

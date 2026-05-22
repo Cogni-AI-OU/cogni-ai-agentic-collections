@@ -2,7 +2,13 @@
 
 ## Installation
 
-To install a specific skill from this collection:
+To install all skills from this collection:
+
+```bash
+gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user
+```
+
+To install a specific skill:
 
 ```bash
 gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
