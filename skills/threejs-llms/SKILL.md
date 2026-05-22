@@ -41,7 +41,8 @@ license: MIT
 
 - **Three.js Core Guidelines and API**
   You MUST read this link when starting a new project, setting up a renderer, or looking for core API and module references.
-  **Headers/Topics**: Instructions for Large Language Models, Getting Started, Renderer Guides, Core Concepts, Essential API (Core, Scenes, Cameras, Renderers, Objects, Materials, Geometries, Lights, Loaders, Controls, Math).
+  **Headers/Topics**: Instructions for Large Language Models, Getting Started, Renderer Guides, Core Concepts, Essential API
+  (Core, Scenes, Cameras, Renderers, Objects, Materials, Geometries, Lights, Loaders, Controls, Math).
   [https://threejs.org/docs/llms.txt](https://threejs.org/docs/llms.txt)
 
 - **Three.js TSL & Full Code Examples**
