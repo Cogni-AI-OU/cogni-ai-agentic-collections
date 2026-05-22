@@ -118,6 +118,121 @@ gh api -H "Accept: application/vnd.github+json" /repos/<owner>/<repo>/actions/ru
 unzip -d /tmp/run_logs /tmp/run_logs.zip
 ```
 
+### Check if Copilot Review is Pending
+
+Query review requests across reviewer types:
+
+```bash
+# Replace OWNER, REPO, PR_NUMBER with actual values
+gh api graphql -f query='
+query {
+  repository(owner: "OWNER", name: "REPO") {
+    pullRequest(number: PR_NUMBER) {
+      reviewRequests(first: 10) {
+        nodes {
+          requestedReviewer {
+            __typename
+            ... on Bot { login }
+            ... on User { login }
+            ... on Team { login: slug }
+            ... on Mannequin { login }
+          }
+        }
+      }
+    }
+  }
+}' --jq '.data.repository.pullRequest.reviewRequests.nodes[]
+  | select((.requestedReviewer.login // "" | sub("\\[bot\\]$"; "")) == "copilot-pull-request-reviewer")'
+```
+
+If output is non-empty, Copilot review is pending (in progress).
+
+### Check if Copilot Has Finished Reviewing
+
+Query completed reviews via REST API:
+
+```bash
+gh api repos/OWNER/REPO/pulls/PR_NUMBER/reviews \
+  --jq '.[] | select((.user.login // "" | sub("\\[bot\\]$"; "")) == "copilot-pull-request-reviewer")
+    | {state, submitted_at}'
+```
+
+Or via GraphQL:
+
+```bash
+gh api graphql -f query='
+query {
+  repository(owner: "OWNER", name: "REPO") {
+    pullRequest(number: PR_NUMBER) {
+      reviews(first: 20) {
+        nodes {
+          author { login }
+          state
+          submittedAt
+        }
+      }
+    }
+  }
+}' --jq '.data.repository.pullRequest.reviews.nodes[]
+  | select((.author.login // "" | sub("\\[bot\\]$"; "")) == "copilot-pull-request-reviewer")'
+```
+
+### Full Copilot Review Status Summary
+
+Run one GraphQL call, keep the JSON in a variable, then run focused `jq` checks:
+
+```bash
+copilot_review_json="$(gh api graphql -f query='
+query {
+  repository(owner: "OWNER", name: "REPO") {
+    pullRequest(number: PR_NUMBER) {
+      reviewRequests(first: 10) {
+        nodes {
+          requestedReviewer {
+            __typename
+            ... on Bot { login }
+            ... on User { login }
+            ... on Team { login: slug }
+            ... on Mannequin { login }
+          }
+        }
+      }
+      reviews(first: 20) {
+        nodes {
+          author { login }
+          state
+          submittedAt
+        }
+      }
+      reviewThreads(first: 100) {
+        nodes {
+          isResolved
+          comments(first: 1) {
+            nodes {
+              author { login }
+            }
+          }
+        }
+      }
+    }
+  }
+}')"
+
+# Pending review request(s)
+jq '.data.repository.pullRequest.reviewRequests.nodes[]
+  | select((.requestedReviewer.login // "" | sub("\\[bot\\]$"; "")) == "copilot-pull-request-reviewer")' <<<"$copilot_review_json"
+
+# Completed review(s)
+jq '.data.repository.pullRequest.reviews.nodes[]
+  | select((.author.login // "" | sub("\\[bot\\]$"; "")) == "copilot-pull-request-reviewer")' <<<"$copilot_review_json"
+
+# Unresolved Copilot thread count
+jq '[.data.repository.pullRequest.reviewThreads.nodes[]
+  | select(.isResolved == false and (.comments.nodes | length > 0) and
+      (.comments.nodes[0].author.login // "" | sub("\\[bot\\]$"; "")) == "copilot-pull-request-reviewer")]
+  | length' <<<"$copilot_review_json"
+```
+
 ## Retrieving Job Summaries
 
 GitHub Actions Job Summaries (written to `$GITHUB_STEP_SUMMARY`) are **NOT** directly accessible via the REST API
