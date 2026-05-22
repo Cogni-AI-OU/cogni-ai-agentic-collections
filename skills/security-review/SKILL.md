@@ -45,6 +45,13 @@ Use this skill when:
 
 For PR reviews, provide a concise summary of findings. Use the format defined in `references/report-format.md`.
 
+## Security
+
+- Never commit secrets or API keys
+- Use environment variables for configuration
+- Validate all user inputs
+- Follow OWASP best practices
+
 ## Related Skills
 
 - **github-pr-review**
