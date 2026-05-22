@@ -32,7 +32,7 @@ copilot plugin install cogni-ai-architect@cogni-ai-copilot-collections
 
 ### Skills
 
-How to install skill (non-interactive):
+How to install a skill (non-interactive):
 
 ```console
 gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
