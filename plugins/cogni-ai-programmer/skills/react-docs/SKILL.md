@@ -1,12 +1,16 @@
 ---
 name: react-docs
-description: 'Read and navigate React documentation using llms.txt context. You MUST load this skill when asked to read React documentation, Hooks, Rules of React, or React APIs.'
+description: >-
+  React documentation.
+  You MUST load this skill when asked to read React documentation, Hooks, Rules of React, or React APIs.'
 license: MIT
 ---
 
 # React Docs
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
+
+React is a library for web and native user interfaces.
 
 ## When to Use
 
@@ -32,5 +36,6 @@ license: MIT
 ## References
 
 - **React Documentation Index (llms.txt)**: [https://react.dev/llms.txt](https://react.dev/llms.txt)
-  - **Condition**: Read this index when you need to find documentation for React Hooks, built-in components, APIs, or React Server Components.
-  - **Includes headers/tags**: Learn React, API Reference, Hooks, Components, Client APIs, Server APIs, Rules Of React, React Server Components.
+  MUST read this index when working with React,
+  in order to find documentation for React Hooks, built-in components, APIs, or React Server Components.
+  Learn React, API Reference, Hooks, Components, Client APIs, Server APIs, Rules Of React, React Server Components.
