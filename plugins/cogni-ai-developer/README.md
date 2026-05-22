@@ -15,7 +15,7 @@ Autonomous development agent plugin for GitHub Copilot. Specializes in building 
 ### Using Copilot CLI
 
 ```bash
-copilot plugin install Cogni-AI-OU/cogni-ai-copilot-collections:plugins/cogni-ai-developer
+copilot plugin install Cogni-AI-OU/cogni-ai-agentic-collections:plugins/cogni-ai-developer
 ```
 
 ## What's Included

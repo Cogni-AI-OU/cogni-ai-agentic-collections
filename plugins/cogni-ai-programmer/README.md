@@ -15,7 +15,7 @@ Autonomous programmer agent plugin for GitHub Copilot. Specializes in solving te
 ### Using Copilot CLI
 
 ```bash
-copilot plugin install Cogni-AI-OU/cogni-ai-copilot-collections:plugins/cogni-ai-programmer
+copilot plugin install Cogni-AI-OU/cogni-ai-agentic-collections:plugins/cogni-ai-programmer
 ```
 
 ## What's Included

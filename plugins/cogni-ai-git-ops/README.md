@@ -15,7 +15,7 @@ Autonomous Git Operations agent plugin for GitHub Copilot. Specializes in versio
 ### Using Copilot CLI
 
 ```bash
-copilot plugin install Cogni-AI-OU/cogni-ai-copilot-collections:plugins/cogni-ai-git-ops
+copilot plugin install Cogni-AI-OU/cogni-ai-agentic-collections:plugins/cogni-ai-git-ops
 ```
 
 ## What's Included

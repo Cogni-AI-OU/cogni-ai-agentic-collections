@@ -15,7 +15,7 @@ Autonomous test engineering agent plugin for GitHub Copilot. Specializes in prov
 ### Using Copilot CLI
 
 ```bash
-copilot plugin install Cogni-AI-OU/cogni-ai-copilot-collections:plugins/cogni-ai-tester
+copilot plugin install Cogni-AI-OU/cogni-ai-agentic-collections:plugins/cogni-ai-tester
 ```
 
 ## What's Included

@@ -18,9 +18,9 @@ Register this repository as a plugin marketplace, then install by plugin name:
 
 ```bash
 # Register this collection as a marketplace
-copilot plugin marketplace add Cogni-AI-OU/cogni-ai-copilot-collections
+copilot plugin marketplace add Cogni-AI-OU/cogni-ai-agentic-collections
 # Install a specific plugin by name
-copilot plugin install cogni-ai-architect@cogni-ai-copilot-collections
+copilot plugin install cogni-ai-architect@cogni-ai-agentic-collections
 ```
 
 Each plugin includes a `README.md` with detailed installation and usage instructions.
