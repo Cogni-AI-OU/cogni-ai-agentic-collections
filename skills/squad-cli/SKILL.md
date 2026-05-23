@@ -82,7 +82,7 @@ license: MIT
 
 - **Show Status**: `squad status`
 - **Link Remote Team**: `squad link <team-repo-path>`
-- **Externalize State**: `squad externalize` (moves `.squad/` outside working tree)
+- **Externalize State**: `squad externalize` (moves `.squad/` outside the working tree)
 - **Internalize State**: `squad internalize`
 - **Context Hygiene**: `squad nap --deep`
 
