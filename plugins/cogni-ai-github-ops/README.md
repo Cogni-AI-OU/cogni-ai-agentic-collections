@@ -9,7 +9,14 @@ actions, and agentic workflows.
 | --- | --- |
 | **Description** | Autonomous GitHub Operations agent with GitHub skills |
 | **Contents** | 1 agent, 33 skills |
-| **Slash Commands** | [`/cogni-ai-github-ops:gh`](../AGENTS.md), [`/cogni-ai-github-ops:github`](../AGENTS.md), [`/cogni-ai-github-ops:github-actions`](../AGENTS.md), [`/cogni-ai-github-ops:github-aw`](../AGENTS.md) |
+## Commands (Slash Commands)
+
+| Command | Description |
+|---------|-------------|
+| [`/cogni-ai-github-ops:gh`](../AGENTS.md) | Load the gh skill -- GitHub CLI (`gh`) operations for issues, PRs, and workflows |
+| [`/cogni-ai-github-ops:github`](../AGENTS.md) | Load the github skill -- Guidance on GitHub-specific features and collaborative practices |
+| [`/cogni-ai-github-ops:github-actions`](../AGENTS.md) | Load the github-actions skill -- Diagnose GitHub Actions workflow failures |
+| [`/cogni-ai-github-ops:github-aw`](../AGENTS.md) | Load the github-aw skill -- Safely update existing GitHub Agentic Workflows (gh-aw) |
 
 ## Installation
 

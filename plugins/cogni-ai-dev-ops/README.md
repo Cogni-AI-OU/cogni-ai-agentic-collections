@@ -9,7 +9,14 @@ precision, resolving deployment challenges, and enforcing infrastructure-as-code
 | --- | --- |
 | **Description** | Elite autonomous DevOps and site reliability agent |
 | **Contents** | 1 agent, 7 skills |
-| **Slash Commands** | [`/cogni-ai-dev-ops:devops`](../AGENTS.md), [`/cogni-ai-dev-ops:molecule`](../AGENTS.md), [`/cogni-ai-dev-ops:pulumi-cli`](../AGENTS.md), [`/cogni-ai-dev-ops:docker`](../AGENTS.md) |
+## Commands (Slash Commands)
+
+| Command | Description |
+|---------|-------------|
+| [`/cogni-ai-dev-ops:devops`](../AGENTS.md) | Load the devops skill -- Core DevOps and Site Reliability Engineering workflow |
+| [`/cogni-ai-dev-ops:molecule`](../AGENTS.md) | Load the molecule skill -- Molecule testing workflows for Ansible roles |
+| [`/cogni-ai-dev-ops:pulumi-cli`](../AGENTS.md) | Load the pulumi-cli skill -- Execute Pulumi CLI commands for stack management |
+| [`/cogni-ai-dev-ops:docker`](../AGENTS.md) | Load the docker skill -- How to run, manage, and troubleshoot Docker containers safely |
 
 ## Installation
 

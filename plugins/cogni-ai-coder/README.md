@@ -9,7 +9,12 @@ precision and speed.
 | --- | --- |
 | **Description** | Autonomous coding agent with coding and critical-thinking skills |
 | **Contents** | 1 agent, 2 skills |
-| **Slash Commands** | [`/cogni-ai-coder:coding`](../AGENTS.md), [`/cogni-ai-coder:critical-thinking`](../AGENTS.md) |
+## Commands (Slash Commands)
+
+| Command | Description |
+|---------|-------------|
+| [`/cogni-ai-coder:coding`](../AGENTS.md) | Load the coding skill -- workflow for implementing code from clear specifications with precision |
+| [`/cogni-ai-coder:critical-thinking`](../AGENTS.md) | Load the critical-thinking skill -- a cognitive framework for deep analytical reasoning |
 
 ## Installation
 

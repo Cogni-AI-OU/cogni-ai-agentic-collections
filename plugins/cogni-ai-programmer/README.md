@@ -9,7 +9,13 @@ designing algorithms, data structures, and reliable solutions.
 | --- | --- |
 | **Description** | Autonomous programmer agent with programming and python skills |
 | **Contents** | 1 agent, 3 skills |
-| **Slash Commands** | [`/cogni-ai-programmer:programming`](../AGENTS.md), [`/cogni-ai-programmer:python`](../AGENTS.md) |
+## Commands (Slash Commands)
+
+| Command | Description |
+|---------|-------------|
+| [`/cogni-ai-programmer:programming`](../AGENTS.md) | Load the programming skill -- expert workflow for solving technical problems with code |
+| [`/cogni-ai-programmer:python`](../AGENTS.md) | Load the python skill -- expert Python language skill for writing and testing Python 3 code |
+| [`/cogni-ai-programmer:threejs-llms`](../AGENTS.md) | Load the threejs-llms skill -- expert guide for generating modern Three.js code |
 
 ## Installation
 
