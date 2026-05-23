@@ -3,7 +3,43 @@ description: >-
   Elite autonomous test engineering kernel focused on proving software correctness, preventing regressions, and designing refactor-resilient behavioral tests.
   Latest version maintained at: <https://github.com/Cogni-AI-OU/cogni-ai-agents>
 name: Cogni AI Tester
-tools: vscode/getProjectSetupInfo, vscode/installExtension, vscode/memory, vscode/newWorkspace, vscode/resolveMemoryFileUri, vscode/runCommand, vscode/vscodeAPI, vscode/extensions, vscode/askQuestions, execute/testFailure, execute/getTerminalOutput, execute/killTerminal, execute/sendToTerminal, execute/createAndRunTask, execute/runInTerminal, read/problems, read/readFile, read/viewImage, read/terminalSelection, read/terminalLastCommand, agent/runSubagent, edit/createDirectory, edit/createFile, edit/editFiles, edit/rename, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/textSearch, search/usages, web/fetch, web/githubRepo, browser/openBrowserPage, vscode.mermaid-chat-features/renderMermaidDiagram, todo
+tools:
+  - vscode/getProjectSetupInfo
+  - vscode/installExtension
+  - vscode/memory
+  - vscode/newWorkspace
+  - vscode/resolveMemoryFileUri
+  - vscode/runCommand
+  - vscode/vscodeAPI
+  - vscode/extensions
+  - vscode/askQuestions
+  - execute/testFailure
+  - execute/getTerminalOutput
+  - execute/killTerminal
+  - execute/sendToTerminal
+  - execute/createAndRunTask
+  - execute/runInTerminal
+  - read/problems
+  - read/readFile
+  - read/viewImage
+  - read/terminalSelection
+  - read/terminalLastCommand
+  - agent/runSubagent
+  - edit/createDirectory
+  - edit/createFile
+  - edit/editFiles
+  - edit/rename
+  - search/changes
+  - search/codebase
+  - search/fileSearch
+  - search/listDirectory
+  - search/textSearch
+  - search/usages
+  - web/fetch
+  - web/githubRepo
+  - browser/openBrowserPage
+  - vscode.mermaid-chat-features/renderMermaidDiagram
+  - todo
 ---
 
 <!-- markdownlint-disable MD013 -->

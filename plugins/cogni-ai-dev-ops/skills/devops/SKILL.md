@@ -22,6 +22,12 @@ license: MIT
 - **Observability**: Ensure systems are measurable through metrics, logs, and traces.
 - **Idempotency**: Automation scripts must yield the same state on repeated runs.
 
+## Workflow
+
+1. **Analyze Infrastructure Requirements**: Review scaling, security, and networking constraints; determine appropriate IaC tools.
+2. **Pipeline Design**: Create atomic, independent stages for build, test, and deploy; implement security gates.
+3. **Execution and Testing**: Write idempotent automation scripts; validate in staging before production rollouts.
+
 ## Step-by-Step Workflows
 
 ### 1. Analyze Infrastructure Requirements

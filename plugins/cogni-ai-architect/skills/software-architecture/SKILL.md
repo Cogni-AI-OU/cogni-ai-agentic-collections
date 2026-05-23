@@ -30,6 +30,14 @@ license: MIT
 - **Fitness Functions**: Use automated checks to ensure the architecture continues to meet its defined quality attributes over time.
 - **Last Responsible Moment**: Delay architectural decisions until there is enough information to justify and validate them, avoiding analysis paralysis.
 
+## Workflow
+
+1. **Analyze Requirements and Constraints**: Collect functional and non-functional requirements, extract quality attributes, and inventory business constraints.
+2. **Evaluate Architectural Styles**: Compare styles (Monolith, Layered, Microservices, Event-Driven) against prioritized quality attributes and constraints.
+3. **Apply Design Principles**: Enforce SOLID principles and foundational heuristics (DRY, KISS, YAGNI, Law of Demeter).
+4. **Select Design Patterns**: Choose creational, structural, and behavioral patterns that fit the selected architectural style.
+5. **Document Decisions**: Capture each architectural choice as an ADR with context, alternatives, rationale, and consequences.
+
 ## Step-by-Step Workflows
 
 ### 1. Analyze Requirements and Constraints
