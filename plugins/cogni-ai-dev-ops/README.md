@@ -9,7 +9,7 @@ precision, resolving deployment challenges, and enforcing infrastructure-as-code
 | --- | --- |
 | **Description** | Elite autonomous DevOps and site reliability agent |
 | **Contents** | 1 agent, 7 skills |
-| **Slash Commands** | [`/cogni-ai-dev-ops:devops`](../AGENTS.md), [`/cogni-ai-dev-ops:molecule`](../AGENTS.md) |
+| **Slash Commands** | [`/cogni-ai-dev-ops:devops`](../AGENTS.md), [`/cogni-ai-dev-ops:molecule`](../AGENTS.md), [`/cogni-ai-dev-ops:pulumi-cli`](../AGENTS.md), [`/cogni-ai-dev-ops:docker`](../AGENTS.md) |
 
 ## Installation
 

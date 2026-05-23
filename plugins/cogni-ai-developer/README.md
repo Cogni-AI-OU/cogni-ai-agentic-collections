@@ -9,7 +9,7 @@ software that delivers user and business value.
 | --- | --- |
 | **Description** | Autonomous developer agent with development, tdd, and critical-thinking skills |
 | **Contents** | 1 agent, 4 skills |
-| **Slash Commands** | [`/cogni-ai-developer:development`](../AGENTS.md), [`/cogni-ai-developer:tdd`](../AGENTS.md) |
+| **Slash Commands** | [`/cogni-ai-developer:development`](../AGENTS.md), [`/cogni-ai-developer:tdd`](../AGENTS.md), [`/cogni-ai-developer:critical-thinking`](../AGENTS.md) |
 
 ## Installation
 

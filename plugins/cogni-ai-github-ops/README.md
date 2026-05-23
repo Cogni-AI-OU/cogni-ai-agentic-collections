@@ -9,7 +9,7 @@ actions, and agentic workflows.
 | --- | --- |
 | **Description** | Autonomous GitHub Operations agent with GitHub skills |
 | **Contents** | 1 agent, 33 skills |
-| **Slash Commands** | [`/cogni-ai-github-ops:gh`](../AGENTS.md), [`/cogni-ai-github-ops:github`](../AGENTS.md) |
+| **Slash Commands** | [`/cogni-ai-github-ops:gh`](../AGENTS.md), [`/cogni-ai-github-ops:github`](../AGENTS.md), [`/cogni-ai-github-ops:github-actions`](../AGENTS.md), [`/cogni-ai-github-ops:github-aw`](../AGENTS.md) |
 
 ## Installation
 
