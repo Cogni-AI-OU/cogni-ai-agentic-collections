@@ -18,6 +18,15 @@ license: MIT
 - When managing alternative package managers like `yarn` or `pnpm`.
 - When writing general JavaScript/TypeScript code that does not interact with npm packages or scripts.
 
+## Troubleshooting
+
+The following pages are from the official npm documentation troubleshooting guide. Use an available web fetching tool to read the raw markdown contents for diagnostic steps and resolution guidance.
+
+- **Common Errors**: [common-errors.mdx](https://raw.githubusercontent.com/npm/documentation/refs/heads/main/content/getting-started/troubleshooting/common-errors.mdx)
+- **Generating and Locating npm Debug Log Files**: [generating-and-locating-npm-debug.log-files.mdx](https://raw.githubusercontent.com/npm/documentation/refs/heads/main/content/getting-started/troubleshooting/generating-and-locating-npm-debug.log-files.mdx)
+- **Try the Latest Stable Version of Node**: [try-the-latest-stable-version-of-node.mdx](https://raw.githubusercontent.com/npm/documentation/refs/heads/main/content/getting-started/troubleshooting/try-the-latest-stable-version-of-node.mdx)
+- **Try the Latest Stable Version of npm**: [try-the-latest-stable-version-of-npm.mdx](https://raw.githubusercontent.com/npm/documentation/refs/heads/main/content/getting-started/troubleshooting/try-the-latest-stable-version-of-npm.mdx)
+
 ## Common Pitfalls
 
 - **Lockfile drift**: Running `npm install` instead of `npm ci` in CI environments can produce different dependency trees than committed in `package-lock.json`. Always use `npm ci` in CI for reproducible installs.
