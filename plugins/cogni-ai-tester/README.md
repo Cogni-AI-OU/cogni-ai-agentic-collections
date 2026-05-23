@@ -9,11 +9,6 @@ regressions, and designing refactor-resilient behavioral tests.
 | --- | --- |
 | **Description** | Autonomous tester agent with testing skill |
 | **Contents** | 1 agent, 1 skill |
-## Commands (Slash Commands)
-
-| Command | Description |
-|---------|-------------|
-| [`/cogni-ai-tester:testing`](../AGENTS.md) | Load the testing skill -- elite autonomous test engineering and reliability kernel |
 
 ## Installation
 
@@ -30,6 +25,12 @@ claude plugin install cogni-ai-tester@cogni-ai-agentic-collections
 ```
 
 ## What's Included
+
+### Commands (Slash Commands)
+
+| Command | Description |
+| --- | --- |
+| `/cogni-ai-tester:testing` | Load the testing skill — elite autonomous test engineering and reliability kernel |
 
 ### Agents
 

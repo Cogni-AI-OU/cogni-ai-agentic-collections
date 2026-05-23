@@ -9,12 +9,6 @@ rebase operations, and repository management.
 | --- | --- |
 | **Description** | Autonomous Git Operations agent with git skills |
 | **Contents** | 1 agent, 2 skills |
-## Commands (Slash Commands)
-
-| Command | Description |
-|---------|-------------|
-| [`/cogni-ai-git-ops:git`](../AGENTS.md) | Load the git skill -- Guide for using git with non-interactive, safe operations |
-| [`/cogni-ai-git-ops:git-docs`](../AGENTS.md) | Load the git-docs skill -- Official Git documentation index |
 
 ## Installation
 
@@ -31,6 +25,13 @@ claude plugin install cogni-ai-git-ops@cogni-ai-agentic-collections
 ```
 
 ## What's Included
+
+### Commands (Slash Commands)
+
+| Command | Description |
+| --- | --- |
+| `/cogni-ai-git-ops:git` | Load the git skill — Guide for using git with non-interactive, safe operations |
+| `/cogni-ai-git-ops:git-docs` | Load the git-docs skill — Official Git documentation index |
 
 ### Agents
 

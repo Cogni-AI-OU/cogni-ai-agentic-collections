@@ -9,11 +9,6 @@ decomposition, and neurosymbolic verification across all codebase vectors.
 | --- | --- |
 | **Description** | Autonomous architect agent with software-architecture skill |
 | **Contents** | 1 agent, 1 skill |
-## Commands (Slash Commands)
-
-| Command | Description |
-|---------|-------------|
-| [`/cogni-ai-architect:software-architecture`](../AGENTS.md) | Load the software-architecture skill -- expert workflow for architecture design |
 
 ## Installation
 
@@ -30,6 +25,12 @@ claude plugin install cogni-ai-architect@cogni-ai-agentic-collections
 ```
 
 ## What's Included
+
+### Commands (Slash Commands)
+
+| Command | Description |
+| --- | --- |
+| `/cogni-ai-architect:software-architecture` | Load the software-architecture skill — expert workflow for architecture design |
 
 ### Agents
 
