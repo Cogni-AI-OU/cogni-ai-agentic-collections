@@ -71,6 +71,7 @@ license: MIT
 - **`.nvmrc` / `.node-version`**: Specifies the required Node.js version for the project, automatically picked up by tools like nvm or n (Node Version Manager).
 - **`.pre-commit-config.yaml`**: Configures pre-commit hooks to automatically format code, check for secrets, and run linters before a commit is finalized.
 - **`.ripgreprc`**: Project-specific configuration for `ripgrep` (`rg`), defining default flags and ignore patterns.
+- **`.squad/`**: Directory for Squad AI agent teams, containing team roster (`team.md`), agent charters and history, decisions, and session logs as defined in the project's `.squad/` structure.
 - **`.tours/`**: Directory for VS Code CodeTour files, including `*.tour` (walkthroughs) and `README.md` (documentation).
 - **`.vscode/`**: Directory for VS Code-specific configurations, including `settings.json` (workspace settings), `extensions.json` (recommended extensions), `launch.json` (debug configurations), and `tasks.json` (task runners).
 - **`.waza.yaml`**: Configuration file for Waza, defining project metadata, build settings, and deployment configurations.
