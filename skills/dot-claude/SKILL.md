@@ -54,6 +54,17 @@ Claude Code supports extending its functionality via plugins from external marke
   ```
 - **Official Documentation**: Refer to [Claude Code Plugin Marketplaces](https://code.claude.com/docs/en/plugin-marketplaces.md) for more details.
 
+### plugin.json Minimal Format
+
+```json
+{
+  "name": "fx-plugin-name",
+  "version": "1.0.0",
+  "description": "Clear, concise description of what this plugin does"
+}
+```
+
+Only `name` is required. Version and description are highly recommended.
 ## Best Practices
 
 - **Explicit Permissions**: Instead of granting broad permissions, use precise glob patterns (e.g., `Bash(uv tool *)`).
