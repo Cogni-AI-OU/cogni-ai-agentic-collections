@@ -1,8 +1,8 @@
 ---
 name: git
 description: >-
-  Guide for using git.
-  You MUST load this skill when performing standard git operations.
+  Usage for basic Git operations and repository management. This is the core skill for all git interactions.
+  You MUST load this skill when using git command-line.
 license: MIT
 ---
 
@@ -373,3 +373,14 @@ user.
   You MUST load this skill when working with the `gh pr` command.
 - **gh-run**:
   MUST be loaded when using `gh run` or `gh workflow` commands.
+
+## References
+
+- [Git Filter Branch](references/git-filter-branch.md)
+  Reference MUST be loaded before running `git filter-branch` for history rewriting and subdirectory extraction tasks.
+- [Bisecting (git bisect)](references/git-bisect.md)
+- [Advanced Cherry-Picking (git cherry-pick)](references/git-cherry-pick.md)
+- [Git Merge](references/git-merge.md)
+- [Git Rebase](references/git-rebase.md)
+- [Reflog Recovery (git reflog)](references/git-reflog.md)
+- [Git Recovery & Troubleshooting](references/recovery.md)
