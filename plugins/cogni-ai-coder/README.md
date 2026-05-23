@@ -12,10 +12,16 @@ Autonomous coding agent plugin for GitHub Copilot. Specializes in implementing c
 
 ## Installation
 
-### Using Copilot CLI
+### GitHub Copilot
 
 ```bash
 copilot plugin install Cogni-AI-OU/cogni-ai-agentic-collections:plugins/cogni-ai-coder
+```
+
+### Claude Code
+
+```bash
+claude plugin install cogni-ai-coder@cogni-ai-agentic-collections
 ```
 
 ## What's Included

@@ -36,6 +36,7 @@ Claude Code supports extending its functionality via plugins from external marke
   /plugin marketplace add https://example.com/path/to/marketplace.json
   ```
   > **Security Note**: The URL above is an example placeholder. Only add marketplaces you trust, as enabling external plugins executes third-party code.
+
 - **Project-Level Configuration**: Add marketplaces to `.claude/settings.json` to share them with the team.
   ```json
   {
@@ -52,7 +53,20 @@ Claude Code supports extending its functionality via plugins from external marke
     }
   }
   ```
+
 - **Official Documentation**: Refer to [Claude Code Plugin Marketplaces](https://code.claude.com/docs/en/plugin-marketplaces.md) for more details.
+
+### plugin.json Minimal Format
+
+```json
+{
+  "name": "plugin-name",
+  "version": "1.0.0",
+  "description": "Clear, concise description of what this plugin does"
+}
+```
+
+Only `name` is required. Version and description are highly recommended.
 
 ## Best Practices
 
