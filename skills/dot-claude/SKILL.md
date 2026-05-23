@@ -33,25 +33,26 @@ Claude Code supports extending its functionality via plugins from external marke
 
 - **Add a Marketplace**: Use the CLI command to register a new plugin source.
   ```bash
-  /plugin marketplace add https://cc.fx.gd/.claude-plugin/marketplace.json
+  /plugin marketplace add https://example.com/path/to/marketplace.json
   ```
+  > **Security Note**: The URL above is an example placeholder. Only add marketplaces you trust, as enabling external plugins executes third-party code.
 - **Project-Level Configuration**: Add marketplaces to `.claude/settings.json` to share them with the team.
   ```json
   {
     "extraKnownMarketplaces": {
-      "community-marketplace": {
+      "example-marketplace": {
         "source": {
           "source": "url",
-          "url": "https://cc.fx.gd/.claude-plugin/marketplace.json"
+          "url": "https://example.com/path/to/marketplace.json"
         }
       }
     },
     "enabledPlugins": {
-      "plugin-name@community-marketplace": true
+      "example-plugin@example-marketplace": true
     }
   }
   ```
-- **Official Documentation**: Refer to [Claude Code Plugin Marketplaces](https://code.claude.com/docs/en/plugin-marketplaces) for more details.
+- **Official Documentation**: Refer to [Claude Code Plugin Marketplaces](https://code.claude.com/docs/en/plugin-marketplaces.md) for more details.
 
 ## Best Practices
 

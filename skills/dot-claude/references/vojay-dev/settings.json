@@ -47,7 +47,7 @@
     "cogni-ai-marketplace": {
       "source": {
         "source": "url",
-        "url": "https://cc.fx.gd/.claude-plugin/marketplace.json"
+        "url": "https://example.com/path/to/marketplace.json"
       }
     }
   },
