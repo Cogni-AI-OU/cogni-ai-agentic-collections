@@ -92,8 +92,8 @@ license: MIT
 
 ## Autonomous Execution Directive
 
-Execute multi-step workflows autonomously to completion, continuously looping and self-correcting until all success criteria are met.
-If a phase fails after 3 iterations or is blocked by an external dependency, stop execution, report the blocker, and request guidance.
+Execute multi-step workflows to completion, looping and retrying phases until success criteria are met.
+If a phase fails after 3 iterations or is blocked by an external dependency, surface the blocker and halt execution.
 
 ## Execution Model
 
@@ -105,6 +105,8 @@ while not workflow_complete:
             iterate_until_success_or_max_retries(phase, max_retries=3)
         if result.is_blocked:
             report_blocker_and_stop()
+            workflow_complete = True
+            break
     check_completion_criteria()
 ```
 

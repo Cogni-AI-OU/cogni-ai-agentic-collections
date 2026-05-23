@@ -68,10 +68,14 @@ while not workflow_complete:
     for phase in workflow_phases:
         result = execute_phase(phase)
         if result.needs_iteration:
-            iterate_until_success_or_max_retries(phase, max_retries=3)
+            result = iterate_until_success_or_max_retries(phase, max_retries=3)
         if result.is_blocked:
             report_blocker_and_stop()
-    check_completion_criteria()
+            workflow_complete = True
+            break
+    if workflow_complete:
+        break
+    workflow_complete = check_completion_criteria()
 ```
 
 ## Related Skills
