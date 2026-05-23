@@ -70,6 +70,13 @@ exist. Do not skip items just because a file already exists.
   - Action: Create if missing; update if exists to match organization standards
   - Key rules: 120 char line length, consistent heading style, fenced code blocks
 
+- [ ] **`.markdownlintignore`**
+  - Check if file exists in repository root
+  - Reference: `https://github.com/Cogni-AI-OU/.github/blob/main/.markdownlintignore`
+  - Purpose: Files/directories to exclude from markdown linting
+  - Action: Create if missing (can be empty initially)
+  - Customize: Add paths to exclude (e.g., `node_modules/`, `vendor/`, generated docs)
+
 - [ ] **`.lycheeignore`**
   - Check if file exists in repository root
   - Reference: `https://github.com/Cogni-AI-OU/.github/blob/main/.lycheeignore`
