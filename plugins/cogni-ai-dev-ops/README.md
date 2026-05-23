@@ -12,10 +12,16 @@ Elite autonomous DevOps and Site Reliability Engineering plugin. Focuses on task
 
 ## Installation
 
-### Using Copilot CLI
+### GitHub Copilot
 
 ```bash
 copilot plugin install Cogni-AI-OU/cogni-ai-agentic-collections:plugins/cogni-ai-dev-ops
+```
+
+### Claude Code
+
+```bash
+claude plugin install cogni-ai-dev-ops@cogni-ai-agentic-collections
 ```
 
 ## What's Included

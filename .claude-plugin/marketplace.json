@@ -1,0 +1,48 @@
+{
+  "name": "cogni-ai-agentic-collections",
+  "owner": {
+    "name": "Cogni AI"
+  },
+  "plugins": [
+    {
+      "name": "cogni-ai-architect",
+      "source": "./plugins/cogni-ai-architect",
+      "description": "Cogni AI architect agent. Specializes in structural perfection, recursive problem decomposition, and neurosymbolic verification."
+    },
+    {
+      "name": "cogni-ai-coder",
+      "source": "./plugins/cogni-ai-coder",
+      "description": "Cogni AI coder agent."
+    },
+    {
+      "name": "cogni-ai-dev-ops",
+      "source": "./plugins/cogni-ai-dev-ops",
+      "description": "Cogni AI DevOps and SRE agent."
+    },
+    {
+      "name": "cogni-ai-developer",
+      "source": "./plugins/cogni-ai-developer",
+      "description": "Cogni AI developer agent."
+    },
+    {
+      "name": "cogni-ai-git-ops",
+      "source": "./plugins/cogni-ai-git-ops",
+      "description": "Cogni AI Git Ops agent."
+    },
+    {
+      "name": "cogni-ai-github-ops",
+      "source": "./plugins/cogni-ai-github-ops",
+      "description": "Cogni AI GitHub Ops agent."
+    },
+    {
+      "name": "cogni-ai-programmer",
+      "source": "./plugins/cogni-ai-programmer",
+      "description": "Cogni AI programmer agent."
+    },
+    {
+      "name": "cogni-ai-tester",
+      "source": "./plugins/cogni-ai-tester",
+      "description": "Cogni AI tester agent."
+    }
+  ]
+}

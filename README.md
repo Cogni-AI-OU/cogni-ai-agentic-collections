@@ -23,11 +23,22 @@ git clone --depth=1 https://github.com/Cogni-AI-OU/cogni-ai-agent-instructions ~
 
 To install plugins (which includes agents and corresponding skills):
 
+#### GitHub Copilot
+
 ```console
 # Install plugins from this collection as a marketplace
 copilot plugin marketplace add Cogni-AI-OU/cogni-ai-agentic-collections
 # Then install individual plugins by name (e.g. cogni-ai-architect):
 copilot plugin install cogni-ai-architect@cogni-ai-agentic-collections
+```
+
+#### Claude Code
+
+```console
+# Install plugins from this collection as a marketplace
+claude plugin marketplace add Cogni-AI-OU/cogni-ai-agentic-collections
+# Then install individual plugins by name (e.g. cogni-ai-architect):
+claude plugin install cogni-ai-architect@cogni-ai-agentic-collections
 ```
 
 ### Skills
