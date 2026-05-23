@@ -3,44 +3,55 @@
   "owner": {
     "name": "Cogni AI"
   },
+  "metadata": {
+    "sourceOfTruth": ".github/plugin/marketplace.json"
+  },
   "plugins": [
     {
       "name": "cogni-ai-architect",
+      "version": "1.0.0",
       "source": "./plugins/cogni-ai-architect",
       "description": "Cogni AI architect agent. Specializes in structural perfection, recursive problem decomposition, and neurosymbolic verification."
     },
     {
       "name": "cogni-ai-coder",
+      "version": "1.0.0",
       "source": "./plugins/cogni-ai-coder",
       "description": "Cogni AI coder agent."
     },
     {
       "name": "cogni-ai-dev-ops",
+      "version": "1.0.0",
       "source": "./plugins/cogni-ai-dev-ops",
       "description": "Cogni AI DevOps and SRE agent."
     },
     {
       "name": "cogni-ai-developer",
+      "version": "1.0.0",
       "source": "./plugins/cogni-ai-developer",
       "description": "Cogni AI developer agent."
     },
     {
       "name": "cogni-ai-git-ops",
+      "version": "1.0.0",
       "source": "./plugins/cogni-ai-git-ops",
       "description": "Cogni AI Git Ops agent."
     },
     {
       "name": "cogni-ai-github-ops",
+      "version": "1.0.0",
       "source": "./plugins/cogni-ai-github-ops",
       "description": "Cogni AI GitHub Ops agent."
     },
     {
       "name": "cogni-ai-programmer",
+      "version": "1.0.0",
       "source": "./plugins/cogni-ai-programmer",
       "description": "Cogni AI programmer agent."
     },
     {
       "name": "cogni-ai-tester",
+      "version": "1.0.0",
       "source": "./plugins/cogni-ai-tester",
       "description": "Cogni AI tester agent."
     }
