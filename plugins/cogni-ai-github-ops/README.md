@@ -2,13 +2,14 @@
 
 [![License][license-image]][license-link]
 
-Autonomous GitHub Operations agent plugin for GitHub Copilot. Specializes in GitHub workflows, pull requests, issues, actions, and agentic workflows.
+Autonomous GitHub Operations agent plugin for GitHub Copilot. Specializes in GitHub workflows, pull requests, issues,
+actions, and agentic workflows.
 
 | | |
-|---|---|
+| --- | --- |
 | **Description** | Autonomous GitHub Operations agent with GitHub skills |
 | **Contents** | 1 agent, 33 skills |
-| **Slash Commands** | [`/cogni-ai-github-ops:gh`](../AGENTS.md) <br/> [`/cogni-ai-github-ops:github`](../AGENTS.md) <br/> [`/cogni-ai-github-ops:github-actions`](../AGENTS.md) <br/> [`/cogni-ai-github-ops:github-aw`](../AGENTS.md) |
+| **Slash Commands** | [`/cogni-ai-github-ops:gh`](../AGENTS.md), [`/cogni-ai-github-ops:github`](../AGENTS.md) |
 
 ## Installation
 
@@ -28,13 +29,15 @@ claude plugin install cogni-ai-github-ops@cogni-ai-agentic-collections
 
 ### Agents
 
-- **cogni-ai-github-ops** — Autonomous GitHub Operations assistant that handles repository management on GitHub, issues, pull requests, workflow runs, and agentic workflows safely and efficiently.
+- **cogni-ai-github-ops** — Autonomous GitHub Operations assistant that handles repository management on GitHub,
+  issues, pull requests, workflow runs, and agentic workflows safely and efficiently.
 
 ### Skills
 
 - **gh** — GitHub CLI operations for issues, pull requests, workflow runs, reviews, and API.
 - **github** — GitHub-specific features and collaborative practices.
-- *(And 31 other specialized GitHub skills for actions, agentic workflows, API, codespaces, issues, models, PRs, runs, search, topics, and more.)*
+- *(And 31 other specialized GitHub skills for actions, agentic workflows, API, codespaces, issues, models, PRs, runs,
+  search, topics, and more.)*
 
 ## Usage
 

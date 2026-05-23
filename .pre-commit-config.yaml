@@ -44,7 +44,19 @@ repos:
       - id: forbid-binary
       - id: git-check  # Configure in .gitattributes
       - id: require-ascii
-        exclude: (\.github/|\.tours/|README\.md|SKILL\.md|\.agent\.md)
+        exclude: >-
+          (?x)(
+          \.github/|
+          \.tours/|
+          README\.md|
+          SKILL\.md|
+          \.agent\.md|
+          references/|
+          scripts/|
+          \.prompt\.md|
+          instructions/|
+          plugins/AGENTS\.md
+          )
       - id: script-must-have-extension
   - repo: https://github.com/lyz-code/yamlfix
     rev: 1.19.1
