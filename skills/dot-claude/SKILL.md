@@ -58,7 +58,7 @@ Claude Code supports extending its functionality via plugins from external marke
 
 ```json
 {
-  "name": "fx-plugin-name",
+  "name": "plugin-name",
   "version": "1.0.0",
   "description": "Clear, concise description of what this plugin does"
 }
