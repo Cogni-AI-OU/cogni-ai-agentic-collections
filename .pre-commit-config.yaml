@@ -38,6 +38,11 @@ repos:
     rev: v0.46.0
     hooks:
       - id: markdownlint
+        exclude: >-
+          (?x)(
+          \.github/prompts/|
+          references/
+          )
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 3.0.0
     hooks:
