@@ -12,7 +12,7 @@ For a human-readable overview, see [README.md](README.md).
 - **[cogni-ai-agent.yml](cogni-ai-agent.yml)**: Logic for the Cogni AI Agent.
 - **[copilot-setup-steps.yml](copilot-setup-steps.yml)**: Environment setup utility.
 - **[devcontainer-ci.yml](devcontainer-ci.yml)**: Build/test devcontainer and required tools/packages.
-- **[waza-eval.yml](waza-eval.yml)**: Waza evaluation for markdown files.
+- **[waza-eval.yml](waza-eval.yml)**: Waza evaluation for Markdown files.
 
 ## Details
 
