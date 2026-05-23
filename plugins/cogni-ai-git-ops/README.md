@@ -7,8 +7,8 @@ Autonomous Git Operations agent plugin for GitHub Copilot. Specializes in versio
 | | |
 |---|---|
 | **Description** | Autonomous Git Operations agent with git skills |
-| **Contents** | 1 agent, 1 skill |
-| **Slash Commands** | [`/cogni-ai-git-ops:git`](../AGENTS.md) |
+| **Contents** | 1 agent, 2 skills |
+| **Slash Commands** | [`/cogni-ai-git-ops:git`](../AGENTS.md), [`/cogni-ai-git-ops:git-docs`](../AGENTS.md) |
 
 ## Installation
 
@@ -27,6 +27,7 @@ copilot plugin install Cogni-AI-OU/cogni-ai-agentic-collections:plugins/cogni-ai
 ### Skills
 
 - **git** — Guide for using git with non-interactive, safe operations. Includes advanced references to reflog, bisecting, merges, cherry-picking, rebase operations, and repository recovery.
+- **git-docs** — Official Git documentation index. Use this skill when searching for specific Git commands, configuration options, how-to guides, and technical references.
 
 ## Usage
 

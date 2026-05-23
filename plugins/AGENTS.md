@@ -123,6 +123,7 @@ Slash commands are invoked via `/agent:skill` in the Copilot CLI or VS Code Chat
 | `/cogni-ai-developer:critical-thinking` | Load the critical-thinking skill — cognitive framework for deep analytical reasoning and problem decomposition (bundled with the developer plugin) |
 | `/cogni-ai-tester:testing` | Load the testing skill — elite autonomous test engineering and reliability kernel for proving correctness |
 | `/cogni-ai-git-ops:git` | Load the git skill — Guide for using git with non-interactive, safe operations. Includes references for reflog, bisecting, merges, rebase, cherry-picking, and recovery |
+| `/cogni-ai-git-ops:git-docs` | Load the git-docs skill — Official Git documentation index. Load this skill when searching for specific Git commands, configuration options, how-to guides, and technical references. |
 | `/cogni-ai-github-ops:gh` | Load the gh skill — GitHub CLI (`gh`) operations for issues, PRs, and workflows |
 | `/cogni-ai-github-ops:github` | Load the github skill — Guidance on GitHub-specific features, pull requests viewing modes, and collaborative practices |
 | `/cogni-ai-github-ops:github-actions` | Load the github-actions skill — Diagnose GitHub Actions workflow failures by retrieving run statuses and logs |
