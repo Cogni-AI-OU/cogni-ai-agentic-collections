@@ -52,6 +52,21 @@ A comprehensive workflow for delivering complete, usable software that solves re
 - **Operational Awareness**: Design for observability, deployability, and recoverability from day one.
 - **Stakeholder Communication**: Keep relevant parties informed about progress, trade-offs, and risks.
 
+## Autonomous Execution Directive
+
+Execute multi-step workflows autonomously to completion, continuously looping and self-correcting until all success criteria are met.
+
+## Execution Model
+
+```python
+while not workflow_complete:
+    for phase in workflow_phases:
+        result = execute_phase(phase)
+        if result.needs_iteration:
+            iterate_until_success(phase)
+    check_completion_criteria()
+```
+
 ## What to Avoid
 
 - **Requirements Bypass**: Implementing without validating understanding of the user need.
