@@ -9,7 +9,15 @@ software that delivers user and business value.
 | --- | --- |
 | **Description** | Autonomous developer agent with development, tdd, and critical-thinking skills |
 | **Contents** | 1 agent, 4 skills |
-| **Slash Commands** | [`/cogni-ai-developer:development`](../AGENTS.md), [`/cogni-ai-developer:tdd`](../AGENTS.md), [`/cogni-ai-developer:critical-thinking`](../AGENTS.md) |
+
+## Slash Commands
+
+| Command | Description |
+| --- | --- |
+| `/cogni-ai-developer:development` | Full-cycle software development workflow from requirements to deployment |
+| `/cogni-ai-developer:tdd` | Commands and procedures for test engineering and the TDD lifecycle |
+| `/cogni-ai-developer:critical-thinking` | Cognitive framework for deep analytical reasoning |
+| `/cogni-ai-developer:npm-cli` | Reference and index of documentation pages for npm CLI commands |
 
 ## Installation
 

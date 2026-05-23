@@ -8,8 +8,18 @@ designing algorithms, data structures, and reliable solutions.
 | | |
 | --- | --- |
 | **Description** | Autonomous programmer agent with programming and python skills |
-| **Contents** | 1 agent, 3 skills |
-| **Slash Commands** | [`/cogni-ai-programmer:programming`](../AGENTS.md), [`/cogni-ai-programmer:python`](../AGENTS.md) |
+| **Contents** | 1 agent, 6 skills |
+
+## Slash Commands
+
+| Command | Description |
+| --- | --- |
+| `/cogni-ai-programmer:programming` | Expert workflow for solving technical problems with code |
+| `/cogni-ai-programmer:python` | Expert Python language skill for writing and testing Python 3 code |
+| `/cogni-ai-programmer:threejs-llms` | Expert guide for generating modern Three.js code |
+| `/cogni-ai-programmer:react-llms` | Expert guide for generating React code |
+| `/cogni-ai-programmer:nextjs-llms` | Expert guide for generating Next.js code |
+| `/cogni-ai-programmer:reactnative-llms` | Expert guide for generating React Native code |
 
 ## Installation
 
@@ -38,6 +48,9 @@ claude plugin install cogni-ai-programmer@cogni-ai-agentic-collections
   case handling, and code craftsmanship.
 - **python** — Expert Python language skill for writing, refactoring, and testing idiomatic Python 3 code.
 - **threejs-llms** — Expert guide for generating modern Three.js code using WebGL, WebGPU, and TSL.
+- **react-llms** — Expert guide for generating React code with modern patterns.
+- **nextjs-llms** — Expert guide for generating Next.js applications.
+- **reactnative-llms** — Expert guide for generating React Native mobile applications.
 
 ## Usage
 

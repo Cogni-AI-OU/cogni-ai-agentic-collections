@@ -9,7 +9,12 @@ decomposition, and neurosymbolic verification across all codebase vectors.
 | --- | --- |
 | **Description** | Autonomous architect agent with software-architecture skill |
 | **Contents** | 1 agent, 1 skill |
-| **Slash Commands** | [`/cogni-ai-architect:software-architecture`](../AGENTS.md) |
+
+## Slash Commands
+
+| Command | Description |
+| --- | --- |
+| `/cogni-ai-architect:software-architecture` | Expert workflow for software architecture design |
 
 ## Installation
 

@@ -9,7 +9,13 @@ rebase operations, and repository management.
 | --- | --- |
 | **Description** | Autonomous Git Operations agent with git skills |
 | **Contents** | 1 agent, 2 skills |
-| **Slash Commands** | [`/cogni-ai-git-ops:git`](../AGENTS.md), [`/cogni-ai-git-ops:git-docs`](../AGENTS.md) |
+
+## Slash Commands
+
+| Command | Description |
+| --- | --- |
+| `/cogni-ai-git-ops:git` | Guide for using git with non-interactive, safe operations |
+| `/cogni-ai-git-ops:git-docs` | Official Git documentation index |
 
 ## Installation
 
