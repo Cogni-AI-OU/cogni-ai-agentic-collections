@@ -12,7 +12,7 @@ For a human-readable overview, see [README.md](README.md).
 - **[cogni-ai-agent.yml](cogni-ai-agent.yml)**: Logic for the Cogni AI Agent.
 - **[copilot-setup-steps.yml](copilot-setup-steps.yml)**: Environment setup utility.
 - **[devcontainer-ci.yml](devcontainer-ci.yml)**: Build/test devcontainer and required tools/packages.
-- **[waza-eval.yml](waza-eval.yml)**: Waza evaluation for Markdown files.
+- **[waza-check.yml](waza-check.yml)**: Waza evaluation for Markdown files.
 
 ## Details
 
@@ -60,7 +60,7 @@ For a human-readable overview, see [README.md](README.md).
 - Permissions: callers must grant `packages: write` when pushing images to GHCR.
 - Reusable: `uses: Cogni-AI-OU/.github/.github/workflows/devcontainer-ci.yml@main`.
 
-### waza-eval.yml
+### waza-check.yml
 
 - Purpose: run Waza evaluation framework on markdown files.
 - Triggers: `pull_request` and `push` when `**/*.md` files are modified, and `workflow_dispatch`.
