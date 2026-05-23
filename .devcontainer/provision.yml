@@ -25,7 +25,7 @@
     - name: Install ansible via pipx
       ansible.builtin.command: pipx install --include-deps ansible
       args:
-        creates: ~/.local/bin/ansible
+        creates: "{{ ansible_env.HOME }}/.local/bin/ansible"
       become: false
 
     - name: Inject ansible python requirements
