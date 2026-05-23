@@ -64,7 +64,7 @@ For a human-readable overview, see [README.md](README.md).
 
 - Purpose: run Waza evaluation framework on markdown files.
 - Triggers: `pull_request` and `push` when `**/*.md` files are modified, and `workflow_dispatch`.
-- Details: Installs Python 3.11, pip installs waza, and evaluates the project against the specified `eval-path`.
+- Details: Installs Go, builds waza from source (github.com/microsoft/waza), and evaluates the project against the specified `eval-path`.
 - Permissions: `contents: read`.
 
 ## Synchronized Configuration
