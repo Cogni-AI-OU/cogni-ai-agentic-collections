@@ -8,7 +8,7 @@ license: MIT
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 
-## USE FOR
+## WHEN TO USE
 
 - **Capability Documentation**: Formalizing a specific agent capability into a portable `SKILL.md` playbook with verifiable, imperative steps.
 - **Mechanical Workflow Design**: Authoring precise `bash`, `gh`, or API execution sequences that any agent can invoke regardless of their persona.
@@ -16,7 +16,7 @@ license: MIT
 - **Resource Bundling**: Organizing scripts, templates, and reference docs into a structured directory for progressive context loading.
 - **Skill Refactoring**: Decomposing bloated skills into atomic units or offloading detailed content to the `references/` directory to save context.
 
-## DO NOT USE FOR
+## WHEN NOT TO USE
 
 - **Persona Specification**: Defining a persistent agent identity, mandate, or internal reasoning protocol — use `agent-md-writer` instead.
 - **General Project Context**: Setting repo-wide build/test commands or architectural constraints — use `agents-md-writer` (AGENTS.md) instead.
@@ -68,11 +68,11 @@ Structure the generated file with the following sections (omit optional ones if 
    - `license` (MIT)
 2. **Title (`# Skill Name`)**
 3. **Markdownlint overrides** (e.g., `<!-- markdownlint-disable MD013 MD023 MD031 MD032 -->`)
-4. **`## USE FOR`**
+4. **`## WHEN TO USE`**
    Concrete scenarios reinforcing description triggers.
    **Bullet points** (concise and strictly relevant).
    Use to clarify exact activation conditions. Skip generic filler.
-5. **`## DO NOT USE FOR`**
+5. **`## WHEN NOT TO USE`**
    Explicit non-triggers to prevent false activation.
    **Bullet points** (focus on non-obvious edge cases and overlaps).
    Use to set clear boundaries against similar out-of-scope tasks; skip obvious exclusions.
