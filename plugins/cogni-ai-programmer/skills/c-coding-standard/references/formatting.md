@@ -200,7 +200,7 @@ Consider the following example where both problems occur:
        if ( i++ > STOP_VALUE) break;
     }
 
-Note: \"A lot of code\" is necessary in order that the problem cannot be
+Note: "A lot of code" is necessary in order that the problem cannot be
 caught easily by the programmer.
 
 From the above example, a further rule may be given: Mixing continue
@@ -278,7 +278,7 @@ prone as you could cast a value not in the enum.
 ## Use Header File Guards
 
 Include files should protect against multiple inclusion through the use
-of macros that \"guard\" the files. Note that for C++ compatibility and
+of macros that "guard" the files. Note that for C++ compatibility and
 interoperability reasons, do **not** use underscores '\_' as the
 first or last character of a header guard (see below)
 

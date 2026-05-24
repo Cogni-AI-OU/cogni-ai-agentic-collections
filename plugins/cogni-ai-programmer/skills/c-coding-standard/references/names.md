@@ -9,7 +9,7 @@ people coming after power over the code. Don't laugh!
 
 A name is the result of a long deep thought process about the ecology it
 lives in. Only a programmer who understands the system as a whole can
-create a name that \"fits\" with the system. If the name is appropriate
+create a name that "fits" with the system. If the name is appropriate
 everything fits together naturally, relationships are clear, meaning is
 derivable, and reasoning from common human expectations works as
 expected.
@@ -69,7 +69,7 @@ example:
     structures should be declared at the top of the file in which they
     are used, or in separate header files, if they are used in multiple
     source files. Use of the structures should be by separate
-    declarations and should be \"extern\" if they are declared in a
+    declarations and should be "extern" if they are declared in a
     header file. It may be useful to use a meaningful prefix for each
     member name. E.g, for \`\`struct softc'' the prefix could be
     \`\`sc\_''.

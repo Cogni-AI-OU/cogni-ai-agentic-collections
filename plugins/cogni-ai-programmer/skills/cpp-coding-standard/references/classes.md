@@ -2,7 +2,7 @@
 
 To be good citizens almost all classes should implement the following
 methods. If you don't have to define and implement any of the
-\"required\" methods they should still be represented in your class
+"required" methods they should still be represented in your class
 definition as comments.
 
 -   **Default Constructor**
@@ -236,14 +236,14 @@ globally independent.
 
 ### Don't Globally Define using
 
-Don't place \"using namespace\" directive at global scope in a header
+Don't place "using namespace" directive at global scope in a header
 file. This can cause lots of magic invisible conflicts that are hard to
 track. Keep using statements to implementation files.
 
 ## Use Header File Guards
 
 Include files should protect against multiple inclusion through the use
-of macros that \"guard\" the files.
+of macros that "guard" the files.
 
 ### When Not Using Namespces
 

@@ -189,7 +189,7 @@ people coming after power over the code. Don't laugh!
 
 A name is the result of a long deep thought process about the ecology it
 lives in. Only a programmer who understands the system as a whole can
-create a name that \"fits\" with the system. If the name is appropriate
+create a name that "fits" with the system. If the name is appropriate
 everything fits together naturally, relationships are clear, meaning is
 derivable, and reasoning from common human expectations works as
 expected.

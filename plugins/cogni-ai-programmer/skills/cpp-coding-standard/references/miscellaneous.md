@@ -4,7 +4,7 @@
 
 C++ provides the *const* key word to allow passing as parameters objects
 that cannot change to indicate when a method doesn't modify its object.
-Using const in all the right places is called \"const correctness.\"
+Using const in all the right places is called "const correctness."
 It's hard at first, but using const really tightens up your coding
 style. Const correctness grows on you.
 
@@ -355,7 +355,7 @@ type safety is implemented by encoding type information in link symbols,
 a process called *name mangling*. This creates a problem when linking to
 C code as C function names are not mangled. When calling a C function
 from C++ the function name will be mangled unless you turn it off. Name
-mangling is turned off with the *extern \"C\"* syntax. If you want to
+mangling is turned off with the *extern "C"* syntax. If you want to
 create a C function in C++ you must wrap it with the above syntax. If
 you want to call a C function in a C library from C++ you must wrap in
 the above syntax. Here are some examples:
