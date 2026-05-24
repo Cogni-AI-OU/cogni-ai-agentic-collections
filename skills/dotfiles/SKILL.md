@@ -33,7 +33,15 @@ license: MIT
 
 ## Dotfile Reference
 
-### Git Repository & Workspace Dotfiles
+### Git-Specific Dotfiles
+
+- **`.git/`**: The hidden directory containing the repository's Git metadata, objects, and configuration. **CRITICAL**: Never modify files within this directory manually.
+- **`.gitattributes`**: Defines Git attributes per path, controlling line ending normalization, merge strategies, text/binary classification, and diff output.
+- **`.gitconfig`**: The global Git configuration file (typically in `$HOME`), containing user identity, global aliases, and default behaviors.
+- **`.gitignore`**: Specifies intentionally untracked files to ignore (e.g., build artifacts, temporary files, secrets) preventing them from being committed to the Git repository.
+- **`.gitmodules`**: Configures Git submodules, mapping their paths to the remote repository URLs.
+
+### Workspace Dotfiles
 
 - **`.astro/config.yaml`**: Configuration file for the Astro web framework, defining build options, integrations, and project settings.
 - **`.claude/`**: Directory containing workspace-specific Claude configuration, such as `settings.json` for hooks, tool permissions, and model or other workspace settings.
@@ -56,9 +64,6 @@ license: MIT
 - **`.github/workflows/README.md`**: Documentation for GitHub Actions workflows, describing their purpose, inputs, and usage.
 - **`.github/workflows/*.yml`**: GitHub Actions workflow files for CI/CD automation, testing, and deployment.
 - **`.github/{actionlint,pre-commit}-matcher.json`**: GitHub Actions problem matchers that enable inline error reporting for linters in PRs.
-- **`.gitattributes`**: Defines Git attributes per path, controlling line ending normalization, merge strategies, text/binary classification, and diff output.
-- **`.gitignore`**: Specifies intentionally untracked files to ignore (e.g., build artifacts, temporary files, secrets) preventing them from being committed to the Git repository.
-- **`.gitmodules`**: Configures Git submodules, mapping their paths to the remote repository URLs.
 - **`.golangci.yml`**: Configuration file for `golangci-lint`, a Go linters aggregator, defining enabled linters, error reporting, and analysis settings.
 - **`.htaccess`**: Distributed configuration file for Apache web server, allowing for decentralized management of web server configuration.
 - **`.lycheeignore`**: Defines URL patterns and regular expressions to exclude from link checking with lychee.
@@ -90,7 +95,6 @@ license: MIT
 - **`.curlrc`**: Default configuration for the `curl` command-line tool, used to specify common flags or proxy settings.
 - **`.drush/`**: Configuration directory for Drush (Drupal Shell), containing aliases and command-specific settings.
 - **`.gdbinit`**: Initialization script for the GDB debugger, used to define custom commands or UI settings.
-- **`.gitconfig`**: The global Git configuration file (typically in `$HOME`), containing user identity, global aliases, and default behaviors.
 - **`.gnupg/`**: Directory for GnuPG (GNU Privacy Guard) configuration, keys, and trust database.
 - **`.hyper.js`**: Configuration file for the Hyper terminal emulator.
 - **`.inputrc`**: Configuration for the Readline library, used by shells (Bash) and other CLI tools for line editing and history.
