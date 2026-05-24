@@ -12,7 +12,7 @@ For a human-readable overview, see [README.md](README.md).
 - **[cogni-ai-agent.yml](cogni-ai-agent.yml)**: Logic for the Cogni AI Agent.
 - **[copilot-setup-steps.yml](copilot-setup-steps.yml)**: Environment setup utility.
 - **[devcontainer-ci.yml](devcontainer-ci.yml)**: Build/test devcontainer and required tools/packages.
-- **[waza-check.yml](waza-check.yml)**: Waza evaluation for Markdown files.
+- **[waza-eval.yml](waza-eval.yml)**: Waza evaluation for Markdown files.
 
 ## Details
 
@@ -60,7 +60,7 @@ For a human-readable overview, see [README.md](README.md).
 - Permissions: callers must grant `packages: write` when pushing images to GHCR.
 - Reusable: `uses: Cogni-AI-OU/.github/.github/workflows/devcontainer-ci.yml@main`.
 
-### waza-check.yml
+### waza-eval.yml
 
 - Purpose: run Waza evaluation framework on skill files (SKILL.md, .agent.md) in PRs.
 - Triggers: `pull_request` and `push` when `**/SKILL.md`, `**/*.agent.md`, or skill directories
@@ -71,7 +71,7 @@ For a human-readable overview, see [README.md](README.md).
   Saves results as artifacts for the comment workflow.
 - Permissions: `contents: read`.
 
-### waza-check-pr-comment.yml
+### waza-eval-pr-comment.yml
 
 - Purpose: Posts results from the "Waza Evaluation" workflow as a PR comment.
 - Triggers: `workflow_run` (after Waza Evaluation), `workflow_call`, `workflow_dispatch`.
