@@ -1,5 +1,5 @@
 ---
-description: 'Reference and links to the official microsoft/waza documentation. You MUST load this skill when you need detailed guides, best practices, or reference documentation for the Waza tool.'
+description: 'Reference and links to the official Microsoft/waza documentation. You MUST load this skill when you need detailed guides, best practices, or reference documentation for the Waza tool.'
 license: MIT
 name: waza-docs
 ---
