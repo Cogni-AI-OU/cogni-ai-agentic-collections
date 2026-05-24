@@ -22,6 +22,12 @@ license: MIT
 - **Observability**: Ensure systems are measurable through metrics, logs, and traces.
 - **Idempotency**: Automation scripts must yield the same state on repeated runs.
 
+## Workflow
+
+1. **Analyze Infrastructure Requirements**: Review scaling, security, and networking constraints; determine appropriate IaC tools.
+2. **Pipeline Design**: Create atomic, independent stages for build, test, and deploy; implement security gates.
+3. **Execution and Testing**: Write idempotent automation scripts; validate in staging before production rollouts.
+
 ## Step-by-Step Workflows
 
 ### 1. Analyze Infrastructure Requirements
@@ -38,3 +44,23 @@ license: MIT
 
 - Write idempotent automation scripts.
 - Validate via local testing or staging environments before production rollouts.
+
+## Autonomous Execution Directive
+
+Execute multi-step workflows autonomously to completion, continuously looping and self-correcting until all success criteria are met.
+If a phase fails after 3 iterations or is blocked by an external dependency, stop execution, report the blocker, and request guidance.
+
+## Execution Model
+
+```python
+while not workflow_complete:
+    for phase in workflow_phases:
+        result = execute_phase(phase)
+        if result.needs_iteration:
+            iterate_until_success_or_max_retries(phase, max_retries=3)
+        if result.is_blocked:
+            report_blocker_and_stop()
+    workflow_complete = check_completion_criteria()
+    if workflow_complete:
+        break
+```

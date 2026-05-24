@@ -30,6 +30,14 @@ license: MIT
 - **Fitness Functions**: Use automated checks to ensure the architecture continues to meet its defined quality attributes over time.
 - **Last Responsible Moment**: Delay architectural decisions until there is enough information to justify and validate them, avoiding analysis paralysis.
 
+## Workflow
+
+1. **Analyze Requirements and Constraints**: Collect functional and non-functional requirements, extract quality attributes, and inventory business constraints.
+2. **Evaluate Architectural Styles**: Compare styles (Monolith, Layered, Microservices, Event-Driven) against prioritized quality attributes and constraints.
+3. **Apply Design Principles**: Enforce SOLID principles and foundational heuristics (DRY, KISS, YAGNI, Law of Demeter).
+4. **Select Design Patterns**: Choose creational, structural, and behavioral patterns that fit the selected architectural style.
+5. **Document Decisions**: Capture each architectural choice as an ADR with context, alternatives, rationale, and consequences.
+
 ## Step-by-Step Workflows
 
 ### 1. Analyze Requirements and Constraints
@@ -81,6 +89,28 @@ license: MIT
 - Do not use email or informal channels as the primary record for architectural decisions. Always maintain a centralized ADR repository.
 - Avoid tight coupling between high-level policy and low-level details. Always depend on abstractions.
 - Avoid introducing intermediate layers that perform minimal processing without adding significant value in layered architectures.
+
+## Autonomous Execution Directive
+
+Execute multi-step workflows to completion, looping and retrying phases until success criteria are met.
+If a phase fails after 3 iterations or is blocked by an external dependency, surface the blocker and halt execution.
+
+## Execution Model
+
+```python
+while not workflow_complete:
+    for phase in workflow_phases:
+        result = execute_phase(phase)
+        if result.needs_iteration:
+            iterate_until_success_or_max_retries(phase, max_retries=3)
+        if result.is_blocked:
+            report_blocker_and_stop()
+            workflow_complete = True
+            break
+    workflow_complete = check_completion_criteria()
+    if workflow_complete:
+        break
+```
 
 ## Related Skills
 

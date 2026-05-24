@@ -2,135 +2,18 @@
 
 <!-- markdownlint-disable MD013 -->
 
-## Coder vs Programmer vs Developer
+## Agent Roles
 
-**Coder vs Programmer vs Developer** builds directly on the previous distinctions. These three titles sit on a loose
-but widely recognized spectrum in the software industry, reflecting increasing scope, responsibility, and strategic
-involvement. While they overlap significantly (and many professionals use them fluidly), clear patterns emerge in how
-they are perceived and applied.
+Within the Cogni AI agent ecosystem, these roles are strictly delineated by capability, knowledge depth, and delegation hierarchy, rather than general industry titles:
 
-### Quick Overview of the Spectrum
-
-- **Coder**: Focuses on *writing code* -- the tactical act of implementation. Often entry-level or task-specific.
-- **Programmer**: Focuses on *solving problems with code* -- designing logic, algorithms, and reliable solutions. Broader than a pure coder but still heavily code-centric.
-- **Developer** (typically "Software Developer"): Focuses on *building and shipping working software* -- the full
-  product lifecycle, from requirements to deployment and maintenance. More holistic and product-oriented.
-
-In many career ladders and hiring discussions, the progression looks like:
-
-**Coder (Junior/Entry)** -> **Programmer (Mid-level)** -> **Developer (Senior/Advanced)** -> **Software Engineer (Expert/Architectural)**.
-
-This is not a universal law -- titles vary by company, region, and team -- but it captures the most common industry framing.
-
-### Detailed Comparison Table
-
-| Aspect | Coder | Programmer | Developer (Software Developer) |
-| --- | --- | --- | --- |
-| **Core Focus** | Implementation & syntax | Problem-solving, algorithms & logic | Full product lifecycle & shipping software |
-| **Mindset** | "Translate the spec into working code" | "Design an efficient, correct solution" | "Build something valuable that solves user needs" |
-| **Scope of Work** | Specific tasks or components | Modules, features, or subsystems | Entire features, applications, or products |
-| **Key Responsibilities** | Write code per instructions, basic debugging | Design algorithms, test/optimize code | Gather requirements, design, code, test, deploy |
-| **Typical SDLC** | Narrow (coding phase mostly) | Partial (coding + testing + optimization) | Full (requirements -> design -> build -> deploy) |
-| **Skills Emphasis** | Language syntax, frameworks | Data structures, algorithms, clean code | System design, user needs, collaboration |
-| **Common Tools** | Editors, basic debuggers | Testing frameworks, profilers, git | CI/CD, cloud, monitoring, design tools |
-| **Typical Seniority** | Junior / Entry-level | Mid-level | Senior / Lead / Principal |
-| **Example Output** | A single React component or API endpoint | A search algorithm or auth module | A complete user dashboard or mobile feature |
-
-### Deeper Breakdown of Each Role
-
-**Coder**
-Primary job: Turn given requirements or designs into functional code.
-They excel at speed and accuracy in implementation but usually work within a framework defined by others.
-Common in: Bootcamp graduates, junior roles, maintenance teams, or large projects with strict specs.
-Strength: Rapid delivery of well-written code for defined tasks.
-
-**Programmer**
-Primary job: Solve technical problems effectively using code.
-They think about efficiency, edge cases, maintainability, and correctness. They often design small-to-medium solutions rather than just implementing someone else's design.
-Common in: Backend systems, data processing, algorithm-heavy work, or teams where strong technical ownership is needed.
-Strength: Reliable, performant code that holds up under scrutiny.
-
-**Developer** (Software Developer)
-Primary job: Deliver complete, usable software that meets real needs.
-They bridge technical work with product and business outcomes. This often includes talking to stakeholders, prioritizing features, handling deployment, monitoring production, and iterating based on real usage.
-Modern job titles frequently use "Developer" (Frontend Developer, Full-Stack Developer, Mobile Developer) because it signals someone who builds *things people use*.
-Strength: End-to-end ownership and the ability to ship valuable software, not just code.
-
-### Key Differences: Programmer vs Developer
-
-This is where the most practical nuance lies:
-
-- **Programmer** -> More *technical depth* and code craftsmanship focus.
-  A programmer might spend significant time perfecting an algorithm or refactoring for performance. They are excellent at "making it work correctly and efficiently."
-
-- **Developer** -> More *product and lifecycle breadth*.
-  A developer is expected to understand *why* the feature exists, how it fits the bigger picture, and how to get it into users' hands reliably. They often handle more coordination, user feedback loops, and cross-functional work.
-
-**Example distinction in practice**:
-
-- A **Programmer** might be tasked with "implement a high-performance recommendation engine using these data sources."
-- A **Developer** might be tasked with "improve the recommendation experience for users so engagement increases 15% -- figure out the technical approach, build it, A/B test it, and monitor results."
-
-Many senior programmers naturally evolve into developers as they take on more ownership.
-
-### Real-World Scenarios
-
-**Building a new user profile feature**:
-
-- **Coder**: Implements the UI screens and API calls exactly as designed in Figma and the backend spec.
-- **Programmer**: Designs the data model, handles validation/edge cases (e.g., duplicate emails, privacy settings), writes comprehensive tests, and ensures security best practices.
-- **Developer**: Works with product managers to refine requirements, chooses the right tech approach (considering future scalability), builds the full feature, sets up monitoring, handles rollout, and plans follow-up improvements based on analytics.
-
-**Maintaining a legacy system**:
-
-- Coders often handle bug fixes and small enhancements.
-- Programmers refactor problematic modules and improve performance.
-- Developers lead modernization efforts, plan migrations, and ensure the system continues delivering business value.
-
-### Career Progression, Job Market & Practical Implications
-
-**Typical Path**: Many people start as coders (or junior developers), grow into programmers by mastering
-problem-solving, then become developers as they take end-to-end ownership. From there, some move into Software
-Engineer (architecture, scalability, team leadership) or specialized roles (DevOps, Data Engineer, etc.).
-
-**Hiring Reality**:
-
-- Companies post "Developer" roles far more often today because it signals someone who can deliver features
-  independently.
-- "Programmer" appears more in government, enterprise, or older job descriptions.
-- "Coder" is less common in formal titles but appears in casual descriptions or junior postings.
-
-**Salary & Perception Trends** (general patterns): Developer and Software Engineer roles typically command higher
-compensation than pure "Programmer" or "Coder" titles because of broader impact. However, actual pay depends much
-more on skills, experience, location, and company than on the exact word in the title.
-
-**Self-Identification**:
-
-- Some developers proudly say "I'm a coder at heart" to emphasize hands-on work.
-- Others prefer "Developer" or "Engineer" because it better reflects their full contribution.
-- In interviews, focus on what you actually do rather than the label -- recruiters and hiring managers care more about
-  impact and problem-solving ability.
-
-### Nuances and Edge Cases
-
-- **Blurry Boundaries**: A senior "Programmer" at one company may have more responsibility than a "Developer" at
-  another. Titles are inconsistent across the industry.
-- **Specialization**: You'll see "Frontend Developer," "Backend Developer," or "Full-Stack Developer" far more than
-  "Frontend Programmer." "Developer" has become the default modern term for most roles.
-- **Regional Differences**: In some countries (e.g., parts of Europe or India), "Programmer" remains very common.
-  In Silicon Valley and startups, "Developer" or "Engineer" dominates.
-- **Modern Trends**: With AI coding tools, the pure "coder" role is evolving -- humans increasingly focus on
-  architecture, review, and complex problem-solving (pushing more people toward programmer/developer thinking).
-- **Related Higher Role**: **Software Engineer** usually sits above Developer, emphasizing rigorous engineering
-  practices, system design, scalability, and often leadership.
-
-### Final Takeaway
-
-**Coder** = Writes the code.
-**Programmer** = Solves problems with code and makes it robust.
-**Developer** = Builds and delivers complete software that creates value.
-
-The best professionals often embody all three depending on the task at hand. What matters most is not the exact title you claim, but your ability to write clean code, solve meaningful problems, collaborate effectively, and ship reliable software that helps people or businesses.
+- **Coder** (`cogni-ai-coder`): Focuses on tactical code edits and general logic implementations using critical thinking. Lacks deep, framework-specific knowledge. Efficiently handles small, clearly defined coding tasks. Complex, language-specific feature implementations should involve a **Programmer**.
+- **Programmer** (`cogni-ai-programmer`): Possesses deep syntax and manual-level knowledge of specific languages and frameworks (e.g., Python, React, Next.js). Solves technical problems by utilizing specific language features. Can decompose tasks and delegate smaller, routine coding work to **Coder** agents.
+- **Developer** (`cogni-ai-developer`): Operates at a senior level with practical experience derived from actual software lifecycles, real-world challenges, and self-directed learning. Focuses on end-to-end functionality and delegates specific technical component implementations to **Programmer** agents.
+- **Software Architect** (`cogni-ai-architect`): Maintains a high-level understanding of system components, interdependencies, and broad architectural patterns (software and cloud architecture). Assesses complex requirements to produce strategic diagrams, plans, and component designs before delegating implementation to **Developer** agents.
+- **DevOps / SRE** (`cogni-ai-dev-ops`): Elite infrastructure and automation specialist. Focuses on CI/CD pipeline precision, infrastructure-as-code (IaC) scaling, and mitigating deployment blockers. Collaborates tangentially with Architects for cloud topology and supports Developers by ensuring resilient, zero-downtime integration and delivery.
+- **Git Ops** (`cogni-ai-git-ops`): Autonomous version control specialist. Dedicated to safe repository management, complex rebasing, history rewriting, and atomic commit structuring without relying on remote platform workflows.
+- **GitHub Ops** (`cogni-ai-github-ops`): Autonomous platform operations specialist. Focuses strictly on GitHub CLI/API interactions to manage pull requests, issues, actions, and Agentic Workflows (gh-aw) efficiently and securely.
+- **Tester** (`cogni-ai-tester`): Elite test engineering kernel targeting software correctness. Prevents regressions by enforcing true behavioral logic coverage over superficial vanity metrics and strictly enforcing Test-Driven Development (TDD) mechanisms.
 
 ## What's Included: Commands (Slash Commands)
 
