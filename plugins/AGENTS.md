@@ -33,6 +33,7 @@ Slash commands are invoked via `/agent:skill` in the Copilot CLI or VS Code Chat
 | `/cogni-ai-github-ops:github` | Load the github skill -- Guidance on GitHub-specific features, pull requests viewing modes, and collaborative practices |
 | `/cogni-ai-github-ops:github-actions` | Load the github-actions skill -- Diagnose GitHub Actions workflow failures by retrieving run statuses and logs |
 | `/cogni-ai-github-ops:github-aw` | Load the github-aw skill -- Safely update existing GitHub Agentic Workflows (gh-aw) |
+| `/cogni-ai-github-ops:dot-github` | Load the dot-github skill -- Standardize .github directory structure and agentic patterns |
 | `/cogni-ai-github-ops:gh-api` | Load the gh-api skill -- Advanced GitHub API queries and mutations via REST or GraphQL |
 | `/cogni-ai-github-ops:gh-issue` | Load the gh-issue skill -- GitHub issue management and operations |
 | `/cogni-ai-github-ops:gh-pr` | Load the gh-pr skill -- GitHub pull request operations, reviews, and checks |
