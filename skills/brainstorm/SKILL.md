@@ -152,6 +152,12 @@ radar-beta
 
 - **Assumption-Driven Brainstorming**: Relying on guesses instead of factual context gathered through tools.
 
+## WHEN NOT TO USE
+
+- Convergent evaluation of a single plan (use `critical-thinking` instead).
+- Narrow technical debugging (use `critical-thinking` or `tester` instead).
+- Simple file management or git operations.
+
 ## Related Skills
 
 - **brainstorm-agent-runs**: You MUST load this skill when identifying agentic runs in CI/CD for a Pull Request.
