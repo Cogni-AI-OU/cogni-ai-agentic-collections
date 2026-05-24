@@ -26,11 +26,11 @@ Guidance for reviewing core architecture, documentation, and constraint files fo
 ## WHEN NOT TO USE
 
 - For performing deep code execution or logic validation (use `testing` or `code-review` instead).
-- When the user explicitly requests purely formatting/linting fixes (use `markdown` or `yaml` skills).
+- When the user explicitly requests purely formatting/linting fixes (use `pre-commit` to run markdownlint/yamllint, or `yaml` for YAML-specific rules).
 - For writing completely new features from scratch without reviewing existing architecture.
 - Writing new documentation (use `docs-writer` instead).
 - Deep code logic review (use `code-review` instead).
-- Simple markdown linting.
+- Simple markdown linting (use `pre-commit` instead).
 
 ## Common Pitfalls
 
