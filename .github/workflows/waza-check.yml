@@ -91,6 +91,9 @@ jobs:
             echo -e "$OUTPUT_LOG"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
+          if [ "$FAILED" -ne 0 ]; then
+            exit 1
+          fi
       - name: Run evaluation (workflow_dispatch)
         if: github.event_name == 'workflow_dispatch'
         id: run-eval

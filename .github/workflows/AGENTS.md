@@ -13,6 +13,7 @@ For a human-readable overview, see [README.md](README.md).
 - **[copilot-setup-steps.yml](copilot-setup-steps.yml)**: Environment setup utility.
 - **[devcontainer-ci.yml](devcontainer-ci.yml)**: Build/test devcontainer and required tools/packages.
 - **[waza-check.yml](waza-check.yml)**: Waza validation for skill files.
+- **[waza-check-pr-comment.yml](waza-check-pr-comment.yml)**: PR feedback and label management for Waza Check workflow results.
 
 ## Details
 
