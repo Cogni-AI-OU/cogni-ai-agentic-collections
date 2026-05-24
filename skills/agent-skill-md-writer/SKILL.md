@@ -59,7 +59,7 @@ Structure the generated file with the following sections (omit optional ones if 
    Must include the following fields:
    - `name`
    - `description`:
-     Include `USE FOR:` for consise positive routing with list of trigger phrases.
+      Include `USE FOR:` for concise positive routing with list of trigger phrases.
      Include `DO NOT USE FOR:` for negative routing boundaries (anti-trigger phrases).
       Include `MUST LOAD WHEN:` ONLY for exact, unambiguous triggers (e.g., a specific CLI command). Omit for general-purpose skills.
      Optionally `**FOR SINGLE OPERATIONS**` (one-shot / atomic task routing) or `**WORKFLOW SKILL**` (multi-step process routing).
