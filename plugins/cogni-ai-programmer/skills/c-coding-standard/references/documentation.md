@@ -77,7 +77,7 @@ a report so people can make a special effort where needed.
 Functions headers should be in the file where they are declared. This
 means that most likely the functions will have a header in the .h file.
 However, functions like main() with no explicit prototype declaration in
-the .h file, should have a header in the .c file. 
+the .h file, should have a header in the .c file.
 
 ## Include Statement Documentation
 

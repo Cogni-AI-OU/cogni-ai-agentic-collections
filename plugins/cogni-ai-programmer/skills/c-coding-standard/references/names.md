@@ -76,7 +76,6 @@ example:
 
 ### Example
 
-       
     struct foo {
         struct foo *next;   /* List of active foo */
         struct mumble amumble;  /* Comment for mumble */
@@ -100,7 +99,6 @@ example:
 
 ### Example
 
-       
        int handle_error (int error_number) {
           int            error= OsErr();
           Time           time_of_error;
@@ -115,7 +113,7 @@ example:
 
       char *name= NULL;
 
-      char *name, address; 
+      char *name, address;
 
 ## Global Variables
 

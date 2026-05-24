@@ -30,7 +30,7 @@ doesn't affect execution speed. It's easy to do.
 
 #### Justification
 
-It provides safety when adding new lines while maintainng a compact
+It provides safety when adding new lines while maintaining a compact
 readable form.
 
 ## Add Comments to Closing Braces
@@ -41,7 +41,7 @@ on.
 
     while(1) {
        if (valid) {
-      
+
        } /* if valid */
        else {
        } /* not valid */
@@ -135,7 +135,7 @@ to this format, but then it really gets useful.
           /* comments */
 
           case 2:
-          {        
+          {
              int v;
              ...
           }
@@ -161,12 +161,12 @@ out into a separate function, with a success/failure return code.
              if (disaster) {
                 goto error;
 
-             } 
+             }
           }
        }
        ...
     error:
-       clean up the mess 
+       clean up the mess
 
 When a goto is necessary the accompanying label should be alone on a
 line and to the left of the code that follows. The goto should be
@@ -252,7 +252,7 @@ The reasons are:
 
 1.  Documentation can be added for the variable on the line.
 2.  It's clear that the variables are initialized.
-3.  Declarations are clear which reduces the probablity of declaring a
+3.  Declarations are clear which reduces the probability of declaring a
     pointer when you meant to declare just a char.
 
 ## To Use Enums or Not to Use Enums
@@ -279,13 +279,12 @@ prone as you could cast a value not in the enum.
 
 Include files should protect against multiple inclusion through the use
 of macros that \"guard\" the files. Note that for C++ compatibility and
-interoperatibility reasons, do **not** use underscores '\_' as the
+interoperability reasons, do **not** use underscores '\_' as the
 first or last character of a header guard (see below)
 
     #ifndef sys_socket_h
       #define sys_socket_h  /* NOT _sys_socket_h_ */
-      #endif 
-      
+      #endif
 
 # Macros
 
@@ -301,12 +300,12 @@ macros for small functions are ok.
 
 ### Example
 
-    #define  MAX(x,y) (((x) > (y) ? (x) : (y)) // Get the maximum
+    #define  MAX(x,y) (((x) > (y)) ? (x) : (y)) // Get the maximum
 
 The macro above can be replaced for integers with the following inline
 function with no loss of efficiency:
 
-       inline int 
+       inline int
        max(int x, int y) {
           return (x > y ? x : y);
        }
@@ -323,13 +322,13 @@ when invoked with an expression that has side effects.
 ## Always Wrap the Expression in Parenthesis
 
 When putting expressions in macros always wrap the expression in
-parenthesis to avoid potential communitive operation abiguity.
+parenthesis to avoid potential commutative operation ambiguity.
 
 ### Example
 
     #define ADD(x,y) x + y
 
-    must be written as 
+    must be written as
 
     #define ADD(x,y) ((x) + (y))
 
@@ -369,22 +368,22 @@ packages.
 Always document a null body for a for or while statement so that it is
 clear that the null body is intentional and not missing code.
 
-       while (*dest++ = *src++) 
+       while (*dest++ = *src++)
 
       {
-          ;       
+          ;
 
-       }  
+       }
 
 # Do Not Default If Test to Non-Zero
 
 Do not default the test for non-zero, i.e.
 
-       if (FAIL != f()) 
+       if (FAIL != f())
 
 is better than
 
-       if (f()) 
+       if (f())
 
 even though FAIL may have the value 0 which C considers to be false. An
 explicit test will help you out later when somebody decides that a
@@ -396,7 +395,7 @@ the test. A frequent trouble spot is using strcmp to test for string
 equality, where the result should *never* *ever* be defaulted. The
 preferred approach is to define a macro *STREQ*.
 
-       #define STREQ(a, b) (strcmp((a), (b)) == 0) 
+       #define STREQ(a, b) (strcmp((a), (b)) == 0)
 
 Or better yet use an inline method:
 
@@ -436,11 +435,11 @@ maintainability that results when embedded assignments are used in
 artificial places. For example,
 
        a = b + c;
-       d = a + r; 
+       d = a + r;
 
 should not be replaced by
 
-       d = (a = b + c) + r; 
+       d = (a = b + c) + r;
 
 even though the latter may save one cycle. In the long run the time
 difference between the two will decrease as the optimizer gains

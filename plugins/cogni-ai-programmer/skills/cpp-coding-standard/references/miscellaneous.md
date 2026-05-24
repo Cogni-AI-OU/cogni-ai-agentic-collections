@@ -59,11 +59,11 @@ Use #if MACRO not #ifdef MACRO. Someone might write code like:
             temporary_debugger_break();
     #endif
 
-Someone else might compile the code with turned-of debug info like:
+Someone else might compile the code with turned-off debug info like:
 
     cc -c lurker.cc -DDEBUG=0
 
-Alway use #if, if you have to use the preprocessor. This works fine, and
+Always use #if, if you have to use the preprocessor. This works fine, and
 does the right thing, even if DEBUG is not defined at all (!)
 
     #if DEBUG
@@ -86,7 +86,7 @@ Sometimes large blocks of code need to be commented out for testing.
 
 The easiest way to do this is with an #if 0 block:
 
-       void 
+       void
        example()
        {
           great looking code
@@ -94,7 +94,7 @@ The easiest way to do this is with an #if 0 block:
           #if 0
           lots of code
           #endif
-        
+
           more code
         }
 
@@ -114,11 +114,11 @@ added back? It's a mystery.
 
 ### Use Descriptive Macro Names Instead of #if 0
 
-    #if NOT_YET_IMPLEMENTED  
+    #if NOT_YET_IMPLEMENTED
 
     #if OBSOLETE
 
-    #if TEMP_DISABLED 
+    #if TEMP_DISABLED
 
 ### Add a Comment to Document Why
 
@@ -243,12 +243,12 @@ In C++ macros are not needed for code efficiency. Use inlines.
 
 #### Example
 
-    #define  MAX(x,y) (((x) > (y) ? (x) : (y)) // Get the maximum
+    #define  MAX(x,y) (((x) > (y)) ? (x) : (y)) // Get the maximum
 
 The macro above can be replaced for integers with the following inline
 function with no loss of efficiency:
 
-       inline int 
+       inline int
        max(int x, int y)
        {
           return (x > y ? x : y);
@@ -266,13 +266,13 @@ when invoked with an expression that has side effects.
 ### Always Wrap the Expression in Parenthesis
 
 When putting expressions in macros always wrap the expression in
-parenthesis to avoid potential communitive operation abiguity.
+parenthesis to avoid potential commutative operation ambiguity.
 
 #### Example
 
     #define ADD(x,y) x + y
 
-    must be written as 
+    must be written as
 
     #define ADD(x,y) ((x) + (y))
 
@@ -311,11 +311,11 @@ with 1 (TRUE, YES, etc.); instead test for inequality with 0 (FALSE, NO,
 etc.). Most functions are guaranteed to return 0 if false, but only
 non-zero if true. Thus,
 
-       if (TRUE == func()) { ... 
+       if (TRUE == func()) { ...
 
 must be written
 
-       if (FALSE != func()) { ... 
+       if (FALSE != func()) { ...
 
 ## Usually Avoid Embedded Assignments
 
@@ -323,7 +323,7 @@ There is a time and a place for embedded assignment statements. In some
 constructs there is no better way to accomplish the results without
 making the code bulkier and less readable.
 
-       while (EOF != (c = getchar())) 
+       while (EOF != (c = getchar()))
        {
           process the character
        }
@@ -336,11 +336,11 @@ maintainability that results when embedded assignments are used in
 artificial places. For example,
 
        a = b + c;
-       d = a + r; 
+       d = a + r;
 
 should not be replaced by
 
-       d = (a = b + c) + r; 
+       d = (a = b + c) + r;
 
 even though the latter may save one cycle. In the long run the time
 difference between the two will decrease as the optimizer gains
@@ -431,7 +431,6 @@ This section contains some miscellaneous do's and don'ts.
     is a problem. The following is confusing and prone to error.
 
                 if (abool= bbool) { ... }
-             
 
     Does the programmer really mean assignment here? Often yes, but
     usually no. The solution is to just not do it. Instead use explicit
@@ -440,7 +439,6 @@ This section contains some miscellaneous do's and don'ts.
 
                abool= bbool;
                if (abool) { ... }
-            
 
 -   Modern compilers will put variables in registers automatically. Use
     the register sparingly to indicate the variables that you think are
@@ -452,15 +450,15 @@ This section contains some miscellaneous do's and don'ts.
 
 Do not put data definitions in header files. for example:
 
-    /* 
-     * aheader.h 
+    /*
+     * aheader.h
      */
     int x = 0;
 
 1.  It's bad magic to have space consuming code silently inserted
     through the innocent use of header files.
 2.  It's not common practice to define variables in the header file so
-    it will not occur to devellopers to look for this when there are
+    it will not occur to developers to look for this when there are
     problems.
 3.  Consider defining the variable once in a .cc file and use an extern
     statement to reference it.

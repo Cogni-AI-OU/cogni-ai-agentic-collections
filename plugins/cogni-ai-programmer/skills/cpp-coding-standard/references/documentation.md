@@ -85,7 +85,7 @@ complete list of Gotcha Keywords, please refer to
 Functions headers should be in the file where they are declared. This
 means that most likely the functions will have a header in the .hh file.
 However, functions like main() with no explicit prototype declaration in
-the .hh file, should have a header in the .cn file.
+the .hh file, should have a header in the .cc file.
 
 ## Include Statement Documentation
 
@@ -104,8 +104,8 @@ class then it's useful to specify a class relationship:
 
     // SYSTEM INCLUDES
     //
-    #include                              
-    #include 
+    #include
+    #include
 
 # Using Use Cases
 

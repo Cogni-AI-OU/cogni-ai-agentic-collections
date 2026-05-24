@@ -1,7 +1,7 @@
 ---
 name: cpp-coding-standard
 description: >-
-  C++ coding standard guidelines for names, formatting, and object-oriented 
+  C++ coding standard guidelines for names, formatting, and object-oriented
   design. Use this skill when writing or reviewing C++ code.
 ---
 
@@ -72,7 +72,7 @@ description: >-
   - Layering
   - Delegation
   - Minimize Dependencies with Abstract Base Classes
-  - Liskov's Substitution Prinicple
+  - Liskov's Substitution Principle
   - Follow the Law of Demeter
 - [Miscellaneous](references/miscellaneous.md)
   - Be Const Correct

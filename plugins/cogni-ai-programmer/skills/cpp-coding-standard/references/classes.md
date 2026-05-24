@@ -75,7 +75,7 @@ An example using default values:
       // no arguments are supplied:
       //
       Planet(int radius= 5);
-      
+
       // Use compiler-generated copy constructor, assignment, and destructor.
       // Planet(const Planet&);
       // Planet& operator=(const Planet&);
@@ -174,7 +174,7 @@ indicate if the object is open. A good strategy is instead of making a
 lot of access methods you can turn them around to be questions about the
 object thus reducing the exposure of internal structure. Without the
 IsOpen() method we might have had to do: if (STATE_OPEN == State())
-which is much uglier. 
+which is much uglier.
 
 ## What should go in public/protected/private?
 
@@ -251,7 +251,7 @@ of macros that \"guard\" the files.
     #ifndef filename_h
     #define filename_h
 
-    #endif 
+    #endif
 
 The new line after the endif if is required by some compilers.
 
@@ -262,7 +262,7 @@ If namespaces are used then to be completely safe:
     #ifndef namespace_filename_h
     #define namespace_filename_h
 
-    #endif 
+    #endif
 
 1.  Replace *filename* with the name of the file being guarded. This
     should usually be the name of class contained in the file. Use the
@@ -357,7 +357,7 @@ Similar to Get/Set but cleaner. Use this approach when not using the
        {
        public:
           int              Age() const     { return aAge; }
-          int&             rAge()          { return aAge; } 
+          int&             rAge()          { return aAge; }
 
           const String&    Name() const    { return aName; }
           String&          rName()         { return aName; }
@@ -403,7 +403,7 @@ When possible use this approach to attribute access.
 
 Should you do work that can fail in constructors? If you have a compiler
 that does not support exceptions (or thread safe exceptions if it
-matters to you) then the answer is definitely no. 
+matters to you) then the answer is definitely no.
 
 ### Do Work in Open
 

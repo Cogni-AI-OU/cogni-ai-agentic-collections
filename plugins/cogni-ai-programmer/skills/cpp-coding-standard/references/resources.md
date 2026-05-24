@@ -16,7 +16,7 @@
 -   [Collection of Other
     Standards](http://www.cs.umd.edu/users/cml/cstyle)
 -   [Design by Contract from
-    Eiffle](http://www.eiffel.com/doc/manuals/technology/contract/)
+    Eiffel](http://www.eiffel.com/doc/manuals/technology/contract/)
 -   [C++ isn't Perfect, Here are Some Reasons
     Why](http://www.progsoc.uts.edu.au/~geldridg/cpp/cppcv3.html)
 -   [Doxygen](http://www.stack.nl/~dimitri/doxygen/) - is a 'javadoc'

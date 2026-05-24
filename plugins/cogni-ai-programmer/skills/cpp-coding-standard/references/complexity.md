@@ -37,7 +37,7 @@ encourage reuse and dependency breaking.
        class TestTaker
        {
        public:
-          void WriteDownAnswer()   { mPaidTestTaker.WriteDownAnswer(); } 
+          void WriteDownAnswer()   { mPaidTestTaker.WriteDownAnswer(); }
        private:
           PaidTestTaker  mPaidTestTaker;
        }
@@ -150,8 +150,8 @@ specific objects like Horse or Frog:
 
        Gui gui;
        Frog* pFrog= new Frog;
-      
-       gui.MakeJump(pFrog); 
+
+       gui.MakeJump(pFrog);
 
 Notice Gui doesn't even know it's making a frog jump, it just has a
 jumpable thing, that's all it cares about. When Gui calls the Jump

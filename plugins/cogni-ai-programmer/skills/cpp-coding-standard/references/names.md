@@ -27,13 +27,12 @@ caught.
 ### Example
 
        class NameOneTwo
-      
+
        class Name
-      
 
 ### **Class Names**
 
-### 
+###
 
 -   Name the class after what it is. If you can't think of what it is
     that is a clue you have not thought through the design well enough.
@@ -156,7 +155,7 @@ prefix, so classes would be:
        {
        public:
           int                   StartYourEngines(
-                                   Engine& rSomeEngine, 
+                                   Engine& rSomeEngine,
                                    Engine& rAnotherEngine);
        }
 
@@ -357,7 +356,7 @@ label so as to prevent name clashes.
 
 #### Example
 
-       enum PinStateType  {          If PIN was not prepended a conflict 
+       enum PinStateType  {          If PIN was not prepended a conflict
                                    would occur as OFF and ON are probably
           PIN_OFF,                  already defined.
           PIN_ON

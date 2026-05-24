@@ -39,7 +39,6 @@ This section contains some miscellaneous do's and don'ts.
     is a problem. The following is confusing and prone to error.
 
                 if (abool= bbool) { ... }
-             
 
     Does the programmer really mean assignment here? Often yes, but
     usually no. The solution is to just not do it, an inverse Nike
@@ -49,7 +48,6 @@ This section contains some miscellaneous do's and don'ts.
 
                abool= bbool;
                if (abool) { ... }
-            
 
 -   Modern compilers will put variables in registers automatically. Use
     the register sparingly to indicate the variables that you think are
@@ -63,7 +61,7 @@ C provides the *const* key word to allow passing as parameters objects
 that cannot change to indicate when a method doesn't modify its object.
 Using const in all the right places is called \"const correctness.\"
 It's hard at first, but using const really tightens up your coding
-style. Const correctness grows on you. 
+style. Const correctness grows on you.
 
 ## Use #if Not #ifdef
 
@@ -73,11 +71,11 @@ Use #if MACRO not #ifdef MACRO. Someone might write code like:
             temporary_debugger_break();
     #endif
 
-Someone else might compile the code with turned-of debug info like:
+Someone else might compile the code with turned-off debug info like:
 
     cc -c lurker.cc -DDEBUG=0
 
-Alway use #if, if you have to use the preprocessor. This works fine, and
+Always use #if, if you have to use the preprocessor. This works fine, and
 does the right thing, even if DEBUG is not defined at all (!)
 
     #if DEBUG
@@ -100,7 +98,7 @@ Sometimes large blocks of code need to be commented out for testing.
 
 The easiest way to do this is with an #if 0 block:
 
-       void 
+       void
        example()
        {
           great looking code
@@ -108,7 +106,7 @@ The easiest way to do this is with an #if 0 block:
           #if 0
           lots of code
           #endif
-        
+
           more code
         }
 
@@ -117,23 +115,23 @@ comments and surely a large block of your code will contain a comment,
 won't it?
 
 Don't use #ifdef as someone can unknowingly trigger ifdefs from the
-compiler command line. #if 0is that even day later you or anyone else
-has know idea why this code is commented out. Is it because a feature
+compiler command line. #if 0 is that one day later you or anyone else
+has no idea why this code is commented out. Is it because a feature
 has been dropped? Is it because it was buggy? It didn't compile? Can it
 be added back? It's a mystery.
 
 ### Use Descriptive Macro Names Instead of #if 0
 
-    #if NOT_YET_IMPLEMENTED  
+    #if NOT_YET_IMPLEMENTED
 
     #if OBSOLETE
 
-    #if TEMP_DISABLED 
+    #if TEMP_DISABLED
 
 ### Add a Comment to Document Why
 
 Add a short comment explaining why it is not implemented, obsolete or
-temporarily disabled. 
+temporarily disabled.
 
      
 
@@ -146,8 +144,8 @@ files.
 
 Do not put data definitions in header files. for example:
 
-    /* 
-     * aheader.h 
+    /*
+     * aheader.h
      */
     int x = 0;
 

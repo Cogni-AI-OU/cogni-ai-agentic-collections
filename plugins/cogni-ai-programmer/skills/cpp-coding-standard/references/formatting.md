@@ -41,7 +41,7 @@ doesn't affect execution speed. It's easy to do.
 
 #### Justification
 
-It provides safety when adding new lines while maintainng a compact
+It provides safety when adding new lines while maintaining a compact
 readable form.
 
 ### Add Comments to Closing Braces
@@ -52,7 +52,7 @@ on.
 
     while(1) {
        if (valid) {
-      
+
        } // if valid
        else {
        } // not valid
@@ -141,7 +141,7 @@ to this format, but then it really gets useful.
           // FALL THROUGH
 
           case 2:
-          {        
+          {
              int v;
              ...
           }
@@ -167,12 +167,12 @@ out into a separate function, with a success/failure return code.
              if (disaster) {
                 goto error;
 
-             } 
+             }
           }
        }
        ...
     error:
-       clean up the mess 
+       clean up the mess
 
 When a goto is necessary the accompanying label should be alone on a
 line and to the left of the code that follows. The goto should be
@@ -201,7 +201,7 @@ Consider the following example where both problems occur:
           continue;
        }
        ...
-       // A lot of code 
+       // A lot of code
        ...
        if ( i++ > STOP_VALUE) break;
     }
@@ -258,7 +258,7 @@ The reasons are:
 
 1.  Documentation can be added for the variable on the line.
 2.  It's clear that the variables are initialized.
-3.  Declarations are clear which reduces the probablity of declaring a
+3.  Declarations are clear which reduces the probability of declaring a
     pointer when you meant to declare just a char.
 
 ## Alignment of Declaration Blocks
@@ -269,7 +269,7 @@ The reasons are:
 
 -   Clarity.
 -   Similarly blocks of initialization of variables should be tabulated.
--   The '&' and '\*' tokens should be adjacent to the the name, not the
+-   The '&' and '\*' tokens should be adjacent to the name, not the
     type.
 
 ### Example
