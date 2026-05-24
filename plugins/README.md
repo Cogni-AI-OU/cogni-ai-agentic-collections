@@ -26,8 +26,13 @@ Autonomous coding agent with coding and critical-thinking skills.
 
 **Installation:**
 
+**GitHub Copilot:**
 ```bash
 copilot plugin install cogni-ai-coder@cogni-ai-agentic-collections
+```
+
+**Claude Code:**
+```bash
 claude plugin install cogni-ai-coder@cogni-ai-agentic-collections
 ```
 
@@ -37,8 +42,13 @@ Autonomous developer agent with development, tdd, and npm-cli skills.
 
 **Installation:**
 
+**GitHub Copilot:**
 ```bash
 copilot plugin install cogni-ai-developer@cogni-ai-agentic-collections
+```
+
+**Claude Code:**
+```bash
 claude plugin install cogni-ai-developer@cogni-ai-agentic-collections
 ```
 
@@ -48,8 +58,13 @@ Autonomous git operations agent with git skills.
 
 **Installation:**
 
+**GitHub Copilot:**
 ```bash
 copilot plugin install cogni-ai-git-ops@cogni-ai-agentic-collections
+```
+
+**Claude Code:**
+```bash
 claude plugin install cogni-ai-git-ops@cogni-ai-agentic-collections
 ```
 
@@ -59,8 +74,13 @@ Autonomous GitHub operations agent with github skills.
 
 **Installation:**
 
+**GitHub Copilot:**
 ```bash
 copilot plugin install cogni-ai-github-ops@cogni-ai-agentic-collections
+```
+
+**Claude Code:**
+```bash
 claude plugin install cogni-ai-github-ops@cogni-ai-agentic-collections
 ```
 
@@ -70,8 +90,13 @@ Autonomous programmer agent with programming, python, threejs-llms, react-llms, 
 
 **Installation:**
 
+**GitHub Copilot:**
 ```bash
 copilot plugin install cogni-ai-programmer@cogni-ai-agentic-collections
+```
+
+**Claude Code:**
+```bash
 claude plugin install cogni-ai-programmer@cogni-ai-agentic-collections
 ```
 
@@ -81,8 +106,13 @@ Elite autonomous architect agent with software-architecture skill for structural
 
 **Installation:**
 
+**GitHub Copilot:**
 ```bash
 copilot plugin install cogni-ai-architect@cogni-ai-agentic-collections
+```
+
+**Claude Code:**
+```bash
 claude plugin install cogni-ai-architect@cogni-ai-agentic-collections
 ```
 
@@ -92,8 +122,13 @@ Elite autonomous test engineering agent with testing skill for proving software 
 
 **Installation:**
 
+**GitHub Copilot:**
 ```bash
 copilot plugin install cogni-ai-tester@cogni-ai-agentic-collections
+```
+
+**Claude Code:**
+```bash
 claude plugin install cogni-ai-tester@cogni-ai-agentic-collections
 ```
 
@@ -103,8 +138,13 @@ Elite autonomous DevOps and site reliability agent with devops, molecule, pulumi
 
 **Installation:**
 
+**GitHub Copilot:**
 ```bash
 copilot plugin install cogni-ai-dev-ops@cogni-ai-agentic-collections
+```
+
+**Claude Code:**
+```bash
 claude plugin install cogni-ai-dev-ops@cogni-ai-agentic-collections
 ```
 
