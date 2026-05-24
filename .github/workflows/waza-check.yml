@@ -5,18 +5,12 @@ on:
     paths:
       - '**/SKILL.md'
       - '**/*.agent.md'
-      - .github/skills/**
-      - skills/**
-      - plugins/**/skills/**
   push:
     branches:
       - main
     paths:
       - '**/SKILL.md'
       - '**/*.agent.md'
-      - .github/skills/**
-      - skills/**
-      - plugins/**/skills/**
   workflow_dispatch:
     inputs:
       eval-path:
@@ -46,10 +40,11 @@ jobs:
         id: changed-skills
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            git fetch origin "${{ github.base_ref }}" --depth=1
+            git fetch origin "${{ github.base_ref }}"
             CHANGED=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" -- '**/SKILL.md' '**/*.agent.md')
           elif [ "${{ github.event_name }}" = "push" ]; then
-            CHANGED=$(git diff --name-only HEAD~1...HEAD -- '**/SKILL.md' '**/*.agent.md' 2>/dev/null || echo "")
+            CHANGED=$(git diff --name-only "${{ github.event.before }}...${{ github.sha }}" \
+              -- '**/SKILL.md' '**/*.agent.md' 2>/dev/null || echo "")
           else
             CHANGED=""
           fi

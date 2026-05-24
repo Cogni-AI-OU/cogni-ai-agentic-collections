@@ -1,6 +1,6 @@
 ---
 name: Waza Check — PR Comment
-# Posts results from the "Waza Evaluation" workflow as a PR comment.
+# Posts results from the "Waza Check" workflow as a PR comment.
 # Runs with write permissions but never checks out PR code,
 # so it is safe for fork PRs.
 on:
@@ -44,12 +44,11 @@ jobs:
         with:
           script: |-
             const fs = require('fs');
-            const path = require('path');
-            const prNumber = parseInt(fs.readFileSync('pr-number.txt', 'utf8').trim(), 10);
-            const exitCode = fs.readFileSync('exit-code.txt', 'utf8').trim();
-            const rawOutput = fs.readFileSync('waza-output.txt', 'utf8').trim();
-            const changedSkills = fs.readFileSync('changed-skills.txt', 'utf8').trim();
-            const hasResultsJson = fs.existsSync('results.json');
+            const prNumber = parseInt(fs.readFileSync('waza-results/pr-number.txt', 'utf8').trim(), 10);
+            const exitCode = fs.readFileSync('waza-results/exit-code.txt', 'utf8').trim();
+            const rawOutput = fs.readFileSync('waza-results/waza-output.txt', 'utf8').trim();
+            const changedSkills = fs.readFileSync('waza-results/changed-skills.txt', 'utf8').trim();
+            const hasResultsJson = fs.existsSync('waza-results/results.json');
             const marker = '<!-- waza-check-results -->';
             const changedCount = changedSkills ? changedSkills.split('\n').filter(Boolean).length : 0;
             const errorCount = (rawOutput.match(/❌/g) || []).length;

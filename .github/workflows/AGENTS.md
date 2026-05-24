@@ -63,8 +63,7 @@ For a human-readable overview, see [README.md](README.md).
 ### waza-check.yml
 
 - Purpose: run Waza validation framework on skill files (SKILL.md, .agent.md) in PRs.
-- Triggers: `pull_request` and `push` when `**/SKILL.md`, `**/*.agent.md`, or skill directories
-  (`.github/skills/**`, `skills/**`, `plugins/**/skills/**`) are modified, and `workflow_dispatch`.
+- Triggers: `pull_request` and `push` when `**/SKILL.md` or `**/*.agent.md` are modified, and `workflow_dispatch`.
 - Details: Installs Go, builds waza from source (github.com/microsoft/waza), detects changed
   skill files via `git diff`, and runs `waza check` on each for compliance validation.
   On `workflow_dispatch`, also supports running `waza run` with an optional eval path or auto-discovery.
