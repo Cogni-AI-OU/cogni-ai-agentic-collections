@@ -10,6 +10,17 @@ license: MIT
 
 Design, review, and optimize secure AI prompts using advanced prompt engineering patterns, safety frameworks, and injection mitigation strategies.
 
+**COGNITIVE SKILL**
+INVOKES: `critical-thinking`
+FOR SINGLE OPERATIONS: `write` or `edit` tool
+
+## USE FOR:
+
+- "design a system prompt"
+- "optimize this llm template"
+- "review prompts for injection risks"
+- "write copilot instructions"
+
 ## Core Process
 
 1. **Contextualize**: Define explicit tasks, target audience, and precise constraints (format, length, tone).
@@ -50,6 +61,11 @@ Design, review, and optimize secure AI prompts using advanced prompt engineering
 - When writing strict procedural code (like Python or Bash scripts) where natural language ambiguity is unacceptable.
 - For managing low-level hardware or infrastructure where strict, deterministic APIs should be used instead of LLMs.
 - When generating general project documentation without targeting an AI consumer (use `docs-writer` instead).
+
+## DO NOT USE FOR:
+
+- General technical documentation (use `docs-writer` instead).
+- Writing application code.
 
 ## Common Pitfalls
 

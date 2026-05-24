@@ -10,6 +10,17 @@ license: MIT
 
 Agent MD is a format for defining specialized agent personas. These files provide context-specific instructions, project knowledge, and execution boundaries for autonomous agents in GitHub Copilot, OpenCode, and Claude Code. Unlike broad custom instructions, custom agents are selected for specific tasks and maintain their configuration throughout the workflow.
 
+**REFERENCE SKILL**
+INVOKES: `agent-md-writer`
+FOR SINGLE OPERATIONS: `read` tool
+
+## USE FOR:
+
+- "check the schema for a custom agent"
+- "understand the structure of .agent.md files"
+- "reference CLAUDE.md format"
+- "validate opencode.json configuration"
+
 ## When to Use
 
 - **Platform Syntax Reference**: Defining and validating the exact YAML frontmatter and Markdown structure for `.agent.md`, `CLAUDE.md`, and `opencode.json`.
@@ -24,7 +35,13 @@ Agent MD is a format for defining specialized agent personas. These files provid
 - **Mechanical Execution**: Defining step-by-step terminal commands or API workflows — these belong in `SKILL.md`.
 - **One-off Interaction**: Simple chat prompts or quick clarifications that don't require a persistent persona or complex tool mapping.
 
+## DO NOT USE FOR:
+
+- Writing the actual content of agent personas (use `agent-md-writer` instead).
+- General markdown editing.
+
 ## Common Pitfalls
+
 
 - **The 500 KiB Wall**: GitHub truncates agent files beyond this limit; avoid embedding large documentation files directly—use relative links instead.
 - **Absolute Path Breakage**: Using absolute URLs or paths within a repository; always use relative links to ensure portability across clones.
