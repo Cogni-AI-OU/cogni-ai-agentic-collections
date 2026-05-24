@@ -208,7 +208,7 @@ When refining or generating an `AGENTS.md` file, ensure it passes these authorit
   "NEVER commit secrets" and "NEVER mutate vendor directories" are mandatory for root-level authority.
 - **Advisory Checks:**
   - **Negative Delta Risk:**
-    Eliminate conflicting instructions or ambiguous procedure paths (e.g., "alternatively", "however you can also").
+    Eliminate conflicting instructions or ambiguous procedure paths (e.g., "but alternatively", "however you can also", "another approach is").
     Rules must be deterministic and imperative to prevent agent execution failures.
   - **Context Density:**
     Keep instructions dense and contract-style.

@@ -179,8 +179,9 @@ When refining or generating a skill, ensure the output passes the following advi
   Verify that all referenced URLs and sub-directory links are valid and accessible.
 - **Token Budget & Complexity:**
   Keep the skill concise.
-  The hard limit is typically around 500 tokens (or ~200-500 lines).
-  If exceeded, reduce content or offload procedural details to `references/` modules.
+  Tokens > 500 or >= 4 reference modules triggers a warning (comprehensive classification).
+  200-500 tokens with 2-3 modules is optimal (detailed).
+  Offload detail to `references/` when limits are approached.
 - **Evaluation Suite:**
   Evaluate whether the skill has an `eval.yaml` or defined test framework for verification.
 - **Advisory Checks:**

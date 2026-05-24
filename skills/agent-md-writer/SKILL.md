@@ -95,7 +95,7 @@ When refining or generating an agent persona, ensure it passes these authoritati
   Absolute constraints like "Never commit secrets" must be explicitly stated.
 - **Advisory Checks:**
   - **Negative Delta Risk:**
-    Eliminate conflicting or ambiguous logic (e.g., "alternatively", "however", "you may choose").
+    Eliminate conflicting or ambiguous logic (e.g., "but alternatively", "however you can also", "another approach is").
     Instructions must be deterministic and imperative to prevent reasoning drift.
   - **Persona Density:**
     The primary role description should stay under 60 words for cross-model effectiveness.
