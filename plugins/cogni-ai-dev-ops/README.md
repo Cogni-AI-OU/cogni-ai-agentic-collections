@@ -52,8 +52,8 @@ claude plugin install cogni-ai-dev-ops@cogni-ai-agentic-collections
 
 - **devops** — Core DevOps and Site Reliability Engineering workflow, covering CI/CD, Infrastructure as Code,
   observability, and deployment strategies.
-- **apache-airflow-api** — Execute Apache Airflow Stable REST API queries, manage DAGs, backfills, connections, variables, and assets.
-- **apache-airflow-dags** — Expert-level guide for authoring Apache Airflow DAGs using the skeleton strategy and contract-driven logic.
+- **apache-airflow-api** — Execute Airflow REST API queries: manage DAGs, backfills, connections, variables, and assets.
+- **apache-airflow-dags** — Author Apache Airflow DAGs using skeleton strategy and contract-driven logic.
 - **astro-cli** — Expert-level guide for using the Astro CLI to manage Astronomer Airflow deployments and APIs.
 - **astronomer-llms** — Read and navigate Astronomer documentation using llms.txt context.
 - **devcontainer** — Create, update, and maintain robust devcontainer.json configurations and lifecycle scripts.

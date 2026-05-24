@@ -19,15 +19,15 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 | Skill | Description |
 | --- | --- |
 | [brainstorm](brainstorm/SKILL.md) | Activate brainstorming protocol to explore options and research. |
-| [brainstorm-agent-runs](brainstorm-agent-runs/SKILL.md) | Identify and analyze agent runs via GitHub API for a given PR. |
-| [brainstorm-github-pr](brainstorm-github-pr/SKILL.md) | Analyze and visualize commit history and CI pipeline checks for a PR. |
+| [brainstorm-agent-runs](brainstorm-agent-runs/SKILL.md) | Identify and analyze agent runs via GitHub API for a PR. |
+| [brainstorm-github-pr](brainstorm-github-pr/SKILL.md) | Analyze commit history and CI pipeline checks for a PR. |
 | [cat](cat/SKILL.md) | Guidelines for safely using `cat` and avoiding shell hangs with heredocs. |
-| [chrome-devtools](chrome-devtools/SKILL.md) | Expert-level browser automation and debugging using Chrome DevTools MCP. |
+| [chrome-devtools](chrome-devtools/SKILL.md) | Browser automation and debugging using Chrome DevTools MCP. |
 | [code-review](code-review/SKILL.md) | Cognitive framework for expert-level code inspection and logic validation. |
 | [code-tour](code-tour/SKILL.md) | Create, update, and maintain VSCode CodeTour (.tour) JSON walkthrough files. |
 | [codeql](codeql/SKILL.md) | Configure and execute CodeQL code scanning analysis. |
-| [coding-standard-writer](coding-standard-writer/SKILL.md) | Write a coding standards document from provided file(s) or folder(s). |
-| [context-aware-ops](context-aware-ops/SKILL.md) | Intelligent resource management with size checking to preserve context. |
+| [coding-standard-writer](coding-standard-writer/SKILL.md) | Draft coding standards from provided files or folders. |
+| [context-aware-ops](context-aware-ops/SKILL.md) | Resource management with size checking to preserve context. |
 | [dictation](dictation/SKILL.md) | Apply dictation correction protocols to fix common speech-to-text errors. |
 | [direnv](direnv/SKILL.md) | How to maintain credentials and authenticate using direnv safely. |
 | [docs-review](docs-review/SKILL.md) | Enforce documentation quality and consistency across architecture and code. |
