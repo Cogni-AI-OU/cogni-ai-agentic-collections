@@ -83,22 +83,6 @@ copilot plugin install cogni-ai-developer@cogni-ai-agentic-collections
 claude plugin install cogni-ai-developer@cogni-ai-agentic-collections
 ```
 
-### [cogni-ai-programmer](cogni-ai-programmer/)
-
-Autonomous programmer agent with programming, python, threejs-llms, react-llms, nextjs-llms, and reactnative-llms skills.
-
-**Installation:**
-
-**GitHub Copilot:**
-```bash
-copilot plugin install cogni-ai-programmer@cogni-ai-agentic-collections
-```
-
-**Claude Code:**
-```bash
-claude plugin install cogni-ai-programmer@cogni-ai-agentic-collections
-```
-
 ### [cogni-ai-git-ops](cogni-ai-git-ops/)
 
 Autonomous git operations agent with git skills.
@@ -129,6 +113,22 @@ copilot plugin install cogni-ai-github-ops@cogni-ai-agentic-collections
 **Claude Code:**
 ```bash
 claude plugin install cogni-ai-github-ops@cogni-ai-agentic-collections
+```
+
+### [cogni-ai-programmer](cogni-ai-programmer/)
+
+Autonomous programmer agent with programming, python, threejs-llms, react-llms, nextjs-llms, and reactnative-llms skills.
+
+**Installation:**
+
+**GitHub Copilot:**
+```bash
+copilot plugin install cogni-ai-programmer@cogni-ai-agentic-collections
+```
+
+**Claude Code:**
+```bash
+claude plugin install cogni-ai-programmer@cogni-ai-agentic-collections
 ```
 
 ### [cogni-ai-tester](cogni-ai-tester/)
