@@ -1,14 +1,8 @@
 # Formatting
 
-------------------------------------------------------------------------
-
-[]{#brace}
-
 ## Brace Placement
 
 Of the three major brace placement strategies one is recommended:
-
-------------------------------------------------------------------------
 
 ## When Braces are Needed
 
@@ -39,8 +33,6 @@ doesn\'t affect execution speed. It\'s easy to do.
 It provides safety when adding new lines while maintainng a compact
 readable form.
 
-------------------------------------------------------------------------
-
 ## Add Comments to Closing Braces
 
 Adding a comment to closing braces can help when you are reading code
@@ -56,16 +48,10 @@ on.
 
     } /* end forever */
 
-------------------------------------------------------------------------
-
 ## Consider Screen Size Limits
 
 Some people like blocks to fit within a common screen size so scrolling
 is not necessary when reading code.\
-
-------------------------------------------------------------------------
-
-[]{#parens}
 
 ## Parens *()* with Key Words and Functions Policy
 
@@ -90,10 +76,6 @@ is not necessary when reading code.\
 
         return 1;
 
-------------------------------------------------------------------------
-
-[]{#linelen}
-
 ## A Line Should Not Exceed 78 Characters
 
 -   Lines should not exceed 78 characters.
@@ -106,10 +88,6 @@ is not necessary when reading code.\
     windows is better than wider windows.
 -   We even view and print diff output correctly on all terminals and
     printers.
-
-------------------------------------------------------------------------
-
-[]{#ifthen}
 
 ## *If Then Else* Formatting
 
@@ -140,10 +118,6 @@ you are looking for right up front where you can find it instead of
 buried at the end of your expression. It takes a little time to get used
 to this format, but then it really gets useful.
 
-------------------------------------------------------------------------
-
-[]{#switch}
-
 ## *switch* Formatting
 
 -   Falling through a case statement into the next case statement shall
@@ -169,10 +143,6 @@ to this format, but then it really gets useful.
 
           default:
        }
-
-------------------------------------------------------------------------
-
-[]{#goto}
 
 ## Use of *goto,continue,break* and *?:*
 
@@ -201,7 +171,6 @@ out into a separate function, with a success/failure return code.
 When a goto is necessary the accompanying label should be alone on a
 line and to the left of the code that follows. The goto should be
 commented (possibly in the block header) as to its utility and purpose.
-[]{#contbreak}
 
 ### Continue and Break
 
@@ -257,12 +226,6 @@ The trouble is people usually try and stuff too much code in between the
           ? long statement
           : another long statement;
 
-[]{#aligndecls}
-
-------------------------------------------------------------------------
-
-[]{#one}
-
 ## One Statement Per Line
 
 There should be only one statement per line unless the statements are
@@ -292,10 +255,6 @@ The reasons are:
 3.  Declarations are clear which reduces the probablity of declaring a
     pointer when you meant to declare just a char.
 
-------------------------------------------------------------------------
-
-[]{#useenums}
-
 ## To Use Enums or Not to Use Enums
 
 C allows constant variables, which should deprecate the use of enums as
@@ -316,10 +275,6 @@ prone as you could cast a value not in the enum.
 
      
 
-------------------------------------------------------------------------
-
-[]{#guards}
-
 ## Use Header File Guards
 
 Include files should protect against multiple inclusion through the use
@@ -331,10 +286,6 @@ first or last character of a header guard (see below)
       #define sys_socket_h  /* NOT _sys_socket_h_ */
       #endif 
       
-
-------------------------------------------------------------------------
-
-[]{#macros}
 
 # Macros
 
@@ -390,10 +341,6 @@ packages.
 1.  Prepend macro names with package names.
 2.  Avoid simple and common names like MAX and MIN.
 
-------------------------------------------------------------------------
-
-[]{#initvar}
-
 # Initialize all Variables
 
 -   You shall always initialize variables. Always. Every time. gcc with
@@ -404,12 +351,6 @@ packages.
 
 -   More problems than you can believe are eventually traced back to a
     pointer or variable left uninitialized.
-
-[]{#init}
-
-------------------------------------------------------------------------
-
-[]{#shortmethods}
 
 # Short Functions
 
@@ -423,10 +364,6 @@ packages.
 -   True function calls are slower than not, but there needs to a
     thought out decision (see premature optimization).
 
-------------------------------------------------------------------------
-
-[]{#docnull}
-
 # Document Null Statements
 
 Always document a null body for a for or while statement so that it is
@@ -438,10 +375,6 @@ clear that the null body is intentional and not missing code.
           ;       
 
        }  
-
-------------------------------------------------------------------------
-
-[]{#nztest}
 
 # Do Not Default If Test to Non-Zero
 
@@ -485,12 +418,6 @@ or expressions which meet the following restrictions:
 -   Is named so that the meaning of (say) a **true** return is
     absolutely obvious. Call a predicate is_valid(), not check_valid().
 
-[]{#boolean}
-
-------------------------------------------------------------------------
-
-[]{#eassign}
-
 # Usually Avoid Embedded Assignments
 
 There is a time and a place for embedded assignment statements. In some
@@ -520,8 +447,4 @@ difference between the two will decrease as the optimizer gains
 maturity, while the difference in ease of maintenance will increase as
 the human memory of what\'s going on in the latter piece of code begins
 to fade.
-
-------------------------------------------------------------------------
-
-[]{#documentation}
 

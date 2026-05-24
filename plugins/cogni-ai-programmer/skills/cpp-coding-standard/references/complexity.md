@@ -1,11 +1,5 @@
 # Complexity Management
 
-[]{#complexity}
-
-------------------------------------------------------------------------
-
-[]{#layering}
-
 ## Layering
 
 Layering is the primary technique for reducing complexity in a system. A
@@ -20,10 +14,6 @@ to work only with other adjacent layers.
 
 Sometimes we need to jump layers for performance reasons. This is fine,
 but we should know we are doing it and document appropriately.
-
-------------------------------------------------------------------------
-
-[]{#delegation}
 
 ## Delegation
 
@@ -54,10 +44,6 @@ encourage reuse and dependency breaking.
 
 In this example a test taker delegates actually answering the question
 to a paid test taker. Not ethical but a definite example of delegation!
-
-------------------------------------------------------------------------
-
-[]{#abstract}
 
 ## Minimize Dependencies with Abstract Base Classes
 
@@ -112,7 +98,7 @@ Then someone updated Horse so that its Jump behavior was slightly
 different. Unfortunately this caused a total recompile of the GUI code
 and they were pissed.
 
-[]{#jumpable}Someone got the bright idea of trying to remove all the
+Someone got the bright idea of trying to remove all the
 above dependencies using abstract base classes. They made one base class
 that specified an interface for jumping things:
 
@@ -194,10 +180,6 @@ Pick and choose your spots. When some process or some interface can be
 reused and people will actually make use of the reuse then make an ABC
 and don\'t look back.
 
-------------------------------------------------------------------------
-
-[]{#liskov}
-
 ## Liskov\'s Substitution Principle (LSP)
 
 This principle states:
@@ -223,10 +205,6 @@ behaviour.
 
 LSP is a very restrictive idea. It constrains implementors quite a bit.
 In general people support LSP and have LSP as a goal.
-
-------------------------------------------------------------------------
-
-[]{#demeter}
 
 ## Follow the Law of Demeter
 
@@ -267,8 +245,4 @@ created a method in car for every access to a subobject.
 
        Do   : sun.UpVolume(1);
        Don't: sun.mSound.Up(1);
-
-------------------------------------------------------------------------
-
-[]{#miscellaneous}
 

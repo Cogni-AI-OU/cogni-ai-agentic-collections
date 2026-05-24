@@ -1,7 +1,5 @@
 # Layering
 
-------------------------------------------------------------------------
-
 Layering is the primary technique for reducing complexity in a system. A
 system should be divided into layers. Layers should communicate between
 adjacent layers using well defined interfaces. When a layer uses a
@@ -14,8 +12,4 @@ to work only with other adjacent layers.
 
 Sometimes we need to jump layers for performance reasons. This is fine,
 but we should know we are doing it and document appropriately.
-
-------------------------------------------------------------------------
-
-[]{#misc}
 

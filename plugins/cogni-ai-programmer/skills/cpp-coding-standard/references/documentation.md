@@ -1,11 +1,5 @@
 # Documentation
 
-[]{#documentation}
-
-------------------------------------------------------------------------
-
-[]{#cstas}
-
 ## Comments Should Tell a Story
 
 Consider your comments a story describing the system. Expect your
@@ -16,19 +10,11 @@ implementation yet another part. All these parts should weave together
 and inform someone else at another point of time just exactly what you
 did and why.
 
-------------------------------------------------------------------------
-
-[]{#cdd}
-
 ## Document Decisions
 
 Comments should document decisions. At every point where you had a
 choice of what to do place a comment describing which choice you made
 and why.
-
-------------------------------------------------------------------------
-
-[]{#cuh}
 
 ## Use Headers
 
@@ -40,10 +26,6 @@ These headers are structured in such a way as they can be parsed and
 extracted. They are not useless like normal headers. So take time to
 fill them out. If you do it right once no more documentation may be
 necessary.
-
-------------------------------------------------------------------------
-
-[]{#mge}
 
 ## Make Gotchas Explicit
 
@@ -98,18 +80,12 @@ complete list of Gotcha Keywords, please refer to
        // We need a cast here to recover the derived type. It should
        // probably use a virtual method or template.
 
-[]{#cdef}
-
 ## Commenting function declarations
 
 Functions headers should be in the file where they are declared. This
 means that most likely the functions will have a header in the .hh file.
 However, functions like main() with no explicit prototype declaration in
 the .hh file, should have a header in the .cn file.
-
-------------------------------------------------------------------------
-
-[]{#idoc}
 
 ## Include Statement Documentation
 
@@ -130,10 +106,6 @@ class then it\'s useful to specify a class relationship:
     //
     #include                              
     #include 
-
-------------------------------------------------------------------------
-
-[]{#design}
 
 # Using Use Cases
 
@@ -168,10 +140,6 @@ accomplish.
 -   Run through all the use cases to make sure your model can handle all
     the cases. Update your model and create new use cases as necessary.
 
-------------------------------------------------------------------------
-
-[]{#uml}
-
 # Unified Modeling Language
 
 The Unified Modeling Language is too large to present here. Fortunately
@@ -181,10 +149,6 @@ combines features from several methods into one unified language.
 Remember all languages and methods are open to local customization. If
 their language is too complex then use the parts you and your project
 feel they need and junk the rest.
-
-------------------------------------------------------------------------
-
-[]{#oml}
 
 # OPEN Method
 
@@ -196,10 +160,6 @@ UML.
 
 My guess is UML will win out for marketing reasons. But it is good to
 have some competition going.
-
-------------------------------------------------------------------------
-
-[]{#open}
 
 # Open/Closed Principle
 
@@ -224,10 +184,6 @@ common processes and ideas. Inheritance to create an interface that must
 be adhered to by derived classes. In C++ we are talking about using
 [abstract base classes](CppCodingStandard.html#abstract) . A lot.
 
-------------------------------------------------------------------------
-
-[]{#contract}
-
 # Design by Contract
 
 The idea of design by contract is strongly related to
@@ -246,6 +202,4 @@ languages a bit of faith is needed.
 Design by contract when coupled with language based verification
 mechanisms is a very powerful idea. It makes programming more like
 assembling spec\'d parts.
-
-------------------------------------------------------------------------
 

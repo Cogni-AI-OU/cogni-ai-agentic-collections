@@ -1,9 +1,5 @@
 # Names
 
-------------------------------------------------------------------------
-
-[]{#units}
-
 ## Include Units in Names
 
 If a variable represents time, weight, or some other unit then include
@@ -15,10 +11,6 @@ example:
 
 Better yet is to make a variable into a class so bad conversions can be
 caught.
-
-------------------------------------------------------------------------
-
-[]{#classnames}
 
 ## Class Names
 
@@ -55,10 +47,6 @@ caught.
 -   Suffixes are sometimes helpful. For example, if your system uses
     agents then naming something DownloadAgent conveys real information.
 
-------------------------------------------------------------------------
-
-[]{#classlnames}
-
 ## Class Library Names
 
 -   Now that name spaces are becoming more widely implemented, name
@@ -77,10 +65,6 @@ prefix, so classes would be:
        class JjLinkList
        {
        }
-
-------------------------------------------------------------------------
-
-[]{#methodsnames}
 
 ## Method Names
 
@@ -129,10 +113,6 @@ prefix, so classes would be:
 
     For example: IsHitRetryLimit.
 
-------------------------------------------------------------------------
-
-[]{#attrnames}
-
 ## Class Attribute Names
 
 -   Attribute names should be prepended with the character \'a\'.
@@ -158,10 +138,6 @@ prefix, so classes would be:
           String*               apName;
        }
 
-------------------------------------------------------------------------
-
-[]{#margnames}
-
 ## Method Argument Names
 
 -   The first character should be lower case.
@@ -184,18 +160,10 @@ prefix, so classes would be:
                                    Engine& rAnotherEngine);
        }
 
-------------------------------------------------------------------------
-
-[]{#fext}
-
 ## C++ File Extensions
 
 In short: Use the *.hh* extension for header files and *.cc* for source
 files.
-
-------------------------------------------------------------------------
-
-[]{#cnames}
 
 ## C Function Names
 
@@ -212,10 +180,6 @@ files.
        int
        some_bloody_function() {
        }
-
-------------------------------------------------------------------------
-
-[]{#descriptive}
 
 ## Make Names Fit
 
@@ -256,10 +220,6 @@ probably revisit your design.
        class FluidOz             // NOT FluidOZ
        class NetworkAbcKey       // NOT NetworkABCKey
 
-------------------------------------------------------------------------
-
-[]{#stacknames}
-
 ## Variable Names on the Stack
 
 -   use all lower case letters
@@ -278,10 +238,6 @@ probably revisit your design.
           ErrorProcessor error_processor;
        }
 
-------------------------------------------------------------------------
-
-[]{#pnames}
-
 ## Pointer Variables
 
 -   pointers should be prepended by a \'p\' in most cases
@@ -292,10 +248,6 @@ probably revisit your design.
       String *pName= new String;
 
       String *pName, name, address; // note, only pName is a pointer.
-
-------------------------------------------------------------------------
-
-[]{#rnames}
 
 ## Reference Variables and Functions Returning References
 
@@ -323,10 +275,6 @@ probably revisit your design.
           StatusInfo&        arStatus;
        }
 
-------------------------------------------------------------------------
-
-[]{#gnames}
-
 ## Global Variables
 
 -   Global variables should be prepended with a \'g\'.
@@ -340,10 +288,6 @@ probably revisit your design.
         Logger  gLog;
         Logger* gpLog;
 
-------------------------------------------------------------------------
-
-[]{#gconstants}
-
 ## Global Constants
 
 -   Global constants should be all caps with \'\_\' separators.
@@ -356,10 +300,6 @@ careful to not conflict with other global *#define*s and enum labels.
 ### Example
 
         const int A_GLOBAL_CONSTANT= 5;
-
-------------------------------------------------------------------------
-
-[]{#snames}
 
 ## Static Variables
 
@@ -378,10 +318,6 @@ careful to not conflict with other global *#define*s and enum labels.
           static StatusInfo msStatus;
        }
 
-------------------------------------------------------------------------
-
-[]{#tnames}
-
 ## Type Names
 
 -   When possible for types based on native types make a typedef.
@@ -399,10 +335,6 @@ careful to not conflict with other global *#define*s and enum labels.
 
        typedef uint16  ModuleType;
        typedef uint32  SystemType;
-
-------------------------------------------------------------------------
-
-[]{#enames}
 
 ## Enum Names
 
@@ -446,10 +378,6 @@ it the first label if possible.
 
     enum { STATE_ERR,  STATE_OPEN, STATE_RUNNING, STATE_DYING};
 
-------------------------------------------------------------------------
-
-[]{#mnames}
-
 ## #define and Macro Names
 
 -   Put #defines and macros in all upper using \'\_\' separators.
@@ -467,8 +395,4 @@ same name.
 
     #define MAX(a,b) blah
     #define IS_ERR(err) blah
-
-------------------------------------------------------------------------
-
-[]{#req}
 

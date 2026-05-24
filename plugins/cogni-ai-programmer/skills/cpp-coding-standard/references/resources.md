@@ -1,7 +1,5 @@
 # Resources- Take a Look!
 
-------------------------------------------------------------------------
-
 -   [Design Stories](DesignStories.html)
 -   [OO Info Sources](http://www.sente.ch/cetus/software.html)
 -   [Unified Modeling Language
@@ -28,8 +26,4 @@
     correctness by Chad Loder.
 -   [Abraxis Code Check](http://www.abxsoft.com/) - A program for
     checking code for coding standard violations and other problems.
-
-------------------------------------------------------------------------
-
-[]{#names}
 

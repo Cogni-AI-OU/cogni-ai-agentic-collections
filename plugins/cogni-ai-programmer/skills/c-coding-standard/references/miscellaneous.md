@@ -1,7 +1,5 @@
 # Miscellaneous
 
-------------------------------------------------------------------------
-
 ## General advice
 
 This section contains some miscellaneous do\'s and don\'ts.
@@ -59,21 +57,13 @@ This section contains some miscellaneous do\'s and don\'ts.
     as register and mark the rest as REGISTER. The latter can be
     #defined to register on those machines with many registers.
 
-------------------------------------------------------------------------
-
-[]{#const}
-
 ## Be Const Correct
 
 C provides the *const* key word to allow passing as parameters objects
 that cannot change to indicate when a method doesn\'t modify its object.
 Using const in all the right places is called \"const correctness.\"
 It\'s hard at first, but using const really tightens up your coding
-style. Const correctness grows on you. []{#streams}
-
-------------------------------------------------------------------------
-
-[]{#ifdef}
+style. Const correctness grows on you. 
 
 ## Use #if Not #ifdef
 
@@ -101,10 +91,6 @@ to the conditional without editing text that\'s already in the program:
     #if !defined(USER_NAME)
      #define USER_NAME "john smith"
     #endif
-
-------------------------------------------------------------------------
-
-[]{#if0}
 
 ## Commenting Out Large Code Blocks
 
@@ -147,24 +133,14 @@ be added back? It\'s a mystery.
 ### Add a Comment to Document Why
 
 Add a short comment explaining why it is not implemented, obsolete or
-temporarily disabled. []{#accessor}
+temporarily disabled. 
 
      
-
-[]{#personas}
-
-------------------------------------------------------------------------
-
-[]{#fext}
 
 ## File Extensions
 
 In short: Use the *.h* extension for header files and *.c* for source
 files.
-
-------------------------------------------------------------------------
-
-[]{#nodef}
 
 ## No Data Definitions in Header Files
 
@@ -182,10 +158,6 @@ Do not put data definitions in header files. for example:
     problems.
 3.  Consider defining the variable once in a .c file and use an extern
     statement to reference it.
-
-------------------------------------------------------------------------
-
-[]{#callc}
 
 ## Mixing C and C++
 
@@ -231,10 +203,6 @@ must use the *\_\_cplusplus* preprocessor directive. For example:
 
     #endif
 
-------------------------------------------------------------------------
-
-[]{#nomagic}
-
 ## No Magic Numbers
 
 A magic number is a bare naked number used in source code. It\'s magic
@@ -270,10 +238,6 @@ number in the debugger which is very inconvenient. The const option has
 the downside of allocating memory. Only you know if this matters for
 your application.
 
-------------------------------------------------------------------------
-
-[]{#errorret}
-
 ## Error Return Check Policy
 
 -   Check every system call for an error return, unless you know you
@@ -287,4 +251,3 @@ your application.
     thing always and developers don\'t have to make memory checks
     everywhere.
 
-[]{#embedded}

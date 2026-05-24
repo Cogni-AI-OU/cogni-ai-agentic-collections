@@ -1,9 +1,5 @@
 # Miscellaneous
 
-------------------------------------------------------------------------
-
-[]{#const}
-
 ## Be Const Correct
 
 C++ provides the *const* key word to allow passing as parameters objects
@@ -13,10 +9,6 @@ It\'s hard at first, but using const really tightens up your coding
 style. Const correctness grows on you.
 
 For more information see Const Correctness in the C++ FAQ.
-
-------------------------------------------------------------------------
-
-[]{#streams}
 
 ## Use Streams
 
@@ -59,10 +51,6 @@ For an embedded target tight on memory streams do not make sense.
 Streams inline a lot of code so you might find the image larger than you
 wish. Experiment a little. Streams might work on your target.
 
-------------------------------------------------------------------------
-
-[]{#ifdef}
-
 ## Use #if Not #ifdef
 
 Use #if MACRO not #ifdef MACRO. Someone might write code like:
@@ -89,10 +77,6 @@ to the conditional without editing text that\'s already in the program:
     #if !defined(USER_NAME)
      #define USER_NAME "john smith"
     #endif
-
-------------------------------------------------------------------------
-
-[]{#if0}
 
 ## Commenting Out Large Code Blocks
 
@@ -141,10 +125,6 @@ added back? It\'s a mystery.
 Add a short comment explaining why it is not implemented, obsolete or
 temporarily disabled.
 
-------------------------------------------------------------------------
-
-[]{#nooper}
-
 ## Don\'t Over Use Operators
 
 C++ allows the overloading of all kinds of weird operators. Unless you
@@ -157,10 +137,6 @@ semantics will be clear to users.
 -   Very few people will have the same intuition as you about what a
     particular operator will do.
 
-------------------------------------------------------------------------
-
-[]{#shortmethods}
-
 ## Short Methods
 
 -   Methods should limit themselves to a single page of code.
@@ -172,10 +148,6 @@ semantics will be clear to users.
 -   Most arguments of inefficiency turn out to be false in the long run.
 -   True function calls are slower than not, but there needs to a
     thought out decision (see premature optimization).
-
-------------------------------------------------------------------------
-
-[]{#nomagic}
 
 ## No Magic Numbers
 
@@ -212,10 +184,6 @@ number in the debugger which is very inconvenient. The const option has
 the downside of allocating memory. Only you know if this matters for
 your application.
 
-------------------------------------------------------------------------
-
-[]{#errorret}
-
 ## Error Return Check Policy
 
 -   Check every system call for an error return, unless you know you
@@ -228,10 +196,6 @@ your application.
     wrapper for these calls, including new, so you can do the right
     thing always and developers don\'t have to make memory checks
     everywhere.
-
-------------------------------------------------------------------------
-
-[]{#useenums}
 
 ## To Use Enums or Not to Use Enums
 
@@ -265,10 +229,6 @@ anywhere and only the expected amount of space is taken.
        static const int   B_VARIABLE;
        static const int   C_VARIABLE;
     }
-
-------------------------------------------------------------------------
-
-[]{#macros}
 
 ## Macros
 
@@ -324,10 +284,6 @@ packages.
 1.  Prepend macro names with package names.
 2.  Avoid simple and common names like MAX and MIN.
 
-------------------------------------------------------------------------
-
-[]{#boolean}
-
 ## The Bull of Boolean Types
 
 Any project using source code from many sources knows the pain of
@@ -361,10 +317,6 @@ must be written
 
        if (FALSE != func()) { ... 
 
-------------------------------------------------------------------------
-
-[]{#eassign}
-
 ## Usually Avoid Embedded Assignments
 
 There is a time and a place for embedded assignment statements. In some
@@ -395,10 +347,6 @@ difference between the two will decrease as the optimizer gains
 maturity, while the difference in ease of maintenance will increase as
 the human memory of what\'s going on in the latter piece of code begins
 to fade.
-
-------------------------------------------------------------------------
-
-[]{#callc}
 
 ## Mixing C and C++
 
@@ -443,10 +391,6 @@ must use the *\_\_cplusplus* preprocessor directive. For example:
     extern some_function();
 
     #endif
-
-------------------------------------------------------------------------
-
-[]{#misc}
 
 ## Miscellaneous
 
@@ -504,10 +448,6 @@ This section contains some miscellaneous do\'s and don\'ts.
     as register and mark the rest as REGISTER. The latter can be
     #defined to register on those machines with many registers.
 
-------------------------------------------------------------------------
-
-[]{#nodef}
-
 ## No Data Definitions in Header Files
 
 Do not put data definitions in header files. for example:
@@ -525,10 +465,6 @@ Do not put data definitions in header files. for example:
 3.  Consider defining the variable once in a .cc file and use an extern
     statement to reference it.
 4.  Consider using a singleton for access to the data.
-
-------------------------------------------------------------------------
-
-[]{#reentrant}
 
 ## Make Functions Reentrant
 

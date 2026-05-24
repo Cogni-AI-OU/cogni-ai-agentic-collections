@@ -1,9 +1,5 @@
 # Formatting
 
-------------------------------------------------------------------------
-
-[]{#brace}
-
 ## Braces *{}* Policy
 
 ### Brace Placement
@@ -63,10 +59,6 @@ on.
 
     } // end forever
 
-------------------------------------------------------------------------
-
-[]{#parens}
-
 ## Parens *()* with Key Words and Functions Policy
 
 -   Do not put parens next to keywords. Put a space between.
@@ -90,10 +82,6 @@ on.
 
         return 1;
 
-------------------------------------------------------------------------
-
-[]{#linelen}
-
 ## A Line Should Not Exceed 78 Characters
 
 -   Lines should not exceed 78 characters.
@@ -106,10 +94,6 @@ on.
     windows is better than wider windows.
 -   We even view and print diff output correctly on all terminals and
     printers.
-
-------------------------------------------------------------------------
-
-[]{#ifthen}
 
 ## *If Then Else* Formatting
 
@@ -140,10 +124,6 @@ you are looking for right up front where you can find it instead of
 buried at the end of your expression. It takes a little time to get used
 to this format, but then it really gets useful.
 
-------------------------------------------------------------------------
-
-[]{#switch}
-
 ## *switch* Formatting
 
 -   Falling through a case statement into the next case statement shall
@@ -169,10 +149,6 @@ to this format, but then it really gets useful.
 
           default:
        }
-
-------------------------------------------------------------------------
-
-[]{#goto}
 
 ## Use of *goto,continue,break* and *?:*
 
@@ -201,7 +177,6 @@ out into a separate function, with a success/failure return code.
 When a goto is necessary the accompanying label should be alone on a
 line and to the left of the code that follows. The goto should be
 commented (possibly in the block header) as to its utility and purpose.
-[]{#contbreak}
 
 ### Continue and Break
 
@@ -257,10 +232,6 @@ The trouble is people usually try and stuff too much code in between the
           ? long statement
           : another long statement;
 
-------------------------------------------------------------------------
-
-[]{#one}
-
 ## One Statement Per Line
 
 There should be only one statement per line unless the statements are
@@ -290,10 +261,6 @@ The reasons are:
 3.  Declarations are clear which reduces the probablity of declaring a
     pointer when you meant to declare just a char.
 
-------------------------------------------------------------------------
-
-[]{#aligndecls}
-
 ## Alignment of Declaration Blocks
 
 -   Block of declarations should be aligned.
@@ -316,8 +283,4 @@ The reasons are:
        apDword  = NULL;
        apChar   = NULL;
        aChar    = 0;
-
-------------------------------------------------------------------------
-
-[]{#classes}
 

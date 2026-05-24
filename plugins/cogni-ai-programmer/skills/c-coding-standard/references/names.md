@@ -1,9 +1,5 @@
 # Names
 
-[]{#descriptive}
-
-------------------------------------------------------------------------
-
 ## Make Names Fit
 
 Names are the heart of programming. In the past people believed knowing
@@ -20,8 +16,6 @@ expected.
 
 If you find all your names could be Thing and DoIt then you should
 probably revisit your design.
-
-------------------------------------------------------------------------
 
 ## Function Names
 
@@ -52,10 +46,6 @@ probably revisit your design.
 
     For example: is_hit_retry_limit.
 
-[]{#units}
-
-------------------------------------------------------------------------
-
 ## Include Units in Names
 
 If a variable represents time, weight, or some other unit then include
@@ -64,10 +54,6 @@ example:
 
     uint32 timeout_msecs;
     uint32 my_weight_lbs;
-
-------------------------------------------------------------------------
-
-[]{#classnames}
 
 ## Structure Names
 
@@ -102,10 +88,6 @@ example:
     };
     struct foo *foohead;        /* Head of global foo list */
 
-------------------------------------------------------------------------
-
-[]{#stacknames}
-
 ## Variable Names on the Stack
 
 -   use all lower case letters
@@ -125,10 +107,6 @@ example:
           ErrorProcessor error_processor;
        }
 
-------------------------------------------------------------------------
-
-[]{#pnames}
-
 ## Pointer Variables
 
 -   place the *\** close to the variable name not pointer type
@@ -138,8 +116,6 @@ example:
       char *name= NULL;
 
       char *name, address; 
-
-------------------------------------------------------------------------
 
 ## Global Variables
 
@@ -155,10 +131,6 @@ example:
         Logger  g_log;
         Logger* g_plog;
 
-------------------------------------------------------------------------
-
-[]{#gconstants}
-
 ## Global Constants
 
 -   Global constants should be all caps with \'\_\' separators.
@@ -171,12 +143,6 @@ careful to not conflict with other global *#define*s and enum labels.
 ### Example
 
         const int A_GLOBAL_CONSTANT= 5;
-
-[]{#snames}
-
-------------------------------------------------------------------------
-
-[]{#mnames}
 
 ## #define and Macro Names
 
@@ -210,12 +176,6 @@ same name.
         w = (y) + 2;                            \
     } while (0)
 
-[]{#cnames}
-
-------------------------------------------------------------------------
-
-[]{#enames}
-
 ## Enum Names
 
 ### Labels All Upper Case with \'\_\' Word Separators
@@ -238,10 +198,4 @@ it the first label if possible.
 #### Example
 
     enum { STATE_ERR,  STATE_OPEN, STATE_RUNNING, STATE_DYING};
-
-[]{#req}
-
-------------------------------------------------------------------------
-
-[]{#formatting}
 

@@ -82,15 +82,7 @@ An example using default values:
       // ~Planet();
     };
 
-------------------------------------------------------------------------
-
-[]{#formatting}
-
 # Classes
-
-------------------------------------------------------------------------
-
-[]{#cflayout}
 
 ## Naming Class Files
 
@@ -118,10 +110,6 @@ following rule:
 **section** is some name that identifies why the code is chunked
 together. The class name and section name are separated by \'\_\'.
 
-------------------------------------------------------------------------
-
-[]{#classlayout}
-
 ## Class Layout
 
 A common class layout is critical from a code comprehension point of
@@ -143,10 +131,6 @@ with the build system where possible.
 This template has placeholders for [required
 methods](CppCodingStandard.html#req) . You can delete them or implement
 them.
-
-------------------------------------------------------------------------
-
-[]{#pubpropriorder}
 
 ## Ordering is: public, protected, private
 
@@ -190,9 +174,7 @@ indicate if the object is open. A good strategy is instead of making a
 lot of access methods you can turn them around to be questions about the
 object thus reducing the exposure of internal structure. Without the
 IsOpen() method we might have had to do: if (STATE_OPEN == State())
-which is much uglier. []{#pubpropri}
-
-------------------------------------------------------------------------
+which is much uglier. 
 
 ## What should go in public/protected/private?
 
@@ -230,11 +212,9 @@ helpful.
 Keeping everything all private seems the easiest approach. By making the
 public methods virtual flexibility is preserved.
 
-------------------------------------------------------------------------
-
 ## Method Layout
 
-[]{#mlayout} The approach used is to place a comment block before each
+ The approach used is to place a comment block before each
 method that can be extracted by a tool and be made part of the class
 documentation. Here we\'ll use [Doxygen](http://www.doxygen.org) . See
 the Doxygen documentation for a list of attributes supported by the
@@ -243,10 +223,6 @@ document generator.
 ### Method Header
 
 Follow Doxygen\'s way.
-
-------------------------------------------------------------------------
-
-[]{#namespace}
 
 ## Use of Namespaces
 
@@ -264,10 +240,6 @@ globally independent.
 Don\'t place \"using namespace\" directive at global scope in a header
 file. This can cause lots of magic invisible conflicts that are hard to
 track. Keep using statements to implementation files.
-
-------------------------------------------------------------------------
-
-[]{#guards}
 
 ## Use Header File Guards
 
@@ -308,10 +280,6 @@ If namespaces are used then to be completely safe:
     directives. Historically many compilers have not accepted comments
     on preprocessor directives.
 5.  Historically many compilers require a new line after last endif.
-
-------------------------------------------------------------------------
-
-[]{#accessor}
 
 ## Different Accessor Styles
 
@@ -421,10 +389,6 @@ belongs. It\'s also clean from a name perspective.
 
 When possible use this approach to attribute access.
 
-------------------------------------------------------------------------
-
-[]{#initvar}
-
 ## Initialize all Variables
 
 -   You shall always initialize variables. Always. Every time.
@@ -435,15 +399,11 @@ When possible use this approach to attribute access.
     pointer or variable left uninitialized. C++ tends to encourage this
     by spreading initialization to each constructor.
 
-------------------------------------------------------------------------
-
-[]{#work}
-
 ## Think About What Work to do in Constructors
 
 Should you do work that can fail in constructors? If you have a compiler
 that does not support exceptions (or thread safe exceptions if it
-matters to you) then the answer is definitely no. []{#useopen}
+matters to you) then the answer is definitely no. 
 
 ### Do Work in Open
 
@@ -466,8 +426,6 @@ Open() should be called after object instantiation.
        Device dev;
        if (FAIL == dev.Open()) exit(1);
 
-[]{#openreasons}
-
 ### Use Open Reasons
 
 1.  It is difficult to write exception safe code in constructor. It\'s
@@ -488,8 +446,6 @@ Open() should be called after object instantiation.
     the state around for debugging or statistics or as a supplier of
     information for other objects.
 
-[]{#usecon}
-
 ### Do Work in Constructor
 
 With exceptions work done in the constructor can signal failure so it is
@@ -504,10 +460,6 @@ There is a pattern called **Resource Acquisition as Initialization**
 that says all initialization is performed in the constructor and
 released in the destructor. The idea is that this is a safer approach
 because it should reduce resource leaks.
-
-------------------------------------------------------------------------
-
-[]{#destexcept}
 
 ## Be Careful Throwing Exceptions in Destructors
 
@@ -537,8 +489,4 @@ will never be executed creating a gaping resource leak.
 Special care must be taken to catch exceptions which may occur during
 object destruction. Special care must also be taken to fully destruct an
 object when it throws an exception.
-
-------------------------------------------------------------------------
-
-[]{#reuse}
 

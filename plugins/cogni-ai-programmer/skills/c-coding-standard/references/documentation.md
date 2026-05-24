@@ -1,9 +1,5 @@
 # Documentation
 
-------------------------------------------------------------------------
-
-[]{#cstas}
-
 ## Comments Should Tell a Story
 
 Consider your comments a story describing the system. Expect your
@@ -14,18 +10,11 @@ implementation yet another part. All these parts should weave together
 and inform someone else at another point of time just exactly what you
 did and why.
 
-------------------------------------------------------------------------
-
-[]{#cdd}
-
 ## Document Decisions
 
 Comments should document decisions. At every point where you had a
 choice of what to do place a comment describing which choice you made
 and why. Archeologists will find this the most useful information.
-[]{#cuh}
-
-------------------------------------------------------------------------
 
 ## Use Headers
 
@@ -36,17 +25,11 @@ extracted. They are not useless like normal headers. So take time to
 fill them out. If you do it right once no more documentation may be
 necessary.
 
-------------------------------------------------------------------------
-
 ## Comment Layout
 
 Each part of the project has a specific comment layout.
 [Doxygen](http://www.doxygen.org) has the recommended format for the
 comment layouts.
-
-------------------------------------------------------------------------
-
-[]{#mge}
 
 ## Make Gotchas Explicit
 
@@ -89,18 +72,12 @@ a report so people can make a special effort where needed.
     information allows other programmer to make this decision. Embedding
     who information lets us know who to ask.
 
-[]{#cdef}
-
 ## Commenting function declarations
 
 Functions headers should be in the file where they are declared. This
 means that most likely the functions will have a header in the .h file.
 However, functions like main() with no explicit prototype declaration in
-the .h file, should have a header in the .c file. []{#cflayout}
-
-------------------------------------------------------------------------
-
-[]{#idoc}
+the .h file, should have a header in the .c file. 
 
 ## Include Statement Documentation
 
@@ -118,8 +95,4 @@ particular file was included.\
 \* Then there\'s a blank line, followed by the /usr include files.\
 \* The /usr include files should be sorted!\
 \*/
-
-------------------------------------------------------------------------
-
-[]{#layering}
 
