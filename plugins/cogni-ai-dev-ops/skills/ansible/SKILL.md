@@ -1,8 +1,9 @@
 ---
 name: ansible
 description: >-
-  How to run and manage Ansible operations.
-  You MUST load this skill when working with the `ansible` command.
+  Execute and manage Ansible playbooks and commands safely, preventing hangs
+  during remote automation. You MUST load this skill when working with the
+  `ansible` command.
 license: MIT
 ---
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
@@ -11,55 +12,51 @@ license: MIT
 
 ## WHEN TO USE
 
-- Agent needs to execute Ansible playbooks or commands.
-- User needs to run Ansible automation scripts.
-- Troubleshooting hanging issues during Ansible execution.
+- Executing Ansible playbooks or commands
+- Running Ansible automation scripts
+- Troubleshooting hangs during Ansible execution
 
 ## WHEN NOT TO USE
 
-- For localized script automation on a single machine where simple shell scripts suffice.
-- For managing ephemeral, immutable container infrastructure better suited for Terraform or Dockerfiles.
-- When the task explicitly requires agentic AI decision-making loops (Ansible is deterministic).
-- General shell scripts (use `shell` instead).
-- Docker operations (use `docker` instead).
+- Localized script automation on a single machine (use shell scripts)
+- Ephemeral container infrastructure (use Docker or Terraform)
+- Tasks requiring agentic AI decisions (Ansible is deterministic)
+- General shell scripting (use `shell` skill)
+- Docker operations (use `docker` skill)
 
 ## Common Pitfalls
 
-- **Interactive Hangs**: Failing to set `DEBIAN_FRONTEND=noninteractive` or handling sudo passwords poorly, causing the agent to hang indefinitely.
-- **Ignoring Idempotency**: Writing raw shell commands (`ansible.builtin.shell`) instead of using native Ansible modules, breaking the idempotency guarantee of playbooks.
-- **Masking Errors**: Using `ignore_errors: yes` to bypass failures rather than fixing the underlying system state.
+- **Interactive Hangs**: Missing `DEBIAN_FRONTEND=noninteractive` or handling sudo passwords poorly, causing indefinite hangs.
+- **Ignoring Idempotency**: Using `ansible.builtin.shell` instead of native modules, breaking playbook idempotency.
+- **Masking Errors**: Using `ignore_errors: yes` to bypass failures rather than fixing the underlying state.
+- **Mocking Workarounds**: Using `mock_modules` or `mock_roles` to bypass failing tasks. Fix underlying issues directly.
 
 ## Troubleshooting
 
-### Ansible Environment issues
+### Ansible Environment Issues
 
-If you encounter hangs during Ansible execution, especially when interacting with package managers
-like `apt` on Debian/Ubuntu systems:
+For hangs during Ansible execution (especially `apt` on Debian/Ubuntu):
 
-- Use the `DEBIAN_FRONTEND` environment variable to prevent prompts from hanging the process.
-- Set `DEBIAN_FRONTEND=noninteractive` when running your Ansible commands or in your playbook environment.
-- Example: `DEBIAN_FRONTEND=noninteractive ansible-playbook playbook.yml`
-
-### Prohibiting Mocking for Workarounds
-
-Do NOT use mocking to work around unexpected errors:
-
-- Never use `mock_modules` or `mock_roles` to bypass tasks that are failing due to environment-specific issues or other "shouldn't happen" errors.
-- Underlying issues must be fixed directly; do not mask failures with mocks to unblock progress.
+- Set `DEBIAN_FRONTEND=noninteractive` in environment or playbook:
+  `DEBIAN_FRONTEND=noninteractive ansible-playbook playbook.yml`
 
 ## Performance Profiling
 
-To profile the execution time of your playbooks and roles, you can enable the `profile_tasks` callback plugin.
-This is useful for identifying slow tasks and optimizing your automation.
+Enable `profile_tasks` callback to identify slow tasks:
 
-- Enable the plugin by adding it to your `ansible.cfg` file under `[defaults]` or via environment variables.
-- Using environment variables: `ANSIBLE_CALLBACKS_ENABLED=profile_tasks ansible-playbook playbook.yml`
+- `ANSIBLE_CALLBACKS_ENABLED=profile_tasks ansible-playbook playbook.yml`
 - In `ansible.cfg`:
-
   ```ini
   [defaults]
   callbacks_enabled = ansible.posix.profile_tasks
   ```
+
+## Examples
+
+- Run a playbook: `ansible-playbook -i inventory.yml site.yml`
+- Run with tags: `ansible-playbook playbook.yml --tags "setup,deploy"`
+- Check mode: `ansible-playbook playbook.yml --check --diff`
+- Ping all hosts: `ansible all -i inventory.yml -m ping`
 
 ## Related Skills
 
