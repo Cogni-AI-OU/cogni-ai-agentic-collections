@@ -134,20 +134,29 @@ jobs:
             } else if (warningCount > 0 || advisoryCount > 0) {
               verdict = '⚠️ Warnings or advisories found';
             }
-            const highlightedLines = output
-              .split('\n')
-              .map(line => line.trim())
-              .filter(Boolean)
-              .filter(line => !line.startsWith('###'))
-              .filter(line => /^[❌⚠ℹ]/.test(line));
-            const summaryLines = highlightedLines.length > 0
-              ? highlightedLines.slice(0, 10)
-              : output
-                  .split('\n')
-                  .map(line => line.trim())
-                  .filter(Boolean)
-                  .filter(line => !line.startsWith('###'))
-                  .slice(0, 10);
+            let currentSkill = 'General';
+            const findings = [];
+            output.split('\n').forEach(line => {
+              line = line.trim();
+              if (!line) return;
+              if (line.startsWith('## ')) {
+                currentSkill = line.replace(/^##\s+/, '').replace(/\/SKILL\.md$/, '').replace(/\.agent\.md$/, '');
+              } else if (line.startsWith('Skill: ')) {
+                currentSkill = line.replace(/^Skill:\s+/, '');
+              } else if (/^[❌⚠ℹ✅]/.test(line)) {
+                const level = line.startsWith('❌')
+                  ? '❌'
+                  : line.startsWith('⚠')
+                    ? '⚠️'
+                    : line.startsWith('✅')
+                      ? '✅'
+                      : 'ℹ️';
+                const text = line.replace(/^[❌⚠️✅ℹ\s]+/, '').replace(/\|/g, '\\|');
+                findings.push({ skill: currentSkill, level, text });
+              }
+            });
+
+            const summaryFindings = findings.slice(0, 20);
             const scopeTable = [
               '| Scope | Checked |',
               '|---|---:|',
@@ -162,22 +171,12 @@ jobs:
               `| ⚠️ Warnings | ${warningCount} |`,
               `| ℹ️ Advisories | ${advisoryCount} |`,
             ];
-            const findingsTable = summaryLines.length === 0
+            const findingsTable = summaryFindings.length === 0
               ? ['_No findings were emitted by the validator._']
               : [
-                  '| Level | Finding |',
-                  '|---|---|',
-                  ...summaryLines.map(line => {
-                    const level = line.startsWith('❌')
-                      ? '❌'
-                      : line.startsWith('⚠')
-                        ? '⚠️'
-                        : line.startsWith('ℹ')
-                          ? 'ℹ️'
-                          : (exitCode !== '0' ? '⛔' : 'ℹ️');
-                    const text = line.replace(/^[❌⚠ℹ️\s]+/, '').replace(/\|/g, '\\|');
-                    return `| ${level} | ${text} |`;
-                  }),
+                  '| Skill | Type | Finding |',
+                  '|---|---|---|',
+                  ...summaryFindings.map(f => `| ${f.skill} | ${f.level} | ${f.text} |`),
                 ];
             const body = [
               marker,
