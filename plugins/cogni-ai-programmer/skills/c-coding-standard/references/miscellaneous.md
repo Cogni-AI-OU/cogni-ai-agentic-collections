@@ -248,4 +248,3 @@ your application.
     wrapper for these calls, including new, so you can do the right
     thing always and developers don't have to make memory checks
     everywhere.
-

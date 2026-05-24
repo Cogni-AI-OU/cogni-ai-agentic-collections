@@ -53,6 +53,8 @@ claude plugin install cogni-ai-programmer@cogni-ai-agentic-collections
 - **react-llms** — Expert guide for generating React code with modern patterns.
 - **nextjs-llms** — Expert guide for generating Next.js applications.
 - **reactnative-llms** — Expert guide for generating React Native mobile applications.
+- **c-coding-standard** — C coding standard guidelines for names, formatting, documentation, and complexity management.
+- **cpp-coding-standard** — C++ coding standard guidelines for names, formatting, and object-oriented design.
 
 ## Usage
 

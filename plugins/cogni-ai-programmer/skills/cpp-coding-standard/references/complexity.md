@@ -194,7 +194,7 @@ violating LSP is also violating the Open/Closed principle because the
 code would have to be modified every time a derived class was added.
 It's also related to dependency management using abstract base classes
 
-For example, if the [Jump method](CppCodingStandard.html#jumpable) of a
+For example, if the [Jump method](https://users.ece.cmu.edu/~eno/coding/CppCodingStandard.html#jumpable) of a
 Frog object implementing the Jumpable interface actually makes a call
 and orders pizza we can say its implementation is not in the spirit of
 Jump and probably all other objects implementing Jump. Before calling a
@@ -203,7 +203,7 @@ wouldn't screw up the system. We don't want this in programs. We want
 to use base classes and feel comfortable we will get consistent
 behaviour.
 
-LSP is a very restrictive idea. It constrains implementors quite a bit.
+LSP is a very restrictive idea. It constrains implementers quite a bit.
 In general people support LSP and have LSP as a goal.
 
 ## Follow the Law of Demeter
@@ -245,4 +245,3 @@ created a method in car for every access to a subobject.
 
        Do   : sun.UpVolume(1);
        Don't: sun.mSound.Up(1);
-

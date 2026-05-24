@@ -394,4 +394,3 @@ same name.
 
     #define MAX(a,b) blah
     #define IS_ERR(err) blah
-

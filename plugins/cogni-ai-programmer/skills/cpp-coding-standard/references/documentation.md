@@ -143,7 +143,7 @@ accomplish.
 # Unified Modeling Language
 
 The Unified Modeling Language is too large to present here. Fortunately
-you can see it at [Rational's](http://www.rational.com/ot/uml.html) web
+you can see it at [Rational's](http://www.rational.com/uml/) web
 site. Since you do need a modeling language UML is a safe choice. It
 combines features from several methods into one unified language.
 Remember all languages and methods are open to local customization. If
@@ -182,12 +182,12 @@ In practice the Open/Closed principle simply means making good use of
 our old friends abstraction and polymorphism. Abstraction to factor out
 common processes and ideas. Inheritance to create an interface that must
 be adhered to by derived classes. In C++ we are talking about using
-[abstract base classes](CppCodingStandard.html#abstract) . A lot.
+[abstract base classes](https://users.ece.cmu.edu/~eno/coding/CppCodingStandard.html#abstract) . A lot.
 
 # Design by Contract
 
 The idea of design by contract is strongly related to
-[LSP](CppCodingStandard.html#liskov) . A contract is a formal statement
+[LSP](https://users.ece.cmu.edu/~eno/coding/CppCodingStandard.html#liskov) . A contract is a formal statement
 of what to expect from another party. In this case the contract is
 between pieces of code. An object and/or method states that it does X
 and you are supposed to believe it. For example, when you ask an object
@@ -202,4 +202,3 @@ languages a bit of faith is needed.
 Design by contract when coupled with language based verification
 mechanisms is a very powerful idea. It makes programming more like
 assembling spec'd parts.
-

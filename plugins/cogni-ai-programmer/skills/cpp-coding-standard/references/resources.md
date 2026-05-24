@@ -1,6 +1,5 @@
 # Resources- Take a Look!
 
--   [Design Stories](DesignStories.html)
 -   [OO Info Sources](http://www.sente.ch/cetus/software.html)
 -   [Unified Modeling Language
     (UML)](http://www.rational.com/uml/index.jtmpl)
@@ -22,8 +21,5 @@
 -   [Doxygen](http://www.stack.nl/~dimitri/doxygen/) - is a 'javadoc'
     like utility that extracts comments and relevant information from
     your C++/C programs and generates HTML pages from it.
--   [Const Correctness](const.html) - A very nice article on const
-    correctness by Chad Loder.
 -   [Abraxis Code Check](http://www.abxsoft.com/) - A program for
     checking code for coding standard violations and other problems.
-

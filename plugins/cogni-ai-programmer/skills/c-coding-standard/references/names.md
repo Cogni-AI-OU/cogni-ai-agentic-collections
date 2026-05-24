@@ -196,4 +196,3 @@ it the first label if possible.
 #### Example
 
     enum { STATE_ERR,  STATE_OPEN, STATE_RUNNING, STATE_DYING};
-

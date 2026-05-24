@@ -3,11 +3,12 @@ name: cpp-coding-standard
 description: >-
   C++ coding standard guidelines for names, formatting, and object-oriented
   design. Use this skill when writing or reviewing C++ code.
+license: MIT
 ---
 
 # C++ Coding Standard
 
-#### Adapted from <http://www.possibility.com/Cpp/CppCodingStandard.html>
+## Adapted from <http://www.possibility.com/Cpp/CppCodingStandard.html>
 
 ## References
 

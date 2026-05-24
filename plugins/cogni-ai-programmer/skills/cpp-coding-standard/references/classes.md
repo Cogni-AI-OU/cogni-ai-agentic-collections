@@ -128,8 +128,7 @@ with the build system where possible.
 
 ### Required Methods Placeholders
 
-This template has placeholders for [required
-methods](CppCodingStandard.html#req) . You can delete them or implement
+This template has placeholders for [required methods](https://users.ece.cmu.edu/~eno/coding/CppCodingStandard.html#req) . You can delete them or implement
 them.
 
 ## Ordering is: public, protected, private
@@ -489,4 +488,3 @@ will never be executed creating a gaping resource leak.
 Special care must be taken to catch exceptions which may occur during
 object destruction. Special care must also be taken to fully destruct an
 object when it throws an exception.
-

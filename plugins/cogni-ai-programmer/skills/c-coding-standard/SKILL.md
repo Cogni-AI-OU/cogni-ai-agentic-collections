@@ -4,6 +4,7 @@ description: >-
   C coding standard guidelines for names, formatting, documentation, and
   complexity management. Use this skill when writing or reviewing C code to
   ensure consistency and safety.
+license: MIT
 ---
 
 # C Coding Standard

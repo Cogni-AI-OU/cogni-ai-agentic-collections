@@ -283,4 +283,3 @@ The reasons are:
        apDword  = NULL;
        apChar   = NULL;
        aChar    = 0;
-

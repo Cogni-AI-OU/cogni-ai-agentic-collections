@@ -12,4 +12,3 @@ to work only with other adjacent layers.
 
 Sometimes we need to jump layers for performance reasons. This is fine,
 but we should know we are doing it and document appropriately.
-

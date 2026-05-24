@@ -446,4 +446,3 @@ difference between the two will decrease as the optimizer gains
 maturity, while the difference in ease of maintenance will increase as
 the human memory of what's going on in the latter piece of code begins
 to fade.
-
