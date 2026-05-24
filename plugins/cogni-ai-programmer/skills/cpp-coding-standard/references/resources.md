@@ -3,7 +3,7 @@
 -   [OO Info Sources](http://www.sente.ch/cetus/software.html)
 -   [Unified Modeling Language
     (UML)](http://www.rational.com/uml/index.jtmpl)
--   [OPEN Method](http://www.markv.com/OPEN/)
+-   [OPEN Method](https://web.archive.org/web/19990219200533/http://www.markv.com/OPEN)
 -   [OO FAQ - All You Wanted to Know About
     OO](http://www.cyberdyne-object-sys.com/)
 -   [C++ FAQ LITE](http://www.parashift.com/c++-faq-lite/)

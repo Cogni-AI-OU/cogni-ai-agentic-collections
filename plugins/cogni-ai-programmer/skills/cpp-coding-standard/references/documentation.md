@@ -152,14 +152,47 @@ feel they need and junk the rest.
 
 # OPEN Method
 
-[OPEN](http://www.markv.com/OPEN/) stands for **Object-oriented Process,
-Environment and Notation** and is a worthy if not superior competitor to
-UML. It is another group effort composed of basically all the people not
-in the UML group :-) Their web site has a good comparison of OPEN and
-UML.
+[OPEN](https://web.archive.org/web/19990219200533/http://www.markv.com/OPEN) stands for **Object-oriented Process,
+Environment and Notation** and is a third generation, fully object-oriented methodology.
+It encapsulates business issues, quality issues, modelling issues and reuse
+issues within its end-to-end lifecycle support for software development. 
 
-My guess is UML will win out for marketing reasons. But it is good to
-have some competition going.
+While UML ultimately won out in popularity, OPEN was a worthy competitor.
+Its core is a pair of two-dimensional matrices which provide probabilistic
+links between lifecycle *Activities* and *Tasks* (the "what"), and then links
+the *Tasks* to *Techniques* (the "how"). OPEN is supported by a metamodel
+and notation, collectively called OML (OPEN Modelling Language), with
+its preferred notation being COMN. It leveraged existing methodological
+modelling techniques as found in MOSES, SOMA, BON, RDD, OOram and UML.
+
+### Key Papers on OPEN
+
+**1. Overviews:**
+- OPEN: toward method convergence? Henderson-Sellers, B. and Graham, I.M. 
+  et al., 1996, IEEE Computer, 29(4), 86-89
+- The OPEN methodology, Henderson-Sellers, B., 1996, Object Magazine 
+  (Nov 1996), 6(9), 56-59
+- OPEN-ing Up column in Object Currents (renamed Object Magazine Online 
+  (1997)): October 1996 onwards.
+- Choosing between OPEN and UML, Henderson-Sellers, B. and Firesmith, D.G., 
+  1997, American Programmer, 10(3), 15-23
+- Methods unification: the OPEN methodology, Henderson-Sellers, B., 
+  Firesmith, D.G. and Graham, I., 1997, Journal of Object-Oriented 
+  Programming, 10(2), 41-43, 55
+
+**2. Lifecycle:**
+- Using object-oriented techniques to model the lifecycle for OO software 
+  development, Henderson-Sellers, B., Graham, I.M., Swatman, P., Winder, R. 
+  and Reenskaug, T., 1997, Procs. OOIS '96, Springer-Verlag, 211-220
+
+**3. Project management focus:**
+- OPEN project management, Henderson-Sellers, B. and Due, R.T., 1997, 
+  invited article for Object Expert (Jan 1997), 2(2), 30-35
+
+**4. Tasks and techniques:**
+- The OPEN heart, Henderson-Sellers, B., Graham, I.M., Firesmith, D., 
+  Reenskaug, T., Swatman, P. and Winder, R., Procs. TOOLS 21, 
+  TOOLS/ISE, 187-196
 
 # Open/Closed Principle
 
