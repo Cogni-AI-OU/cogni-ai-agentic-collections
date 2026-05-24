@@ -57,6 +57,9 @@ Structure the generated file with the following sections (omit optional ones if 
 
 1. **YAML Frontmatter block**
    Must include `name`, `description`, and `license` (MIT).
+   Target **Medium-High** or **High** frontmatter compliance:
+   - **Medium-High**: Description must contain explicit "USE FOR:" and "DO NOT USE FOR:" phrasing for clear boundaries and reliable routing.
+   - **High**: Additionally include "INVOKES:" and "FOR SINGLE OPERATIONS:" for full routing clarity and MCP integration.
    For the `description`, append `"You MUST load this skill when <condition>"` ONLY for exact, unambiguous triggers (e.g., a specific CLI command).
    Omit this phrase for general-purpose skills. Split long sentences into multiple lines.
 2. **Title (`# Skill Name`)**
