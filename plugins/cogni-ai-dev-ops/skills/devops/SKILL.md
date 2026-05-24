@@ -60,5 +60,7 @@ while not workflow_complete:
             iterate_until_success_or_max_retries(phase, max_retries=3)
         if result.is_blocked:
             report_blocker_and_stop()
-    check_completion_criteria()
+    workflow_complete = check_completion_criteria()
+    if workflow_complete:
+        break
 ```

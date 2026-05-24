@@ -71,7 +71,7 @@ while not workflow_complete:
             report_blocker_and_stop()
             workflow_complete = True
             break
-    check_completion_criteria()
+    workflow_complete = check_completion_criteria()
 ```
 
 ## Related Skills
