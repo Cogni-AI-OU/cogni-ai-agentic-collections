@@ -44,12 +44,18 @@ the portable progressive loading architecture.
 
 ## Core Principles
 
-- **Autonomous Execution Focus**: Write for non-interactive agent flow: self-contained loops, built-in error recovery, verification steps, and no user confirmation prompts except for safety-critical actions.
-- **YAML Frontmatter is Mandatory**: Begin every SKILL.md with required fields `name` (lowercase-hyphenated, exactly matching folder name) and `description` (single-line, keyword-dense, wrapped in single quotes). Include `license` only if needed. YAML must pass all repository validation rules.
-- **Description Precision**: Write the `description` as a single, highly specific sentence that matches user intent patterns without overlap—poor phrasing causes missed or false activations.
-- **Avoid Hardcoding**: Never embed specific values, file paths, repository names, user details, or tool versions; instead, use clear placeholders (e.g., `<repository-name>`, `<file-path>`, `<version>`).
-- **Pure Markdown Body**: Use only Markdown in the body; never include extraneous files, scripts, or resources unless explicitly required for the skill.
-- **Common Pitfalls are High Signal**: Always include a `## Common Pitfalls` section for documenting proactive warnings about non-obvious behavior.
+- **Autonomous Execution Focus**:
+  Write for non-interactive agent flow: self-contained loops, built-in error recovery, verification steps, and no user confirmation prompts except for safety-critical actions.
+- **YAML Frontmatter is Mandatory**:
+  Begin every SKILL.md with required fields `name` (lowercase-hyphenated, exactly matching folder name) and `description` (single-line, keyword-dense, wrapped in single quotes). YAML must pass all repository validation rules.
+- **Description Precision**:
+  Write the `description` as a single, highly specific sentence that matches user intent patterns without overlap—poor phrasing causes missed or false activations.
+- **Avoid Hardcoding**:
+  Never embed specific values, file paths, repository names, user details, or tool versions; instead, use clear placeholders (e.g., `<repository-name>`, `<file-path>`, `<version>`).
+- **Pure Markdown Body**:
+  Use only Markdown in the body; never include extraneous files, scripts, or resources unless explicitly required for the skill.
+- **Common Pitfalls are High Signal**:
+  Always include a `## Common Pitfalls` section for documenting proactive warnings about non-obvious behavior.
 
 ## Skill Structure & Formatting
 
