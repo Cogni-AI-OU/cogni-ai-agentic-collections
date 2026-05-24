@@ -22,6 +22,7 @@ actions, and agentic workflows.
 | `/cogni-ai-github-ops:github` | Guidance on GitHub-specific features and collaborative practices |
 | `/cogni-ai-github-ops:github-actions` | Diagnose GitHub Actions workflow failures |
 | `/cogni-ai-github-ops:github-aw` | Safely update existing GitHub Agentic Workflows (gh-aw) |
+| `/cogni-ai-github-ops:dot-github` | Standardize .github directory structure and agentic patterns |
 
 ## Installation
 

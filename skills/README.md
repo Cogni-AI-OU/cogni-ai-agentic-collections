@@ -37,7 +37,6 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 | [docs-review](docs-review/SKILL.md) | Enforce documentation quality and consistency across architecture and code. |
 | [docs-writer](docs-writer/SKILL.md) | Create and maintain ADRs, runbooks, READMEs, and code docs. |
 | [dot-claude](dot-claude/SKILL.md) | Configure and manage Claude Code (.claude) workspace settings. |
-| [dot-github](dot-github/SKILL.md) | Standardize .github directory structure and agentic patterns. |
 | [dotfiles](dotfiles/SKILL.md) | Reference for repository dotfiles and standard configurations. |
 | [editorconfig](editorconfig/SKILL.md) | Generate comprehensive .editorconfig files based on project analysis. |
 | [fact-writer](fact-writer/SKILL.md) | Guidance for maintaining verifiable project fact files. |
