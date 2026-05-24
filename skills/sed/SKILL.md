@@ -23,8 +23,7 @@ Fast, non-interactive text stream editing and precise file segment extraction us
 
 - Complex multi-line replacements (use `python` or `vim-ex` instead).
 - Making multi-line replacements with complex indentation rules where `ex` (Vim) or Python scripting is more robust.
-- Parsing JSON, YAML, or XML (use `jq`, `yq` instead).
-- Parsing or modifying complex structured data formats (JSON, YAML, XML) where context-aware tools (`jq`, `yq`) are significantly safer.
+- Parsing JSON, YAML, or XML (use `jq`/`yq` instead—structured-data-aware tools are significantly safer).
 
 ## Core Process
 
