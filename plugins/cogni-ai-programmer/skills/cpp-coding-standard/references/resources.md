@@ -1,6 +1,6 @@
 # Resources- Take a Look!
 
--   [OO Info Sources](http://www.sente.ch/cetus/software.html)
+-   [OO Info Sources](https://www.objenv.com/oo_infos.html)
 -   [Unified Modeling Language
     (UML)](http://www.rational.com/uml/index.jtmpl)
 -   [OPEN Method](https://web.archive.org/web/19990219200533/http://www.markv.com/OPEN)
@@ -11,14 +11,12 @@
     Libraries](http://www.desy.de/user/projects/C++/Projects.html)
 -   [C++ Tutorials](http://www.desy.de/user/projects/C++/Learning.html)
 -   [ACE C++
-    Library](http://www.cs.wustl.edu/~schmidt/ACE-overview.html)
+    Library](https://www.dre.vanderbilt.edu/~schmidt/ACE.html)
 -   [Collection of Other
-    Standards](http://www.cs.umd.edu/users/cml/cstyle)
+    Standards](https://cs.arizona.edu/~mccann/cstyle.html)
 -   [Design by Contract from
     Eiffel](http://www.eiffel.com/doc/manuals/technology/contract/)
--   [C++ isn't Perfect, Here are Some Reasons
-    Why](http://www.progsoc.uts.edu.au/~geldridg/cpp/cppcv3.html)
--   [Doxygen](http://www.stack.nl/~dimitri/doxygen/) - is a 'javadoc'
+-   [Doxygen](https://www.doxygen.nl/) - is a 'javadoc'
     like utility that extracts comments and relevant information from
     your C++/C programs and generates HTML pages from it.
 -   [Abraxis Code Check](http://www.abxsoft.com/) - A program for
