@@ -8,7 +8,6 @@ designing algorithms, data structures, and reliable solutions.
 | | |
 | --- | --- |
 | **Description** | Autonomous programmer agent with programming and language-specific skills |
-| **Contents** | 1 agent, 8 skills |
 
 ## Slash Commands
 
