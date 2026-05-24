@@ -45,6 +45,10 @@ Slash commands are invoked via `/agent:skill` in the Copilot CLI or VS Code Chat
 | `/cogni-ai-programmer:cpp-coding-standard` | Load the cpp-coding-standard skill -- C++ coding standard guidelines for names, formatting, documentation, complexity management, miscellaneous resources, and object-oriented design |
 | `/cogni-ai-architect:software-architecture` | Load the software-architecture skill -- expert-level workflow for software architecture design covering architectural styles, SOLID principles, design patterns, and ADRs |
 | `/cogni-ai-dev-ops:devops` | Load the devops skill -- Core DevOps and Site Reliability Engineering workflow covering CI/CD, IaC, and observability |
+| `/cogni-ai-dev-ops:apache-airflow-api` | Load the apache-airflow-api skill -- Execute Apache Airflow Stable REST API queries, manage DAGs, backfills, connections, variables, and assets |
+| `/cogni-ai-dev-ops:apache-airflow-dags` | Load the apache-airflow-dags skill -- Expert-level guide for authoring Apache Airflow DAGs using the skeleton strategy and contract-driven logic |
+| `/cogni-ai-dev-ops:astro-cli` | Load the astro-cli skill -- Expert-level guide for using the Astro CLI to manage Astronomer Airflow deployments and APIs |
+| `/cogni-ai-dev-ops:astronomer-llms` | Load the astronomer-llms skill -- Read and navigate Astronomer documentation using llms.txt context |
 | `/cogni-ai-dev-ops:ansible` | Load the ansible skill -- How to run and manage Ansible operations safely and prevent hangs |
 | `/cogni-ai-dev-ops:molecule` | Load the molecule skill -- Molecule testing workflows for Ansible roles |
 | `/cogni-ai-dev-ops:pulumi-cli` | Load the pulumi-cli skill -- Execute Pulumi CLI commands for stack management and infrastructure deployments |

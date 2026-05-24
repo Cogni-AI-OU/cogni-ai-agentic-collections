@@ -14,6 +14,10 @@ precision, resolving deployment challenges, and enforcing infrastructure-as-code
 | Command | Description |
 | --- | --- |
 | `/cogni-ai-dev-ops:devops` | Core DevOps and Site Reliability Engineering workflow |
+| `/cogni-ai-dev-ops:apache-airflow-api` | Execute Apache Airflow Stable REST API queries |
+| `/cogni-ai-dev-ops:apache-airflow-dags` | Expert-level guide for authoring Apache Airflow DAGs |
+| `/cogni-ai-dev-ops:astro-cli` | Expert-level guide for using the Astro CLI to manage Astronomer Airflow |
+| `/cogni-ai-dev-ops:astronomer-llms` | Read and navigate Astronomer documentation using llms.txt context |
 | `/cogni-ai-dev-ops:devcontainer` | Create and maintain robust devcontainer.json configurations |
 | `/cogni-ai-dev-ops:ansible` | How to run and manage Ansible operations safely and prevent hangs |
 | `/cogni-ai-dev-ops:molecule` | Molecule testing workflows for Ansible roles |
@@ -48,6 +52,10 @@ claude plugin install cogni-ai-dev-ops@cogni-ai-agentic-collections
 
 - **devops** — Core DevOps and Site Reliability Engineering workflow, covering CI/CD, Infrastructure as Code,
   observability, and deployment strategies.
+- **apache-airflow-api** — Execute Apache Airflow Stable REST API queries, manage DAGs, backfills, connections, variables, and assets.
+- **apache-airflow-dags** — Expert-level guide for authoring Apache Airflow DAGs using the skeleton strategy and contract-driven logic.
+- **astro-cli** — Expert-level guide for using the Astro CLI to manage Astronomer Airflow deployments and APIs.
+- **astronomer-llms** — Read and navigate Astronomer documentation using llms.txt context.
 - **devcontainer** — Create, update, and maintain robust devcontainer.json configurations and lifecycle scripts.
 - **ansible** — How to run and manage Ansible operations safely and prevent hangs.
 - **molecule** — Ansible Molecule testing workflows for developing and testing Ansible roles.
