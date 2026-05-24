@@ -107,26 +107,34 @@ jobs:
                 if (error.status !== 404) console.error('Error removing label:', error);
               }
             }
-            const summaryLines = rawOutput
-              .split('\n')
-              .filter(Boolean)
-              .slice(0, 10);
-            const findingsTable = summaryLines.length === 0
+            let currentSkill = 'General';
+            const findings = [];
+            rawOutput.split('\n').forEach(line => {
+              line = line.trim();
+              if (!line) return;
+              if (line.startsWith('## ')) {
+                currentSkill = line.replace(/^##\s+/, '').replace(/\/SKILL\.md$/, '').replace(/\.agent\.md$/, '');
+              } else if (line.startsWith('Skill: ')) {
+                currentSkill = line.replace(/^Skill:\s+/, '');
+              } else if (/^[❌⚠ℹ✅]/.test(line)) {
+                const level = line.startsWith('❌')
+                  ? '❌'
+                  : line.startsWith('⚠')
+                    ? '⚠️'
+                    : line.startsWith('✅')
+                      ? '✅'
+                      : 'ℹ️';
+                const text = line.replace(/^[❌⚠️✅ℹ\s]+/, '').replace(/\|/g, '\\|');
+                findings.push({ skill: currentSkill, level, text });
+              }
+            });
+            const summaryFindings = findings.slice(0, 20);
+            const findingsTable = summaryFindings.length === 0
               ? ['_No findings were emitted._']
               : [
-                  '| Level | Finding |',
-                  '|---|---|',
-                  ...summaryLines.map(line => {
-                    const level = line.startsWith('❌')
-                      ? '❌'
-                      : line.startsWith('⚠')
-                        ? '⚠️'
-                        : line.startsWith('✅')
-                          ? '✅'
-                          : (exitCode !== '0' ? '⛔' : 'ℹ️');
-                    const text = line.replace(/^[❌⚠️✅\s]+/, '').replace(/\|/g, '\\|');
-                    return `| ${level} | ${text} |`;
-                  }),
+                  '| Skill | Type | Finding |',
+                  '|---|---|---|',
+                  ...summaryFindings.map(f => `| ${f.skill} | ${f.level} | ${f.text} |`),
                 ];
             const body = [
               marker,
