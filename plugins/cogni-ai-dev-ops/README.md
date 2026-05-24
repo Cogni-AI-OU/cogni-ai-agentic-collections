@@ -8,7 +8,6 @@ precision, resolving deployment challenges, and enforcing infrastructure-as-code
 | | |
 | --- | --- |
 | **Description** | Elite autonomous DevOps and site reliability agent |
-| **Contents** | 1 agent, 8 skills |
 
 ## Slash Commands
 
