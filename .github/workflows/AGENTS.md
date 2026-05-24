@@ -12,7 +12,8 @@ For a human-readable overview, see [README.md](README.md).
 - **[cogni-ai-agent.yml](cogni-ai-agent.yml)**: Logic for the Cogni AI Agent.
 - **[copilot-setup-steps.yml](copilot-setup-steps.yml)**: Environment setup utility.
 - **[devcontainer-ci.yml](devcontainer-ci.yml)**: Build/test devcontainer and required tools/packages.
-- **[waza-check.yml](waza-check.yml)**: Waza evaluation for Markdown files.
+- **[waza-check.yml](waza-check.yml)**: Waza validation for skill files.
+- **[waza-check-pr-comment.yml](waza-check-pr-comment.yml)**: PR feedback and label management for Waza Check workflow results.
 
 ## Details
 
@@ -62,11 +63,21 @@ For a human-readable overview, see [README.md](README.md).
 
 ### waza-check.yml
 
-- Purpose: run Waza evaluation framework on markdown files.
-- Triggers: `pull_request` and `push` when `**/*.md` files are modified, and `workflow_dispatch`.
-- Details: Installs Go, builds waza from source (github.com/microsoft/waza), and evaluates the project against the
-  specified `eval-path`.
+- Purpose: run Waza validation framework on skill files (SKILL.md, .agent.md) in PRs.
+- Triggers: `pull_request` and `push` when `**/SKILL.md` or `**/*.agent.md` are modified, and `workflow_dispatch`.
+- Details: Installs Go, builds waza from source (github.com/microsoft/waza), detects changed
+  skill files via `git diff`, and runs `waza check` on each for compliance validation.
+  On `workflow_dispatch`, also supports running `waza run` with an optional eval path or auto-discovery.
+  Saves results as artifacts for the comment workflow.
 - Permissions: `contents: read`.
+
+### waza-check-pr-comment.yml
+
+- Purpose: Posts results from the "Waza Check" workflow as a PR comment.
+- Triggers: `workflow_run` (after Waza Check), `workflow_call`, `workflow_dispatch`.
+- Details: Downloads the waza-check-results artifact and posts a "Skill Readiness Check" comment
+  with error/warning counts and findings. Updates existing comments via marker detection.
+- Permissions: `issues: write`, `pull-requests: write`, `actions: read`.
 
 ## Synchronized Configuration
 
