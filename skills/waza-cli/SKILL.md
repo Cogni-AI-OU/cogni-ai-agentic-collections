@@ -91,4 +91,4 @@ waza serve
 ## References
 
 - [Waza Quick Start](https://microsoft.github.io/waza/quick-start/)
-- [Waza SKILL.md Example](https://github.com/microsoft/waza/blob/1dd4a7164638350708619a08fad83936b50ff813/skills/waza/SKILL.md?plain=1#L3)
+- [Waza repository](https://github.com/microsoft/waza)
