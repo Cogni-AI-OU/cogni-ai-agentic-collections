@@ -190,6 +190,39 @@ native file and `AGENTS.md` when both are present.
 - Inject full content into every sub-agent context.
 - Keep this file entropy-pruned and up-to-date.
 
+### Readiness Check
+
+When refining or generating an `AGENTS.md` file, ensure it passes these authoritative patterns and alignment checks:
+
+- **Structural Strictness:**
+  Verify adherence to the canonical `AGENTS.md` layout (Setup, Prerequisites, Key Files, Agent Directives, Common Tasks, Gates).
+  Ensure the file name is strictly `AGENTS.md` (or correctly placed in a subdirectory for inheritance).
+- **Technical Surface Area:**
+  Audit the "Setup & Environment Invariants" for technical specificity.
+  Explicitly name the tech stack (e.g., "React 18", "Python 3.11") and include key architectural versions.
+- **Command & Tooling Precision:**
+  Verify that all build, test, and lint commands include exact flags and options.
+  Avoid listing just tool names (e.g., use `pytest -v -m "not integration"` instead of just `pytest`).
+- **Boundary Clarity (The NEVER Rules):**
+  Check for explicit `NEVER` constraints in the "Agent Directives" section.
+  "NEVER commit secrets" and "NEVER mutate vendor directories" are mandatory for root-level authority.
+- **Advisory Checks:**
+  - **Negative Delta Risk:**
+    Eliminate conflicting instructions or ambiguous procedure paths (e.g., "alternatively", "however you can also").
+    Rules must be deterministic and imperative to prevent agent execution failures.
+  - **Context Density:**
+    Keep instructions dense and contract-style.
+    Avoid abstract prose or explaining standard language syntax that the agent should already know.
+  - **Over-Specificity & Hardcoding:**
+    Avoid hardcoding absolute Unix/Windows paths, IP addresses, or environment-specific URLs.
+    Use placeholders for repository-specific or user-specific values.
+  - **Verification Precision:**
+    Ensure every complex task has a corresponding "Testing & Verification Gate" or an empirical "Definition of Done".
+    The agent must be able to prove the task was successful without human confirmation.
+  - **Progressive Disclosure:**
+    Body content should stay optimal (ideally under 500 lines).
+    For very large monorepos, use nested `AGENTS.md` files to decompose instructions rather than bloating the root file.
+
 ## References
 
 - <https://agents.md/>

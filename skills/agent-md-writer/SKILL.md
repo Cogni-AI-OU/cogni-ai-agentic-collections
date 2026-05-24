@@ -78,6 +78,40 @@ When writing a top-tier agent persona, always include and refine these key secti
 - **Bloated Personas**: Keep the total file size under 500 KiB to avoid truncation by GitHub.
 - **Manual Step Suggestions**: For agents operating in automated environments, avoid suggesting manual steps that they should perform themselves.
 
+### Readiness Check
+
+When refining or generating an agent persona, ensure it passes these authoritative patterns and alignment checks:
+
+- **Persona Clarity & Mandate:**
+  Ensure the persona is defined as a specialist with a narrow, actionable scope.
+  The first sentence should immediately establish the agent's primary function using an action-oriented role definition.
+- **Structural Integrity:**
+  Verify adherence to the canonical persona layout (Role, Initialization, Cognitive Framework, Directives, Invariants, Workflow, Verification).
+  Ensure the boot sequence correctly initializes the agent state and environment.
+- **Cognitive Framework Alignment:**
+  Verify the internal reasoning protocols (e.g., Socratic Depth, Adversarial Red-Teaming) are explicitly defined and non-contradictory.
+- **Safety Envelope (The Triage Rules):**
+  Audit for clear classification into `Always`, `Ask first`, and `Never` operational tiers.
+  Absolute constraints like "Never commit secrets" must be explicitly stated.
+- **Advisory Checks:**
+  - **Negative Delta Risk:**
+    Eliminate conflicting or ambiguous logic (e.g., "alternatively", "however", "you may choose").
+    Instructions must be deterministic and imperative to prevent reasoning drift.
+  - **Persona Density:**
+    The primary role description should stay under 60 words for cross-model effectiveness.
+    The first sentence should start with an action verb defining the agent's core function.
+  - **Constraint Budget:**
+    Limit passive or negative constraints (e.g., "must not", "never") to high-impact invariants.
+    Excessive prohibition can stifle autonomous problem-solving; use imperative "Always" or "MUST" for positive guidance.
+  - **Verification Precision:**
+    Every operational directive must include an empirical verification gate or a "Definition of Done".
+    Avoid vague instructions like "ensure quality" without defining the metrics.
+  - **Context Economy:**
+    Keep the persona file size optimal (ideally under 500 lines).
+    Move extensive domain-specific documentation or long-form guidelines to separate `references/` or `instructions/` modules.
+  - **Capability Scope:**
+    Use clear, hierarchy-based headers to allow the host system to easily detect the agent's specialized capabilities.
+
 ## Related Skills
 
 - **agent-md**:
