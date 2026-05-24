@@ -18,13 +18,6 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 
 | Skill | Description |
 | --- | --- |
-| [agent-log-analysis](agent-log-analysis/SKILL.md) | Procedures and templates for analyzing agent session logs, extracting telemetry, and generating standardized visual audit reports. |
-| [agent-md](agent-md/SKILL.md) | Syntax and structure reference for custom agent persona files (*.agent.md, CLAUDE.md, opencode.json). |
-| [agent-md-writer](agent-md-writer/SKILL.md) | Guidelines and best practices for writing high-performance agent persona files. |
-| [agent-skill-md-writer](agent-skill-md-writer/SKILL.md) | Workflow and guidelines for generating or refining agent skills. |
-| [agents-md-writer](agents-md-writer/SKILL.md) | Autonomous documentation editor responsible for maintaining AGENTS.md files. |
-| [agentskills](agentskills/SKILL.md) | Guidance on the Agent Skills open standard for creating portable Copilot agent skills. |
-| [ai-prompt-writer](ai-prompt-writer/SKILL.md) | Design, review, and optimize secure AI prompts using advanced patterns. |
 | [ansible](ansible/SKILL.md) | How to run and manage Ansible operations safely and prevent hangs. |
 | [apache-airflow-api](apache-airflow-api/SKILL.md) | Execute Apache Airflow Stable REST API queries. |
 | [apache-airflow-dags](apache-airflow-dags/SKILL.md) | Expert-level guide for authoring Apache Airflow DAGs. |
@@ -36,14 +29,11 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 | [brainstorm-github-pr](brainstorm-github-pr/SKILL.md) | Analyze and visualize commit history and CI pipeline checks for a PR. |
 | [cat](cat/SKILL.md) | Guidelines for safely using `cat` and avoiding shell hangs with heredocs. |
 | [chrome-devtools](chrome-devtools/SKILL.md) | Expert-level browser automation and debugging using Chrome DevTools MCP. |
-| [claude-llms](claude-llms/SKILL.md) | Reference and APIs for retrieving Anthropic Claude documentation. |
 | [code-review](code-review/SKILL.md) | Cognitive framework for expert-level code inspection and logic validation. |
 | [code-tour](code-tour/SKILL.md) | Create, update, and maintain VSCode CodeTour (.tour) JSON walkthrough files. |
 | [codeql](codeql/SKILL.md) | Configure and execute CodeQL code scanning analysis. |
 | [coding-standard-writer](coding-standard-writer/SKILL.md) | Write a coding standards document from provided file(s) or folder(s). |
 | [context-aware-ops](context-aware-ops/SKILL.md) | Intelligent resource management with size checking to preserve context. |
-| [copilot-cli](copilot-cli/SKILL.md) | Guidance for installing and using GitHub Copilot CLI. |
-| [copilot-docs](copilot-docs/SKILL.md) | Reference and documentation for GitHub Copilot CLI customization. |
 | [devcontainer](devcontainer/SKILL.md) | Create and maintain robust devcontainer.json configurations. |
 | [dictation](dictation/SKILL.md) | Apply dictation correction protocols to fix common speech-to-text errors. |
 | [direnv](direnv/SKILL.md) | How to maintain credentials and authenticate using direnv safely. |
@@ -58,7 +48,6 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 | [gitattributes](gitattributes/SKILL.md) | Define and modify .gitattributes to standardize repo behavior. |
 | [llmstxt](llmstxt/SKILL.md) | Standard for using /llms.txt to provide context to LLMs. |
 | [lsp-setup](lsp-setup/SKILL.md) | Enable code intelligence by configuring LSP servers. |
-| [mcp-cli](mcp-cli/SKILL.md) | Interface for MCP (Model Context Protocol) servers via CLI. |
 | [mermaid](mermaid/SKILL.md) | Guide for creating and maintaining stable Mermaid.js diagrams. |
 | [mermaid-beta](mermaid-beta/SKILL.md) | Guide for experimental Mermaid.js beta diagrams. |
 | [minizinc](minizinc/SKILL.md) | Expert MiniZinc modeling for constraint satisfaction. |
@@ -66,7 +55,6 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 | [name-com-llms](name-com-llms/SKILL.md) | Reference for name.com Core API documentation. |
 | [npx-skills](npx-skills/SKILL.md) | Install and manage agent skills using the npx skills CLI. |
 | [ollama-cli](ollama-cli/SKILL.md) | Execute and manage local LLMs using the ollama CLI. |
-| [opencode](opencode/SKILL.md) | Manage OpenCode configuration and access the OpenCode Zen API. |
 | [out-yaml](out-yaml/SKILL.md) | Instructs the agent to produce output strictly in valid YAML. |
 | [pdf](pdf/SKILL.md) | PDF file inspection, editing, and lossless size reduction. |
 | [pipenv](pipenv/SKILL.md) | Manage Python dependencies and environments using pipenv. |
@@ -81,11 +69,8 @@ gh skills install Cogni-AI-OU/cogni-ai-agent-skills --scope user <skill-name>
 | [security-review](security-review/SKILL.md) | Lightweight security review focused on Pull Requests. |
 | [sed](sed/SKILL.md) | Fast, non-interactive text stream editing using sed. |
 | [shell](shell/SKILL.md) | Efficient shell command execution with timing and best practices. |
-| [squad-cli](squad-cli/SKILL.md) | Manage human-led AI agent teams for any project using the Squad CLI. |
-| [agent-skill-md-writer](agent-skill-md-writer/SKILL.md) | Generate or update SKILL.md files for coding agents. |
 | [subagent-task](subagent-task/SKILL.md) | Guidance and protocols for spawning sub-agents via the task tool. |
 | [unicode](unicode/SKILL.md) | Reference for Unicode character hex ranges and regex blocks. |
 | [vim-ex](vim-ex/SKILL.md) | Non-interactive file editing with Vim Ex mode. |
-| [waza-cli](waza-cli/SKILL.md) | Automate the skill development workflow and run evaluation benchmarks using waza. |
 | [yaml](yaml/SKILL.md) | Generic guidelines for YAML formatting and linting. |
 | [yq](yq/SKILL.md) | Parse, edit, and transform YAML files using yq. |
