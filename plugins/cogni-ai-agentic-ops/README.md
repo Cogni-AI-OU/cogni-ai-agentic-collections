@@ -8,7 +8,6 @@ configurations, skills, and agentic workflows.
 | | |
 | --- | --- |
 | **Description** | Autonomous operator for agentic systems development and maintenance. |
-| **Contents** | 1 agent, 15 skills |
 
 ## Slash Commands
 
