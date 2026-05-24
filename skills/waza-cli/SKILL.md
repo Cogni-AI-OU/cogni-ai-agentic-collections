@@ -81,6 +81,66 @@ waza run skills/my-skill/evals/eval.yaml -v
 waza serve
 ```
 
+## Examples
+
+```console
+# Run all tasks
+waza run eval.yaml -v
+
+# Run specific skill
+waza run code-explainer
+
+# Specify fixtures directory
+waza run eval.yaml -c ./fixtures -v
+
+# Save results
+waza run eval.yaml -o results.json
+
+# Filter to specific tasks
+waza run eval.yaml --task "basic*" --task "edge*"
+
+# Multiple models (parallel)
+waza run eval.yaml --model gpt-4o --model claude-sonnet-4.6
+
+# Use a different judge model for LLM-as-judge graders
+waza run eval.yaml --model gpt-4o --judge-model claude-opus-4.6
+
+# Parallel execution with 8 workers
+waza run eval.yaml --parallel --workers 8
+
+# With caching
+waza run eval.yaml --cache --cache-dir .waza-cache
+
+# Generate JUnit XML for CI test reporting
+waza run eval.yaml --reporter junit:results.xml
+
+# A/B testing: baseline vs skill performance
+waza run eval.yaml --baseline -o results.json
+# Output includes improvement breakdown (quality, tokens, turns, time, completion)
+
+# Auto-update diff grader snapshots
+waza run eval.yaml --update-snapshots
+
+# Auto skill discovery
+waza run --discover ./skills/
+
+# Auto discovery with strict mode (fail if any SKILL.md lacks eval coverage)
+waza run --discover --strict ./skills/
+
+# Skip grading, then grade separately
+waza run eval.yaml --skip-graders -o results.json
+waza grade eval.yaml --results results.json
+
+# Session event logging
+waza run eval.yaml --session-log --session-dir ./logs
+
+# Multi-model comparison with recommendation
+waza run eval.yaml --model gpt-4o --model claude-sonnet-4.6 --recommend
+
+# Keep temp workspaces for debugging fixture issues
+waza run eval.yaml --keep-workspace -v
+```
+
 ## Related Skills
 
 - **waza-docs**:
@@ -92,3 +152,5 @@ waza serve
 
 - [Waza Quick Start](https://microsoft.github.io/waza/quick-start/)
 - [Waza repository](https://github.com/microsoft/waza)
+- [Waza CLI Reference](https://github.com/microsoft/waza/blob/v0.33.0/site/src/content/docs/reference/cli.mdx)
+  Complete reference for all waza CLI commands and their options.
