@@ -12,6 +12,18 @@ license: MIT
 
 Guidance for writing core architecture, documentation, and constraint files. Use this skill when creating or updating repository documentation.
 
+**DOCUMENTATION SKILL**
+INVOKES: `critical-thinking`, `agents-md-writer`
+FOR SINGLE OPERATIONS: `write` or `edit` tool
+
+## USE FOR:
+
+- "document this new feature"
+- "create an ADR for the architecture change"
+- "update the README with setup instructions"
+- "write a runbook for the deployment process"
+- "create an AGENTS.md for this subdirectory"
+
 ## When to Use
 
 - Writing or generating Architectural Decision Records (ADRs).
@@ -25,6 +37,12 @@ Guidance for writing core architecture, documentation, and constraint files. Use
 - When writing the actual application source code or fixing a software bug.
 - For generating automated API references where dedicated tools (like JSDoc or Swagger) should be used instead.
 - When tasked with creating specific Agentic Workflow or Copilot CLI configurations (use specialized skills for those).
+
+## DO NOT USE FOR:
+
+- Writing actual application source code or fixing a software bug.
+- Reviewing existing documentation for consistency (use `docs-review` instead).
+- Generating automated API references.
 
 ## Common Pitfalls
 

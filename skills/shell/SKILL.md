@@ -10,6 +10,17 @@ license: MIT
 
 Execute shell commands with performance monitoring and timeout protection.
 
+**UTILITY SKILL**
+INVOKES: `robust-commands`, `bash`
+FOR SINGLE OPERATIONS: `bash` with `timeout` or `time`
+
+## USE FOR:
+
+- "run this command with a timeout"
+- "measure the execution time of this script"
+- "handle long-running builds or tests"
+- "prevent hangs in shell execution"
+
 ## When to Use
 
 - Commands that might hang indefinitely
@@ -21,6 +32,12 @@ Execute shell commands with performance monitoring and timeout protection.
 - Quick, reliable commands that execute in milliseconds
 - Interactive terminal sessions requiring human input
 - Operations better handled by specialized built-in agents or native APIs
+
+## DO NOT USE FOR:
+
+- Simple, quick commands like `ls` or `pwd`.
+- Commands requiring interactive human input.
+- Operations that have native API tools available.
 
 ## Common Pitfalls
 

@@ -13,6 +13,18 @@ license: MIT
 
 Execute expert-level code reviews, dissecting codebases and Pull Requests (PRs) with surgical precision to identify logical flaws, architectural drift, performance bottlenecks, and security vulnerabilities before they merge.
 
+**REVIEW SKILL**
+INVOKES: `critical-thinking`, `tester`, `github-pr-review`
+FOR SINGLE OPERATIONS: `bash` with `gh pr review`
+
+## USE FOR:
+
+- "review this pull request"
+- "audit the changes in this file"
+- "check for security vulnerabilities in this PR"
+- "verify architectural alignment"
+- "scan for debug statements and hygiene issues"
+
 ## When to Use
 
 - When explicitly asked to review, audit, or verify a Pull Request before it merges.
@@ -123,11 +135,15 @@ While the workflow is managed by `github-pr-review`, this skill focuses on analy
 - Quoting massive unchanged blocks in feedback. Highlight only the segments of code requiring attention.
 - Overlooking missing tests or shallow coverage.
 - Bypassing validation boundaries, leaking state, or hardcoding credentials.
-- Magic numbers or hardcoded strings without named constants.
-- Commented-out code left in the diff.
-- Adding dependencies without justification.
+
+## DO NOT USE FOR:
+
+- Writing new code or implementing features.
+- Running tests or build scripts (use `bash` or `tester` instead).
+- Trivial documentation reviews (use `docs-review` instead).
 
 ## Limitations
+
 
 - This skill relies on static analysis and reading code; it does not execute the code to verify runtime behavior dynamically.
 

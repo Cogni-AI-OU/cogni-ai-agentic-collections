@@ -10,6 +10,18 @@ license: MIT
 
 # MiniZinc Modeling
 
+**ENGINEERING SKILL**
+INVOKES: `bash` (for running the solver)
+FOR SINGLE OPERATIONS: `bash` with `minizinc` command
+
+## USE FOR:
+
+- "solve this scheduling problem"
+- "model the constraints for this resource allocation"
+- "find an optimal assignment"
+- "verify the logical consistency of these rules"
+- "dry-code the problem constraints formally"
+
 ## When to Use
 
 - Addressing constraint satisfaction, scheduling, assignment, or combinatorial problems.
@@ -104,6 +116,12 @@ license: MIT
 - Never omit `globals.mzn`.
 - Never rely on default search for non-trivial models.
 - Never leave symmetry unaddressed in symmetric problems.
+
+## DO NOT USE FOR:
+
+- Simple procedural logic.
+- Continuous, non-linear optimization.
+- General application development.
 
 ## Limitations & Safety
 

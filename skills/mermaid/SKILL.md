@@ -16,6 +16,18 @@ license: MIT
 **render compatibility** (GitHub, VS Code, Mermaid Live Editor, Markdown), **minimalism**, and **Easy-To-Change (ETC)**
 design so diagrams remain maintainable as systems evolve.
 
+**VISUALIZATION SKILL**
+INVOKES: `mermaid-beta`
+FOR SINGLE OPERATIONS: `write` or `edit` tool with `mermaid` code blocks
+
+## USE FOR:
+
+- "create a flowchart for this process"
+- "draw a sequence diagram of the interaction"
+- "visualize the database schema with an ER diagram"
+- "map the system architecture using C4"
+- "generate a mindmap of the project facts"
+
 ## When to Use
 
 - Agent must explain complex logic, system architecture, or requirements via diagrams.
@@ -750,6 +762,12 @@ mindmap
       ::icon(fa fa-minus)
         id_pit2_fix["Fix: Escape as '\,'"]
 ```
+
+## DO NOT USE FOR:
+
+- Complex, data-heavy visualizations better suited for specialized tools.
+- Real-time or highly interactive UI components.
+- Standard text-only documentation.
 
 ## Related Skills
 
