@@ -125,6 +125,9 @@ While the workflow is managed by `github-pr-review`, this skill focuses on analy
 - Quoting massive unchanged blocks in feedback. Highlight only the segments of code requiring attention.
 - Overlooking missing tests or shallow coverage.
 - Bypassing validation boundaries, leaking state, or hardcoding credentials.
+- Magic numbers or hardcoded strings without named constants.
+- Commented-out code left in the diff.
+- Adding dependencies without justification.
 
 ## Limitations
 
