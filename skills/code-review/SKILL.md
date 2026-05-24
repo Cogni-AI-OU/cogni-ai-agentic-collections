@@ -13,8 +13,6 @@ license: MIT
 
 Execute expert-level code reviews, dissecting codebases and Pull Requests (PRs) with surgical precision to identify logical flaws, architectural drift, performance bottlenecks, and security vulnerabilities before they merge.
 
-**REVIEW SKILL**
-
 ## WHEN TO USE
 
 - When explicitly asked to review, audit, or verify a Pull Request before it merges.
