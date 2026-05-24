@@ -20,6 +20,22 @@ claude plugin marketplace add Cogni-AI-OU/cogni-ai-agentic-collections
 
 ## Available Plugins
 
+### [cogni-ai-architect](cogni-ai-architect/)
+
+Elite autonomous architect agent with software-architecture skill for structural perfection and neurosymbolic verification.
+
+**Installation:**
+
+**GitHub Copilot:**
+```bash
+copilot plugin install cogni-ai-architect@cogni-ai-agentic-collections
+```
+
+**Claude Code:**
+```bash
+claude plugin install cogni-ai-architect@cogni-ai-agentic-collections
+```
+
 ### [cogni-ai-coder](cogni-ai-coder/)
 
 Autonomous coding agent with coding and critical-thinking skills.
@@ -66,22 +82,6 @@ copilot plugin install cogni-ai-developer@cogni-ai-agentic-collections
 **Claude Code:**
 ```bash
 claude plugin install cogni-ai-developer@cogni-ai-agentic-collections
-```
-
-### [cogni-ai-architect](cogni-ai-architect/)
-
-Elite autonomous architect agent with software-architecture skill for structural perfection and neurosymbolic verification.
-
-**Installation:**
-
-**GitHub Copilot:**
-```bash
-copilot plugin install cogni-ai-architect@cogni-ai-agentic-collections
-```
-
-**Claude Code:**
-```bash
-claude plugin install cogni-ai-architect@cogni-ai-agentic-collections
 ```
 
 ### [cogni-ai-dev-ops](cogni-ai-dev-ops/)
