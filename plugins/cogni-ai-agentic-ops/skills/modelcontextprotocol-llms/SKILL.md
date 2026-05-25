@@ -1,6 +1,10 @@
 ---
 name: modelcontextprotocol-llms
-description: 'Reference and APIs for retrieving Model Context Protocol (MCP) documentation programmatically for LLMs. You MUST load this skill when asked to search or retrieve MCP documentation. USE FOR: fetching MCP specs, reading protocol docs, discovering server/client implementations. DO NOT USE FOR: running MCP servers, writing MCP clients, SDK usage.'
+description: >-
+  Reference and APIs for retrieving Model Context Protocol (MCP) documentation programmatically for LLMs.
+  USE FOR: fetching MCP specs, reading protocol docs, discovering server/client implementations.
+  DO NOT USE FOR: running MCP servers, writing MCP clients, SDK usage.
+  You MUST load this skill when asked to search or retrieve MCP documentation.
 license: MIT
 ---
 
