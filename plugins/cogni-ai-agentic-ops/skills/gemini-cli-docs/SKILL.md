@@ -27,7 +27,7 @@ license: MIT
 1. **Identify the Topic**: Determine the docs area (CLI reference, hooks, extensions, tools, tutorials, get-started, admin, reference, or core).
 2. **Fetch Doc Content**: Build the URL path using the pattern:
    ```text
-   https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/<area>/<filename>
+   https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/tags/v0.43.0/docs/<area>/<filename>
    ```
 3. **Process Content**: Extract relevant information to answer the query.
 
