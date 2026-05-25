@@ -34,6 +34,9 @@ license: MIT
 To fully utilize this skill, you MUST read at least one of the links relevant to the current context:
 
 - [Letta Documentation Index](https://docs.letta.com/llms.txt)
-  USE FOR: High-level overview, index of Letta documentation, finding specific documentation sections, and basic Letta concepts.
+  USE FOR: High-level overview, index of Letta documentation, navigation to specific guides, quick topic discovery,
+  basic Letta concepts, architecture summaries, and identifying the right page before deep retrieval.
 - [Letta Full Documentation](https://docs.letta.com/llms-full.txt)
-  USE FOR: Deep technical reference, comprehensive Letta SDK details, full API documentation, extensive code examples, and architecture details. Note: this file is very large and needs to be filtered due to size.
+  USE FOR: Deep technical reference, comprehensive Letta SDK details, full API documentation, endpoint behavior,
+  configuration details, extensive code examples, troubleshooting details, and architecture implementation guidance.
+  Note: this file is very large and needs to be filtered due to size.
