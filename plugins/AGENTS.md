@@ -55,3 +55,18 @@ Slash commands are invoked via `/agent:skill` in the Copilot CLI or VS Code Chat
 | `/cogni-ai-dev-ops:molecule` | Load the molecule skill -- Molecule testing workflows for Ansible roles |
 | `/cogni-ai-dev-ops:pulumi-cli` | Load the pulumi-cli skill -- Execute Pulumi CLI commands for stack management and infrastructure deployments |
 | `/cogni-ai-dev-ops:docker` | Load the docker skill -- How to run, manage, and troubleshoot Docker containers, images, and networks safely |
+| `/cogni-ai-agentic-ops:agent-md` | Load the agent-md skill -- Agent metadata formatting and syntax reference |
+| `/cogni-ai-agentic-ops:agent-md-writer` | Load the agent-md-writer skill -- Best practices for creating agent personas |
+| `/cogni-ai-agentic-ops:agent-skill-md-writer` | Load the agent-skill-md-writer skill -- Guidelines for creating and refining agent skills |
+| `/cogni-ai-agentic-ops:agents-md-writer` | Load the agents-md-writer skill -- Editor guidelines for maintaining AGENTS.md files |
+| `/cogni-ai-agentic-ops:agentskills` | Load the agentskills skill -- Agent Skills open standard reference |
+| `/cogni-ai-agentic-ops:ai-prompt-writer` | Load the ai-prompt-writer skill -- Guidelines for designing and optimizing AI prompts |
+| `/cogni-ai-agentic-ops:claude-llms` | Load the claude-llms skill -- Guides for Anthropic Claude LLMs |
+| `/cogni-ai-agentic-ops:copilot-cli` | Load the copilot-cli skill -- Configuration and usage guides for Copilot CLI |
+| `/cogni-ai-agentic-ops:copilot-docs` | Load the copilot-docs skill -- Copilot agent customization docs |
+| `/cogni-ai-agentic-ops:gemini-cli-docs` | Load the gemini-cli-docs skill -- Documentation references for Google Gemini CLI |
+| `/cogni-ai-agentic-ops:mcp-cli` | Load the mcp-cli skill -- Specifications for MCP CLI usage |
+| `/cogni-ai-agentic-ops:opencode` | Load the opencode skill -- Guidelines for the OpenCode ecosystem |
+| `/cogni-ai-agentic-ops:squad-cli` | Load the squad-cli skill -- Automation workflows for the Squad CLI |
+| `/cogni-ai-agentic-ops:waza-cli` | Load the waza-cli skill -- Workflows for the Waza tool |
+| `/cogni-ai-agentic-ops:waza-docs` | Load the waza-docs skill -- References for the Microsoft/Waza docs |

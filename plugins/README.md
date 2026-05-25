@@ -164,4 +164,22 @@ copilot plugin install cogni-ai-tester@cogni-ai-agentic-collections
 claude plugin install cogni-ai-tester@cogni-ai-agentic-collections
 ```
 
+### [cogni-ai-agentic-ops](cogni-ai-agentic-ops/)
+
+Autonomous operator for managing, maintaining, and refining agentic systems, skills, and agentic workflows.
+
+**Installation:**
+
+**GitHub Copilot:**
+
+```bash
+copilot plugin install Cogni-AI-OU/cogni-ai-agentic-collections:plugins/cogni-ai-agentic-ops
+```
+
+**Claude Code:**
+
+```bash
+claude plugin install cogni-ai-agentic-ops@cogni-ai-agentic-collections
+```
+
 Each plugin includes a `README.md` with detailed installation and usage instructions.

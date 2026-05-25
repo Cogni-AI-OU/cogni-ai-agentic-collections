@@ -55,6 +55,7 @@ claude plugin install cogni-ai-agentic-ops@cogni-ai-agentic-collections
 - **claude-llms** — Guides for Anthropic Claude LLMs.
 - **copilot-cli** — Configuration and usage guides for Copilot CLI.
 - **copilot-docs** — Copilot agent customization docs.
+- **gemini-cli-docs** — Documentation references for Google Gemini CLI.
 - **mcp-cli** — Specifications for MCP CLI usage.
 - **opencode** — Guidelines for the OpenCode ecosystem.
 - **squad-cli** — Automation workflows for the Squad CLI.
