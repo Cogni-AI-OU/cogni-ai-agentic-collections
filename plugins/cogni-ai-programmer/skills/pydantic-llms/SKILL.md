@@ -1,9 +1,10 @@
 ---
 name: pydantic-llms
-description: 'Reference and APIs for retrieving Pydantic documentation programmatically.
+description: >-
+  Reference and APIs for retrieving Pydantic documentation programmatically.
   USE FOR: Pydantic documentation search, data validation, models, settings, V2 migration.
   DO NOT USE FOR: General Python programming questions without Pydantic.
-  MUST LOAD WHEN: asked to search or retrieve Pydantic documentation.'
+  MUST LOAD WHEN: user explicitly requests Pydantic llms context files (llms.txt or llms-full.txt).
 license: MIT
 ---
 
