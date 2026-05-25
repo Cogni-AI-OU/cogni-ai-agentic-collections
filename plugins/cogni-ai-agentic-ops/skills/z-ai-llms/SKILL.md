@@ -1,6 +1,6 @@
 ---
 name: z-ai-llms
-description: |
+description: >-
   Reference and APIs for retrieving z.AI documentation programmatically for LLMs.
   USE FOR: searching z.AI docs, GLM models documentation, z.AI API reference, CogVideoX, Vidu, OpenCode integration with z.AI.
   DO NOT USE FOR: calling live z.AI API endpoints, invoking GLM models directly.
