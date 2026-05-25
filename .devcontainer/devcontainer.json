@@ -1,12 +1,12 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-  // "build": {
-  //   "dockerfile": "Dockerfile",
-  //   // Update 'VARIANT' to pick an Ubuntu version: jammy / ubuntu-22.04, focal / ubuntu-20.04, bionic /ubuntu-18.04
-  //   // Use ubuntu-22.04 or ubuntu-18.04 on local arm64/Apple Silicon.
-  //   // "args": { "VARIANT": "ubuntu-22.04" }
-  // },
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "noble"
+    }
+  },
 
   // Configure tool-specific properties.
   // Note: Keep the list in alphabetical order.
@@ -49,7 +49,7 @@
   // "postCreateCommand": "uname -a",
 
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  // "image": "mcr.microsoft.com/devcontainers/base:jammy",
 
   // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "vscode",
