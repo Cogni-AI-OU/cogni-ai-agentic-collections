@@ -56,6 +56,7 @@ claude plugin install cogni-ai-agentic-ops@cogni-ai-agentic-collections
 - **copilot-cli** — Configuration and usage guides for Copilot CLI.
 - **copilot-docs** — Copilot agent customization docs.
 - **mcp-cli** — Specifications for MCP CLI usage.
+- **modelcontextprotocol-llms** — Reference and APIs for retrieving Model Context Protocol (MCP) documentation.
 - **opencode** — Guidelines for the OpenCode ecosystem.
 - **squad-cli** — Automation workflows for the Squad CLI.
 - **waza-cli** — Workflows for the Waza tool.
