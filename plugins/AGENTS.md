@@ -49,6 +49,7 @@ Slash commands are invoked via `/agent:skill` in the Copilot CLI or VS Code Chat
 | `/cogni-ai-dev-ops:molecule` | Load the molecule skill -- Molecule testing workflows for Ansible roles |
 | `/cogni-ai-dev-ops:pulumi-cli` | Load the pulumi-cli skill -- Execute Pulumi CLI commands for stack management and infrastructure deployments |
 | `/cogni-ai-developer:bun-llms` | Load the bun-llms skill -- reference and APIs for retrieving Bun documentation programmatically for LLMs |
+| `/cogni-ai-developer:code-visualstudio-llms` | Load the code-visualstudio-llms skill -- reference and APIs for retrieving Visual Studio Code documentation programmatically for LLMs |
 | `/cogni-ai-developer:development` | Load the development skill -- full-cycle software development workflow from requirements and system design through deployment, monitoring, and iteration |
 | `/cogni-ai-developer:npm-cli` | Load the npm-cli skill -- reference and index of documentation pages for npm CLI commands and configurations |
 | `/cogni-ai-developer:tdd` | Load the tdd skill -- commands, step-by-step procedures, and mechanical execution for test engineering, testability audits, and the TDD lifecycle |
