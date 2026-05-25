@@ -28,14 +28,15 @@
       ansible.builtin.command:
         argv:
           - pipx
-          - inject
+          - runpip
           - ansible
+          - install
           - -r
           - '{{ playbook_dir }}/requirements-ansible.txt'
       become: false
-      register: pipx_inject
-      changed_when: "'is already injected' not in pipx_inject.stderr"
-      failed_when: pipx_inject.rc != 0 and 'is already injected' not in pipx_inject.stderr
+      register: pipx_runpip
+      changed_when: "'Successfully installed' in (pipx_runpip.stdout + pipx_runpip.stderr)"
+      failed_when: pipx_runpip.rc != 0
     - name: Install python requirements
       ansible.builtin.pip:
         requirements: '{{ playbook_dir }}/requirements.txt'
