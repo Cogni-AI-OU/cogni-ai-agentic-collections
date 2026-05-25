@@ -7,7 +7,7 @@ software that delivers user and business value.
 
 | | |
 | --- | --- |
-| **Description** | Autonomous developer agent with development, tdd, critical-thinking, npm-cli, code-visualstudio-llms, and bun-llms skills |
+| **Description** | Autonomous developer agent with development, tdd, npm-cli, VS Code docs, and bun skills |
 
 ## Slash Commands
 
@@ -18,7 +18,7 @@ software that delivers user and business value.
 | `/cogni-ai-developer:critical-thinking` | Cognitive framework for deep analytical reasoning |
 | `/cogni-ai-developer:npm-cli` | Reference and index of documentation pages for npm CLI commands |
 | `/cogni-ai-developer:bun-llms` | Reference and APIs for retrieving Bun documentation programmatically for LLMs |
-| `/cogni-ai-developer:code-visualstudio-llms` | Reference and APIs for retrieving Visual Studio Code documentation programmatically for LLMs |
+| `/cogni-ai-developer:code-visualstudio-llms` | Reference and APIs for retrieving VS Code documentation for LLMs |
 
 ## Installation
 
