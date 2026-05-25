@@ -28,7 +28,7 @@ license: MIT
 
 ## Common Pitfalls
 
-- **Fetching `llms-full.txt` without narrowing the scope**: `https://bun.com/llms-full.txt` is large. Prefer the index or a targeted document when possible, and filter aggressively if you must use the full file.
+- **Fetching `llms-full.txt` without narrowing the scope**. Prefer the index or a targeted document when possible, and filter aggressively if you must use the full file.
 - **Using this skill for non-Bun ecosystems**: Route Node.js, npm, yarn, pnpm, or Deno documentation requests to the appropriate skill instead of relying on Bun references.
 
 ## References
