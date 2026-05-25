@@ -1,6 +1,9 @@
 ---
 name: bun-llms
-description: 'Reference and APIs for retrieving Bun documentation programmatically for LLMs. USE FOR: bun, bunjs, bun.sh, bun run, bun install, bun test, bun build, package manager, javascript runtime, bundler, test runner. DO NOT USE FOR: nodejs, npm, yarn, pnpm, deno. You MUST load this skill when asked to search or retrieve Bun documentation.'
+description: >-
+  Reference and APIs for retrieving Bun documentation programmatically for LLMs.
+  USE FOR: bun, bunjs, bun.sh, bun run, bun install, bun test, bun build, package manager, javascript runtime, bundler, test runner.
+  DO NOT USE FOR: nodejs, npm, yarn, pnpm, deno. You MUST load this skill when asked to search or retrieve Bun documentation.
 license: MIT
 ---
 
