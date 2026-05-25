@@ -35,10 +35,10 @@ license: MIT
 To fully utilize this skill, you MUST read at least one of the links relevant to the current context:
 
 - [OpenAI Developers](https://developers.openai.com/llms.txt)
-  USE FOR: Documentation sets, API overview, platform docs navigation.
+  USE FOR: High-level platform overview, getting started guidance, and the main documentation index.
 - [OpenAI Developers Full Docs](https://developers.openai.com/llms-full.txt)
   USE FOR: Full single-file Markdown export of all developers docs (large, so needs to be filtered).
 - [OpenAI API Docs](https://developers.openai.com/api/docs/llms.txt)
-  USE FOR: Documentation sets, Actions, Assistants, Bots, Concepts, Deprecations, GPTs, Guides, Libraries, MCP, Pricing, Quickstart, Supported Countries, Tutorials, UI Kit Demo.
+  USE FOR: Actions, Assistants, Bots, Concepts, Deprecations, GPTs, Guides, Libraries, MCP, Pricing, Quickstart, Supported Countries, Tutorials, UI Kit Demo.
 - [OpenAI API Docs Full](https://developers.openai.com/api/docs/llms-full.txt)
   USE FOR: Full single-file export of API guides and conceptual docs (large, so needs to be filtered).
