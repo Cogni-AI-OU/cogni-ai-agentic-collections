@@ -51,4 +51,85 @@ Use `webfetch` or equivalent to retrieve raw markdown files.
 
 ## References
 
+### Docs (root)
+- [CONTRIBUTING.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/CONTRIBUTING.md)
+- [index.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/index.md)
+- [local-development.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/local-development.md)
+- [npm.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/npm.md)
+- [releases.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/releases.md)
+
+### Admin
+- [enterprise-controls.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/admin/enterprise-controls.md)
+
+### CLI
+- [cli-reference.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/cli-reference.md)
+- [creating-skills.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/creating-skills.md)
+- [generation-settings.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/generation-settings.md)
+- [model-routing.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/model-routing.md)
+- [plan-mode.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/plan-mode.md)
+- [sandbox.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/sandbox.md)
+- [session-management.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/session-management.md)
+- [skills.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/skills.md)
+- [system-prompt.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/system-prompt.md)
+- [themes.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/themes.md)
+- [token-caching.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/token-caching.md)
+- [trusted-folders.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/trusted-folders.md)
+
+### CLI Tutorials
+- [automation.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/automation.md)
+- [mcp-setup.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/mcp-setup.md)
+- [memory-management.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/memory-management.md)
+- [shell-commands.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/shell-commands.md)
+- [skills-getting-started.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/skills-getting-started.md)
+- [task-planning.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/task-planning.md)
+- [web-tools.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/web-tools.md)
+
+### Core
+- [gemma-setup.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/core/gemma-setup.md)
+- [local-model-routing.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/core/local-model-routing.md)
+- [remote-agents.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/core/remote-agents.md)
+- [subagents.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/core/subagents.md)
+
+### Extensions
+- [best-practices.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/extensions/best-practices.md)
+- [reference.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/extensions/reference.md)
+- [releasing.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/extensions/releasing.md)
+- [writing-extensions.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/extensions/writing-extensions.md)
+
+### Get Started
+- [authentication.mdx](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/get-started/authentication.mdx)
+- [installation.mdx](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/get-started/installation.mdx)
+- [gemini-3.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/get-started/gemini-3.md)
+
+### Hooks
+- [best-practices.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/hooks/best-practices.md)
+- [reference.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/hooks/reference.md)
+- [writing-hooks.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/hooks/writing-hooks.md)
+
+### IDE Integration
+- [ide-companion-spec.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/ide-integration/ide-companion-spec.md)
+
+### Reference
+- [commands.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/commands.md)
+- [configuration.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/configuration.md)
+- [keyboard-shortcuts.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/keyboard-shortcuts.md)
+- [policy-engine.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/policy-engine.md)
+- [tools.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/tools.md)
+
+### Resources
+- [faq.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/faq.md)
+- [quota-and-pricing.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/quota-and-pricing.md)
+- [troubleshooting.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/troubleshooting.md)
+- [uninstall.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/uninstall.md)
+
+### Tools
+- [activate-skill.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/activate-skill.md)
+- [file-system.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/file-system.md)
+- [mcp-server.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/mcp-server.md)
+- [memory.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/memory.md)
+- [planning.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/planning.md)
+- [shell.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/shell.md)
+- [web-fetch.md](https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/web-fetch.md)
+
+### Repository
 - [Gemini CLI Repository](https://github.com/google-gemini/gemini-cli)
