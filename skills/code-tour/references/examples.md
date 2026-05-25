@@ -60,7 +60,7 @@ requiring the author to explain every file.
 
 ## github/codespaces-codeql -- The most technically complete example
 
-**Tour file:** <https://github.com/github/codespaces-codeql/blob/main/.tours/codeql-tutorial.tour>
+**Tour file:** <https://raw.githubusercontent.com/github/codespaces-codeql/refs/heads/main/.tours/codeql-tutorial.tour>
 **Persona:** Security engineer / concept learner
 **Steps:** 12 · **Depth:** Standard
 

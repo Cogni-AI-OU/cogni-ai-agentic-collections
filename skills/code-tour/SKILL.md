@@ -57,7 +57,7 @@ Find more with the GitHub code search: <https://github.com/search?q=path%3A**%2F
 | Minimal tutorial — tight `file+line` narration for interactive learning | <https://github.com/lostintangent/rock-paper-scissors/blob/master/main.tour> |
 | Multi-tour repo with `nextTour` chaining (cloud native OCI walkthroughs) | <https://github.com/lucasjellema/cloudnative-on-oci-2021/blob/main/.tours/oci-and-infrastructure-as-code.tour> |
 | `isPrimary: true` (marks the onboarding entry point) | <https://github.com/github/codespaces-learn-with-me/blob/main/.tours/main.tour> |
-| `pattern` instead of `line` (regex-anchored steps) | <https://github.com/github/codespaces-codeql/blob/main/.tours/codeql-tutorial.tour> |
+| `pattern` instead of `line` (regex-anchored steps) | <https://raw.githubusercontent.com/github/codespaces-codeql/refs/heads/main/.tours/codeql-tutorial.tour> |
 
 **Raw content tip:** Prefix `raw.githubusercontent.com` and drop `/blob/` for raw JSON access.
 
