@@ -69,7 +69,7 @@ For a human-readable overview, see [README.md](README.md).
 - Details: Uses `docker/metadata-action` for tagging and
   `docker/build-push-action` for building and pushing. Supports a matrix of platforms
   (e.g., `ubuntu-noble`).
-- Permissions: `packages: write`.
+- Permissions: `contents: read`, `packages: write`.
 
 ### waza-check.yml
 
