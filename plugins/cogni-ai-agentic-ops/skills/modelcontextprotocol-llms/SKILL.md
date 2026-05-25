@@ -12,14 +12,14 @@ license: MIT
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 
-## When to Use
+## WHEN TO USE
 
-- **Documentation Search**: Locating specific Model Context Protocol (MCP) documentation articles.
 - **Article Retrieval**: Fetching the full rendered markdown of a specific MCP docs page via its `llms.txt` or related context.
-- **Spec Verification**: Checking protocol specification details, transport options, or security considerations.
 - **Client/Server Discovery**: Finding available MCP server and client implementations.
+- **Documentation Search**: Locating specific Model Context Protocol (MCP) documentation articles.
+- **Spec Verification**: Checking protocol specification details, transport options, or security considerations.
 
-## When Not to Use
+## WHEN NOT TO USE
 
 - **MCP Protocol Operations**: Interacting with live MCP servers or building servers. Use appropriate tools or SDKs for that.
 - **SDK Usage**: Writing code that uses MCP SDKs directly. This skill only provides documentation context.
