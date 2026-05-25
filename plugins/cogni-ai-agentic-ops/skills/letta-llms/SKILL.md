@@ -22,7 +22,7 @@ license: MIT
 ## Core Process
 
 1. **Identify the Need**: Determine whether you need to search for a topic or fetch a specific known documentation path in the Letta documentation.
-2. **Execute the Query**: Use `webfetch` to fetch the data from the llms.txt reference or relevant URLs.
+2. **Execute the Query**: Fetch the data from the llms.txt reference or relevant URLs.
 3. **Process Content**: Extract the relevant information to answer the user's query or inform the ongoing task.
 
 ## Common Pitfalls
