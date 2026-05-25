@@ -26,6 +26,11 @@ license: MIT
 2. **Execute the Query**: Use `webfetch` to fetch the data from the llms.txt reference or relevant URLs.
 3. **Process Content**: Extract the relevant information to answer the user's query or inform the ongoing task.
 
+## Common Pitfalls
+
+- **Fetching `llms-full.txt` without narrowing the scope**: `https://bun.com/llms-full.txt` is large. Prefer the index or a targeted document when possible, and filter aggressively if you must use the full file.
+- **Using this skill for non-Bun ecosystems**: Route Node.js, npm, yarn, pnpm, or Deno documentation requests to the appropriate skill instead of relying on Bun references.
+
 ## References
 
 To fully utilize this skill, you MUST read at least one of the links relevant to the current context:
