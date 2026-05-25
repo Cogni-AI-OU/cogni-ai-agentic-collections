@@ -27,17 +27,22 @@ license: MIT
 
 To fully utilize this skill, you MUST read at least one of the links relevant to the current context:
 
-- [Agent SDK overview](https://code.claude.com/docs/en/agent-sdk.md)
+- [Agent SDK overview](https://code.claude.com/docs/en/agent-sdk)
   Includes: Get started, Capabilities (Built-in tools, Hooks, Subagents, MCP, Permissions, Sessions),
   Features (Agent SDK vs Client SDK, Agent SDK vs Claude Code CLI, Agent SDK vs Managed Agents),
   Compare the Agent SDK to other Claude tools, Guidelines.
-  USE FOR: `Agent SDK`, `Capabilities`, `Hooks`, `Subagents`, `MCP`, `Permissions`, `Sessions`.
+  USE FOR: `Agent SDK`, `SDK setup`, `Capabilities`, `Built-in tools`, `Hooks`, `Subagents`, `MCP`,
+  `Permissions`, `Sessions`, `Client SDK comparisons`, `Managed Agents comparisons`, `SDK guidelines`.
 - [Anthropic Developer Documentation](https://platform.claude.com/llms.txt)
-  USE FOR: `Anthropic API`, `Models`, `Developer Guides`, `Rate Limits`.
+  USE FOR: `Anthropic API`, `API quickstart`, `Models`, `Developer guides`, `Rate limits`, `Pricing`,
+  `Streaming`, `Tool use`, `Prompting`.
 - [Anthropic Developer Documentation (Full)](https://platform.claude.com/llms-full.txt)
   (NOTE: This file is extremely large and SHOULD be filtered when loading).
-  USE FOR: `Full API Reference`, `Exhaustive Documentation`.
+  USE FOR: `Full API reference`, `Exhaustive documentation`, `Endpoint details`, `Schema details`,
+  `Parameter definitions`, `Error surfaces`.
 - [Claude Docs](https://claude.com/llms.txt)
-  USE FOR: `Claude Usage`, `General AI Capabilities`, `Claude UI Features`.
+  USE FOR: `Claude usage`, `Claude plans`, `General AI capabilities`, `Claude UI features`,
+  `Web app workflows`, `Product overview`.
 - [Claude Code Docs](https://code.claude.com/llms.txt)
-  USE FOR: `Claude Code CLI`, `Commands`, `Local Development`, `CLAUDE.md`.
+  USE FOR: `Claude Code CLI`, `CLI setup`, `Commands`, `Slash commands`, `Local development`,
+  `Project setup`, `CLAUDE.md`, `MCP setup`, `Agent workflows`.
