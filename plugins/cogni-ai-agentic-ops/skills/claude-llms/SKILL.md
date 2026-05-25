@@ -27,7 +27,7 @@ license: MIT
 
 To fully utilize this skill, you MUST read at least one of the links relevant to the current context:
 
-- [Agent SDK overview](https://code.claude.com/docs/en/agent-sdk)
+- [Agent SDK overview](https://code.claude.com/docs/en/agent-sdk.md)
   Includes: Get started, Capabilities (Built-in tools, Hooks, Subagents, MCP, Permissions, Sessions),
   Features (Agent SDK vs Client SDK, Agent SDK vs Claude Code CLI, Agent SDK vs Managed Agents),
   Compare the Agent SDK to other Claude tools, Guidelines.
