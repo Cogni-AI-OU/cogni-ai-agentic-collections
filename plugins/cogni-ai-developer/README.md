@@ -8,7 +8,6 @@ software that delivers user and business value.
 | | |
 | --- | --- |
 | **Description** | Autonomous developer agent with development, tdd, critical-thinking, npm-cli, and bun-llms skills |
-| **Contents** | 1 agent, 5 skills |
 
 ## Slash Commands
 
