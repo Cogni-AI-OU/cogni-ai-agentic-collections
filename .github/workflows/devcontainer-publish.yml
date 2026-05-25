@@ -45,13 +45,13 @@ jobs:
           images: ghcr.io/${{ github.repository }}
           tags: |
             # Immutable versioned tags: v1.0.4-ubuntu-noble
-            type=semver,pattern={{version}}-${{ matrix.platform }}
+            type=semver,pattern={{version}}-${{ matrix.platform }},enable=${{ startsWith(github.ref, 'refs/tags/v') }}
             # Distro rolling tags: ubuntu-noble
             type=raw,value=${{ matrix.platform }},enable=${{ env.IS_RELEASE == 'true' }}
             # Branch-specific platform tags: latest-ubuntu-noble (for default branch)
             type=raw,value=latest-${{ matrix.platform }},enable=${{ env.IS_DEFAULT_BRANCH == 'true' }}
             # Global rolling tags (only for default platform)
-            type=semver,pattern={{version}},enable=${{ matrix.is_default == true }}
+            type=semver,pattern={{version}},enable=${{ matrix.is_default == true && startsWith(github.ref, 'refs/tags/v') }}
             type=raw,value=latest,enable=${{ matrix.is_default == true && env.IS_RELEASE == 'true' }}
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
