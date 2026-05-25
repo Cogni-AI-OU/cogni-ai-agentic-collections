@@ -1,6 +1,10 @@
 ---
 name: openai-llms
-description: 'Reference and APIs for retrieving OpenAI documentation programmatically for LLMs. USE FOR: Documentation Search, Article Retrieval. DO NOT USE FOR: OpenAI API Operations. You MUST load this skill when asked to search or retrieve OpenAI documentation.'
+description: >-
+  Reference and APIs for retrieving OpenAI documentation programmatically for LLMs.
+  USE FOR: Documentation Search, Article Retrieval.
+  DO NOT USE FOR: OpenAI API Operations.
+  MUST LOAD WHEN: asked to search or retrieve OpenAI documentation.
 license: MIT
 ---
 
