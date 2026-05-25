@@ -11,12 +11,12 @@ license: MIT
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 
-## When to Use
+## WHEN TO USE
 
 - **Documentation Search**: Locating specific OpenAI API, guides, concepts, or reference documentation articles.
 - **Article Retrieval**: Fetching the full rendered markdown of a specific OpenAI docs page via its `llms.txt` or related context.
 
-## When Not to Use
+## WHEN NOT TO USE
 
 - **OpenAI API Operations**: Interacting with live OpenAI APIs to generate text, images, or audio. Use appropriate API endpoints or SDKs for that.
 
