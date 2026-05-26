@@ -202,9 +202,7 @@ Image and video generation are exposed as agent tools inside normal chat session
 You keep using a text model for the session, and Grok saves generated media under
 `.grok/generated-media/` by default unless you ask for a specific output path.
 
----
-
-## What you actually get
+## Features
 
 
 | Thing                             | What it means                                                                                                                                                                                                              |
