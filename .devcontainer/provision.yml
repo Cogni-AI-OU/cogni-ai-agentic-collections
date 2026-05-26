@@ -43,6 +43,16 @@
         extra_args: --break-system-packages --user
         state: present
       become: false
+    - name: Install Copilot CLI
+      ansible.builtin.command:
+        argv:
+          - gh
+          - copilot
+          - --
+          - --version
+      args:
+        creates: '{{ ansible_env.HOME }}/.local/share/gh/copilot/copilot'
+      become: false
     - name: Add Cogni AI plugin marketplace
       ansible.builtin.command:
         cmd: gh copilot plugin marketplace add Cogni-AI-OU/cogni-ai-agentic-collections
