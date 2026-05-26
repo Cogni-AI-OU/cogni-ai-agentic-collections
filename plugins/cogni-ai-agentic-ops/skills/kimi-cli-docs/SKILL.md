@@ -130,13 +130,13 @@ To fully utilize this skill, you MUST read at least one of the links relevant to
 - [Sandbox](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/sandbox.md)
   - USE FOR: sandbox, execution isolation, command restrictions, security boundaries, safe execution
 - [Session Management](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/session-management.md)
-  - USE FOR: session commands, session resume operations, history management, persistence controls, session operations
+  - USE FOR: session CLI commands, session command reference, resume command usage, history operations, persistence controls
 - [Settings](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/settings.md)
   - USE FOR: settings, config options, preferences, settings files, global/project configuration
 - [Skills Best Practices](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/skills-best-practices.md)
   - USE FOR: skills best practices, skill quality, maintainable skills, documentation standards, skill governance
 - [Skills](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/skills.md)
-  - USE FOR: skill system architecture, discovery and activation flow, skill lifecycle concepts, capability composition, conceptual skills reference
+  - USE FOR: skill system architecture, discovery and activation flow, skills architecture concepts, capability composition, skills conceptual model
 - [System Prompt](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/system-prompt.md)
   - USE FOR: system prompt, prompt overrides, base instructions, behavior policy, instruction customization
 - [Telemetry](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/telemetry.md)
