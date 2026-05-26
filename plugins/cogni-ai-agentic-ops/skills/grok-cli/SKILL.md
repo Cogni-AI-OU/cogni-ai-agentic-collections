@@ -354,6 +354,8 @@ bun run lint
 ## References
 
 - [grok-cli GitHub Repository](https://github.com/superagent-ai/grok-cli)
+  - USE FOR: source code, issues, contributing, releases, changelog, roadmap, CI/CD status.
 - [x.ai CLI Documentation](https://docs.x.ai/llms.txt)
+  - USE FOR: API reference, authentication, models, endpoints, rate limits, SDKs, streaming, batch API.
 - [Troubleshooting](./references/troubleshooting.md)
   - USE FOR: installation, API key, terminal UI, Telegram, sandbox, and performance issues.
