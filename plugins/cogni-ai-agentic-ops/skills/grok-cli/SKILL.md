@@ -40,7 +40,7 @@ An open-source coding agent for the Grok API.
 export GROK_API_KEY=your_key_here
 ```
 
-`**.env**` in the project (see `.env.example` if present):
+`.env` in the project (see `.env.example` if present):
 
 ```bash
 GROK_API_KEY=your_key_here
@@ -58,7 +58,7 @@ grok -k your_key_here
 { "apiKey": "your_key_here" }
 ```
 
-Optional `**subAgents**` — custom foreground sub-agents. Each entry needs `**name**`, `**model**`, and `**instruction**`:
+Optional **subAgents** — custom foreground sub-agents. Each entry needs **name**, **model**, and **instruction**:
 
 ```json
 {
@@ -74,7 +74,7 @@ Optional `**subAgents**` — custom foreground sub-agents. Each entry needs `**n
 
 Names cannot be `general`, `explore`, `vision`, `verify`, or `computer` because those are reserved for the built-in sub-agents.
 
-Optional: `**GROK_BASE_URL**` (default `https://api.x.ai/v1`), `**GROK_MODEL**`, `**GROK_MAX_TOKENS**`.
+Optional: **GROK_BASE_URL** (default `https://api.x.ai/v1`), **GROK_MODEL**, **GROK_MAX_TOKENS**.
 
 ## Core Process
 
@@ -187,7 +187,7 @@ grok "Use the computer sub-agent to launch Google Chrome, snapshot the UI, and t
 
 Notes:
 
-- Screenshots are saved under `**.grok/computer/**` by default.
+- Screenshots are saved under `.grok/computer/` by default.
 - The primary workflow is **snapshot -> refs -> action -> snapshot** using `agent-desktop` accessibility snapshots and stable refs like `@e1`.
 - `computer_screenshot` is available for visual confirmation, but the preferred path is `computer_snapshot` plus ref-based actions such as `computer_click`, `computer_type`, and `computer_scroll`.
 - macOS requires **System Settings → Privacy & Security → Accessibility** access for the terminal app running `grok`.
@@ -250,25 +250,25 @@ You keep using a text model for the session, and Grok saves generated media unde
 | Thing                             | What it means                                                                                                                                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Built for the Grok API**        | Defaults tuned for the xAI API; models like `grok-4.3`, `grok-4.20-non-reasoning`, `grok-4.20-multi-agent-0309`, plus current flagship and multi-agent variants—run `grok models` for the full menu.                       |
-| **X + web search**                | `**search_x`** and `**search_web`** tools—live posts and docs without pretending the internet stopped in 2023.                                                                                                             |
-| **Media generation**              | Built-in `**generate_image`** and `**generate_video`** tools for text-to-image, image editing, text-to-video, and image-to-video flows. Generated files are saved locally so you can reuse them after the xAI URLs expire. |
-| **Sub-agents (default behavior)** | Foreground `**task`** delegation (e.g. explore, general, or computer) plus background `**delegate`** for read-only deep dives—parallelize like you mean it.                                                                |
-| **Verify**                        | `**/verify`** or `**--verify`** — inspects your app, builds, tests, boots it, and runs browser smoke checks in a sandboxed environment. Screenshots and video included.                                                    |
-| **Computer use**                  | Built-in `**computer`** sub-agent for host desktop automation via `**agent-desktop`**. It prefers semantic accessibility snapshots and stable refs, with screenshots saved under `**.grok/computer/**` when requested.     |
+| **X + web search**                | `search_x` and `search_web` tools—live posts and docs without pretending the internet stopped in 2023.                                                                                       |
+| **Media generation**              | Built-in `generate_image` and `generate_video` tools for text-to-image, image editing, text-to-video, and image-to-video flows. Generated files are saved locally so you can reuse them after the xAI URLs expire. |
+| **Sub-agents (default behavior)** | Foreground `task` delegation (e.g. explore, general, or computer) plus background `delegate` for read-only deep dives—parallelize like you mean it.                                           |
+| **Verify**                        | `/verify` or `--verify` — inspects your app, builds, tests, boots it, and runs browser smoke checks in a sandboxed environment. Screenshots and video included.                               |
+| **Computer use**                  | Built-in `computer` sub-agent for host desktop automation via `agent-desktop`. It prefers semantic accessibility snapshots and stable refs, with screenshots saved under `.grok/computer/` when requested.     |
 | **Custom sub-agents**             | Define named agents with `subAgents` in `~/.grok/user-settings.json` and manage them from the TUI with `/agents`.                                                                                                          |
-| **Remote control**                | Pair **Telegram** from the TUI (`/remote-control` → Telegram): DM your bot, `**/pair`**, approve the code in-terminal. Keep the CLI running while you ping it from your phone.                                             |
+| **Remote control**                | Pair **Telegram** from the TUI (`/remote-control` → Telegram): DM your bot, `/pair`, approve the code in-terminal. Keep the CLI running while you ping it from your phone.                    |
 | **No “mystery meat” UI**          | OpenTUI React terminal UI—fast, keyboard-driven, not whatever glitchy thing you’re thinking of.                                                                                                                            |
-| **Skills**                        | Agent Skills under `**.agents/skills/<name>/SKILL.md`** (project) or `**~/.agents/skills/`** (user). Use `**/skills**` in the TUI to list what’s installed.                                                                |
-| **MCPs**                          | Extend with Model Context Protocol servers—configure via `**/mcps`** in the TUI or `**.grok/settings.json`** (`mcpServers`).                                                                                               |
-| **Sessions**                      | Conversations persist; `**--session latest`** picks up where you left off.                                                                                                                                                 |
-| **Headless**                      | `**--prompt`** / `**-p`** for non-interactive runs—pipe it, script it, bench it.                                                                                                                                           |
+| **Skills**                        | Agent Skills under `.agents/skills/<name>/SKILL.md` (project) or `~/.agents/skills/` (user). Use `/skills` in the TUI to list what’s installed.                                                |
+| **MCPs**                          | Extend with Model Context Protocol servers—configure via `/mcps` in the TUI or `.grok/settings.json` (`mcpServers`).                                                                          |
+| **Sessions**                      | Conversations persist; `--session latest` picks up where you left off.                                                                                                                        |
+| **Headless**                      | `--prompt` / `-p` for non-interactive runs—pipe it, script it, bench it.                                                                                                                      |
 | **Hackable**                      | TypeScript, clear agent loop, bash-first tools—fork it, shamelessly.                                                                                                                                                       |
 
 ## Telegram (remote control) — short version
 
 1. Create a bot with [@BotFather](https://t.me/BotFather), copy the token.
-2. Set `**TELEGRAM_BOT_TOKEN**` or add `**telegram.botToken**` in `~/.grok/user-settings.json` (the TUI `**/remote-control**` flow can save it).
-3. Start `**grok**`, open `**/remote-control**` → **Telegram** if needed, then in Telegram DM your bot: `/pair`, enter the **6-character code** in the terminal when asked.
+2. Set **TELEGRAM_BOT_TOKEN** or add **telegram.botToken** in `~/.grok/user-settings.json` (the TUI `/remote-control` flow can save it).
+3. Start **grok**, open `/remote-control` → **Telegram** if needed, then in Telegram DM your bot: `/pair`, enter the **6-character code** in the terminal when asked.
 4. First user must be approved once; after that, it’s remembered. **Keep the CLI process running** while you use the bot (long polling lives in that process).
 
 ### Voice & audio messages
@@ -360,7 +360,7 @@ All settings are saved in `~/.grok/user-settings.json` (user) and `.grok/setting
 
 ### Verify
 
-Run `**/verify`** in the TUI or `**--verify`** on the CLI to verify your app locally:
+Run `/verify` in the TUI or `--verify` on the CLI to verify your app locally:
 
 ```bash
 grok --verify
