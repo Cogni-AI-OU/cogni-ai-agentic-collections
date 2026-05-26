@@ -57,7 +57,7 @@ license: MIT
 ## Common Pitfalls
 
 - **Using `turbo` for Translation**: Pitfall: Using `whisper --model turbo --task translate`. Prevention: The `turbo` model is not trained for translation tasks. Switch to `--model medium` or `--model large`.
-- **Missing Dependencies**: Pitfall: `whisper` fails to run due to missing `ffmpeg` or `rust`. Prevention: Ensure `ffmpeg` is installed via system package manager (e.g., `apt install ffmpeg`, `brew install ffmpeg`).
+- **Missing Dependencies**: Pitfall: `whisper` fails to run due to missing `ffmpeg` or Rust. Prevention: Ensure `ffmpeg` is installed via system package manager (e.g., `apt install ffmpeg`, `brew install ffmpeg`).
 
 ## References
 
