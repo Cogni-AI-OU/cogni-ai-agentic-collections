@@ -26,8 +26,11 @@ contributor-covenant.org
 cs.arizona.edu
 cssguidelin.es
 dev.to
+developers.openai.com
 docs.datadoghq.com
 docs.djangoproject.com
+docs.eiffel.com
+docs.letta.com
 docs.name.com
 docs.pydantic.dev
 docs.z.ai
@@ -36,6 +39,7 @@ en.wikibooks.org
 example.com
 freecodecamp.org
 galaxy.ansible.com
+geminicli.com
 gh.io
 ghcr.io
 github.blog
@@ -67,6 +71,8 @@ perldoc.perl.org
 phptherightway.com
 pkg-containers.githubusercontent.com
 platform.claude.com
+possibility.com
+pydantic.dev
 raw.githubusercontent.com
 react.dev
 reactnative.dev
@@ -90,6 +96,7 @@ web.archive.org
 www.astronomer.io
 www.dre.vanderbilt.edu
 www.eiffel.com
+www.ibm.com
 www.kernel.org
 www.name.com
 www.objenv.com
