@@ -39,6 +39,7 @@
       failed_when: pipx_runpip.rc != 0
     - name: Install python requirements
       ansible.builtin.pip:
+        executable: /usr/local/bin/pip3
         requirements: '{{ playbook_dir }}/requirements.txt'
         extra_args: --user
         state: present
