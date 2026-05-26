@@ -50,9 +50,8 @@
           - copilot
           - --
           - --version
-      args:
-        creates: '{{ ansible_env.HOME }}/.local/share/gh/copilot/copilot'
       become: false
+      changed_when: false
     - name: Add Cogni AI plugin marketplace
       ansible.builtin.command:
         cmd: gh copilot plugin marketplace add Cogni-AI-OU/cogni-ai-agentic-collections
