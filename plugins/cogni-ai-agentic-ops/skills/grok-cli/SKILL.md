@@ -11,8 +11,6 @@ license: MIT
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 
-You MUST load this skill when interacting with the grok-cli command.
-
 An open-source coding agent for the Grok API.
 
 ## WHEN TO USE
@@ -358,4 +356,4 @@ bun run lint
 - [grok-cli GitHub Repository](https://github.com/superagent-ai/grok-cli)
 - [x.ai CLI Documentation](https://docs.x.ai/llms.txt)
 - [Troubleshooting](./references/troubleshooting.md)
-  USE FOR: installation, API key, terminal UI, Telegram, sandbox, and performance issues.
+  - USE FOR: installation, API key, terminal UI, Telegram, sandbox, and performance issues.
