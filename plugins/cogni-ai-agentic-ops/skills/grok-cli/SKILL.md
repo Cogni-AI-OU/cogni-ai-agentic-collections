@@ -74,7 +74,7 @@ Optional `subAgents` — custom foreground sub-agents. Each entry needs `name`, 
 
 Names cannot be `general`, `explore`, `vision`, `verify`, or `computer` because those are reserved for the built-in sub-agents.
 
-Optional: **GROK_BASE_URL** (default `https://api.x.ai/v1`), **GROK_MODEL**, **GROK_MAX_TOKENS**.
+Optional: `GROK_BASE_URL` (default `https://api.x.ai/v1`), `GROK_MODEL`, `GROK_MAX_TOKENS`.
 
 ## Core Process
 
