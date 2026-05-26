@@ -75,6 +75,7 @@ An open-source coding agent for the Grok API.
 - `grok trace` - Export or upload session trace data
 - `grok update` - Check for updates or install a specific version
 - `grok worktree` - Manage Git worktrees
+
 ## Run it
 
 **Interactive (default)** — launches the OpenTUI coding agent:
@@ -204,23 +205,20 @@ You keep using a text model for the session, and Grok saves generated media unde
 
 ## Features
 
-
-| Thing                             | What it means                                                                                                                                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Built for the Grok API**        | Defaults tuned for the xAI API; models like `grok-4.3`, `grok-4.20-non-reasoning`, `grok-4.20-multi-agent-0309`, plus current flagship and multi-agent variants—run `grok models` for the full menu.                       |
-| **X + web search**                | `search_x` and `search_web` tools—live posts and docs without pretending the internet stopped in 2023.                                                                                       |
-| **Media generation**              | Built-in `generate_image` and `generate_video` tools for text-to-image, image editing, text-to-video, and image-to-video flows. Generated files are saved locally so you can reuse them after the xAI URLs expire. |
-| **Sub-agents (default behavior)** | Foreground `task` delegation (e.g. explore, general, or computer) plus background `delegate` for read-only deep dives—parallelize like you mean it.                                           |
-| **Verify**                        | `/verify` or `--verify` — inspects your app, builds, tests, boots it, and runs browser smoke checks in a sandboxed environment. Screenshots and video included.                               |
-| **Computer use**                  | Built-in `computer` sub-agent for host desktop automation via `agent-desktop`. It prefers semantic accessibility snapshots and stable refs, with screenshots saved under `.grok/computer/` when requested.     |
-| **Custom sub-agents**             | Define named agents with `subAgents` in `~/.grok/user-settings.json` and manage them from the TUI with `/agents`.                                                                                                          |
-| **Remote control**                | Pair **Telegram** from the TUI (`/remote-control` → Telegram): DM your bot, `/pair`, approve the code in-terminal. Keep the CLI running while you ping it from your phone.                    |
-| **No “mystery meat” UI**          | OpenTUI React terminal UI—fast, keyboard-driven, not whatever glitchy thing you’re thinking of.                                                                                                                            |
-| **Skills**                        | Agent Skills under `.agents/skills/<name>/SKILL.md` (project) or `~/.agents/skills/` (user). Use `/skills` in the TUI to list what’s installed.                                                |
-| **MCPs**                          | Extend with Model Context Protocol servers—configure via `/mcps` in the TUI or `.grok/settings.json` (`mcpServers`).                                                                          |
-| **Sessions**                      | Conversations persist; `--session latest` picks up where you left off.                                                                                                                        |
-| **Headless**                      | `--prompt` / `-p` for non-interactive runs—pipe it, script it, bench it.                                                                                                                      |
-| **Hackable**                      | TypeScript, clear agent loop, bash-first tools—fork it, shamelessly.                                                                                                                                                       |
+- **Built for the Grok API** — Defaults tuned for the xAI API; models like `grok-4.3`, `grok-4.20-non-reasoning`, `grok-4.20-multi-agent-0309`, plus current flagship and multi-agent variants—run `grok models` for the full menu.
+- **X + web search** — `search_x` and `search_web` tools—live posts and docs without pretending the internet stopped in 2023.
+- **Media generation** — Built-in `generate_image` and `generate_video` tools for text-to-image, image editing, text-to-video, and image-to-video flows. Generated files are saved locally so you can reuse them after the xAI URLs expire.
+- **Sub-agents (default behavior)** — Foreground `task` delegation (e.g. explore, general, or computer) plus background `delegate` for read-only deep dives—parallelize like you mean it.
+- **Verify** — `/verify` or `--verify` inspects your app, builds, tests, boots it, and runs browser smoke checks in a sandboxed environment. Screenshots and video included.
+- **Computer use** — Built-in `computer` sub-agent for host desktop automation via `agent-desktop`. It prefers semantic accessibility snapshots and stable refs, with screenshots saved under `.grok/computer/` when requested.
+- **Custom sub-agents** — Define named agents with `subAgents` in `~/.grok/user-settings.json` and manage them from the TUI with `/agents`.
+- **Remote control** — Pair **Telegram** from the TUI (`/remote-control`): DM your bot, `/pair`, approve the code in-terminal. Keep the CLI running while you ping it from your phone.
+- **No "mystery meat" UI** — OpenTUI React terminal UI—fast, keyboard-driven.
+- **Skills** — Agent Skills under `.agents/skills/<name>/SKILL.md` (project) or `~/.agents/skills/` (user). Use `/skills` in the TUI to list what's installed.
+- **MCPs** — Extend with Model Context Protocol servers—configure via `/mcps` in the TUI or `.grok/settings.json` (`mcpServers`).
+- **Sessions** — Conversations persist; `--session latest` picks up where you left off.
+- **Headless** — `--prompt` / `-p` for non-interactive runs—pipe it, script it, bench it.
+- **Hackable** — TypeScript, clear agent loop, bash-first tools—fork it, shamelessly.
 
 ## Telegram (remote control) — short version
 
@@ -233,7 +231,7 @@ You keep using a text model for the session, and Grok saves generated media unde
 
 Send a voice note or audio attachment in Telegram and Grok will transcribe it with the **Grok Speech-to-Text API** (`POST https://api.x.ai/v1/stt`) before passing the text to the agent. The endpoint accepts Telegram's OGG/Opus voice notes and common audio containers (MP3, WAV, M4A, FLAC, AAC) directly — no local model download, `whisper-cli`, or `ffmpeg` required.
 
-#### Prerequisites
+#### Audio Prerequisites
 
 - A valid `GROK_API_KEY` (the same key used for the agent). Transcription reuses the CLI's `apiKey` / `baseURL` resolution, so if the agent can reach xAI, transcription will too.
 
@@ -246,11 +244,9 @@ Send a voice note or audio attachment in Telegram and Grok will transcribe it wi
     "audioInput": {
       "enabled": true,
       "language": "en"
-    }
   }
 }
 ```
-
 
 | Setting    | Default | Description                                                                                                           |
 | ---------- | ------- | --------------------------------------------------------------------------------------------------------------------- |
