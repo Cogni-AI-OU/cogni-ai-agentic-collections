@@ -4,7 +4,7 @@ description: >
   Manage and run the grok-cli coding agent.
   USE FOR: grok terminal, xAI Grok API, headless grok, sub-agents, telegram remote control, sandbox mode, hooks configuration.
   USE FOR: (https://docs.x.ai/llms.txt) x.ai CLI, agent, completions, export, import, inspect, leader, login, logout, mcp, memory, models, plugin, sessions, setup, ssh, trace, update, version, worktree.
-  USE FOR: (https://github.com/superagent-ai/grok-cli) grok-dev, OpenTUI, web search, media generation, generate_image, generate_video, task, delegate, verify, shuru microVM.
+  USE FOR: (https://github.com/superagent-ai/grok-cli) grok-dev, OpenTUI, web search, media generation, generate_image, generate_video, task, delegate, verify, Shuru microVM.
   DO NOT USE FOR: general xAI API integration without the CLI, non-grok agents. You MUST load this skill when interacting with the grok-cli command.
 license: MIT
 ---
