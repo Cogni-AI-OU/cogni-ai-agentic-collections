@@ -2,6 +2,8 @@
 
 <!-- markdownlint-disable MD013 -->
 
+For plugin installation and overview, see [README.md](README.md).
+
 ## Agent Roles
 
 Within the Cogni AI agent ecosystem, these roles are strictly delineated by capability, knowledge depth, and delegation hierarchy, rather than general industry titles:
