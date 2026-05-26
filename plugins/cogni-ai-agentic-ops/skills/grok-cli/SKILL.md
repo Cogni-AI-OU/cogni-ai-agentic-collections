@@ -15,7 +15,7 @@ license: MIT
 
 An open-source coding agent for the Grok API.
 
-## When to Use
+## WHEN TO USE
 
 - Executing `grok` terminal commands (interactive or headless).
 - Installing or updating the `grok-cli` via `curl` or `bun`.
@@ -24,7 +24,7 @@ An open-source coding agent for the Grok API.
 - Running headless automation, schedules, or `batch-api` tasks with Grok.
 - Verifying local applications using `grok --verify` and sandbox mode.
 
-## When Not to Use
+## WHEN NOT TO USE
 
 - General API requests to `api.x.ai` (use standard `curl` or SDKs instead).
 - Other AI coding agents (e.g., Claude Code, OpenCode) unless explicitly bridging or migrating.
