@@ -1,6 +1,8 @@
 ---
 name: agent-browser
-description: Use the host-side `agent-browser` CLI for local browser smoke tests, screenshots, snapshots, and simple UI validation against forwarded localhost URLs.
+description: >-
+  Use the host-side `agent-browser` CLI for local browser smoke tests, screenshots, snapshots, and simple UI validation against forwarded localhost URLs.
+  USE FOR: when interacting with `agent-browser` CLI.
 ---
 
 # agent-browser
