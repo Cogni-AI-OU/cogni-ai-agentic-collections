@@ -75,8 +75,8 @@ claude plugin install cogni-ai-agentic-ops@cogni-ai-agentic-collections
 - **npx-skills** — Install, find, update, and manage agent skills using the npx skills CLI tool.
 - **ollama-cli** — Execute and manage local LLMs using the ollama CLI,
   including pulling models and launching agents with MCP configurations.
-- **opencode** — Guidelines for the OpenCode ecosystem.
 - **openai-whisper-cli** — Command-line usage for OpenAI Whisper.
+- **opencode** — Guidelines for the OpenCode ecosystem.
 - **squad-cli** — Automation workflows for the Squad CLI.
 - **waza-cli** — Workflows for the Waza tool.
 - **waza-docs** — References for the Microsoft/Waza docs.
