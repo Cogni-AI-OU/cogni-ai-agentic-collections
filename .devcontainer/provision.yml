@@ -45,11 +45,7 @@
       become: false
     - name: Install Copilot CLI
       ansible.builtin.command:
-        argv:
-          - gh
-          - copilot
-          - --
-          - --version
+        cmd: npm install -g @github/copilot
       become: false
       changed_when: false
     - name: Add Cogni AI plugin marketplace
