@@ -231,7 +231,7 @@ When you find relevant skills, present options with:
 
 Example response (skill names are illustrative):
 
-```
+```text
 I found a skill that might help! The "<skill-name>" skill provides
 <description> from <source>.
 
@@ -275,7 +275,7 @@ If no relevant skills exist:
 
 Example:
 
-```
+```text
 I searched for skills related to "xyz" but didn't find any matches.
 I can still help you with this task directly! Would you like me to proceed?
 
