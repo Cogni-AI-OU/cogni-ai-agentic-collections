@@ -1,6 +1,8 @@
 ---
 name: npx-skills
-description: 'Install, find, update, and manage agent skills using the npx skills CLI tool for both agents and users. You MUST load this skill when asked to use the npx skills command, or when users or agents need to discover installable skills.'
+description: >-
+  Install, find, update, and manage agent skills using the npx skills CLI tool for both agents and users.
+  You MUST load this skill when asked to use the npx skills command, or when users or agents need to discover installable skills.
 license: MIT
 ---
 
