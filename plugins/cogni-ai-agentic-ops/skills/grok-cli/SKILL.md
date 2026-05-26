@@ -13,6 +13,8 @@ license: MIT
 
 <!-- markdownlint-disable MD013 MD023 MD031 MD032 -->
 
+An open-source coding agent for the Grok API.
+
 ## When to Use
 
 - Executing `grok` terminal commands (interactive or headless).
