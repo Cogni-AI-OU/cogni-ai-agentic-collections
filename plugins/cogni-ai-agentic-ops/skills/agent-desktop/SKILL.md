@@ -56,3 +56,7 @@ Stop and report clearly if:
 - The target app/window cannot be found.
 - Refs are stale or ambiguous after a UI transition.
 - The requested action could be destructive and the user did not explicitly ask for it.
+
+## References
+
+- [agent-desktop's SKILL](https://raw.githubusercontent.com/superagent-ai/grok-cli/refs/heads/main/.agents/skills/agent-desktop/SKILL.md)
