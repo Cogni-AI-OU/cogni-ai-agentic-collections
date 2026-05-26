@@ -1,13 +1,13 @@
 ---
 name: agent-desktop
 description: >-
-  Native desktop automation CLI for AI agents.
-  Use the built-in `Computer` sub-agent with `agent-desktop` for macOS desktop automation. Apply when a task needs application launching, accessibility snapshots, stable element refs, window focusing, semantic clicks/typing, or visual confirmation outside the browser sandbox.
+  USE FOR: Native desktop automation CLI for AI agents.
+  Use the built-in `Computer` sub-agent with `agent-desktop` for macOS desktop automation. Trigger words: desktop, app, application, launch, click, type, keypress, snapshot, accessibility, window, focus, scroll, native, macOS, UI automation.
 ---
 
 # agent-desktop
 
-Control any application through OS accessibility trees with structured JSON output and deterministic element refs.
+**USE FOR:** Host desktop automation through OS accessibility trees with structured JSON output and deterministic element refs.
 Use this skill when the task involves the host macOS desktop rather than repository files, shell output, or browser-only verification.
 
 This project uses `agent-desktop` on the host. Prefer the built-in `Computer` sub-agent for these tasks instead of trying to drive the desktop with plain shell commands.
@@ -50,6 +50,14 @@ This project uses `agent-desktop` on the host. Prefer the built-in `Computer` su
 - Keep actions reversible and low risk unless the user explicitly asked for something destructive.
 - If the accessibility tree is poor or ambiguous, use `computer_screenshot` for confirmation and explain the limitation.
 
+## DO NOT USE FOR
+
+- Web-only automation (use browser-based tools instead).
+- File system or shell operations (use shell commands or repo tools).
+- Remote server or SSH-based automation.
+- Cross-platform automation (Windows, Linux) — `agent-desktop` targets macOS.
+- Screenshot-only workflows without accessibility tree verification.
+
 ## Blockers
 
 Stop and report clearly if:
@@ -62,4 +70,8 @@ Stop and report clearly if:
 
 ## References
 
-- [agent-desktop's SKILL](https://raw.githubusercontent.com/superagent-ai/grok-cli/refs/heads/main/.agents/skills/agent-desktop/SKILL.md)
+- [agent-desktop's SKILL](https://raw.githubusercontent.com/superagent-ai/grok-cli/refs/heads/main/.agents/skills/agent-desktop/SKILL.md)  
+  **Tags:** `agent-desktop`, `grok-cli`, `desktop-automation`, `accessibility-tree`, `computer-sub-agent`  
+  **Topics:** macOS automation, accessibility snapshots, element refs, semantic clicks, keypress simulation  
+  **Headers:** Requirements, preferred flow, tool guidance, reliability rules, blockers  
+  **Trigger words:** grok, computer_launch, computer_snapshot, computer_click, computer_type, computer_press, computer_scroll, computer_get, computer_screenshot
