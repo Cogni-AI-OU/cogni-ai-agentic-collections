@@ -176,7 +176,7 @@ as `step_start`, `text`, `tool_use`, `step_finish`, and `error`.
 
 ### Computer sub-agent
 
-Grok ships a built-in `**computer**` sub-agent backed by `[agent-desktop](https://github.com/lahfir/agent-desktop)` for host desktop automation on macOS.
+Grok ships a built-in `computer` sub-agent backed by [agent-desktop](https://github.com/lahfir/agent-desktop) for host desktop automation on macOS.
 
 Ask for it in natural language, for example:
 
