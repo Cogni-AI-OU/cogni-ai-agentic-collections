@@ -21,12 +21,6 @@
     },
     {
       "pattern": "^https://github.com/org/repo"
-    },
-    {
-      "pattern": "^https://web\\.archive\\.org/web/19990219200533/"
-    },
-    {
-      "pattern": "^https://web\\.archive\\.org/web/20210101000000/"
     }
   ],
   "retryCount": 3,
