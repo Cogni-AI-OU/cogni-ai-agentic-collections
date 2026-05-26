@@ -11,11 +11,19 @@ license: MIT
 
 ## WHEN TO USE
 
-TBC
+- You need open-source tools for dictation, voice typing, or speech-to-text text entry while actively working.
+- You are comparing desktop, mobile, or terminal-first speech input workflows.
+- You want tools that can insert recognized text directly into an editor, input field, or command-line workflow.
+- You are specifically evaluating local-only or hybrid speech recognition options.
+- You need a platform-specific shortlist for Linux, macOS, Windows, Android, or iOS voice typing tools.
 
 ## WHEN NOT TO USE
 
-TBC
+- You are looking for closed-source dictation or transcription products.
+- You need meeting bots, note takers, or call transcription services rather than active voice typing tools.
+- You want general speech-to-text APIs or backend transcription services without a usable typing interface.
+- You are evaluating non-open-source mobile assistants or OS-native features that are not open-source projects.
+- You need a comprehensive survey of all transcription software rather than tools focused on dictation workflows.
 
 ## Scope
 
