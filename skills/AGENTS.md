@@ -89,7 +89,6 @@ OpenCode (if installed) uses XDG base directories (not a single `~/.opencode` di
 | `~/.cache/opencode`       | Ephemeral binary cache - not worth persisting          |
 | `~/.local/state/opencode` | Runtime state - not worth persisting                   |
 
-
 ## Tooling
 
 - Use MCP when possible.

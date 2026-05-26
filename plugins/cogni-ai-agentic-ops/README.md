@@ -72,7 +72,8 @@ claude plugin install cogni-ai-agentic-ops@cogni-ai-agentic-collections
 - **mcp-cli** — Specifications for MCP CLI usage.
 - **modelcontextprotocol-llms** — Reference and APIs for retrieving Model Context Protocol (MCP) documentation.
 - **npx-skills** — Install, find, update, and manage agent skills using the npx skills CLI tool.
-- **ollama-cli** — Execute and manage local LLMs using the ollama CLI, including pulling models and launching agents with MCP configurations.
+- **ollama-cli** — Execute and manage local LLMs using the ollama CLI,
+  including pulling models and launching agents with MCP configurations.
 - **opencode** — Guidelines for the OpenCode ecosystem.
 - **squad-cli** — Automation workflows for the Squad CLI.
 - **waza-cli** — Workflows for the Waza tool.
