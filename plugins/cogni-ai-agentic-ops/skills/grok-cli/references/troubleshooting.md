@@ -93,6 +93,6 @@ If you're on Intel Mac or Linux, sandbox mode is not available. Use standard mod
 - Check existing [issues](https://github.com/superagent-ai/grok-cli/issues)
 - Open a new issue with:
   - OS and terminal emulator version
-  - Grok CLI version (`grok --version`)
+  - Grok CLI version (`grok version`)
   - Steps to reproduce
   - Error messages or logs
