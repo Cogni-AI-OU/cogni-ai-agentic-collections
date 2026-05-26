@@ -61,7 +61,7 @@ To fully utilize this skill, you MUST read at least one of the links relevant to
 - [Interaction Guide](https://raw.githubusercontent.com/MoonshotAI/kimi-cli/refs/tags/1.44.0/docs/en/guides/interaction.md)
   - USE FOR: prompt interaction, chat workflow, command interaction, conversational usage, input patterns
 - [Sessions Guide](https://raw.githubusercontent.com/MoonshotAI/kimi-cli/refs/tags/1.44.0/docs/en/guides/sessions.md)
-  - USE FOR: session management, resume history, context persistence, multi-session workflow, conversation continuity
+  - USE FOR: session lifecycle concepts, continuity strategy, multi-session planning, long-running conversations, conceptual session guidance
 - [Use Cases Guide](https://raw.githubusercontent.com/MoonshotAI/kimi-cli/refs/tags/1.44.0/docs/en/guides/use-cases.md)
   - USE FOR: use cases, practical examples, scenario-based workflows, implementation patterns, real-world tasks
 - [Index](https://raw.githubusercontent.com/MoonshotAI/kimi-cli/refs/tags/1.44.0/docs/en/index.md)
@@ -100,7 +100,7 @@ To fully utilize this skill, you MUST read at least one of the links relevant to
 - [CLI Reference](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/cli-reference.md)
   - USE FOR: CLI reference, command syntax, flags, options, terminal commands
 - [Creating Skills](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/creating-skills.md)
-  - USE FOR: creating skills, SKILL.md authoring, skill scaffolding, skill development, custom skill design
+  - USE FOR: authoring new skills, SKILL.md structure, skill scaffolding workflow, custom skill implementation, skill development setup
 - [Custom Commands](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/custom-commands.md)
   - USE FOR: custom commands, command aliases, slash command extension, workflow commands, command customization
 - [Enterprise](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/enterprise.md)
@@ -136,7 +136,7 @@ To fully utilize this skill, you MUST read at least one of the links relevant to
 - [Skills Best Practices](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/skills-best-practices.md)
   - USE FOR: skills best practices, skill quality, maintainable skills, documentation standards, skill governance
 - [Skills](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/skills.md)
-  - USE FOR: skills overview, skill loading, skill invocation, skill catalog, reusable instructions
+  - USE FOR: skill system architecture, discovery and activation flow, skill lifecycle concepts, capability composition, conceptual skills reference
 - [System Prompt](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/system-prompt.md)
   - USE FOR: system prompt, prompt overrides, base instructions, behavior policy, instruction customization
 - [Telemetry](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/telemetry.md)
@@ -148,7 +148,7 @@ To fully utilize this skill, you MUST read at least one of the links relevant to
 - [Trusted Folders](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/trusted-folders.md)
   - USE FOR: trusted folders, workspace trust, security prompts, safe directories, trust configuration
 - [Using Agent Skills](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/cli/using-agent-skills.md)
-  - USE FOR: using agent skills, skill activation, skill invocation patterns, context injection, skill orchestration
+  - USE FOR: using existing skills, runtime skill invocation, task-to-skill matching, context injection in execution, operational skill orchestration
 
 #### Tutorials
 
@@ -167,7 +167,7 @@ To fully utilize this skill, you MUST read at least one of the links relevant to
 - [Shell Commands](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/tags/v0.43.0/docs/cli/tutorials/shell-commands.md)
   - USE FOR: shell commands tutorial, terminal execution, command safety, bash integration, command workflows
 - [Skills Getting Started](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/tags/v0.43.0/docs/cli/tutorials/skills-getting-started.md)
-  - USE FOR: skills getting started tutorial, first skill, basic skill setup, skill examples, onboarding
+  - USE FOR: first-skill tutorial, beginner walkthrough, hands-on skill setup, guided skill example, starter exercises
 - [Task Planning](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/tags/v0.43.0/docs/cli/tutorials/task-planning.md)
   - USE FOR: task planning tutorial, todo planning, execution steps, prioritization, progress tracking
 - [Web Tools](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/tags/v0.43.0/docs/cli/tutorials/web-tools.md)
