@@ -65,7 +65,7 @@ To fully utilize this skill, you MUST read at least one of the links relevant to
 - [Use Cases Guide](https://raw.githubusercontent.com/MoonshotAI/kimi-cli/refs/tags/1.44.0/docs/en/guides/use-cases.md)
   - USE FOR: use cases, practical examples, scenario-based workflows, implementation patterns, real-world tasks
 - [Index](https://raw.githubusercontent.com/MoonshotAI/kimi-cli/refs/tags/1.44.0/docs/en/index.md)
-  - USE FOR: documentation index, overview, navigation, topic discovery, docs entrypoint
+  - USE FOR: main docs index, kimi-cli overview, feature navigation, topic discovery, docs entrypoint
 - [Keyboard Reference](https://raw.githubusercontent.com/MoonshotAI/kimi-cli/refs/tags/1.44.0/docs/en/reference/keyboard.md)
   - USE FOR: keyboard shortcuts, keybindings, navigation keys, terminal controls, productivity shortcuts
 - [Kimi ACP Reference](https://raw.githubusercontent.com/MoonshotAI/kimi-cli/refs/tags/1.44.0/docs/en/reference/kimi-acp.md)
@@ -163,7 +163,7 @@ To fully utilize this skill, you MUST read at least one of the links relevant to
 - [Plan Mode Steering](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/tags/v0.43.0/docs/cli/tutorials/plan-mode-steering.md)
   - USE FOR: plan mode steering, planning controls, steering plans, strategic prompts, plan refinement
 - [Session Management](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/tags/v0.43.0/docs/cli/tutorials/session-management.md)
-  - USE FOR: session management, session resume, history tracking, conversation persistence, session lifecycle
+  - USE FOR: session management tutorial, step-by-step session workflows, guided resume examples, conversation history walkthrough, tutorial exercises
 - [Shell Commands](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/tags/v0.43.0/docs/cli/tutorials/shell-commands.md)
   - USE FOR: shell commands tutorial, terminal execution, command safety, bash integration, command workflows
 - [Skills Getting Started](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/tags/v0.43.0/docs/cli/tutorials/skills-getting-started.md)
@@ -178,7 +178,7 @@ To fully utilize this skill, you MUST read at least one of the links relevant to
 - [Gemma Setup](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/core/gemma-setup.md)
   - USE FOR: Gemma setup, local models, Gemma installation, local inference, model runtime setup
 - [Index](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/core/index.md)
-  - USE FOR: documentation index, overview, navigation, topic discovery, docs entrypoint
+  - USE FOR: core docs index, core concepts overview, architecture navigation, foundational topics, core entrypoint
 - [Local Model Routing](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/core/local-model-routing.md)
   - USE FOR: local model routing, on-device routing, provider selection, local fallback, routing configuration
 - [Remote Agents](https://raw.githubusercontent.com/google-gemini/gemini-cli/refs/heads/main/docs/core/remote-agents.md)
