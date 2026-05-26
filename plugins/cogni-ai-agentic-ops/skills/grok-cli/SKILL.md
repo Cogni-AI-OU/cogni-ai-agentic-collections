@@ -31,50 +31,10 @@ An open-source coding agent for the Grok API.
 
 ## Prerequisites
 
-- **Grok API Key**: Ensure `GROK_API_KEY` is exported in the environment, present in `.env`, or saved via `grok -k <key>`.
-- **Bun**: Required for alternative installation or running from source (`bun add -g grok-dev`).
-
-**Environment (good for CI):**
-
-```bash
-export GROK_API_KEY=your_key_here
-```
-
-`.env` in the project (see `.env.example` if present):
-
-```bash
-GROK_API_KEY=your_key_here
-```
-
-**CLI once:**
-
-```bash
-grok -k your_key_here
-```
-
-**Saved in user settings** — `~/.grok/user-settings.json`:
-
-```json
-{ "apiKey": "your_key_here" }
-```
-
-Optional `subAgents` — custom foreground sub-agents. Each entry needs `name`, `model`, and `instruction`:
-
-```json
-{
-  "subAgents": [
-    {
-      "name": "security-review",
-      "model": "grok-4.3",
-      "instruction": "Prioritize security implications and suggest concrete fixes."
-    }
-  ]
-}
-```
-
-Names cannot be `general`, `explore`, `vision`, `verify`, or `computer` because those are reserved for the built-in sub-agents.
-
-Optional: `GROK_BASE_URL` (default `https://api.x.ai/v1`), `GROK_MODEL`, `GROK_MAX_TOKENS`.
+- **Grok API Key**: Set via env `GROK_API_KEY`, `.env` file, `grok -k <key>`, or `~/.grok/user-settings.json` (`apiKey` field).
+- **Bun**: Needed for `bun add -g grok-dev` or running from source.
+- **Optional env vars**: `GROK_BASE_URL` (default `https://api.x.ai/v1`), `GROK_MODEL`, `GROK_MAX_TOKENS`.
+- **Optional subAgents**: Define custom agents via `subAgents` in `~/.grok/user-settings.json` (name, model, instruction). Reserved names: `general`, `explore`, `vision`, `verify`, `computer`.
 
 ## Core Process
 
