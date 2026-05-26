@@ -1,10 +1,13 @@
 ---
 name: agent-desktop
-description: Use the built-in `Computer` sub-agent with `agent-desktop` for macOS desktop automation. Apply when a task needs application launching, accessibility snapshots, stable element refs, window focusing, semantic clicks/typing, or visual confirmation outside the browser sandbox.
+description: >-
+  Native desktop automation CLI for AI agents.
+  Use the built-in `Computer` sub-agent with `agent-desktop` for macOS desktop automation. Apply when a task needs application launching, accessibility snapshots, stable element refs, window focusing, semantic clicks/typing, or visual confirmation outside the browser sandbox.
 ---
 
 # agent-desktop
 
+Control any application through OS accessibility trees with structured JSON output and deterministic element refs.
 Use this skill when the task involves the host macOS desktop rather than repository files, shell output, or browser-only verification.
 
 This project uses `agent-desktop` on the host. Prefer the built-in `Computer` sub-agent for these tasks instead of trying to drive the desktop with plain shell commands.
