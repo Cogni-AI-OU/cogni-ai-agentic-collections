@@ -42,11 +42,9 @@
     "ghcr.io/devcontainers/features/copilot-cli:1": {},
     "ghcr.io/devcontainers/features/docker-in-docker:3": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/go:1": { "version": "1.26" },
     "ghcr.io/devcontainers/features/python:1": {},
     "ghcr.io/guiyomh/features/vim:0": {},
     "ghcr.io/jungaretti/features/make:1": {},
-    "ghcr.io/jungaretti/features/ripgrep:1": {},
     "ghcr.io/sliekens/devcontainer-features/opencode:1": {}
   },
 
@@ -74,7 +72,11 @@
   "onCreateCommand": "sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ansible && ansible-playbook .devcontainer/provision.yml",
 
   "postCreateCommand": {
-    "jq": "eget -t 1.7.1 -a linux64 --to=/go/bin/ jqlang/jq",
-    "yq": "eget -t v4.45.1 -a ^.tar.gz --to=/go/bin/ mikefarah/yq"
+    "exa": "eget ogham/exa",
+    "fd": "eget sharkdp/fd",
+    "jq": "eget -t 1.7.1 -a linux64 jqlang/jq",
+    "pandoc": "eget jgm/pandoc",
+    "rg": "eget BurntSushi/ripgrep",
+    "yq": "eget -t v4.45.1 -a ^.tar.gz mikefarah/yq"
   }
 }
