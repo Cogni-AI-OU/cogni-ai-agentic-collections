@@ -59,6 +59,11 @@ Create, update, and maintain robust `devcontainer.json` configurations and assoc
   //   // "args": { "VARIANT": "ubuntu-22.04" }
   // },
 
+  "containerEnv": {
+    "DEBIAN_FRONTEND": "noninteractive",
+    "EGET_CONFIG": "${containerWorkspaceFolder}/.devcontainer/.eget.toml"
+  },
+
   // Configure tool-specific properties.
   // Note: Keep the list in alphabetical order.
   "customizations": {
