@@ -107,12 +107,10 @@ Create, update, and maintain robust `devcontainer.json` configurations and assoc
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "uname -a",
+  // "postCreateCommand": "pip install -r requirements.txt || npm install || true",
 
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/base:jammy",
-
-  "postCreateCommand": "pip install -r requirements.txt || npm install || true",
 
   // @docs: <https://code.visualstudio.com/remote/advancedcontainers/environment-variables>
   "remoteEnv": {
