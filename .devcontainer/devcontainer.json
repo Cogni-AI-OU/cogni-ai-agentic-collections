@@ -71,6 +71,7 @@
   // Note: Python dependencies can be added in the `requirements.txt` file.
   "onCreateCommand": "sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ansible && ansible-playbook .devcontainer/provision.yml",
 
+  // @see: <https://github.com/zyedidia/eget>
   "postCreateCommand": {
     "exa": "eget ogham/exa",
     "fd": "eget sharkdp/fd",
