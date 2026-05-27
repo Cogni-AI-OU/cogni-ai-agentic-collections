@@ -95,7 +95,6 @@ Create, update, and maintain robust `devcontainer.json` configurations and assoc
     "ghcr.io/devcontainers/features/python:1": {},
     "ghcr.io/guiyomh/features/vim:0": {},
     "ghcr.io/jungaretti/features/make:1": {},
-    "ghcr.io/jungaretti/features/ripgrep:1": {},
     "ghcr.io/prulloac/devcontainer-features/pre-commit:1": {},
     "ghcr.io/sliekens/devcontainer-features/opencode:1": {}
   },
@@ -127,9 +126,14 @@ Create, update, and maintain robust `devcontainer.json` configurations and assoc
   // Note: Python dependencies can be added in the `requirements.txt` file.
   "onCreateCommand": "sudo apt-get update && if [ -f .devcontainer/apt-packages.txt ]; then xargs -a .devcontainer/apt-packages.txt sudo apt-get install -y; fi",
 
+  // @see: <https://github.com/zyedidia/eget>
   "postCreateCommand": {
-    "jq": "eget -t 1.7.1 -a linux64 --to=/go/bin/ jqlang/jq",
-    "yq": "eget -t v4.45.1 -a ^.tar.gz --to=/go/bin/ mikefarah/yq"
+    "exa": "eget ogham/exa",
+    "fd": "eget sharkdp/fd",
+    "jq": "eget -t 1.7.1 -a linux64 jqlang/jq",
+    "pandoc": "eget jgm/pandoc",
+    "rg": "eget BurntSushi/ripgrep",
+    "yq": "eget -t v4.45.1 -a ^.tar.gz mikefarah/yq"
   }
 }
 ```
