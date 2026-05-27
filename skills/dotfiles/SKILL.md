@@ -84,7 +84,7 @@ license: MIT
 - **`.ripgreprc`**: Project-specific configuration for `ripgrep` (`rg`), defining default flags and ignore patterns.
 - **`.squad/`**: Directory for Squad AI agent teams, containing team roster (`team.md`), agent charters and history, decisions, and session logs as defined in the project's `.squad/` structure.
 - **`.tours/`**: Directory for VS Code CodeTour files, including `*.tour` (walkthroughs) and `README.md` (documentation).
-- **`.vscode/`**: Directory for VS Code-specific configurations, including `settings.json` (workspace settings), `extensions.json` (recommended extensions), `launch.json` (debug configurations), and `tasks.json` (task runners).
+- **`.vscode/`**: Directory for VS Code-specific configurations, including `settings.json` (workspace settings), `extensions.json` (recommended extensions), `launch.json` (debug configurations), and more.
 - **`.waza.yaml`**: Configuration file for Waza, defining project metadata, build settings, and deployment configurations.
 - **`.yamlfix.toml`**: Configures `yamlfix` for automated YAML formatting and style enforcement.
 - **`.yamllint` / `.yamllint.yaml`**: Defines rules for yamllint to ensure YAML files are syntactically valid and stylistically consistent.
@@ -100,6 +100,7 @@ license: MIT
 - **`.ctags`**: Configuration for Ctags, used to define how source code symbols are indexed for navigation.
 - **`.curlrc`**: Default configuration for the `curl` command-line tool, used to specify common flags or proxy settings.
 - **`.drush/`**: Configuration directory for Drush (Drupal Shell), containing aliases and command-specific settings.
+- **`.eget.toml`**: Eget configuration file. Typically stored at `~/.eget.toml`; Eget also supports the XDG fallback path `~/.config/eget/eget.toml`, a config file alongside the Eget binary, or a path set via `EGET_CONFIG`. It defines global defaults and per-repository settings such as `target`, `system`, `asset_filters`, `upgrade_only`, and checksum verification behavior.
 - **`.gdbinit`**: Initialization script for the GDB debugger, used to define custom commands or UI settings.
 - **`.gnupg/`**: Directory for GnuPG (GNU Privacy Guard) configuration, keys, and trust database.
 - **`.hyper.js`**: Configuration file for the Hyper terminal emulator.
@@ -136,7 +137,7 @@ license: MIT
 
 - **Keep it Minimal**: Only add necessary rules; rely on community standard defaults where possible.
 - **Document Non-Standard Rules**: If a configuration deviates from standard conventions, add an inline comment explaining why.
-- **Merge, Don't Replace**: When updating existing configuration files, merge organizational standards into the existing content rather than replacing the file entirely. Preserve project-specific customizations.
+- **Merge, Don't Replace**: When updating existing configuration files, merge organizational standards into the existing content rather than replacing the file entirely. Preserve project-specific customizations whenever possible.
 - **Lexicographical Order**: Maintain hooks in `.pre-commit-config.yaml` and other list-based configurations in alphabetical order.
 - **Standard Formatting**: Use 4-space indentation for most files, but 2-space for YAML and JSON in `.editorconfig`.
 - **Test Hooks Locally**: Always test `.pre-commit-config.yaml` changes locally by running `pre-commit run --all-files` before pushing.
