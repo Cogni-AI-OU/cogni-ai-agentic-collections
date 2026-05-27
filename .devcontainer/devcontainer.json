@@ -82,16 +82,16 @@
 
   // @see: <https://github.com/zyedidia/eget>
   "postCreateCommand": {
-    "bat": "eget sharkdp/bat --asset ^musl",
-    "btop": "eget aristocratos/btop",
-    "duf": "eget muesli/duf",
-    "exa": "eget ogham/exa",
-    "fd": "eget sharkdp/fd",
-    "jq": "eget -t 1.7.1 -a linux64 jqlang/jq",
-    // "pandoc": "eget jgm/pandoc",
-    "rg": "eget BurntSushi/ripgrep",
-    "tealdeer": "eget dbrgn/tealdeer",
-    "vale": "eget errata-ai/vale",
-    "yq": "eget -t v4.45.1 -a ^.tar.gz mikefarah/yq"
+    "bat": "timeout 30 eget sharkdp/bat --asset '^musl'",
+    "btop": "timeout 30 eget aristocratos/btop --asset 'x86_64.*linux.*tbz'",
+    "duf": "timeout 30 eget muesli/duf --asset 'linux_amd64'",
+    "exa": "timeout 30 eget ogham/exa --asset '^musl'",
+    "fd": "timeout 30 eget sharkdp/fd --asset 'amd64.*unknown-linux-musl'",
+    "jq": "timeout 30 eget -t jq-1.7.1 -a 'linux64' jqlang/jq",
+    "pandoc": "timeout 30 eget jgm/pandoc --asset 'linux-amd64\\.tar\\.gz$'",
+    "rg": "timeout 30 eget BurntSushi/ripgrep --asset 'x86_64-unknown-linux-musl'",
+    "tealdeer": "timeout 30 eget dbrgn/tealdeer --asset 'linux-musl-amd64'",
+    "vale": "timeout 30 eget errata-ai/vale --asset 'Linux_64-bit\\.tar\\.gz$'",
+    "yq": "timeout 30 eget -t v4.45.1 -a 'linux_amd64\\.tar\\.gz$' mikefarah/yq"
   }
 }
