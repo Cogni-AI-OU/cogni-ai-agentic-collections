@@ -43,11 +43,41 @@
         extra_args: --break-system-packages --user
         state: present
       become: false
+    - name: Check installed Copilot CLI version
+      ansible.builtin.command:
+        argv:
+          - npm
+          - list
+          - -g
+          - '@github/copilot'
+          - --depth=0
+          - --json
+      become: false
+      register: copilot_cli_installed
+      changed_when: false
+      failed_when: copilot_cli_installed.rc not in [0, 1]
+    - name: Check latest Copilot CLI version
+      ansible.builtin.command:
+        argv:
+          - npm
+          - view
+          - '@github/copilot'
+          - version
+      become: false
+      register: copilot_cli_latest
+      changed_when: false
     - name: Install Copilot CLI
       ansible.builtin.command:
-        cmd: npm install -g @github/copilot
+        argv:
+          - npm
+          - install
+          - -g
+          - '@github/copilot'
       become: false
-      changed_when: false
+      when: >-
+        copilot_cli_installed.rc != 0 or
+        (((copilot_cli_installed.stdout | from_json).dependencies['@github/copilot'].version | default(''))
+        != (copilot_cli_latest.stdout | trim))
     - name: Add Cogni AI plugin marketplace
       ansible.builtin.command:
         cmd: gh copilot plugin marketplace add Cogni-AI-OU/cogni-ai-agentic-collections
