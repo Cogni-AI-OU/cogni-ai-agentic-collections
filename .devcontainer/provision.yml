@@ -94,16 +94,8 @@
       become: false
       register: plugin_install
       changed_when: >-
-        (
-          plugin_install.results
-          | map(attribute='stdout')
-          | zip(plugin_install.results | map(attribute='stderr'))
-          | map('join')
-          | map('lower')
-          | reject('search', 'already installed')
-          | list
-          | length
-        ) > 0
+        'already installed' not in ((plugin_install.stdout + plugin_install.stderr) | lower)
+      failed_when: plugin_install.rc != 0
       loop:
         - cogni-ai-agentic-ops
         - cogni-ai-architect
