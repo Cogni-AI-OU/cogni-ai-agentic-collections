@@ -32,19 +32,3 @@ To properly remove or cleanup a submodule:
    rm -v .git/modules/<name>
    ```
 
-## References
-
-To fully utilize this guide, you SHOULD read the links relevant to the current context:
-
-- [Git Recovery & Troubleshooting](recovery.md)
-  Reference MUST be loaded when performing repository recovery, solving complex conflicts, or manipulating history.
-- [Reflog Recovery (git reflog)](git-reflog.md)
-  Reference MUST be loaded when using `git reflog` to recover lost commits, branches, or undo destructive operations.
-- [Git Merge](git-merge.md)
-  Reference MUST be loaded before performing a git merge, ensuring no conflict markers or duplicate lines are present.
-- [Git Rebase](git-rebase.md)
-  Reference MUST be loaded before performing Git rebase operations (interactive history cleanup or non-interactive rewrites).
-- [Git Skill](../../SKILL.md)
-  Usage for basic Git operations and repository management. This is the core skill for all git interactions.
-
-
