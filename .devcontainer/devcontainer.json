@@ -82,16 +82,16 @@
 
   // @see: <https://github.com/zyedidia/eget>
   "postCreateCommand": {
-    "bat": "eget sharkdp/bat --asset=x86_64-unknown-linux-musl.tar.gz",
-    "btop": "eget aristocratos/btop --asset=btop-x86_64-unknown-linux-musl.tar.gz",
-    "duf": "eget muesli/duf --asset=linux_amd64.deb",
-    "exa": "eget ogham/exa --asset=linux-x86_64-musl-v",
-    "fd": "eget sharkdp/fd --asset=x86_64-unknown-linux-musl",
-    "jq": "eget -t jq-1.7.1 -a linux64 jqlang/jq",
-    "pandoc": "eget jgm/pandoc --asset=linux-amd64.tar.gz",
-    "rg": "eget BurntSushi/ripgrep --asset=x86_64-unknown-linux-musl",
-    "tealdeer": "eget dbrgn/tealdeer --asset=tealdeer-linux-x86_64-musl",
-    "vale": "eget errata-ai/vale --asset=Linux_64-bit.tar.gz",
-    "yq": "eget -t v4.45.1 -a yq_linux_amd64 mikefarah/yq"
+    "bat": "eget -a x86_64-unknown-linux-gnu -a tar.gz sharkdp/bat",
+    "btop": "eget -a btop-x86_64-unknown-linux-musl.tar.gz aristocratos/btop",
+    "duf": "eget -a linux_x86_64.tar.gz muesli/duf",
+    "exa": "eget -a linux-x86_64 -a ^musl ogham/exa",
+    "fd": "eget -a x86_64-unknown-linux-gnu -a tar.gz sharkdp/fd",
+    "jq": "eget -a linux64 jqlang/jq",
+    "pandoc": "eget -a linux-amd64.tar.gz jgm/pandoc",
+    "rg": "eget -a x86_64-unknown-linux-musl.tar.gz BurntSushi/ripgrep",
+    "tealdeer": "eget -a tealdeer-linux-x86_64-musl -a ^sha256 dbrgn/tealdeer",
+    "vale": "eget -a Linux_64-bit.tar.gz errata-ai/vale",
+    "yq": "eget -a ^.tar.gz mikefarah/yq"
   }
 }
