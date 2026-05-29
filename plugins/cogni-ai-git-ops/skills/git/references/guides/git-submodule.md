@@ -15,11 +15,6 @@ To properly remove or cleanup a submodule:
    git rm <path_to_submodule>
    ```
 
-2. **Deinitialize the Submodule:**
-   ```bash
-   git submodule deinit -f -- <path_to_submodule>
-   ```
-
 3. **Remove Configuration Sections:**
    Use the following command to remove sections from `.gitmodules` or `.git/config`:
    ```bash
@@ -31,4 +26,3 @@ To properly remove or cleanup a submodule:
    ```bash
    rm -v .git/modules/<name>
    ```
-
