@@ -27,7 +27,7 @@ To properly remove or cleanup a submodule:
    git config --remove-section submodule.<name>
    ```
 
-4. **Cleanup Git Internals:**
+4. **Cleanup Git Internals:** (only if exist)
    ```bash
-   rm -rf .git/modules/<name>
+   rm -v .git/modules/<name>
    ```
