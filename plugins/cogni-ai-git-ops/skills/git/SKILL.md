@@ -379,6 +379,8 @@ To fully utilize this skill, you MUST read at least one of the links relevant to
   Reference MUST be loaded before performing a git merge, ensuring no conflict markers or duplicate lines are present.
 - [Git Rebase](references/guides/git-rebase.md)
   Reference MUST be loaded before performing Git rebase operations (interactive history cleanup or non-interactive rewrites).
+- [Git Submodule Management](references/guides/git-submodule.md)
+  Reference MUST be loaded when managing, adding, or removing Git submodules safely.
 - [Reflog Recovery (git reflog)](references/guides/git-reflog.md)
   Reference MUST be loaded when using `git reflog` to recover lost commits, branches, or undo destructive operations.
 - [Git Recovery & Troubleshooting](references/guides/recovery.md)
