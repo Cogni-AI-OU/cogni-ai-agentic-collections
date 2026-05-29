@@ -74,6 +74,8 @@
           - -g
           - '@github/copilot'
       become: false
+      register: copilot_cli_install
+      changed_when: copilot_cli_install.rc == 0
       when: >-
         copilot_cli_installed.rc != 0 or
         (((copilot_cli_installed.stdout | from_json).dependencies['@github/copilot'].version | default(''))
