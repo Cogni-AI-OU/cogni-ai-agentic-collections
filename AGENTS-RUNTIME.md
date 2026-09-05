@@ -40,8 +40,8 @@ this repo is cloned into `.github/agents`.
 - [**Cogni AI Developer**](plugins/cogni-ai-developer/agents/cogni-ai-developer.agent.md):
   Autonomous developer agent for full-cycle software delivery: from requirements and system design through deployment,
   monitoring, and iteration.
-- [**Cogni AI Code Reviewer**](agents/cogni-ai-code-reviewer.agent.md):
-  Elite autonomous code reviewer for PR analysis, quality enforcement, and zero-defect security validation.
+- [**Cogni AI Code Reviewer**](plugins/cogni-ai-code-reviewer/agents/cogni-ai-code-reviewer.agent.md):
+  Elite autonomous code reviewer for PR analysis, quality enforcement, and zero-defect security validation. Skills live in `plugins/cogni-ai-code-reviewer/skills/` (including pre-commit).
 - [**Cogni AI Plan Reviewer**](agents/cogni-ai-plan-reviewer.agent.md):
   Elite autonomous architectural reviewer for plan validation and ensuring strategic alignment.
 - [**Cogni AI Tester**](plugins/cogni-ai-tester/agents/cogni-ai-tester.agent.md):
