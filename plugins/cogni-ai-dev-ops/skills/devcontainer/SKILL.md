@@ -43,7 +43,8 @@ Create, update, and maintain robust `devcontainer.json` configurations and assoc
 
 - **Monolithic Dockerfiles**: Writing massive, custom `Dockerfile`s full of `apt-get` commands instead of using standardized, cached Dev Container Features.
 - **Wrong Lifecycle Hook**: Using `postCreateCommand` for heavy OS-level installations, drastically delaying the time it takes for the user's workspace to become interactive.
-- **Root Permission Errors**: Forgetting that certain `onCreateCommand` scripts run as `root`, while `postCreateCommand` runs as the `remoteUser` (e.g., `vscode`), leading to permission denied errors on npm/pip installs.
+- **Root Permission Errors**: Forgetting that certain onCreateCommand scripts run as root, while postCreateCommand runs as the remoteUser (e.g. vscode), leading to permission denied errors on npm/pip installs.
+- **pre-commit or pip user tools not in PATH**: pre-commit (and other pip --user tools) install to ~/.local/bin. Use a dedicated Ansible task in provision.yml (lineinfile on ~/.bashrc) to make PATH persistent. The pre-commit install hook task runs but the binary must be discoverable in interactive terminals.
 
 ## Example: devcontainer.json
 
