@@ -1,6 +1,6 @@
 ---
 name: devcontainer
-description: Create, update, and maintain robust devcontainer.json configurations and lifecycle scripts for reproducible development environments.
+description: Create, update, and maintain robust devcontainer.json configurations and lifecycle scripts (onCreateCommand, updateContentCommand, postCreateCommand) for reproducible, feature-rich, and secure development environments in VS Code, Codespaces, and Docker. Prefer Dev Container Features over custom Dockerfiles for caching and modularity. Use for standardizing tooling, extensions, Python/Ansible setups, and non-root users across contributors.
 license: MIT
 ---
 # Devcontainer
@@ -190,5 +190,5 @@ npx -y @devcontainers/cli rebuild
 
 ## Related Skills
 
-- **yaml**: You MUST load this skill when formatting or linting YAML configurations related to devcontainers.
 - **pre-commit**: You MUST load this skill when configuring pre-commit hooks in the devcontainer.
+- **yaml**: You MUST load this skill when formatting or linting YAML configurations related to devcontainers.
