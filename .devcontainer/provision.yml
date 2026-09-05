@@ -41,6 +41,9 @@
         requirements: '{{ playbook_dir }}/requirements.txt'
         extra_args: --break-system-packages --user
         state: present
+        executable: pip3
+      vars:
+        ansible_python_interpreter: python3
       become: false
     - name: Check installed Copilot CLI version
       ansible.builtin.command:
@@ -130,13 +133,13 @@
         chdir: '{{ playbook_dir }}/..'
         creates: .git/hooks/pre-commit
       become: false
-
     - name: Ensure ~/.local/bin is in PATH for user-installed CLIs (pre-commit, uv, etc.)
       ansible.builtin.lineinfile:
         path: '{{ ansible_env.HOME }}/.bashrc'
-        line: 'export PATH="$HOME/.local/bin:$PATH"'
+        line: export PATH="$HOME/.local/bin:$PATH"
         state: present
         insertafter: EOF
         create: true
+        mode: '0644'
       become: false
       when: ansible_env.HOME is defined
