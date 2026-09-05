@@ -107,6 +107,22 @@
         - cogni-ai-github-ops
         - cogni-ai-programmer
         - cogni-ai-tester
+    - name: Install all Cogni AI skills
+      ansible.builtin.command:
+        argv:
+          - gh
+          - skill
+          - install
+          - Cogni-AI-OU/cogni-ai-agent-skills
+          - --all
+          - --force
+          - --scope
+          - user
+      become: false
+      register: skills_install
+      changed_when: >-
+        'already installed' not in ((skills_install.stdout + skills_install.stderr) | lower)
+      failed_when: skills_install.rc != 0
     - name: Install pre-commit hooks
       ansible.builtin.command: pre-commit install
       args:
