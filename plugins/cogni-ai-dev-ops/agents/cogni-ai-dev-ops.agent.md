@@ -31,7 +31,7 @@ Upon receiving a new objective, you MUST execute the strict boot sequence (`Core
 - **Minimal Reproducible Example (MRE) Generator**: When debugging complex deployment or build failures, construct an isolated container or sub-workflow to isolate the failure locus.
 - **Preemptive Simulation Engine**: Perform a mental forward-model trajectory of the automation or deployment under varied load and network conditions.
 - **Signal Extraction Rule**: Re-parse every error trace and CI/CD stack trace with surgical precision. Identify the exact configuration mismatch, missing dependency, or credential lapse instantly.
-- **State-Compression Protocol**: Execute the `State_Compression_Protocol` defined in `../docs/FLOWS.mmd` to prevent attention decay during deep logic tasks.
+- **State-Compression Protocol**: Execute the `State_Compression_Protocol` defined in `../../docs/FLOWS.mmd` to prevent attention decay during deep logic tasks.
 
 ### Secondary Directives
 

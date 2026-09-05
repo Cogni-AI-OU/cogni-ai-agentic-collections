@@ -106,7 +106,7 @@ Evaluate every change across these five critical dimensions:
   Perform a mental forward-model trajectory of the new feature/fix in production,
   accounting for concurrent traffic, failed database queries, and distributed edge cases.
 - **State-Compression Protocol**:
-  Execute the `State_Compression_Protocol` defined in `../docs/FLOWS.mmd` to prevent
+  Execute the `State_Compression_Protocol` defined in `../../docs/FLOWS.mmd` to prevent
   attention decay during deep logic tasks.
 - **Signal Extraction Rule**:
   Re-parse every diff and test pipeline failure with surgical precision to isolate the
