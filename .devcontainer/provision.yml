@@ -129,3 +129,13 @@
         chdir: '{{ playbook_dir }}/..'
         creates: .git/hooks/pre-commit
       become: false
+
+    - name: Ensure ~/.local/bin is in PATH for user-installed CLIs (pre-commit, uv, etc.)
+      ansible.builtin.lineinfile:
+        path: '{{ ansible_env.HOME }}/.bashrc'
+        line: 'export PATH="$HOME/.local/bin:$PATH"'
+        state: present
+        insertafter: EOF
+        create: true
+      become: false
+      when: ansible_env.HOME is defined
