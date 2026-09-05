@@ -155,7 +155,37 @@ Create, update, and maintain robust `devcontainer.json` configurations and assoc
 
 ## Limitations
 
-- Agents cannot natively build or attach to the devcontainer to test the environment interactively. Rely on schema validation, JSON linting, and best practices.
+- Agents cannot natively build or attach to the devcontainer to test the environment interactively. Rely on schema validation, JSON linting, and best practices. Use the Dev Containers CLI for rebuilds after changes.
+
+## Dev Containers CLI
+
+### Installation
+
+**Best long-term fix — install the CLI globally**
+
+```bash
+npm install -g @devcontainers/cli
+```
+
+Then shorter commands work:
+
+```bash
+devcontainer rebuild
+devcontainer up --remove-existing-container --build-no-cache
+```
+
+**Temporary (npx):**
+
+```bash
+npx -y @devcontainers/cli rebuild
+```
+
+### Rebuild Steps
+
+1. Update devcontainer.json, features, or lifecycle commands (onCreateCommand/postCreateCommand).
+2. Run `devcontainer rebuild` (or the npx equivalent).
+3. Optionally add the CLI via postCreateCommand (or a feature) for availability inside containers.
+4. Verify tools, extensions, and environment functionality.
 
 ## Related Skills
 
