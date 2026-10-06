@@ -94,7 +94,7 @@ Create, update, and maintain robust `devcontainer.json` configurations and assoc
   "features": {
     "ghcr.io/devcontainers-extra/features/actionlint:1": {},
     "ghcr.io/devcontainers-extra/features/eget:1": { "version": "1.3.4" },
-    "ghcr.io/devcontainers-extra/features/node-asdf:0": {},
+    "ghcr.io/devcontainers-extra/features/node-asdf:0": { "version": "22.23.3" },
     "ghcr.io/devcontainers-extra/features/pipx-package:1": {},
     "ghcr.io/devcontainers/features/docker-in-docker:3": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
