@@ -32,7 +32,7 @@ gh skills install Cogni-AI-OU/cogni-ai-agents --scope user <agent-name>
 | [cogni-ai-coder](../plugins/cogni-ai-coder/agents/cogni-ai-coder.agent.md) | Coders | Autonomous coding agent for spec-driven implementation with precision and speed |
 | [cogni-ai-programmer](../plugins/cogni-ai-programmer/agents/cogni-ai-programmer.agent.md) | Programmers | Autonomous programmer for algorithmic problem-solving and robust code craftsmanship |
 | [cogni-ai-developer](../plugins/cogni-ai-developer/agents/cogni-ai-developer.agent.md) | Developers | Autonomous developer for full-cycle product delivery and end-to-end feature ownership |
-| [cogni-ai-code-reviewer.agent.md](cogni-ai-code-reviewer.agent.md) | Reviewers | Elite autonomous code, PR analysis, and zero-defect enforcer |
+| [cogni-ai-code-reviewer](../plugins/cogni-ai-code-reviewer/agents/cogni-ai-code-reviewer.agent.md) | Reviewers | Elite autonomous code, PR analysis, and zero-defect enforcer |
 | [cogni-ai-plan-reviewer.agent.md](cogni-ai-plan-reviewer.agent.md) | Reviewers | Elite autonomous architectural reviewer for plan validation |
 | [cogni-ai-weaver.agent.md](cogni-ai-weaver.agent.md) | Weavers | Canonical Flow Custody & Diagram Stewardship Kernel |
 | [cogni-ai-agent-auditor.agent.md](cogni-ai-agent-auditor.agent.md) | Auditors | Expert autonomous auditor for analyzing agent session logs |

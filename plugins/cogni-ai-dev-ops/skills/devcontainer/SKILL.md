@@ -1,6 +1,6 @@
 ---
 name: devcontainer
-description: Create, update, and maintain robust devcontainer.json configurations and lifecycle scripts for reproducible development environments.
+description: Create, update, and maintain robust devcontainer.json configurations and lifecycle scripts (onCreateCommand, updateContentCommand, postCreateCommand) for reproducible, feature-rich, and secure development environments in VS Code, Codespaces, and Docker. Prefer Dev Container Features over custom Dockerfiles for caching and modularity. Use for standardizing tooling, extensions, Python/Ansible setups, and non-root users across contributors.
 license: MIT
 ---
 # Devcontainer
@@ -43,7 +43,8 @@ Create, update, and maintain robust `devcontainer.json` configurations and assoc
 
 - **Monolithic Dockerfiles**: Writing massive, custom `Dockerfile`s full of `apt-get` commands instead of using standardized, cached Dev Container Features.
 - **Wrong Lifecycle Hook**: Using `postCreateCommand` for heavy OS-level installations, drastically delaying the time it takes for the user's workspace to become interactive.
-- **Root Permission Errors**: Forgetting that certain `onCreateCommand` scripts run as `root`, while `postCreateCommand` runs as the `remoteUser` (e.g., `vscode`), leading to permission denied errors on npm/pip installs.
+- **Root Permission Errors**: Forgetting that certain onCreateCommand scripts run as root, while postCreateCommand runs as the remoteUser (e.g. vscode), leading to permission denied errors on npm/pip installs.
+- **pre-commit or pip user tools not in PATH**: pre-commit (and other pip --user tools) install to ~/.local/bin. Use a dedicated Ansible task in provision.yml (lineinfile on ~/.bashrc) to make PATH persistent. The pre-commit install hook task runs but the binary must be discoverable in interactive terminals.
 
 ## Example: devcontainer.json
 
@@ -93,7 +94,7 @@ Create, update, and maintain robust `devcontainer.json` configurations and assoc
   "features": {
     "ghcr.io/devcontainers-extra/features/actionlint:1": {},
     "ghcr.io/devcontainers-extra/features/eget:1": { "version": "1.3.4" },
-    "ghcr.io/devcontainers-extra/features/node-asdf:0": {},
+    "ghcr.io/devcontainers-extra/features/node-asdf:0": { "version": "22.23.3" },
     "ghcr.io/devcontainers-extra/features/pipx-package:1": {},
     "ghcr.io/devcontainers/features/docker-in-docker:3": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
@@ -155,9 +156,39 @@ Create, update, and maintain robust `devcontainer.json` configurations and assoc
 
 ## Limitations
 
-- Agents cannot natively build or attach to the devcontainer to test the environment interactively. Rely on schema validation, JSON linting, and best practices.
+- Agents cannot natively build or attach to the devcontainer to test the environment interactively. Rely on schema validation, JSON linting, and best practices. Use the Dev Containers CLI for rebuilds after changes.
+
+## Dev Containers CLI
+
+### Installation
+
+**Best long-term fix — install the CLI globally**
+
+```bash
+npm install -g @devcontainers/cli
+```
+
+Then shorter commands work:
+
+```bash
+devcontainer rebuild
+devcontainer up --remove-existing-container --build-no-cache
+```
+
+**Temporary (npx):**
+
+```bash
+npx -y @devcontainers/cli rebuild
+```
+
+### Rebuild Steps
+
+1. Update devcontainer.json, features, or lifecycle commands (onCreateCommand/postCreateCommand).
+2. Run `devcontainer rebuild` (or the npx equivalent).
+3. Optionally add the CLI via postCreateCommand (or a feature) for availability inside containers.
+4. Verify tools, extensions, and environment functionality.
 
 ## Related Skills
 
-- **yaml**: You MUST load this skill when formatting or linting YAML configurations related to devcontainers.
 - **pre-commit**: You MUST load this skill when configuring pre-commit hooks in the devcontainer.
+- **yaml**: You MUST load this skill when formatting or linting YAML configurations related to devcontainers.
