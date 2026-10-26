@@ -1,84 +1,50 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "Getting Started with Example Ops Template",
-  "description": "A comprehensive walkthrough of the repository structure, development setup, and contribution guidelines",
+  "title": "Getting Started with Cogni AI Agentic Collections",
+  "description": "Walkthrough of the repository for AI agent skills, agents, workflows, devcontainer, and Waza validation. Covers devcontainer build fixes, skill standards, CI workflows, and contribution.",
   "isPrimary": true,
   "steps": [
     {
-      "title": "Welcome!",
-      "description": "# Welcome to the Example Ops Template Repository! \ud83c\udf89\n\nThis code tour will guide you through the repository structure and help you understand how to contribute to this project.\n\n## What You'll Learn\n\n- Repository structure and organization\n- Development environment setup\n- Coding standards and best practices\n- How to run validation tools\n- Contribution workflow\n\nLet's get started!"
+      "title": "Welcome to Cogni AI Agentic Collections!",
+      "description": "# Welcome! \ud83e\udd16\n\nThis repository is the organization-wide collection of AI agent personas, skills, plugins, instructions, and workflows for tools like GitHub Copilot, Claude, OpenCode, and Waza.\n\n## What You'll Learn\n- Devcontainer setup (jammy image, provision.yml with Ansible, MCP, NO_COLOR for clean logs)\n- Skill standard (`SKILL.md` with Waza validation, <500 tokens, triggers, USE FOR/DO NOT USE FOR)\n- Agentic workflows (`gh aw`, waza checks, summary generation)\n- Coding standards and pre-commit\n- How changes to devcontainer/SKILL.md/workflows affect CI\n\nThe recent fixes addressed devcontainer build (sudo usage, noble->jammy), Waza compliance in SKILL.md, and escape sequences in logs for summary action.",
+      "file": "README.md",
+      "line": 1
     },
     {
-      "title": "Project Overview",
-      "description": "## About This Project\n\nThis is a template repository that provides a standardized starting point for operational projects. It's designed to provide:\n\n- Python 3.11+ development environment\n- Pre-configured devcontainer for consistent development\n- Comprehensive pre-commit hooks for code quality\n- GitHub Actions for CI/CD\n- Claude automation assets\n- Multiple coding standards and guidelines\n\nThe project uses modern Python tooling including `uv` for dependency management and `pre-commit` for automated checks.",
-      "file": "README.md"
-    },
-    {
-      "title": "Project Configuration",
-      "description": "## Project Metadata\n\nThe `pyproject.toml` file contains the project's metadata and dependencies:\n\n- **Name**: example-ops-template\n- **Python Version**: >=3.11\n- **Key Dependencies**: requests, tabulate, PyYAML\n\nThis follows modern Python packaging standards using the `hatchling` build backend.",
-      "file": "pyproject.toml",
-      "line": 7
-    },
-    {
-      "title": "Development Environment Setup",
-      "description": "## Devcontainer Configuration\n\nThis project uses VS Code's devcontainer for a consistent development environment.\n\n### Key Features:\n\n- **Base Image**: Ubuntu Jammy (22.04)\n- **Pre-installed Tools**: Python, Node.js, Docker, Make, Ripgrep\n- **VS Code Extensions**: Markdownlint, Copilot, CodeTour, Claude Code, and more\n- **Automatic Setup**: Runs `pip install` and `pre-commit install` on creation\n\n### Important Extension:\n\nNotice the `vsls-contrib.codetour` extension is included - that's what enables this tour!",
+      "title": "Devcontainer Configuration",
+      "description": "## Reproducible Dev Environment\n\nThe `.devcontainer/devcontainer.json` now uses the stable `mcr.microsoft.com/devcontainers/base:jammy` image (matching the org's `.github` repo). Key updates:\n- `onCreateCommand`: Bootstrap with `sudo apt-get` + `ansible-playbook .devcontainer/provision.yml` (installs tools, pipx Ansible, Copilot CLI, Cogni plugins, pre-commit).\n- Features: python, github-cli, docker-in-docker, opencode, eget, actionlint, vim, make.\n- `postCreateCommand`: eget for CLI tools (bat, rg, yq, + minizinc/rga).\n- VS Code: extensions, MCP GitHub server, terminal profile.\n- `initializeCommand`: Pre-creates OpenCode host dirs for bind mounts.\n\n**Fixes applied**: Switched from noble build to avoid sudo/docker issues; added NO_COLOR env in workflows; condensed skills for Waza.\n\nRun `devcontainer rebuild` after changes.",
       "file": ".devcontainer/devcontainer.json",
-      "line": 20
+      "line": 4
     },
     {
-      "title": "GitHub Copilot Instructions",
-      "description": "## Copilot Configuration\n\nThis file provides context-aware instructions to GitHub Copilot when working in this repository.\n\n### Key Guidelines:\n\n- **Python Standards**: Use Python 3.11+, PEP 8, and `uv` for dependency management\n- **Formatting**: Follow markdownlint and yamllint rules\n- **Project Structure**: Uses Codespaces and pre-commit hooks\n\nThese instructions help Copilot provide more accurate and consistent code suggestions.",
-      "file": ".github/copilot-instructions.md",
+      "title": "Provision Playbook",
+      "description": "## Ansible Provisioning\n\n`.devcontainer/provision.yml` handles post-bootstrap setup (apt from `apt-packages.txt`, pipx Ansible + inject for docker/requests, Python reqs, Copilot CLI, gh copilot marketplace/plugins for cogni-ai-*, pre-commit hooks).\n\nUpdated inject task uses `pipx inject` with improved idempotency (matches org `.github` version).\n\nSee `requirements-ansible.txt` and `requirements.txt` for deps. This ensures no extra venvs (per project rules) and controller-side deps are in devcontainer.",
+      "file": ".devcontainer/provision.yml",
       "line": 1
     },
     {
-      "title": "Formal Constraints",
-      "description": "## Protocol-Level Guardrails\n\nThe `CONSTRAINTS.mzn` file defines formal constraints for agent behavior using MiniZinc:\n\n- **Budget Protocol**: Max steps, tool calls, token usage, and time limits\n- **Loop Arrest**: Detection of stagnation or runaway repetition\n- **State Compression**: Checkpoint and partitioning rules\n\nThese constraints are loaded during agent initialization to provide hard-stop safety boundaries.",
-      "file": "CONSTRAINTS.mzn",
+      "title": "Skill Standard & Waza",
+      "description": "## SKILL.md Compliance\n\nSkills follow the `agentskills` open standard (see `.agents/skills/agentskills/SKILL.md`).\n\n**Recent fix** (for PR #133): Condensed `plugins/cogni-ai-dev-ops/skills/devcontainer/SKILL.md`:\n- Expanded frontmatter `description` (>150 chars + triggers).\n- Added `metadata` for provenance.\n- Standard headings (When to Use, When Not to Use, Core Principles, Common Pitfalls).\n- Minimal example; removed long embedded JSON (now references the file).\n- Token count now <500; added Waza reference.\n\nWaza (`waza check`) enforces this in CI (`waza-check.yml`). Run locally with Go 1.26+: `waza check plugins/cogni-ai-dev-ops/skills/devcontainer`.\n\nUse `agent-skill-md-writer` skill when editing SKILL.md.",
+      "file": "plugins/cogni-ai-dev-ops/skills/devcontainer/SKILL.md",
       "line": 1
     },
     {
-      "title": "Custom Agents",
-      "description": "## Custom Agent Profiles\n\nThe custom agent profiles are located in the `agents/` directory in the repository root, with plugin-bundled agents in `plugins/`.\n\n### Notable Files:\n\n- **`plugins/cogni-ai-architect/agents/cogni-ai-architect.agent.md`**: The Cogni AI Architect agent profile for autonomous engineering and system architecture (plugin-bundled)",
-      "file": "plugins/cogni-ai-architect/agents/cogni-ai-architect.agent.md",
+      "title": "Agentic Workflows & CI",
+      "description": "## GitHub Agentic Workflows (gh aw)\n\n- `cogni-ai-agent.yml`: Triggers on PRs/comments; runs agents (cogni-ai-coder, architect, etc.); uses cloned agents/instructions/skills repos.\n- `waza-check.yml`: Validates changed SKILL.md/*.agent.md on PR/push; fails on non-compliance; generates summary.\n- `waza-check-pr-comment.yml`: Posts results as PR comment.\n- Added `NO_COLOR=1` + `TERM=dumb` to jobs to fix summary parser (no ANSI escapes).\n\n**Fix applied**: Env vars prevent \"terminal escape sequences\" error in `ai-inference/summary` action.\n\nSee `.github/workflows/README.md` for details. Use `gh aw` for agentic tasks.",
+      "file": ".github/workflows/cogni-ai-agent.yml",
       "line": 1
     },
     {
-      "title": "Pre-commit Configuration",
-      "description": "## Automated Code Quality Checks\n\nThe `.pre-commit-config.yaml` file defines hooks that run automatically before each commit:\n\n### Linters & Formatters:\n- **yamllint**: YAML syntax and style validation\n- **ansible-lint**: Ansible best practices\n- **markdownlint**: Markdown formatting\n- **black**: Python code formatting\n- **flake8**: Python linting\n\n### Security & Quality:\n- **gitleaks**: Secret detection\n- **detect-secrets**: Credential scanning\n- **codespell**: Spell checking\n\n### Running Manually:\n```bash\npre-commit run --all-files\n```",
+      "title": "Coding Standards & Pre-commit",
+      "description": "## Quality Gates\n\n- `.pre-commit-config.yaml`: yamllint, markdownlint, ansible-lint, codespell, gitleaks, etc.\n- `.github/copilot-instructions.md`: Python (uv, PEP8, argparse, BrokenPipeError), JSON/YAML/Markdown rules, devcontainer guidance (no extra venvs, use container Python, update requirements for missing deps).\n- `AGENTS.md`, `AGENTS-RUNTIME.md`, skills in `.agents/skills/` and `plugins/*/skills/`.\n\nRun `pre-commit run -a` locally. CI enforces on PRs.\n\n**Tour update**: This file was refreshed to reflect devcontainer fixes, Waza, condensed skills, and NO_COLOR env.",
       "file": ".pre-commit-config.yaml",
       "line": 1
     },
     {
-      "title": "Markdown Linting Rules",
-      "description": "## Markdownlint Configuration\n\nThis configuration enforces consistent markdown formatting:\n\n### Key Rules:\n- Line length: 120 characters max\n- No trailing spaces\n- Blank lines around headings, lists, and code blocks\n- Single trailing newline\n- Explicit language for code blocks\n\n### Testing Locally:\n```bash\npre-commit run markdownlint -a\n```",
-      "file": ".markdownlint.yaml"
-    },
-    {
-      "title": "YAML Linting Rules",
-      "description": "## YAML Validation\n\nThe `.yamllint` file defines YAML formatting standards:\n\n### Standards:\n- 2-space indentation\n- 120 character line length\n- Explicit booleans (`true`/`false`)\n- Single trailing newline\n- Lexicographical ordering where practical\n\n### Validation:\n```bash\npre-commit run yamllint -a\n```",
-      "file": ".yamllint"
-    },
-    {
-      "title": "GitHub Actions Workflow",
-      "description": "## Continuous Integration\\n\\nThe repository keeps the standard `check.yml` validation workflow.\\n\\n### Reusable Workflow:\\n\\nThe `check.yml` workflow uses a reusable workflow call from the `.github` organization repository:\\n- **Location**: `Cogni-AI-OU/.github/.github/workflows/check.yml@main`\\n- **Jobs**: actionlint and pre-commit checks\\n\\nThis centralizes workflow definitions across all organization repositories while keeping repository-specific entrypoints checked in here.",
-      "file": ".github/workflows/check.yml",
-      "line": 10
-    },
-    {
-      "title": "VS Code Settings",
-      "description": "## VS Code Configuration\n\nThe `settings.json` file configures VS Code behavior for this repository.\n\n### Code Runner Configuration:\n\nThe code-runner extension is configured to execute various file types:\n- Python scripts with `python -u`\n- JavaScript with `node`\n- Pre-commit checks with `pre-commit run --all-files`\n- Ansible Molecule tests for specific scenarios\n\n### Agent-Friendly Terminal Defaults:\n\nTerminal auto-approval includes common validation and automation commands such as `gh`, `git`, `pipx`, and `pre-commit`.",
-      "file": ".vscode/settings.json",
-      "line": 2
-    },
-    {
-      "title": "License",
-      "description": "## Project License\n\nThis project is licensed under the MIT License.\n\n### Key Points:\n\n- \u2705 Commercial use allowed\n- \u2705 Modification allowed\n- \u2705 Distribution allowed\n- \u2705 Private use allowed\n- \u26a0\ufe0f License and copyright notice must be included\n\nFor full details, see the LICENSE file or visit [TLDRLegal](https://tldrlegal.com/license/mit-license).",
-      "file": "LICENSE"
-    },
-    {
-      "title": "Next Steps",
-      "description": "# You're All Set! \ud83d\ude80\n\n## Quick Start Checklist:\n\n\u2705 Explored the repository structure\n\u2705 Learned about development environment setup\n\u2705 Understand coding standards and guidelines\n\u2705 Know how to run validation tools\n\n## What's Next?\n\n1. **Set Up Environment**: Open this repository in a devcontainer or install dependencies locally\n2. **Install Pre-commit**: Run `pre-commit install` to enable automatic checks\n3. **Review Assets**: Inspect `.devcontainer/` and setup scripts\n4. **Start Contributing**: Pick an issue or create a new feature\n5. **Run Validations**: Always run `pre-commit run --all-files` before committing\n\n## Helpful Commands:\n\n```bash\n# Install pre-commit hooks\npre-commit install\n\n# Run all validation checks\npre-commit run --all-files\n\n# Run specific check\npre-commit run markdownlint -a\npre-commit run yamllint -a\n```\n\n## Questions?\n\nOpen an issue for help!\n\nHappy coding! \ud83d\udcbb"
+      "title": "Contribution Workflow",
+      "description": "## How to Contribute\n\n1. Update skill/agent or devcontainer (keep tours current!).\n2. `pre-commit run -a` + `waza check` on SKILL.md changes.\n3. PR with description; Waza + Cogni AI Agent + summary will run.\n4. Address CodeRabbit/Sourcery reviews.\n5. Merge on green checks.\n\nSee `CONTRIBUTING.md`, `AGENTS.md`, and `docs/` for more. Use the agents (cogni-ai-coder, dev-ops, etc.) via comments or `gh aw`.\n\nThis tour is kept up-to-date per project rules after devcontainer/SKILL/workflow changes.",
+      "file": "README.md",
+      "line": 30
     }
   ]
 }

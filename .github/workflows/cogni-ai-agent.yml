@@ -104,6 +104,10 @@ jobs:
       issues: write
       pull-requests: write
       discussions: write
+    env:
+      NO_COLOR: "1"
+      FORCE_COLOR: "0"
+      TERM: "dumb"
     steps:
       - uses: actions/checkout@v6
         with:

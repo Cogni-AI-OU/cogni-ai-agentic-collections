@@ -164,6 +164,9 @@ venv.bak/
 /.github/instructions/
 /.github/skills/
 
+# Local agent configurations (skills, personas, etc. — committed versions live in plugins/ and .github/)
+.agents/
+
 # Spyder project settings
 .spyderproject
 .spyproject
