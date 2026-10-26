@@ -92,7 +92,8 @@
   // Note: Python dependencies can be added in the `requirements.txt` file.
   // Bootstrap ansible via pipx (avoids apt conflicts with python feature/pipx-package; provision.yml tasks are idempotent).
   // PATH for ~/.local/bin (pre-commit and other user pip installs) is configured in provision.yml.
-  "onCreateCommand": "sudo apt-get update -qq && PATH=\"${HOME}/.local/bin:$PATH\" pipx install --include-deps ansible && PATH=\"${HOME}/.local/bin:$PATH\" pipx inject ansible -r .devcontainer/requirements-ansible.txt && PATH=\"${HOME}/.local/bin:$PATH\" ansible-playbook .devcontainer/provision.yml",
+  // Pre-create ~/.local/bin so eget's `target` resolves to a directory, not a file.
+  "onCreateCommand": "mkdir -p \"${HOME}/.local/bin\" && sudo apt-get update -qq && PATH=\"${HOME}/.local/bin:$PATH\" pipx install --include-deps ansible && PATH=\"${HOME}/.local/bin:$PATH\" pipx inject ansible -r .devcontainer/requirements-ansible.txt && PATH=\"${HOME}/.local/bin:$PATH\" ansible-playbook .devcontainer/provision.yml",
 
   // @see: <https://github.com/zyedidia/eget>
   "postCreateCommand": {
